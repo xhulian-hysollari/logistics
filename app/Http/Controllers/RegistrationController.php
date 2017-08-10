@@ -46,7 +46,7 @@ class RegistrationController extends Controller
             $this->attachUserRole($user, 'user');
             $activation = Activation::create($user);
 
-            $mail = Mail::send('emails.reminder', ['user' => $user, 'activation' => $activation], function ($m) use ($user) {
+            $mail = Mail::queue('emails.reminder', ['user' => $user, 'activation' => $activation], function ($m) use ($user) {
                 $m->from('customer@maxlogistics.eu', 'Your Application');
                 $m->to($user->email, $user->name)->subject('Your Reminder!');
             });
