@@ -46,11 +46,11 @@ class RegistrationController extends Controller
             $this->attachUserRole($user, 'user');
             $activation = Activation::create($user);
 
-            Mail::send('emails.reminder', ['user' => $user, 'activation' => $activation], function ($m) use ($user) {
+            $mail = Mail::send('emails.reminder', ['user' => $user, 'activation' => $activation], function ($m) use ($user) {
                 $m->from('customer@maxlogistics.eu', 'Your Application');
                 $m->to($user->email, $user->name)->subject('Your Reminder!');
             });
-
+                dd($mail);
             return redirect()->route('home');
         } catch (\Exception $ex) {
             return response($ex->getMessage(), 500)
