@@ -52,8 +52,7 @@ class RegistrationController extends Controller
             });
             return redirect()->route('home');
         } catch (\Exception $ex) {
-            return response($ex->getMessage(), 500)
-                ->header('Content-Type', 'application/json');
+            return $ex->getMessage();
         }
     }
 
