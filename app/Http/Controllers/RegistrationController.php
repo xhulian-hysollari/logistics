@@ -20,7 +20,7 @@ class RegistrationController extends Controller
 
     public function register()
     {
-//        try {
+        try {
             $full_name = Input::get('full_name');
             $email = Input::get('email');
             $password = Input::get('password');
@@ -50,10 +50,10 @@ class RegistrationController extends Controller
                 $m->from('customer@maxlogistics.eu', 'Your Application');
                 $m->to($user->email, $user->name)->subject('Your Reminder!');
             });
-            return redirect()->route('home');
-//        } catch (\Exception $ex) {
-//            return $ex->getMessage();
-//        }
+            return redirect()->route('home')->with('success', trans('register.success'));
+        } catch (\Exception $ex) {
+            return redirect()->back()->with('error', $ex->getMessage());
+        }
     }
 
     private function attachUserRole($user, $slug)
@@ -66,5 +66,9 @@ class RegistrationController extends Controller
             ]);
         }
         $role->users()->attach($user);
+    }
+
+    public function activate(){
+
     }
 }

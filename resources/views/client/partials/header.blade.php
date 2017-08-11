@@ -5,21 +5,21 @@
                id="logo"></a>
         </div>
         <div class="col-md-9">
-            <div class="row header">
-                <div class="col-sm-3 col-md-3 col-lg-3" style="margin-top: -45px;">
-                </div>
-                <div class="col-sm-12">
-                    <div class="text-right header-padding visible-lg visible-md">
-                        @include('client.partials.contact-detail')
-                        @if(\Cartalyst\Sentinel\Laravel\Facades\Sentinel::guest())
-                            <a class="btn btn-success"
-                               href="{{route('register')}}">{{trans('navigation.register')}}</a>
-                            <a class="btn btn-info" href="{{route('login')}}"><i
-                                        class="fa fa-sign-in"></i> {{trans('navigation.login')}}</a>
-                        @endif
-                    </div>
-                </div>
-            </div>
+            {{--<div class="row header">--}}
+                {{--<div class="col-sm-3 col-md-3 col-lg-3" style="margin-top: -45px;">--}}
+                {{--</div>--}}
+                {{--<div class="col-sm-12">--}}
+                    {{--<div class="text-right header-padding visible-lg visible-md">--}}
+                        {{--@include('client.partials.contact-detail')--}}
+                        {{--@if(\Cartalyst\Sentinel\Laravel\Facades\Sentinel::guest())--}}
+                            {{--<a class="btn btn-success"--}}
+                               {{--href="{{route('register')}}">{{trans('navigation.register')}}</a>--}}
+                            {{--<a class="btn btn-info" href="{{route('login')}}"><i--}}
+                                        {{--class="fa fa-sign-in"></i> {{trans('navigation.login')}}</a>--}}
+                        {{--@endif--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
             <div id="main-menu-bg"></div>
             <a id="menu-open" href="#"><i class="fa fa-bars"></i></a>
             <nav class="main-menu navbar-main-slide" style="padding-right: 5em">
