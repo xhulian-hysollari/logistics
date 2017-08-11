@@ -20,7 +20,7 @@ class RegistrationController extends Controller
 
     public function register()
     {
-        try {
+//        try {
             $full_name = Input::get('full_name');
             $email = Input::get('email');
             $password = Input::get('password');
@@ -51,9 +51,9 @@ class RegistrationController extends Controller
                 $m->to($user->email, $user->name)->subject('Your Reminder!');
             });
             return redirect()->route('home');
-        } catch (\Exception $ex) {
-            return $ex->getMessage();
-        }
+//        } catch (\Exception $ex) {
+//            return $ex->getMessage();
+//        }
     }
 
     private function attachUserRole($user, $slug)
