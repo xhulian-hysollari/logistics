@@ -72,7 +72,7 @@
             Thanks for signing up for MaxLogistics! Please click the link below to confirm your email address.
         </p>
         <p>
-            <a href="{{route('activate.autobot', [$user->id, $activation->code])}}">{{route('activate.autobot', $user->id, $activation->code)}}</a>
+            <a href="{{route('activate.autobot', [$user->id, $activation->code])}}">{{route('activate.autobot', [$user->id, $activation->code])}}</a>
         </p>
 
         <p>
