@@ -48,7 +48,7 @@ class RegistrationController extends Controller
 
             Mail::send('emails.reminder', ['user' => $user, 'activation' => $activation], function ($m) use ($user) {
                 $m->from('customer@maxlogistics.eu', 'Your Application');
-                $m->to($user->email, $user->name)->subject('Your Reminder!');
+                $m->to($user->email, $user->full_name)->subject('Your Reminder!');
             });
             return redirect()->route('home')->with('success', trans('register.success'));
         } catch (\Exception $ex) {
