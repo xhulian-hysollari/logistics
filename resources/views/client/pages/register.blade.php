@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="container">
-            <h4>{{trans('register.profile')}}</h4>
+            <h4>Registration</h4>
             <div class="row" style="margin-bottom: 20px;">
                 <form id="profile-form" method="post" style="width: 100%" action="{{route('register.autobot')}}" enctype="multipart/form-data">
                     <div class="col-md-6 col-md-offset-3 form-elem">
@@ -31,12 +31,10 @@
                                    placeholder="********">
                         </div>
                     </div>
-                    <ul class="list-inline pull-right">
-                        <li>
+                    <div class="pull-right">
                             <button id="profile-btn" type="submit"
                                     class="btn btn-primary next-step">Register</button>
-                        </li>
-                    </ul>
+                    </div>
                 </form>
             </div>
         </div>
