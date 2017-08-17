@@ -83,10 +83,10 @@
 <body>
 <div class="sp-body">
     @include('client.partials.header')
+    @include('client.partials.alerts')
     @section('slider')
     @show
     <div class="row" style="background-color:#5bc0de;">
-
         <div id="left-side" class="col-md-2 hidden-sm hidden-xs navigation " style="padding-right: 0">
             <div style="text-align: center">
                 <h4><p style="color:white">MARKETPLACE</p></h4>
