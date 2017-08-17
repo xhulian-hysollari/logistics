@@ -24,7 +24,7 @@ Route::get('/register', ['as' => 'register', 'uses' => 'NavigationController@get
 Route::post('/register/autobot', ['as' => 'register.autobot', 'uses' => 'RegistrationController@register']);
 Route::get('/login', ['as' => 'login', 'uses' => 'NavigationController@getLoginPage']);
 Route::post('/login/autobot', ['as' => 'login.autobot', 'uses' => 'LoginController@login']);
-Route::post('/activate/{id}/{code}', ['as' => 'activate.autobot', 'uses' => 'ActivationController@activate']);
+Route::get('/activate/{id}/{code}', ['as' => 'activate.autobot', 'uses' => 'ActivationController@activate']);
 
 
 Route::get('/dashboard/freights', ['as' => 'freight.index', 'uses' => 'FreightController@index']);
