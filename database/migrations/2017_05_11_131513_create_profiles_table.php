@@ -24,7 +24,6 @@ class CreateProfilesTable extends Migration
             $table->string('company', 255);
             $table->string('website', 255);
             $table->text('about_me');
-            $table->enum('preferred_lang',['sq','en'])->default('en');
             $table->timestamps();
             $table->softDeletes();
         });

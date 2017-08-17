@@ -25,7 +25,8 @@ Route::post('/register/autobot', ['as' => 'register.autobot', 'uses' => 'Registr
 Route::get('/login', ['as' => 'login', 'uses' => 'NavigationController@getLoginPage']);
 Route::post('/login/autobot', ['as' => 'login.autobot', 'uses' => 'LoginController@login']);
 Route::get('/activate/{id}/{code}', ['as' => 'activate.autobot', 'uses' => 'ActivationController@activate']);
-
+Route::get('/profile', ['as' => 'profile', 'uses' => 'ProfileController@completeProfile']);
+Route::get('/profile/autobot', ['as' => 'profile.autobot', 'uses' => 'ProfileController@complete']);
 
 Route::get('/dashboard/freights', ['as' => 'freight.index', 'uses' => 'FreightController@index']);
 Route::get('/dashboard/freights/create', ['as' => 'freight.create', 'uses' => 'FreightController@create']);
