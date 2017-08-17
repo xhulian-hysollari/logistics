@@ -67,8 +67,4 @@ class RegistrationController extends Controller
         }
         $role->users()->attach($user);
     }
-
-    public function activate(){
-
-    }
 }

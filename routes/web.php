@@ -20,27 +20,29 @@ Route::get('/about', function () {
 });
 
 
-Route::get('/view/freights', ['as' => 'freight.index', 'uses' => 'FreightController@index']);
-Route::get('/view/freights/create', ['as' => 'freight.create', 'uses' => 'FreightController@create']);
-Route::get('/view/freights/update', ['as' => 'freight.update', 'uses' => 'FreightController@update']);
-Route::get('/view/freights/edit', ['as' => 'freight.edit', 'uses' => 'FreightController@edit']);
-Route::get('/view/freights/show', ['as' => 'freight.show', 'uses' => 'FreightController@show']);
+Route::get('/register', ['as' => 'register', 'uses' => 'NavigationController@getRegistrationPage']);
+Route::post('/register/autobot', ['as' => 'register.autobot', 'uses' => 'RegistrationController@register']);
+Route::get('/login', ['as' => 'login', 'uses' => 'NavigationController@getLoginPage']);
+Route::post('/login/autobot', ['as' => 'login.autobot', 'uses' => 'LoginController@login']);
 
-Route::get('/view/trucks', ['as' => 'trucks.index', 'uses' => 'TruckController@index']);
-Route::get('/view/trucks/create', ['as' => 'trucks.create', 'uses' => 'TruckController@create']);
-Route::get('/view/trucks/update', ['as' => 'trucks.update', 'uses' => 'TruckController@update']);
-Route::get('/view/trucks/edit', ['as' => 'trucks.edit', 'uses' => 'TruckController@edit']);
-Route::get('/view/trucks/show', ['as' => 'trucks.show', 'uses' => 'TruckController@show']);
+
+Route::get('/dashboard/freights', ['as' => 'freight.index', 'uses' => 'FreightController@index']);
+Route::get('/dashboard/freights/create', ['as' => 'freight.create', 'uses' => 'FreightController@create']);
+Route::get('/dashboard/freights/update', ['as' => 'freight.update', 'uses' => 'FreightController@update']);
+Route::get('/dashboard/freights/edit', ['as' => 'freight.edit', 'uses' => 'FreightController@edit']);
+Route::get('/dashboard/freights/show', ['as' => 'freight.show', 'uses' => 'FreightController@show']);
+Route::get('/dashboard/trucks', ['as' => 'trucks.index', 'uses' => 'TruckController@index']);
+Route::get('/dashboard/trucks/create', ['as' => 'trucks.create', 'uses' => 'TruckController@create']);
+Route::get('/dashboard/trucks/update', ['as' => 'trucks.update', 'uses' => 'TruckController@update']);
+Route::get('/dashboard/trucks/edit', ['as' => 'trucks.edit', 'uses' => 'TruckController@edit']);
+Route::get('/dashboard/trucks/show', ['as' => 'trucks.show', 'uses' => 'TruckController@show']);
+
+
 
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.freight'), ['as' => 'freight', 'uses' => 'NavigationController@getFreightPage']);
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.about'), ['as' => 'about', 'uses' => 'NavigationController@getAboutPage']);
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.contact'), ['as' => 'contact', 'uses' => 'NavigationController@getContactPage']);
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.truck'), ['as' => 'truck', 'uses' => 'NavigationController@getTruckPage']);
-Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.register'), ['as' => 'register', 'uses' => 'NavigationController@getRegistrationPage']);
-Route::any(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.register_user'), ['as' => 'register.user', 'uses' => 'RegistrationController@register']);
-Route::any(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.register_company'), ['as' => 'register.company', 'uses' => 'RegistrationController@registerCompany']);
-Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.login'), ['as' => 'login', 'uses' => 'NavigationController@getLoginPage']);
-Route::post(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.login_user'), ['as' => 'login.user', 'uses' => 'LoginController@login']);
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.service'), ['as' => 'service.view', 'uses' => 'NavigationController@getRegistrationPage']);
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.admin'), ['as' => 'admin', 'uses' => 'NavigationController@getAdminPages']);
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.logout'), ['as' => 'logout', 'uses' => 'LoginController@logout']);

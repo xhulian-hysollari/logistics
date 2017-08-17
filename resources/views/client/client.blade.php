@@ -69,9 +69,9 @@
         }
 
         #logo {
-            width: 312px !important;
-            height: 143px !important;
-            margin-top: 10px;
+            width: 142px !important;
+            height: 131px !important;
+            margin-top: 5px;
         }
 
         .nav > li > a:focus, .nav > li > a:hover {

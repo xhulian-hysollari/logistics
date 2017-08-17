@@ -1,8 +1,87 @@
-Hello {{ucwords($user->full_name)}}
+<!doctype html>
+<html lang="{{ config('app.locale') }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-Thanks for signing up for MaxLogistics! Please click the link below to confirm your email address.
+    <title>Max Logistics</title>
 
-https://cloud.digitalocean.com/account_verification/email/WyJ4aHVsaWFuaHlzb2xsYXJpQGdtYWlsLmNvbSIsMTUwMjQ0MjgwMV0%253D--ab63b4125f207de1c0d4f52e7a29d4103880fab3?i=33ae9c
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-Thank you for choosing us,
-Team MaxLogistics
+    <!-- Styles -->
+    <style>
+        html, body {
+            background-color: #fff;
+            color: #636b6f;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 100;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .full-height {
+            height: 100vh;
+        }
+
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .position-ref {
+            position: relative;
+        }
+
+        .top-right {
+            position: absolute;
+            right: 10px;
+            top: 18px;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .title {
+            font-size: 84px;
+        }
+
+        .links > a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .m-b-md {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="flex-center position-ref full-height well">
+    <div class="content">
+        <h4>Hello {{ucwords($user->full_name)}}</h4>
+        <p>
+            Thanks for signing up for MaxLogistics! Please click the link below to confirm your email address.
+        </p>
+        <p>
+            <a href="{{route('activate.autobot', $user->id, $activation->code)}}">{{route('activate.autobot', $user->id, $activation->code)}}</a>
+        </p>
+
+        <p>
+            Thank you for choosing us,
+            Team MaxLogistics
+        </p>
+    </div>
+</div>
+</body>
+</html>
+
+

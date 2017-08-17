@@ -4,43 +4,41 @@
         <div class="container">
             <h4>{{trans('register.profile')}}</h4>
             <div class="row" style="margin-bottom: 20px;">
-                <form id="profile-form" method="post" style="width: 100%" action="{{route('register.user')}}" enctype="multipart/form-data">
+                <form id="profile-form" method="post" style="width: 100%" action="{{route('register.autobot')}}" enctype="multipart/form-data">
                     <div class="col-md-6 col-md-offset-3 form-elem">
                         <div class="default-inp form-elem">
-                            <label for="full_name">{{trans('register.full_name')}}</label>
+                            <label for="full_name">Full Name</label>
                             <input type="text" name="full_name" id="full_name"
-                                   placeholder="{{trans('register.full_name')}}">
+                                   placeholder="Full Name">
                         </div>
                         <div class="default-inp form-elem">
-                            <label for="company_logo">{{trans('register.company_logo')}}</label>
-                            <input type="file" accept="image/*" name="company_logo" id="company_logo"
-                                   placeholder="{{trans('register.company_logo')}}">
+                            <label for="company_logo">Company Logo</label>
+                            <input type="file" accept="image/*" name="company_logo" id="company_logo">
                         </div>
                         <div class="default-inp form-elem">
-                            <label for="email">{{trans('register.email')}}</label>
+                            <label for="email">Email</label>
                             <input type="text" name="email" id="email"
-                                   placeholder="{{trans('register.email')}}">
+                                   placeholder="Email">
                         </div>
                         <div class="default-inp form-elem">
-                            <label for="password">{{trans('register.password')}}</label>
+                            <label for="password">Password</label>
                             <input type="password" name="password" id="password"
-                                   placeholder="{{trans('register.password')}}">
+                                   placeholder="********">
                         </div>
                         <div class="default-inp form-elem">
-                            <label for="confirm_password">{{trans('register.confirm_password')}}</label>
+                            <label for="confirm_password">Confirm password</label>
                             <input type="password" name="confirm_password" id="confirm_password"
-                                   placeholder="{{trans('register.confirm_password')}}">
+                                   placeholder="********">
                         </div>
                     </div>
                     <ul class="list-inline pull-right">
                         <li>
                             <button id="profile-btn" type="submit"
-                                    class="btn btn-primary next-step">{{trans('register.next')}}</button>
+                                    class="btn btn-primary next-step">Register</button>
                         </li>
                     </ul>
                 </form>
             </div>
-
         </div>
     </div>
 @stop
