@@ -1,11 +1,11 @@
 @extends('client.client')
 @section('content')
     <div class="row">
-        <div class="container">
+        <div class="container-fluid">
             <h4>Registration</h4>
             <div class="row" style="margin-bottom: 20px;">
                 <form id="profile-form" method="post" style="width: 100%" action="{{route('register.autobot')}}" enctype="multipart/form-data">
-                    <div class="col-md-6 col-md-offset-3 form-elem">
+                    <div class="form-elem">
                         <div class="default-inp form-elem">
                             <label for="full_name">Full Name</label>
                             <input type="text" name="full_name" id="full_name"
@@ -30,11 +30,12 @@
                             <input type="password" name="confirm_password" id="confirm_password"
                                    placeholder="********">
                         </div>
-                    </div>
-                    <div class="pull-right">
+                        <div class="form-elem pull-right">
                             <button id="profile-btn" type="submit"
                                     class="btn btn-primary next-step">Register</button>
+                        </div>
                     </div>
+
                 </form>
             </div>
         </div>
