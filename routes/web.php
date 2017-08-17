@@ -81,3 +81,7 @@ Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute(
 Route::post(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.legal_store'), ['as' => 'legal.store', 'uses' => 'LegalController@store']);
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.legal_delete'), ['as' => 'legal.delete', 'uses' => 'LegalController@destroy']);
 Route::patch(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.legal_update'), ['as' => 'legal.update', 'uses' => 'LegalController@update']);
+
+//Route::get('url/path', ['as' => 'url_name', 'uses' => 'LegalController@update']);
+
+//{{route('url_name')}}

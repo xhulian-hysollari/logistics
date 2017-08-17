@@ -14,10 +14,10 @@
                                 </li>
                             </ul>
                             <ul class="sidebar-menu sm-bordered sm-active-item-bg">
-                                <li><a href="{{route('freight_list')}}"><i class="fa fa-list"></i>
-                                        <span>{{trans('admin.listings')}}</span></a></li>
-                                <li><a href="{{route('truck_list')}}"><i class="fa fa-truck"></i>
-                                        <span>{{trans('admin.trucks')}}</span></a></li>
+                                {{--<li><a href="{{route('freight_list')}}"><i class="fa fa-list"></i>--}}
+                                        {{--<span>{{trans('admin.listings')}}</span></a></li>--}}
+                                {{--<li><a href="{{route('truck_list')}}"><i class="fa fa-truck"></i>--}}
+                                        {{--<span>{{trans('admin.trucks')}}</span></a></li>--}}
                                 <li><a href="{{route('user_list')}}"><i class="fa fa-users"></i>
                                         <span>{{trans('admin.users')}}</span></a></li>
                                 <li><a href="{{route('settings')}}"><i class="fa fa-cogs"></i>
@@ -26,6 +26,10 @@
                                         <span>{{trans('admin.partners')}}</span></a></li>
                                 <li><a href="{{route('legal.list')}}"><i class="fa fa-list"></i>
                                         <span>{{trans('admin.legal')}}</span></a></li>
+                                <li><a href=""><i class="fa fa-list"></i>
+                                        <span>{{trans('admin.listings')}}</span></a></li>
+                                <li><a href=""><i class="fa fa-truck"></i>
+                                        <span>{{trans('admin.trucks')}}</span></a></li>
                             </ul>
                         </div>
                     </div>
