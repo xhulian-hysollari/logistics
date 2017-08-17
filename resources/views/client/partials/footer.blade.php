@@ -1,5 +1,4 @@
 <footer>
-    <div class="color-part2"></div>
     <div class="color-part"></div>
     <div class="container-fluid">
         <div class="row block-content">
