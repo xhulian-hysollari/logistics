@@ -27,26 +27,28 @@ class ActivationController extends Controller
     }
 
     public function resendActivation(){
-        $email = Input::get('email');
-        if($this->autobot->where('email', $email)->exists()){
-            $user = $this->autobot->where('email', $email)->first();
-            if ($activation = Activation::exists($user)) {
-                $code = $activation->code;
-                Mail::queue("emails.it.registration", compact('user', 'code'), function ($m) use ($user)
-                {
-                    $m->to($user->email)->subject(trans('subject.activate'));
+        try{
+            $email = Input::get('email');
+            if($this->autobot->where('email', $email)->exists()){
+                $user = $this->autobot->where('email', $email)->first();
+                if ($activation = Activation::exists($user)) {
+                    Mail::send('emails.reminder', ['user' => $user, 'activation' => $activation], function ($m) use ($user) {
+                        $m->from('customer@maxlogistics.eu', 'Max Logistics');
+                        $m->to($user->email, $user->full_name)->subject('Your Activation Code!');
+                    });
+                    return redirect()->back()->with('success','Email Sent');
+                }
+                $activation = Activation::create($user);
+                Mail::send('emails.reminder', ['user' => $user, 'activation' => $activation], function ($m) use ($user) {
+                    $m->from('customer@maxlogistics.eu', 'Max Logistics');
+                    $m->to($user->email, $user->full_name)->subject('Your Activation Code!');
                 });
                 return redirect()->back()->with('success','Email Sent');
             }
-            $activation = Activation::create($user);
-            $code = $activation->code;
-            Mail::queue("emails.it.registration", compact('user', 'code'), function($m) use ($user)
-            {
-                $m->to($user->email)->subject(trans('subject.activate'));
-            });
-            return redirect()->back()->with('success','Email Sent');
+            return redirect()->back()->with('error','Not Exists');
+        }catch (\Exception $ex){
+            return redirect()->back()->with('error', $ex->getMessage());
         }
-        return redirect()->back()->with('error','Not Exists');
     }
 
     public function activate($id, $code)
