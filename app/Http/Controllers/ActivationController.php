@@ -52,9 +52,15 @@ class ActivationController extends Controller
     public function activate($id, $code)
     {
         $user = $this->autobot->findOrFail($id);
-        if (!Activation::complete($user, $code)) {
-            return redirect()->route('home')->with('error', 'There was an error while trying to activate your account. Please try again or contact customer support.');
+        if($activation = Activation::exists($user)){
+            if($activation->completed == 1){
+                return redirect()->route('home')->with('info', 'You have already activated your account.');
+            }
+            if (!Activation::complete($user, $code)) {
+                return redirect()->route('home')->with('error', 'There was an error while trying to activate your account. Please try again or contact customer support.');
+            }
         }
+
         $this->transformer->login($user);
         return redirect()->route('profile')->with('success', 'Your account has been activated. Please complete your profile before using our platform.');
     }
