@@ -56,9 +56,9 @@ class ActivationController extends Controller
             if($activation->completed == 1){
                 return redirect()->route('home')->with('info', 'You have already activated your account.');
             }
-            if (!Activation::complete($user, $code)) {
-                return redirect()->route('home')->with('error', 'There was an error while trying to activate your account. Please try again or contact customer support.');
-            }
+//            if (!Activation::complete($user, $code)) {
+//                return redirect()->route('home')->with('error', 'There was an error while trying to activate your account. Please try again or contact customer support.');
+//            }
         }
 
         $this->transformer->login($user);
