@@ -18,6 +18,20 @@ Route::get('/dashboard', function () {
 Route::get('/about', function () {
     return view('client.pages.about');
 });
+
+
+Route::get('/view/freights', ['as' => 'freight.index', 'uses' => 'FreightController@index']);
+Route::get('/view/freights/create', ['as' => 'freight.create', 'uses' => 'FreightController@create']);
+Route::get('/view/freights/update', ['as' => 'freight.update', 'uses' => 'FreightController@update']);
+Route::get('/view/freights/edit', ['as' => 'freight.edit', 'uses' => 'FreightController@edit']);
+Route::get('/view/freights/show', ['as' => 'freight.show', 'uses' => 'FreightController@show']);
+
+Route::get('/view/trucks', ['as' => 'trucks.index', 'uses' => 'TruckController@index']);
+Route::get('/view/trucks/create', ['as' => 'trucks.create', 'uses' => 'TruckController@create']);
+Route::get('/view/trucks/update', ['as' => 'trucks.update', 'uses' => 'TruckController@update']);
+Route::get('/view/trucks/edit', ['as' => 'trucks.edit', 'uses' => 'TruckController@edit']);
+Route::get('/view/trucks/show', ['as' => 'trucks.show', 'uses' => 'TruckController@show']);
+
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.freight'), ['as' => 'freight', 'uses' => 'NavigationController@getFreightPage']);
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.about'), ['as' => 'about', 'uses' => 'NavigationController@getAboutPage']);
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.contact'), ['as' => 'contact', 'uses' => 'NavigationController@getContactPage']);
@@ -81,7 +95,8 @@ Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute(
 Route::post(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.legal_store'), ['as' => 'legal.store', 'uses' => 'LegalController@store']);
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.legal_delete'), ['as' => 'legal.delete', 'uses' => 'LegalController@destroy']);
 Route::patch(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.legal_update'), ['as' => 'legal.update', 'uses' => 'LegalController@update']);
-
 //Route::get('url/path', ['as' => 'url_name', 'uses' => 'LegalController@update']);
+
+
 
 //{{route('url_name')}}

@@ -26,10 +26,12 @@
                                         <span>{{trans('admin.partners')}}</span></a></li>
                                 <li><a href="{{route('legal.list')}}"><i class="fa fa-list"></i>
                                         <span>{{trans('admin.legal')}}</span></a></li>
-                                <li><a href=""><i class="fa fa-list"></i>
+                                <li><a href="{{route('freight.index')}}"><i class="fa fa-list"></i>
                                         <span>{{trans('admin.listings')}}</span></a></li>
-                                <li><a href=""><i class="fa fa-truck"></i>
-                                        <span>{{trans('admin.trucks')}}</span></a></li>
+                                <li><a href="{{route('trucks.index')}}"><i class="fa fa-list"></i>{{trans('admin.trucks')}}</a>
+                                </li>
+                                <li><a href=""><i class="fa fa-list-alt"></i>
+                                        <span>{{trans('admin.tender')}}</span></a></li>
                             </ul>
                         </div>
                     </div>

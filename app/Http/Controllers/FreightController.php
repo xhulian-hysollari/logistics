@@ -18,8 +18,9 @@ class FreightController extends Controller
     {
         try{
             $user = Sentinel::getUser();
-            $result = Freight::where('user_id', $user->id)->get();
-            return view('admin.freight.index', compact('result'));
+//            $results = Freight::where('user_id', $user->id)->get();
+            $results = Freight::all();
+            return view('admin.freight.index', compact('results'));
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }
@@ -33,7 +34,7 @@ class FreightController extends Controller
     public function create()
     {
         try{
-
+            return view('admin.freight.create');
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }
@@ -48,9 +49,23 @@ class FreightController extends Controller
     public function store(Request $request)
     {
         try{
-
+            $freight = new Freight();
+//            $freight->user_id = Sentinel::getUser()->id;
+            $freight->user_id = 1;
+            $freight->freight_id = Input::get('freight_id');
+            $freight->weight = Input::get('weight');
+            $freight->height = Input::get('height');
+            $freight->length = Input::get('length');
+            $freight->volume = Input::get('volume');
+            $freight->type = Input::get('lorry_type');
+            $freight->location = Input::get('location');
+            $freight->description = Input::get('description');
+            $freight->quantity = Input::get('quantity');
+            $freight->status = 0;
+            $freight->save();
+            return redirect()->back()->with('success');
         }catch (\Exception $ex){
-            return redirect()->back()->with('error', $ex->getMessage());
+            dd($ex->getMessage());
         }
     }
 
@@ -63,7 +78,8 @@ class FreightController extends Controller
     public function show($id)
     {
         try{
-
+            $results = Freight::where('id', $id)->first();
+            return view('admin.freight.show', compact('results'));
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }
@@ -78,7 +94,8 @@ class FreightController extends Controller
     public function edit($id)
     {
         try{
-
+            $results = Freight::where('id', $id)->first();
+            return view('admin.freight.edit', compact('results'));
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }
@@ -94,7 +111,17 @@ class FreightController extends Controller
     public function update(Request $request, $id)
     {
         try{
-
+            $freight = Freight::where('id', $id)->first();
+            $freight->weight = Input::get('weight');
+            $freight->length = Input::get('length');
+            $freight->height = Input::get('height');
+            $freight->type = Input::get('type');
+            $freight->location = Input::get('location');
+            $freight->description = Input::get('description');
+            $freight->volume = Input::get('volume');
+            $freight->quantity = Input::get('quantity');
+            $freight->save();
+            return redirect()->back()->with('success');
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }
@@ -109,7 +136,8 @@ class FreightController extends Controller
     public function destroy($id)
     {
         try{
-
+            $freight = Freight::where('id', $id)->delete();
+            return redirect()->back()->with('success');
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }

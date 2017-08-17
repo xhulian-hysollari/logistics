@@ -2,18 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Truck;
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class TruckController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        try {
+//            $user = Sentinel::getUser()->id;
+//            $results = Truck::where('user_id', $user->id)->get();
+            $results = Truck::all();
+            return view('admin.truck.index', compact('results'));
+        } catch (Exception $ex) {
+            return redirect()->back()->with('error', $ex->getMessage());
+        }
     }
 
     /**
@@ -23,7 +30,11 @@ class TruckController extends Controller
      */
     public function create()
     {
-        //
+            try {
+                return view('admin.truck.create');
+            } catch (Exception $ex) {
+                return redirect()->back()->with('error', $ex->getMessage());
+            }
     }
 
     /**
@@ -34,8 +45,28 @@ class TruckController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+        $trucks = new Truck();
+//        $trucks->user_id = Sentinel::getUser()->id;
+        $trucks->user_id = 1;
+        $trucks->weight = Input::get('weight');
+        $trucks->length = Input::get('length');
+        $trucks->height = Input::get('height');
+        $trucks->type = Input::get('lorry_type');
+        $trucks->plate = Input::get('plate');
+        $trucks->location = Input::get('location');
+        $trucks->description = Input::get('description');
+        $trucks->status = 0;
+        $trucks->save();
+
+        return redirect()->back()->with('success');
+
+        } catch (Exception $ex) {
+            dd($ex->getMessage());
+        }
     }
+
+
 
     /**
      * Display the specified resource.
@@ -45,7 +76,12 @@ class TruckController extends Controller
      */
     public function show($id)
     {
-        //
+        try{
+        $results = Truck::where('id', $id)->first();
+        return view('admin.truck.show', compact('results'));
+        } catch (Exception $ex) {
+            return redirect()->back()->with('error', $ex->getMessage());
+        }
     }
 
     /**
@@ -56,7 +92,12 @@ class TruckController extends Controller
      */
     public function edit($id)
     {
-        //
+        try {
+            $results = Truck::where('id', $id)->first();
+            return view('admin.truck.edit', compact('results'));
+        } catch (Exception $ex) {
+            return redirect()->back()->with('error', $ex->getMessage());
+        }
     }
 
     /**
@@ -68,7 +109,33 @@ class TruckController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        try {
+            $trucks = Truck::where('id', $id)->first();
+            $trucks->weight = Input::get('weight');
+            $trucks->length = Input::get('length');
+            $trucks->height = Input::get('height');
+            $trucks->type = Input::get('lorry_type');
+            $trucks->plate = Input::get('plate');
+            $trucks->location = Input::get('location');
+            $trucks->description = Input::get('description');
+            $trucks->save();
+
+            return redirect()->back()->with('success');
+        } catch (Exception $ex) {
+            return redirect()->back()->with('error', $ex->getMessage());
+        }
+
+//        $table->integer('user_id')->unsigned();
+//        $table->integer('status')->unsigned();
+//        $table->string('weight', 50);
+//        $table->string('length', 50);
+//        $table->string('height', 50);
+//        $table->string('type', 50);
+//        $table->string('plate', 15);
+//        $table->string('location', 255);
+//        $table->string('description', 255);
+
     }
 
     /**
@@ -79,6 +146,11 @@ class TruckController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            Truck::where('id', $id)->delete();
+            return redirect()->back()->with('success');
+        } catch (Exception $ex) {
+            return redirect()->back()->with('error', $ex->getMessage());
+        }
     }
 }

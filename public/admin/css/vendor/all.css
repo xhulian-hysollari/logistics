@@ -3039,20 +3039,20 @@ select[multiple].form-group-lg .form-control {
   color: #616161;
 }
 @media (min-width: 768px) {
-  .form-inline .form-group {
+  .form-inline.form-group {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
   }
-  .form-inline .form-control {
+  .form-inline.form-control {
     display: inline-block;
     width: auto;
     vertical-align: middle;
   }
-  .form-inline .form-control-static {
+  .form-inline.form-control-static {
     display: inline-block;
   }
-  .form-inline .input-group {
+  .form-inline.input-group {
     display: inline-table;
     vertical-align: middle;
   }
