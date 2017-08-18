@@ -26,6 +26,7 @@ class ProfileController extends Controller
             $profile->website = Input::get('website');
             $profile->about_me = Input::get('about_me');
             $profile->user_id = $user->id;
+            $profile->save();
             return redirect()->route('home')->with('success', 'Your profile has been updated successfully!');
         }catch (\Exception $ex){
             return redirect()->back()->withInput()->with('error', 'There was an error while trying to update your profile. Please try again or contact customer support!');
