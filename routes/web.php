@@ -26,7 +26,7 @@ Route::get('/login', ['as' => 'login', 'uses' => 'NavigationController@getLoginP
 Route::post('/login/autobot', ['as' => 'login.autobot', 'uses' => 'LoginController@login']);
 Route::get('/activate/{id}/{code}', ['as' => 'activate.autobot', 'uses' => 'ActivationController@activate']);
 Route::get('/profile', ['as' => 'profile', 'uses' => 'ProfileController@completeProfile']);
-Route::get('/profile/autobot', ['as' => 'profile.autobot', 'uses' => 'ProfileController@complete']);
+Route::post('/profile/autobot', ['as' => 'profile.autobot', 'uses' => 'ProfileController@complete']);
 Route::middleware(['profile'])->group(function () {
     Route::get('/dashboard/freights', ['as' => 'freight.index', 'uses' => 'FreightController@index']);
     Route::get('/dashboard/freights/create', ['as' => 'freight.create', 'uses' => 'FreightController@create']);
