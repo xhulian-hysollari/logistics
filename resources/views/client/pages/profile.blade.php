@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <h4>Your Profile</h4>
             <div class="row" style="margin-bottom: 20px;">
-                <form id="profile-form" method="post" style="width: 100%" action="{{route('register.autobot')}}" enctype="multipart/form-data">
+                <form id="profile-form" method="post" style="width: 100%" action="{{route('profile.autobot')}}" enctype="multipart/form-data">
                     <div class="form-elem">
                         <div class="default-inp form-elem">
                             <label for="telephone">Telephone</label>
