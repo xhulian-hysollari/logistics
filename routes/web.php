@@ -27,19 +27,18 @@ Route::post('/login/autobot', ['as' => 'login.autobot', 'uses' => 'LoginControll
 Route::get('/activate/{id}/{code}', ['as' => 'activate.autobot', 'uses' => 'ActivationController@activate']);
 Route::get('/profile', ['as' => 'profile', 'uses' => 'ProfileController@completeProfile']);
 Route::get('/profile/autobot', ['as' => 'profile.autobot', 'uses' => 'ProfileController@complete']);
-
-Route::get('/dashboard/freights', ['as' => 'freight.index', 'uses' => 'FreightController@index']);
-Route::get('/dashboard/freights/create', ['as' => 'freight.create', 'uses' => 'FreightController@create']);
-Route::get('/dashboard/freights/update', ['as' => 'freight.update', 'uses' => 'FreightController@update']);
-Route::get('/dashboard/freights/edit', ['as' => 'freight.edit', 'uses' => 'FreightController@edit']);
-Route::get('/dashboard/freights/show', ['as' => 'freight.show', 'uses' => 'FreightController@show']);
-Route::get('/dashboard/trucks', ['as' => 'trucks.index', 'uses' => 'TruckController@index']);
-Route::get('/dashboard/trucks/create', ['as' => 'trucks.create', 'uses' => 'TruckController@create']);
-Route::get('/dashboard/trucks/update', ['as' => 'trucks.update', 'uses' => 'TruckController@update']);
-Route::get('/dashboard/trucks/edit', ['as' => 'trucks.edit', 'uses' => 'TruckController@edit']);
-Route::get('/dashboard/trucks/show', ['as' => 'trucks.show', 'uses' => 'TruckController@show']);
-
-
+Route::middleware(['first', 'second'])->group(function () {
+    Route::get('/dashboard/freights', ['as' => 'freight.index', 'uses' => 'FreightController@index']);
+    Route::get('/dashboard/freights/create', ['as' => 'freight.create', 'uses' => 'FreightController@create']);
+    Route::get('/dashboard/freights/update', ['as' => 'freight.update', 'uses' => 'FreightController@update']);
+    Route::get('/dashboard/freights/edit', ['as' => 'freight.edit', 'uses' => 'FreightController@edit']);
+    Route::get('/dashboard/freights/show', ['as' => 'freight.show', 'uses' => 'FreightController@show']);
+    Route::get('/dashboard/trucks', ['as' => 'trucks.index', 'uses' => 'TruckController@index']);
+    Route::get('/dashboard/trucks/create', ['as' => 'trucks.create', 'uses' => 'TruckController@create']);
+    Route::get('/dashboard/trucks/update', ['as' => 'trucks.update', 'uses' => 'TruckController@update']);
+    Route::get('/dashboard/trucks/edit', ['as' => 'trucks.edit', 'uses' => 'TruckController@edit']);
+    Route::get('/dashboard/trucks/show', ['as' => 'trucks.show', 'uses' => 'TruckController@show']);
+});
 
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.freight'), ['as' => 'freight', 'uses' => 'NavigationController@getFreightPage']);
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.about'), ['as' => 'about', 'uses' => 'NavigationController@getAboutPage']);

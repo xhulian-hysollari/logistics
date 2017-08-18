@@ -30,4 +30,8 @@ class User extends EloquentUser
         return Bid::where('owner_id', $this->attributes['id'])->get();
     }
 
+    public function profile(){
+        return $this->hasOne(Profile::class);
+    }
+
 }

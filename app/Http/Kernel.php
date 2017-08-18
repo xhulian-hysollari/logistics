@@ -59,7 +59,7 @@ class Kernel extends HttpKernel
         'localizationRedirect' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
         'localeSessionRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
         'localize' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
-        'talk' => \Nahid\Talk\Middleware\TalkMiddleware::class,
+        'profile' => \App\Http\Middleware\ProfileCompleted::class,
     ];
 }
 
