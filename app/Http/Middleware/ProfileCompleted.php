@@ -18,10 +18,8 @@ class ProfileCompleted
     {
         $user = Sentinel::getUser();
         if ($user->profile) {
-            dd($user->profile);
-            return redirect('/home');
+            return $next($request);
         }
-        dd("No User Profile for ". $user->full_name);
-        return $next($request);
+        return redirect()->route('profile')->with('warning', 'You have to complete your profile before proceeding to use the platform.');
     }
 }
