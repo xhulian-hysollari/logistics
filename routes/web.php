@@ -19,6 +19,8 @@ Route::get('/about', function () {
     return view('client.pages.about');
 });
 
+Route::get('/plans', 'PlansController@index');
+
 
 Route::get('/register', ['as' => 'register', 'uses' => 'NavigationController@getRegistrationPage']);
 Route::post('/register/autobot', ['as' => 'register.autobot', 'uses' => 'RegistrationController@register']);
@@ -27,6 +29,7 @@ Route::post('/login/autobot', ['as' => 'login.autobot', 'uses' => 'LoginControll
 Route::get('/activate/{id}/{code}', ['as' => 'activate.autobot', 'uses' => 'ActivationController@activate']);
 Route::get('/profile', ['as' => 'profile', 'uses' => 'ProfileController@completeProfile']);
 Route::post('/profile/autobot', ['as' => 'profile.autobot', 'uses' => 'ProfileController@complete']);
+
 Route::middleware(['profile'])->group(function () {
     Route::get('/dashboard/freights', ['as' => 'freight.index', 'uses' => 'FreightController@index']);
     Route::get('/dashboard/freights/create', ['as' => 'freight.create', 'uses' => 'FreightController@create']);

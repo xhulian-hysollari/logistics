@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         TestScheduler::class,
+        Commands\SyncPlans::class,
     ];
 
     /**
