@@ -11,6 +11,8 @@
 |
 */
 
+//tuts https://www.sitepoint.com/laravel-and-braintree-sitting-in-a-tree/ https://www.sitepoint.com/laravel-and-braintree-middleware-and-other-advanced-concepts/ https://www.sitepoint.com/real-time-laravel-notifications-follows-sure-stream/
+
 Route::get('/', ['as' => 'home', 'uses' => 'NavigationController@getHomePage']);
 Route::get('/dashboard', function () {
     return view('admin.admin');
