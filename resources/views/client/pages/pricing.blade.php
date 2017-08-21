@@ -19,9 +19,11 @@
                                         @endif
                                     </div>
                                     @if(Sentinel::getUser())
-                                    @if (!Sentinel::getUser()->subscribedToPlan($plan->braintree_plan, 'main'))
-                                        <a href="{{ url('/plan', $plan->slug) }}" class="btn btn-default pull-right">Choose Plan</a>
-                                    @endif
+                                        @if (!Sentinel::getUser()->subscribedToPlan($plan->braintree_plan, 'main'))
+                                            <a href="{{ url('/plan', $plan->slug) }}" class="btn btn-default pull-right">Choose Plan</a>
+                                        @endif
+                                    @else
+                                        <a href="{{ route('login') }}" class="btn btn-default pull-right">Choose Plan</a>
                                     @endif
                                 </li>
                             @endforeach
