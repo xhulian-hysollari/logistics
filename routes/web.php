@@ -17,12 +17,17 @@ Route::get('/', ['as' => 'home', 'uses' => 'NavigationController@getHomePage']);
 Route::get('/dashboard', function () {
     return view('admin.admin');
 });
+
+Route::get('/plans', 'PlansController@index');
+
 Route::get('/about', function () {
     return view('client.pages.about');
 });
 
-Route::get('/plans', 'PlansController@index');
-
+Route::get('/plans', ['as' => 'plans', 'uses' => 'PlansController@index']);
+Route::get('/plan/{plan}', 'PlansController@show');
+Route::get('/braintree/token', 'BraintreeTokenController@token');
+Route::post('/subscribe', ['as' => 'user.subscribe', 'uses' => 'SubscriptionsController@store']);
 
 Route::get('/register', ['as' => 'register', 'uses' => 'NavigationController@getRegistrationPage']);
 Route::post('/register/autobot', ['as' => 'register.autobot', 'uses' => 'RegistrationController@register']);

@@ -11,7 +11,7 @@
                 <ul class="nav navbar-nav navbar-main">
                     <li><a href="{{route('home')}}">{{trans('navigation.home')}}</a></li>
                     <li><a href="{{route('about')}}">About</a></li>
-                    <li><a href="{{route('about')}}">Pricing</a></li>
+                    <li><a href="{{route('plans')}}">Pricing</a></li>
                     <li><a href="{{route('contact')}}">{{trans('navigation.contact')}}</a></li>
                     @if(\Cartalyst\Sentinel\Laravel\Facades\Sentinel::check())
                         <li class="dropdown">
