@@ -18,8 +18,10 @@
                                             <p>{{ $plan->description }}</p>
                                         @endif
                                     </div>
+                                    @if(Sentinel::getUser())
                                     @if (!Sentinel::getUser()->subscribedToPlan($plan->braintree_plan, 'main'))
                                         <a href="{{ url('/plan', $plan->slug) }}" class="btn btn-default pull-right">Choose Plan</a>
+                                    @endif
                                     @endif
                                 </li>
                             @endforeach
