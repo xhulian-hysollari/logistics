@@ -24,4 +24,18 @@ class SubscriptionsController extends Controller
         // redirect to home after a successful subscription
         return redirect()->route('home')->with('success', 'Subscribed to '.$plan->braintree_plan.' successfully');
     }
+
+    public function cancel(Request $request)
+    {
+        $request->user()->subscription('main')->cancel();
+
+        return redirect()->back()->with('success', 'You have successfully cancelled your subscription');
+    }
+
+    public function resume(Request $request)
+    {
+        $request->user()->subscription('main')->resume();
+
+        return redirect()->back()->with('success', 'You have successfully resumed your subscription');
+    }
 }
