@@ -18,7 +18,7 @@
             <div class="col-md-12">
                 <div class="form-group form-control-default">
                     <label for="body">Body</label>
-                    <input class="form-control"  type="text" name="body" id="body" value="{{$results->body}}">
+                    <textarea class="form-control summernote" name="body" id="body">{{$results->body}}</textarea>
                 </div>
             </div>
             <button type="submit" class="btn btn-success btn-default">{{$button}}</button>

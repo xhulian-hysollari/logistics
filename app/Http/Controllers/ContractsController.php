@@ -12,8 +12,6 @@ class ContractsController extends Controller
     public function index()
     {
         try{
-//            $user = Sentinel::getUser();
-//            $results = Freight::where('user_id', $user->id)->get();
             $results = Contracts::all();
             return view('admin.contracts.index', compact('results'));
         }catch (\Exception $ex){

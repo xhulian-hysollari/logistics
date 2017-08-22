@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Pages;
+use App\Models\Pages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
