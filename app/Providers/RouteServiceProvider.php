@@ -66,11 +66,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes()
     {
-        $locale = \Mcamara\LaravelLocalization\Facades\LaravelLocalization::setLocale();
         Route::group([
-            'middleware' => ['web', 'localeSessionRedirect', 'localizationRedirect', 'localize'],
+            'middleware' => ['web'],
             'namespace' => $this->namespace,
-            'prefix' => $locale
+            'prefix' => ''
         ], function ($router) {
             require base_path('routes/web.php');
         });

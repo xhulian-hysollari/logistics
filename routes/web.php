@@ -29,6 +29,9 @@ Route::get('/plan/{plan}', 'PlansController@show');
 Route::get('/braintree/token', 'BraintreeTokenController@token');
 Route::post('/subscribe', ['as' => 'user.subscribe', 'uses' => 'SubscriptionsController@store']);
 
+Route::post('/subscription/cancel', ['as' => 'subscription.cancel', 'uses' => 'SubscriptionsController@cancel']);
+Route::post('/subscription/resume', ['as' => 'subscription.resume', 'uses' => 'SubscriptionsController@resume']);
+
 Route::get('/register', ['as' => 'register', 'uses' => 'NavigationController@getRegistrationPage']);
 Route::post('/register/autobot', ['as' => 'register.autobot', 'uses' => 'RegistrationController@register']);
 Route::get('/login', ['as' => 'login', 'uses' => 'NavigationController@getLoginPage']);

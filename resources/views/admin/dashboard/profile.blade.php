@@ -21,11 +21,6 @@
                                 <h3><strong>Email</strong></h3>
                                 <p>{{$user->email}}</p>
                                 <hr>
-                                <h3><strong>Gender</strong></h3>
-                                <p>Unknown</p>
-                                <hr>
-                                <h3><strong>Birthday</strong></h3>
-                                <p>January 01 1901</p>
                             </div>
                         </div>
                     </div>
@@ -49,39 +44,87 @@
                 <!-- Simple post content example. -->
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div class="pull-left">
-                            <a href="#">
-                                <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
-                            </a>
-                        </div>
-                        <h4><a href="#" style="text-decoration:none;"><strong>John Doe</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> 42 minutes ago</i></a></small></small></h4>
+                        <h4><strong>Subscriptions</strong></h4>
                         <hr>
                         <div class="post-content">
-                            <p>Simple post content example.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel gravida metus, non ultrices sapien. Morbi odio metus, dapibus non nibh id amet.</p>
+                            @if (Sentinel::getUser()->subscription('main')->cancelled())
+                                <p>Your subscription ends on {{ Sentinel::getUser()->subscription('main')->ends_at->format('dS M Y') }}</p>
+                            @else
+                                <p>You are currently subscribed to {{ Sentinel::getUser()->subscription('main')->braintree_plan }} plan</p>
+                            @endif
+                            <ul class="list-group">
+                                @foreach (\App\Models\Plan::orderBy('cost','asc')->get() as $plan)
+                                    <li class="list-group-item clearfix">
+                                        <div class="pull-left">
+                                            <h4>{{ $plan->name }}</h4>
+                                            <h4>${{ number_format($plan->cost, 2) }} monthly</h4>
+                                            @if ($plan->description)
+                                                <p>{{ $plan->description }}</p>
+                                            @endif
+                                        </div>
+                                        @if (!Sentinel::getUser()->subscribedToPlan($plan->braintree_plan, 'main'))
+                                            <a href="{{ url('/plan', $plan->slug) }}" class="btn btn-default pull-right">Choose Plan</a>
+                                        @else
+                                            @if (Sentinel::getUser()->subscription('main')->cancelled())
+                                                <form action="{{ route('subscription.resume') }}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    <button type="submit" class="btn btn-default pull-right">Resume subscription</button>
+                                                </form>
+                                            @else
+                                                <form action="{{ route('subscription.cancel') }}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    <button type="submit" class="btn btn-default pull-right">Cancel subscription</button>
+                                                </form>
+                                            @endif
+                                        @endif
+                                    </li>
+                                @endforeach
+                            </ul>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Simple post content example. -->
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4><strong>Contact Info</strong></h4>
                         <hr>
-                        <div>
-                            <div class="pull-right btn-group-xs">
-                                <a class="btn btn-default btn-xs"><i class="fa fa-heart" aria-hidden="true"></i> Like</a>
-                                <a class="btn btn-default btn-xs"><i class="fa fa-retweet" aria-hidden="true"></i> Reshare</a>
-                                <a class="btn btn-default btn-xs"><i class="fa fa-comment" aria-hidden="true"></i> Comment</a>
-                            </div>
-                            <div class="pull-left">
-                                <p class="text-muted" style="margin-left:5px;"><i class="fa fa-globe" aria-hidden="true"></i> Public</p>
-                            </div>
-                            <br>
+                        <div class="post-content">
+                            <form action="#" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="_method" value="PATCH">
+                                <button type="submit" class="btn btn-default pull-right">Cancel subscription</button>
+                            </form>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Simple post content example. -->
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4><strong>Company Info</strong></h4>
                         <hr>
-                        <div class="media">
-                            <div class="pull-left">
-                                <a href="#">
-                                    <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="35px" height="35px" style="margin-left:3px; margin-right:-5px;">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <textarea class="form-control" rows="1" placeholder="Comment"></textarea>
-                            </div>
+                        <div class="post-content">
+                            <form action="#" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="_method" value="PATCH">
+                                <button type="submit" class="btn btn-default pull-right">Cancel subscription</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simple post content example. -->
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4><strong>Change Password</strong></h4>
+                        <hr>
+                        <div class="post-content">
+                            <form action="#" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="_method" value="PATCH">
+                                <button type="submit" class="btn btn-default pull-right">Cancel subscription</button>
+                            </form>
                         </div>
                     </div>
                 </div>
