@@ -5,3 +5,10 @@
         @include('admin.contracts.form', [$button = 'Save Changes'])
     {!! Form::close() !!}
 @stop
+
+
+
+
+
+
+

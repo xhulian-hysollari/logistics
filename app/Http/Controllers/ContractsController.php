@@ -54,7 +54,7 @@ class ContractsController extends Controller
             $contracts->deadline = Carbon::parse(Input::get('deadline'));
             $contracts->save();
             dd($contracts);
-            return redirect()->back()->withInput()->with('success','bla bla');
+            return redirect()->back()->withInput()->with('success');
         } catch (\Exception $ex) {
             dd($ex);
             return redirect()->back()->withInput()->with('error', $ex->getMessage());
@@ -86,8 +86,8 @@ class ContractsController extends Controller
     public function edit($id)
     {
         try{
-            $results = Contracts::where('id', $id)->first();
-            return view('admin.contracts.edit', compact('results'));
+            $result = Contracts::where('id', $id)->first();
+            return view('admin.contracts.edit', compact('result'));
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }
@@ -102,7 +102,6 @@ class ContractsController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         try{
             $contracts = Contracts::where('id', $id)->first();
             $contracts->description = Input::get('description');
@@ -110,10 +109,11 @@ class ContractsController extends Controller
             $contracts->duration = Input::get('duration');
             $contracts->deadline = Input::get('deadline');
             $contracts->save();
-            return redirect()->back()->with('success');
+            return redirect()->back()->with('success', 'Success');
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }
+
 
     }
 
