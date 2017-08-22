@@ -30,6 +30,10 @@
                                         <span>{{trans('admin.listings')}}</span></a></li>
                                 <li><a href="{{route('trucks.index')}}"><i class="fa fa-list"></i>{{trans('admin.trucks')}}</a>
                                 </li>
+                                <li><a href="{{route('contracts.index')}}"><i class="fa fa-list"></i>Contracts</a>
+                                </li>
+                                <li><a href="{{route('pages.index')}}"><i class="fa fa-list"></i>Pages</a>
+                                </li>
                                 <li><a href=""><i class="fa fa-list-alt"></i>
                                         <span>{{trans('admin.tender')}}</span></a></li>
                             </ul>

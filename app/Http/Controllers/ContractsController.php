@@ -1,27 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Freight;
-use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
+use App\Contracts;
+use Carbon\Carbon;
+use Cartalyst\Sentinel\Sentinel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
-class FreightController extends Controller
+class ContractsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         try{
-            $user = Sentinel::getUser();
+//            $user = Sentinel::getUser();
 //            $results = Freight::where('user_id', $user->id)->get();
-            $results = Freight::all();
-            return view('admin.freight.index', compact('results'));
+            $results = Contracts::all();
+            return view('admin.contracts.index', compact('results'));
         }catch (\Exception $ex){
+            dd($ex);
             return redirect()->back()->with('error', $ex->getMessage());
         }
     }
@@ -34,7 +30,7 @@ class FreightController extends Controller
     public function create()
     {
         try{
-            return view('admin.freight.create');
+            return view('admin.contracts.create');
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }
@@ -48,23 +44,22 @@ class FreightController extends Controller
      */
     public function store(Request $request)
     {
-        try{
-            $freight = new Freight();
-            $freight->user_id = Sentinel::getUser()->id;
-            $freight->freight_id = Input::get('freight_id');
-            $freight->weight = Input::get('weight');
-            $freight->height = Input::get('height');
-            $freight->length = Input::get('length');
-            $freight->volume = Input::get('volume');
-            $freight->type = Input::get('lorry_type');
-            $freight->location = Input::get('location');
-            $freight->description = Input::get('description');
-            $freight->quantity = Input::get('quantity');
-            $freight->status = 0;
-            $freight->save();
-            return redirect()->back()->with('success');
-        }catch (\Exception $ex){
-            dd($ex->getMessage());
+
+        try {
+            $contracts = new Contracts();
+            $contracts->user_id = 0;
+//            $contracts->user_id = Sentinel::getUser()->id;
+            $contracts->status = 0;
+            $contracts->description = Input::get('description');
+            $contracts->requirements = Input::get('requirements');
+            $contracts->duration = Input::get('duration');
+            $contracts->deadline = Carbon::parse(Input::get('deadline'));
+            $contracts->save();
+            dd($contracts);
+            return redirect()->back()->withInput()->with('success','bla bla');
+        } catch (\Exception $ex) {
+            dd($ex);
+            return redirect()->back()->withInput()->with('error', $ex->getMessage());
         }
     }
 
@@ -77,8 +72,8 @@ class FreightController extends Controller
     public function show($id)
     {
         try{
-            $results = Freight::where('id', $id)->first();
-            return view('admin.freight.show', compact('results'));
+            $results = Contracts::where('id', $id)->first();
+            return view('admin.contracts.show', compact('results'));
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }
@@ -93,8 +88,8 @@ class FreightController extends Controller
     public function edit($id)
     {
         try{
-            $results = Freight::where('id', $id)->first();
-            return view('admin.freight.edit', compact('results'));
+            $results = Contracts::where('id', $id)->first();
+            return view('admin.contracts.edit', compact('results'));
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }
@@ -109,21 +104,19 @@ class FreightController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         try{
-            $freight = Freight::where('id', $id)->first();
-            $freight->weight = Input::get('weight');
-            $freight->length = Input::get('length');
-            $freight->height = Input::get('height');
-            $freight->type = Input::get('type');
-            $freight->location = Input::get('location');
-            $freight->description = Input::get('description');
-            $freight->volume = Input::get('volume');
-            $freight->quantity = Input::get('quantity');
-            $freight->save();
+            $contracts = Contracts::where('id', $id)->first();
+            $contracts->description = Input::get('description');
+            $contracts->requirements = Input::get('requirements');
+            $contracts->duration = Input::get('duration');
+            $contracts->deadline = Input::get('deadline');
+            $contracts->save();
             return redirect()->back()->with('success');
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }
+
     }
 
     /**
@@ -134,10 +127,10 @@ class FreightController extends Controller
      */
     public function destroy($id)
     {
-        try{
-            $freight = Freight::where('id', $id)->delete();
-            return redirect()->back()->with('success');
-        }catch (\Exception $ex){
+        try {
+        $contracts = Contracts::where('id', $id)->delete();
+        return redirect()->back()->with('success');
+        } catch (\Exception $ex) {
             return redirect()->back()->with('error', $ex->getMessage());
         }
     }

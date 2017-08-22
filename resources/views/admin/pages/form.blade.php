@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group form-control-default">
+                    <label for="title">Title</label>
+                    <input class="form-control"  type="text" name="title"  id="title" value="{{$results->page_title}}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group form-control-default">
+                    <label for="slug">Slug</label>
+                    <input class="form-control"  type="text" name="slug" id="slug" value="{{$results->slug}}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group form-control-default">
+                    <label for="body">Body</label>
+                    <input class="form-control"  type="text" name="body" id="body" value="{{$results->body}}">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-default">{{$button}}</button>
+        </div>
+    </div>
+</div>
