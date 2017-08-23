@@ -14,9 +14,9 @@ class TruckController extends Controller
     public function index()
     {
         try {
-//            $user = Sentinel::getUser()->id;
-//            $results = Truck::where('user_id', $user->id)->get();
-            $results = Truck::all();
+            $user = Sentinel::getUser()->id;
+            $results = Truck::where('user_id', $user->id)->get();
+//            $results = Truck::all();
             return view('admin.truck.index', compact('results'));
         } catch (Exception $ex) {
             return redirect()->back()->with('error', $ex->getMessage());
@@ -47,8 +47,8 @@ class TruckController extends Controller
     {
         try {
         $trucks = new Truck();
-//        $trucks->user_id = Sentinel::getUser()->id;
-        $trucks->user_id = 1;
+        $trucks->user_id = Sentinel::getUser()->id;
+//        $trucks->user_id = 1;
         $trucks->weight = Input::get('weight');
         $trucks->length = Input::get('length');
         $trucks->height = Input::get('height');

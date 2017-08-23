@@ -46,8 +46,8 @@ class ContractsController extends Controller
         try {
             $contracts = new Contracts();
             $contracts->user_id = 0;
-//            $contracts->user_id = Sentinel::getUser()->id;
-            $contracts->status = 0;
+            $contracts->user_id = Sentinel::getUser()->id;
+//            $contracts->status = 0;
             $contracts->description = Input::get('description');
             $contracts->requirements = Input::get('requirements');
             $contracts->duration = Input::get('duration');
