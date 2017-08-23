@@ -43,15 +43,15 @@ Route::post('/profile/autobot', ['as' => 'profile.autobot', 'uses' => 'ProfileCo
 Route::get('/dashboard/contracts', ['as' => 'contracts.index', 'uses' => 'ContractsController@index']);
 Route::get('/dashboard/contracts/create', ['as' => 'contracts.create', 'uses' => 'ContractsController@create']);
 Route::post('/dashboard/contracts/save', ['as' => 'contracts.store', 'uses' => 'ContractsController@store']);
-Route::patch('/dashboard/contracts/update', ['as' => 'contracts.update', 'uses' => 'ContractsController@update']);
-Route::get('/dashboard/contracts/edit', ['as' => 'contracts.edit', 'uses' => 'ContractsController@edit']);
+Route::patch('/dashboard/contracts/update/{id}', ['as' => 'contracts.update', 'uses' => 'ContractsController@update']);
+Route::get('/dashboard/contracts/edit/{id}', ['as' => 'contracts.edit', 'uses' => 'ContractsController@edit']);
 Route::get('/dashboard/contracts/show', ['as' => 'contracts.show', 'uses' => 'ContractsController@show']);
 
 Route::get('/dashboard/pages', ['as' => 'pages.index', 'uses' => 'PagesController@index']);
 Route::get('/dashboard/pages/create', ['as' => 'pages.create', 'uses' => 'PagesController@create']);
 Route::post('/dashboard/pages/save', ['as' => 'pages.store', 'uses' => 'PagesController@store']);
-Route::patch('/dashboard/pages/update', ['as' => 'pages.update', 'uses' => 'PagesController@update']);
-Route::get('/dashboard/pages/edit', ['as' => 'pages.edit', 'uses' => 'PagesController@edit']);
+Route::patch('/dashboard/pages/update/{id}', ['as' => 'pages.update', 'uses' => 'PagesController@update']);
+Route::get('/dashboard/pages/edit/{id}', ['as' => 'pages.edit', 'uses' => 'PagesController@edit']);
 Route::get('/dashboard/pages/show', ['as' => 'pages.show', 'uses' => 'PagesController@show']);
 
 
@@ -59,14 +59,14 @@ Route::middleware(['profile'])->group(function () {
     Route::get('/dashboard/freights', ['as' => 'freight.index', 'uses' => 'FreightController@index']);
     Route::get('/dashboard/freights/create', ['as' => 'freight.create', 'uses' => 'FreightController@create']);
     Route::post('/dashboard/freights/save', ['as' => 'freight.store', 'uses' => 'FreightController@store']);
-    Route::patch('/dashboard/freights/update', ['as' => 'freight.update', 'uses' => 'FreightController@update']);
-    Route::get('/dashboard/freights/edit', ['as' => 'freight.edit', 'uses' => 'FreightController@edit']);
+    Route::patch('/dashboard/freights/update/{id}', ['as' => 'freight.update', 'uses' => 'FreightController@update']);
+    Route::get('/dashboard/freights/edit/{id}', ['as' => 'freight.edit', 'uses' => 'FreightController@edit']);
     Route::get('/dashboard/freights/show', ['as' => 'freight.show', 'uses' => 'FreightController@show']);
     Route::get('/dashboard/trucks', ['as' => 'trucks.index', 'uses' => 'TruckController@index']);
     Route::get('/dashboard/trucks/create', ['as' => 'trucks.create', 'uses' => 'TruckController@create']);
     Route::post('/dashboard/trucks/store', ['as' => 'trucks.store', 'uses' => 'TruckController@create']);
-    Route::patch('/dashboard/trucks/update', ['as' => 'trucks.update', 'uses' => 'TruckController@update']);
-    Route::get('/dashboard/trucks/edit', ['as' => 'trucks.edit', 'uses' => 'TruckController@edit']);
+    Route::patch('/dashboard/trucks/update/{id}', ['as' => 'trucks.update', 'uses' => 'TruckController@update']);
+    Route::get('/dashboard/trucks/edit/{id}', ['as' => 'trucks.edit', 'uses' => 'TruckController@edit']);
     Route::get('/dashboard/trucks/show', ['as' => 'trucks.show', 'uses' => 'TruckController@show']);
 });
 

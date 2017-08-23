@@ -1,7 +1,7 @@
 @extends('admin.admin')
 
 @section('content')
-    {!! Form::model($results = new \App\Models\Pages(), ['route' => ['pages.store'], 'method' => 'POST', 'class' => ' form-inline', 'novalidate']) !!}
+    {!! Form::model($result = new \App\Models\Pages(), ['route' => ['pages.store'], 'method' => 'POST', 'class' => ' form-inline', 'novalidate']) !!}
     @include('admin.pages.form', [$button = trans('Save')])
     {!! Form::close() !!}
 @stop

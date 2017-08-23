@@ -83,8 +83,8 @@ class PagesController extends Controller
     public function edit($id)
     {
         try {
-            $results = Pages::where('id', $id->first());
-            return view('admin.pages.edit', compact('results'));
+            $result = Pages::where('id', $id)->first();
+            return view('admin.pages.edit', compact('result'));
         } catch (\Exception $ex) {
             return redirect()->back()->with('error', $ex->getMessage());
         }
@@ -100,12 +100,12 @@ class PagesController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $pages = Pages::where('id', $id->first());
+            $pages = Pages::where('id', $id)->first();
             $pages->page_title = Input::get('title');
             $pages->slug = Input::get('slug');
             $pages->body = Input::get('body');
             $pages->save();
-            return redirect()->back()->with('success');
+            return redirect()->back()->with('success', 'Success');
         } catch (\Exception $ex) {
             return redirect()->back()->with('error', $ex->getMessage());
         }
