@@ -105,50 +105,50 @@
                     </div>
                 </div>
 
-                <!-- Simple post content example. -->
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <h4><strong>Contact Info</strong></h4>
-                        <hr>
-                        <div class="post-content">
-                            <form action="#" method="POST">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="_method" value="PATCH">
-                                <button type="submit" class="btn btn-default pull-right">Cancel subscription</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                {{--<!-- Simple post content example. -->--}}
+                {{--<div class="panel panel-default">--}}
+                    {{--<div class="panel-body">--}}
+                        {{--<h4><strong>Contact Info</strong></h4>--}}
+                        {{--<hr>--}}
+                        {{--<div class="post-content">--}}
+                            {{--<form action="#" method="POST">--}}
+                                {{--{{ csrf_field() }}--}}
+                                {{--<input type="hidden" name="_method" value="PATCH">--}}
+                                {{--<button type="submit" class="btn btn-default pull-right">Cancel subscription</button>--}}
+                            {{--</form>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
 
-                <!-- Simple post content example. -->
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <h4><strong>Company Info</strong></h4>
-                        <hr>
-                        <div class="post-content">
-                            <form action="#" method="POST">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="_method" value="PATCH">
-                                <button type="submit" class="btn btn-default pull-right">Cancel subscription</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                {{--<!-- Simple post content example. -->--}}
+                {{--<div class="panel panel-default">--}}
+                    {{--<div class="panel-body">--}}
+                        {{--<h4><strong>Company Info</strong></h4>--}}
+                        {{--<hr>--}}
+                        {{--<div class="post-content">--}}
+                            {{--<form action="#" method="POST">--}}
+                                {{--{{ csrf_field() }}--}}
+                                {{--<input type="hidden" name="_method" value="PATCH">--}}
+                                {{--<button type="submit" class="btn btn-default pull-right">Cancel subscription</button>--}}
+                            {{--</form>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
 
-                <!-- Simple post content example. -->
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <h4><strong>Change Password</strong></h4>
-                        <hr>
-                        <div class="post-content">
-                            <form action="#" method="POST">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="_method" value="PATCH">
-                                <button type="submit" class="btn btn-default pull-right">Cancel subscription</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                {{--<!-- Simple post content example. -->--}}
+                {{--<div class="panel panel-default">--}}
+                    {{--<div class="panel-body">--}}
+                        {{--<h4><strong>Change Password</strong></h4>--}}
+                        {{--<hr>--}}
+                        {{--<div class="post-content">--}}
+                            {{--<form action="#" method="POST">--}}
+                                {{--{{ csrf_field() }}--}}
+                                {{--<input type="hidden" name="_method" value="PATCH">--}}
+                                {{--<button type="submit" class="btn btn-default pull-right">Cancel subscription</button>--}}
+                            {{--</form>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
             </div>
         </div>
     </div>
