@@ -46,7 +46,7 @@
             <div class="col-md-6">
                 <div class="form-group form-control-default">
                     <label for="lorry_type">{{trans('freight.lorry_type')}}</label>
-                    <input class="form-control" type="text" name="lorry_type" id="lorry_type" value="{{$results->lorry_type}}">
+                    <input class="form-control" type="text" name="lorry_type" id="lorry_type" value="{{$results->type}}">
                 </div>
             </div>
             <div class="col-md-6">

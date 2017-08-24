@@ -1,45 +1,50 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="block-content" style="padding-left: 20px; padding-right: 20px;">
-        <div class="row main-grid">
+    <a href="{{route('contracts.create')}}" class="btn btn-success pull-right" style="margin-bottom: 20px"> <i
+                class="fa fa-plus"></i>
+        Create
+        new</a>
+    <div class="row">
+        <div class="col-md-12">
 
-            <form id="create" style="float: right">
-                <a href="{{route('contracts.create')}}" class="btn btn-success btn-default">Create new</a>
-            </form>
+            <div class="panel panel-default">
 
-                <table class="table table-responsive table-striped">
-                    <thead>
-                    <tr>
-                        <th>Status</th>
-                        <th>Description</th>
-                        <th>Requirements</th>
-                        <th>Duration</th>
-                        <th>Deadline</th>
-                        <th>Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @if(isset($results))
-                        @foreach($results as $contract)
-                            <tr class="table-row">
-                                <td>{{$contract->status}}</td>
-                                <td>{{$contract->description}}</td>
-                                <td>{{$contract->requirements}}</td>
-                                <td>{{$contract->duration}}</td>
-                                <td>{{$contract->deadline}}</td>
-                                <td><a href="{{ route('contracts.edit', [$contract->id]) }}">Edit</a></td>
-                            {{--<!--| <a href="{{route('contracts.delete')}}">Delete</a>-->--}}
-                            <tr>
-                        @endforeach
-                    @else
+                <div class="table-responsive">
+                    <table class="table v-middle">
+                        <thead>
                         <tr>
-                            <td colspan="5">No results</td>
+                            <th>Status</th>
+                            <th>Description</th>
+                            <th>Requirements</th>
+                            <th>Duration</th>
+                            <th>Deadline</th>
+                            <th>Actions</th>
                         </tr>
-                    @endif
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                        @if(isset($results))
+                            @foreach($results as $contract)
+                                <tr class="table-row">
+                                    <td>{{$contract->status}}</td>
+                                    <td>{{$contract->description}}</td>
+                                    <td>{{$contract->requirements}}</td>
+                                    <td>{{$contract->duration}}</td>
+                                    <td>{{$contract->deadline}}</td>
+                                    <td><a href="{{ route('contracts.edit', [$contract->id]) }}"><i  class="fa fa-pencil-square fa-2x"></i></a></td>
+                                {{--<!--| <a href="{{route('contracts.delete')}}">Delete</a>-->--}}
+                                <tr>
+                            @endforeach
+                        @else
+                            <tr>
+                                <td colspan="5">No results</td>
+                            </tr>
+                        @endif
+                        </tbody>
+                    </table>
 
+                </div>
+            </div>
         </div>
     </div>
 @stop

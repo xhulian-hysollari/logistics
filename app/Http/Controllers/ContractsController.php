@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Contracts;
 use Carbon\Carbon;
-use Cartalyst\Sentinel\Sentinel;
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -42,19 +42,17 @@ class ContractsController extends Controller
      */
     public function store(Request $request)
     {
-
+        $user = Sentinel::getUser();
         try {
             $contracts = new Contracts();
             $contracts->user_id = 0;
-            $contracts->user_id = Sentinel::getUser()->id;
-//            $contracts->status = 0;
+            $contracts->user_id = $user->id;
             $contracts->description = Input::get('description');
             $contracts->requirements = Input::get('requirements');
             $contracts->duration = Input::get('duration');
             $contracts->deadline = Carbon::parse(Input::get('deadline'));
             $contracts->save();
-            dd($contracts);
-            return redirect()->back()->withInput()->with('success');
+            return redirect()->back()->withInput()->with('success', 'Contract listed successfully!');
         } catch (\Exception $ex) {
             dd($ex);
             return redirect()->back()->withInput()->with('error', $ex->getMessage());
@@ -109,7 +107,7 @@ class ContractsController extends Controller
             $contracts->duration = Input::get('duration');
             $contracts->deadline = Input::get('deadline');
             $contracts->save();
-            return redirect()->back()->with('success', 'Success');
+            return redirect()->back()->with('success', 'Contract modified successfully');
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }
@@ -127,7 +125,7 @@ class ContractsController extends Controller
     {
         try {
         $contracts = Contracts::where('id', $id)->delete();
-        return redirect()->back()->with('success');
+        return redirect()->back()->with('success', 'Contract removed from listing');
         } catch (\Exception $ex) {
             return redirect()->back()->with('error', $ex->getMessage());
         }

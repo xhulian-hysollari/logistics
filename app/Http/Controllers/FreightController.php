@@ -62,9 +62,9 @@ class FreightController extends Controller
             $freight->quantity = Input::get('quantity');
             $freight->status = 0;
             $freight->save();
-            return redirect()->back()->with('success');
+            return redirect()->route('freight.index')->with('success', 'The Freight has been listed successfully!');
         }catch (\Exception $ex){
-            dd($ex->getMessage());
+            return redirect()->back()->with('error', $ex->getMessage());
         }
     }
 
@@ -111,17 +111,19 @@ class FreightController extends Controller
     {
         try{
             $freight = Freight::where('id', $id)->first();
+            $freight->freight_id = Input::get('freight_id');
             $freight->weight = Input::get('weight');
             $freight->length = Input::get('length');
             $freight->height = Input::get('height');
-            $freight->type = Input::get('type');
+            $freight->type = Input::get('lorry_type');
             $freight->location = Input::get('location');
             $freight->description = Input::get('description');
             $freight->volume = Input::get('volume');
             $freight->quantity = Input::get('quantity');
             $freight->save();
-            return redirect()->back()->with('success');
+            return redirect()->route('freight.index')->with('success', 'Freight modification completed successfully!');
         }catch (\Exception $ex){
+            dd($ex);
             return redirect()->back()->with('error', $ex->getMessage());
         }
     }
@@ -136,7 +138,7 @@ class FreightController extends Controller
     {
         try{
             $freight = Freight::where('id', $id)->delete();
-            return redirect()->back()->with('success');
+            return redirect()->route('freight.index')->with('success', 'Freight has been removed from the listing!');
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }

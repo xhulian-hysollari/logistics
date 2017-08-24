@@ -2,10 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-
-            <h4 class="page-section-heading">Responsive Table</h4>
             <div class="panel panel-default">
-                <!-- Progress table -->
                 <div class="table-responsive">
                     <table class="table v-middle">
                         <thead>

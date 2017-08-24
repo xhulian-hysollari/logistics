@@ -28,12 +28,6 @@ Route::get('/about', function () {
 
 Route::get('/', ['as' => 'home', 'uses' => 'NavigationController@getHomePage']);
 Route::get('/plans', ['as' => 'plans', 'uses' => 'PlansController@index']);
-
-
-Route::middleware(['guest'])->group(function () {
-    Route::get('/plan/{plan}', ['as' => 'selected.plan', 'uses' => 'PlansController@show']);
-    Route::get('/user/profile', ['as' => 'dashboard.profile', 'uses' => 'ProfileController@profile']);
-});
 Route::get('/register', ['as' => 'register', 'uses' => 'NavigationController@getRegistrationPage']);
 Route::post('/register/autobot', ['as' => 'register.autobot', 'uses' => 'RegistrationController@register']);
 Route::get('/login', ['as' => 'login', 'uses' => 'NavigationController@getLoginPage']);
@@ -45,6 +39,8 @@ Route::get('/about-us', ['as' => 'about', 'uses' => 'NavigationController@getAbo
 Route::get('/contact-us', ['as' => 'contact', 'uses' => 'NavigationController@getContactPage']);
 Route::get('/trucks', ['as' => 'truck', 'uses' => 'NavigationController@getTruckPage']);
 
+
+Route::middleware(['guest'])->group(function () {
 /*
 |--------------------------------------------------------------------------
 | Subscription Routes
@@ -52,6 +48,9 @@ Route::get('/trucks', ['as' => 'truck', 'uses' => 'NavigationController@getTruck
 | All the routes related to subscription
 |
 */
+    Route::get('/plan/{plan}', ['as' => 'selected.plan', 'uses' => 'PlansController@show']);
+    Route::get('/user/profile', ['as' => 'dashboard.profile', 'uses' => 'ProfileController@profile']);
+});
 
 Route::get('/braintree/token', 'BraintreeTokenController@token');
 Route::post('/subscribe', ['as' => 'user.subscribe', 'uses' => 'SubscriptionsController@store']);

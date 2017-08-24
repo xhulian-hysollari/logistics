@@ -14,11 +14,11 @@ class TruckController extends Controller
     public function index()
     {
         try {
-            $user = Sentinel::getUser()->id;
+            $user = Sentinel::getUser();
             $results = Truck::where('user_id', $user->id)->get();
-//            $results = Truck::all();
             return view('admin.truck.index', compact('results'));
         } catch (Exception $ex) {
+            dd($ex);
             return redirect()->back()->with('error', $ex->getMessage());
         }
     }
@@ -30,55 +30,53 @@ class TruckController extends Controller
      */
     public function create()
     {
-            try {
-                return view('admin.truck.create');
-            } catch (Exception $ex) {
-                return redirect()->back()->with('error', $ex->getMessage());
-            }
+        try {
+            return view('admin.truck.create');
+        } catch (Exception $ex) {
+            return redirect()->back()->with('error', $ex->getMessage());
+        }
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         try {
-        $trucks = new Truck();
-        $trucks->user_id = Sentinel::getUser()->id;
-//        $trucks->user_id = 1;
-        $trucks->weight = Input::get('weight');
-        $trucks->length = Input::get('length');
-        $trucks->height = Input::get('height');
-        $trucks->type = Input::get('lorry_type');
-        $trucks->plate = Input::get('plate');
-        $trucks->location = Input::get('location');
-        $trucks->description = Input::get('description');
-        $trucks->status = 0;
-        $trucks->save();
+            $trucks = new Truck();
+            $trucks->user_id = Sentinel::getUser()->id;
+            $trucks->weight = Input::get('weight');
+            $trucks->length = Input::get('length');
+            $trucks->height = Input::get('height');
+            $trucks->type = Input::get('lorry_type');
+            $trucks->plate = Input::get('plate');
+            $trucks->location = Input::get('location');
+            $trucks->description = Input::get('description');
+            $trucks->status = 0;
+            $trucks->save();
 
-        return redirect()->back()->with('success');
+            return redirect()->route('trucks.index')->with('success', 'The Truck has been listed successfully!');
 
         } catch (Exception $ex) {
-            dd($ex->getMessage());
+            return redirect()->back()->with('error', $ex->getMessage());
         }
     }
-
 
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        try{
-        $results = Truck::where('id', $id)->first();
-        return view('admin.truck.show', compact('results'));
+        try {
+            $results = Truck::where('id', $id)->first();
+            return view('admin.truck.show', compact('results'));
         } catch (Exception $ex) {
             return redirect()->back()->with('error', $ex->getMessage());
         }
@@ -87,14 +85,14 @@ class TruckController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         try {
-            $results = Truck::where('id', $id)->first();
-            return view('admin.truck.edit', compact('results'));
+            $result = Truck::where('id', $id)->first();
+            return view('admin.truck.edit', compact('result'));
         } catch (Exception $ex) {
             return redirect()->back()->with('error', $ex->getMessage());
         }
@@ -103,8 +101,8 @@ class TruckController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -121,7 +119,7 @@ class TruckController extends Controller
             $trucks->description = Input::get('description');
             $trucks->save();
 
-            return redirect()->back()->with('success');
+            return redirect()->route('trucks.index')->with('success', 'The truck has been modified successfully!');
         } catch (Exception $ex) {
             return redirect()->back()->with('error', $ex->getMessage());
         }
@@ -141,14 +139,14 @@ class TruckController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         try {
             Truck::where('id', $id)->delete();
-            return redirect()->back()->with('success');
+            return redirect()->route('trucks.index')->with('success', 'Truck has been removed from the listing!');
         } catch (Exception $ex) {
             return redirect()->back()->with('error', $ex->getMessage());
         }
