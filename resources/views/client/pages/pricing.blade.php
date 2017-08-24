@@ -21,10 +21,10 @@
                         <span style="font-size: 16pt; font-weight: bold"><sup>$</sup>{{ number_format($plan->cost, 2) }}</span>
                         <p>per month</p>
                         @if(Sentinel::getUser())
-                            {{--@if (!Sentinel::getUser()->subscribedToPlan($plan->braintree_plan, 'main'))--}}
-                                {{--<a href="{{ route('selected.plan', [$plan->slug]) }}">Choose Plan</a>--}}
-                            {{--@endif--}}
-                        {{--@else--}}
+                            @if (!Sentinel::getUser()->subscribedToPlan($plan->braintree_plan, 'main'))
+                                <a href="{{ route('selected.plan', [$plan->slug]) }}">Choose Plan</a>
+                            @endif
+                        @else
                             <a href="{{ route('selected.plan', [$plan->slug]) }}">Choose Plan</a>
                         @endif
                     </div>
