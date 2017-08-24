@@ -33,4 +33,9 @@ class ProfileController extends Controller
         }
 
     }
+
+    public function profile(){
+        $user = Sentinel::getUser();
+        return view('admin.dashboard.profile', compact('user'));
+    }
 }

@@ -19,10 +19,8 @@
                                data-toggle="dropdown">{{Sentinel::getUser()->full_name}} <i
                                         class="fa fa-caret-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{route('coming_soon')}}">{{trans('navigation.profile')}}</a></li>
-                                <li><a href="{{route('bid.index')}}">{{trans('navigation.bid')}}</a></li>
-                                <li><a href="{{route('bid.offer')}}">{{trans('navigation.offer')}}</a></li>
-                                <li><a href="{{route('coming_soon')}}">{{trans('navigation.dashboard')}}</a></li>
+                                <li><a href="{{route('dashboard.profile')}}">{{trans('navigation.profile')}}</a></li>
+                                <li><a href="{{route('dashboard')}}">{{trans('navigation.dashboard')}}</a></li>
                                 <li><a href="{{route('logout')}}">{{trans('navigation.logout')}}</a></li>
                             </ul>
                         </li>

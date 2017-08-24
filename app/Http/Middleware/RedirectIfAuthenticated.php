@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,10 +18,9 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+        if (! Sentinel::check()) {
+            return redirect()->route('login')->with('warning', 'You have to be logged in in order to access this page!');
         }
-
         return $next($request);
     }
 }

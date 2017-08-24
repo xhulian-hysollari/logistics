@@ -55,9 +55,9 @@ class NavigationController extends Controller
         return view('client.pages.login');
     }
 
-    public function getComingSoonPage()
+    public function getDashboardPage()
     {
-        return view('client.pages.coming_soon');
+        return view('admin.dashboard.dashboard');
     }
 
     public function getDashboardPages($page = 'dashboard')

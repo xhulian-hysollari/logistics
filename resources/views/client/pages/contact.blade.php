@@ -25,7 +25,7 @@
                 <div class="adress-details wow fadeInLeft" data-wow-delay="0.3s">
                     <div>
                         <span><i class="fa fa-location-arrow"></i></span>
-                        Voghera Italy
+                        <div> Voghera Italy </div>
                     </div>
                     <div>
                         <span><i class="fa fa-phone"></i></span>
@@ -45,39 +45,35 @@
                         <div class="col-sm-6 form-elem">
                             <div class="default-inp form-elem">
                                 <i class="fa fa-user"></i>
-                                <input type="text" name="user-name" id="user-name"
-                                       placeholder="{{trans('contact.first_name')}}"
+                                <input type="text" name="full_name" id="full_name"
+                                       placeholder="Full Name"
                                        required="required">
-                            </div>
-                            <div class="default-inp form-elem">
-                                <i class="fa fa-envelope"></i>
-                                <input type="text" name="user-email" id="user-email"
-                                       placeholder="{{trans('contact.email')}}"
-                                       required="required">
-                            </div>
-                        </div>
-                        <div class="col-sm-6 form-elem">
-                            <div class="default-inp form-elem">
-                                <i class="fa fa-user"></i>
-                                <input type="text" name="user-lastname" id="user-lastname"
-                                       placeholder="{{trans('contact.last_name')}}">
                             </div>
                             <div class="default-inp form-elem">
                                 <i class="fa fa-phone"></i>
-                                <input type="text" name="user-phone" id="user-phone"
-                                       placeholder="{{trans('contact.phone')}}">
+                                <input type="text" name="phone" id="phone"
+                                       placeholder="Phone Number">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 form-elem">
+
+                            <div class="default-inp form-elem">
+                                <i class="fa fa-envelope"></i>
+                                <input type="text" name="email" id="email"
+                                       placeholder="Email Address"
+                                       required="required">
                             </div>
                         </div>
                     </div>
                     <div class="default-inp form-elem">
-                        <input type="text" name="user-subject" id="user-subject"
-                               placeholder="{{trans('contact.subject')}}">
+                        <input type="text" name="subject" id="subject"
+                               placeholder="Topic">
                     </div>
                     <div class="form-elem default-inp">
-                        <textarea id="user-message" placeholder="{{trans('contact.message')}}"></textarea>
+                        <textarea id="message" placeholder="Write your message here"></textarea>
                     </div>
                     <div class="form-elem">
-                        <button type="submit" class="btn btn-success btn-default">{{trans('contact.submit')}}</button>
+                        <button type="submit" class="btn btn-success btn-default"> Contact us</button>
                     </div>
                 </form>
             </div>
