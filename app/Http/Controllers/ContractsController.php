@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Contracts;
+use App\Models\Contracts;
 use Carbon\Carbon;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Http\Request;
