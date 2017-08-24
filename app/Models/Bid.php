@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Contracts;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -25,11 +26,17 @@ class Bid extends Model
 
     public function getItemNameAttribute()
     {
-        if (empty($this->attributes['truck_id'])) {
+        if (!empty($this->attributes['freight_id'])) {
             return Freight::where('id', $this->attributes['freight_id'])->first()->freight_id;
-        } else {
+        } else if (!empty($this->attributes['truck_id'])){
             return Truck::where('id', $this->attributes['truck_id'])->first()->plate;
+        } else{
+            return Contracts::where('id', $this->attributes['contract_id'])->first();
         }
+    }
+
+    public function getFilesAttribute(){
+        return BidFile::where('bid_id', $this->attributes['id'])->get();
     }
 
 }

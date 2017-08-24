@@ -19,6 +19,7 @@ class CreateBidsTable extends Migration
             $table->integer('owner_id')->unsigned()->nullable();
             $table->integer('truck_id')->unsigned()->nullable();
             $table->integer('freight_id')->unsigned()->nullable();
+            $table->integer('contract_id')->unsigned()->nullable();
             $table->text('description');
             $table->timestamps();
             $table->softDeletes();
