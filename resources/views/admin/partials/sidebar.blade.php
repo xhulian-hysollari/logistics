@@ -14,28 +14,21 @@
                                 </li>
                             </ul>
                             <ul class="sidebar-menu sm-bordered sm-active-item-bg">
-                                {{--<li><a href="{{route('freight_list')}}"><i class="fa fa-list"></i>--}}
-                                        {{--<span>{{trans('admin.listings')}}</span></a></li>--}}
-                                {{--<li><a href="{{route('truck_list')}}"><i class="fa fa-truck"></i>--}}
-                                        {{--<span>{{trans('admin.trucks')}}</span></a></li>--}}
-                                <li><a href="{{route('user_list')}}"><i class="fa fa-users"></i>
-                                        <span>{{trans('admin.users')}}</span></a></li>
-                                <li><a href="{{route('settings')}}"><i class="fa fa-cogs"></i>
-                                        <span>{{trans('admin.settings')}}</span></a></li>
-                                <li><a href="{{route('partner_list')}}"><i class="fa fa-user-secret"></i>
-                                        <span>{{trans('admin.partners')}}</span></a></li>
-                                <li><a href="{{route('legal.list')}}"><i class="fa fa-list"></i>
-                                        <span>{{trans('admin.legal')}}</span></a></li>
                                 <li><a href="{{route('freight.index')}}"><i class="fa fa-list"></i>
                                         <span>{{trans('admin.listings')}}</span></a></li>
-                                <li><a href="{{route('trucks.index')}}"><i class="fa fa-list"></i>{{trans('admin.trucks')}}</a>
-                                </li>
+                                <li><a href="{{route('trucks.index')}}"><i class="fa fa-list"></i>{{trans('admin.trucks')}}</a></li>
                                 <li><a href="{{route('contracts.index')}}"><i class="fa fa-list"></i>Contracts</a>
                                 </li>
-                                <li><a href="{{route('pages.index')}}"><i class="fa fa-list"></i>Pages</a>
-                                </li>
-                                <li><a href=""><i class="fa fa-list-alt"></i>
-                                        <span>{{trans('admin.tender')}}</span></a></li>
+                                @if(Sentinel::inRole('admin'))
+                                    <li><a href="{{route('user_list')}}"><i class="fa fa-users"></i>
+                                            <span>{{trans('admin.users')}}</span></a></li>
+                                    <li><a href="{{route('settings')}}"><i class="fa fa-cogs"></i>
+                                            <span>{{trans('admin.settings')}}</span></a></li>
+                                    <li><a href="{{route('pages.index')}}"><i class="fa fa-list"></i>Pages</a>
+                                    </li>
+                                    <li><a href="{{route('partner_list')}}"><i class="fa fa-user-secret"></i>
+                                            <span>{{trans('admin.partners')}}</span></a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>

@@ -11,8 +11,7 @@ class Freight extends Model
 
     public $timestamps = true;
 
-    public function getUserAttribute()
-    {
+    public function getOwnerAttribute(){
         return User::where('id', $this->attributes['user_id'])->first();
     }
 }

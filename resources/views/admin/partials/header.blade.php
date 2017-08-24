@@ -15,12 +15,12 @@
         <!-- user -->
         <li class="dropdown user">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{asset('admin/images/people/110/guy-6.jpg')}}" alt=""
+              <img src="{{asset('storage/'. Sentinel::getUser()->company_logo)}}" alt=""
                    class="img-circle"/> <span
                     class="caret"></span>
           </a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="{{route('dashboard', 'profile')}}"><i class="fa fa-user"></i>Profile</a></li>
+            <li><a href="{{route('dashboard.profile')}}"><i class="fa fa-user"></i>Profile</a></li>
             <li><a href="{{route('logout')}}"><i class="fa fa-sign-out"></i>Logout</a></li>
           </ul>
         </li>

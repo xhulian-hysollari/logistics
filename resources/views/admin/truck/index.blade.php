@@ -14,6 +14,9 @@
                         <thead>
                         <tr>
                             <th>{{trans('truck.plate')}}</th>
+                            @if(Sentinel::inRole('admin'))
+                                <th>Owner</th>
+                            @endif
                             <th>{{trans('truck.type')}}</th>
                             <th>{{trans('truck.location')}}</th>
                             <th>{{trans('truck.status')}}</th>
@@ -25,6 +28,9 @@
                             @foreach($results as $truck)
                                 <tr class="table-row">
                                     <td>{{$truck->plate}}</td>
+                                    @if(Sentinel::inRole('admin'))
+                                        <td>{{$truck->owner->full_name}}</td>
+                                    @endif
                                     <td>{{$truck->type}}</td>
                                     <td>{{$truck->location}}</td>
                                     <td>{{$truck->status}}</td>

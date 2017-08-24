@@ -17,9 +17,11 @@ class FreightController extends Controller
     public function index()
     {
         try{
-            $user = Sentinel::getUser();
-            $results = Freight::where('user_id', $user->id)->get();
-//            $results = Freight::all();
+            if(Sentinel::inRole('admin')){
+                $results = Freight::all();
+            }else{
+                $results = Freight::where('user_id', Sentinel::getUser()->id)->get();
+            }
             return view('admin.freight.index', compact('results'));
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());

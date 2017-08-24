@@ -14,6 +14,9 @@
                         <thead>
                         <tr>
                             <th>{{trans('freight.id')}}</th>
+                            @if(Sentinel::inRole('admin'))
+                                <th>Owner</th>
+                            @endif
                             <th>{{trans('freight.weight')}}</th>
                             <th>{{trans('freight.length')}}</th>
                             <th>{{trans('freight.height')}}</th>
@@ -30,6 +33,10 @@
                             @foreach($results as $result)
                                 <tr>
                                     <td>{{$result->freight_id}}</td>
+
+                                    @if(Sentinel::inRole('admin'))
+                                        <td>{{$result->owner->full_name }}</td>
+                                    @endif
                                     <td>{{$result->weight}}</td>
                                     <td>{{$result->length}}</td>
                                     <td>{{$result->height}}</td>

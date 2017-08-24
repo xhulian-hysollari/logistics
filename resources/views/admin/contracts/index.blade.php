@@ -15,6 +15,9 @@
                         <thead>
                         <tr>
                             <th>Status</th>
+                            @if(Sentinel::inRole('admin'))
+                                <th>Owner</th>
+                            @endif
                             <th>Description</th>
                             <th>Requirements</th>
                             <th>Duration</th>
@@ -27,6 +30,9 @@
                             @foreach($results as $contract)
                                 <tr class="table-row">
                                     <td>{{$contract->status}}</td>
+                                    @if(Sentinel::inRole('admin'))
+                                        <td>{{$contract->owner->full_name}}</td>
+                                    @endif
                                     <td>{{$contract->description}}</td>
                                     <td>{{$contract->requirements}}</td>
                                     <td>{{$contract->duration}}</td>

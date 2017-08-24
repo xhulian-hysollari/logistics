@@ -12,7 +12,11 @@ class ContractsController extends Controller
     public function index()
     {
         try{
-            $results = Contracts::all();
+            if(Sentinel::inRole('admin')){
+                $results = Contracts::all();
+            }else{
+                $results = Contracts::where('user_id', Sentinel::getUser()->id)->get();
+            }
             return view('admin.contracts.index', compact('results'));
         }catch (\Exception $ex){
             dd($ex);
@@ -45,8 +49,8 @@ class ContractsController extends Controller
         $user = Sentinel::getUser();
         try {
             $contracts = new Contracts();
-            $contracts->user_id = 0;
             $contracts->user_id = $user->id;
+            $contracts->status = Input::get('status');
             $contracts->description = Input::get('description');
             $contracts->requirements = Input::get('requirements');
             $contracts->duration = Input::get('duration');
