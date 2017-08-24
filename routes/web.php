@@ -52,6 +52,19 @@ Route::middleware(['guest'])->group(function () {
         ]);
     });
     Route::middleware(['profile'])->group(function () {
+        /*
+        |--------------------------------------------------------------------------
+        | Subscription Routes
+        |--------------------------------------------------------------------------
+        | All the routes related to subscription
+        |
+        */
+
+        Route::get('/plan/{plan}', ['as' => 'selected.plan', 'uses' => 'PlansController@show']);
+        Route::get('/user/profile', ['as' => 'dashboard.profile', 'uses' => 'ProfileController@profile']);
+        Route::post('/subscribe', ['as' => 'user.subscribe', 'uses' => 'SubscriptionsController@store']);
+        Route::post('/subscription/cancel', ['as' => 'subscription.cancel', 'uses' => 'SubscriptionsController@cancel']);
+        Route::post('/subscription/resume', ['as' => 'subscription.resume', 'uses' => 'SubscriptionsController@resume']);
         Route::middleware(['lastKnight'])->group(function () {
         /*
         |--------------------------------------------------------------------------
@@ -73,22 +86,6 @@ Route::middleware(['guest'])->group(function () {
         Route::get('/trucks/show/{id}', ['as' => 'trucks.show', 'uses' => 'TruckController@show']);
         Route::get('/trucks/edit/{id}', ['as' => 'trucks.edit', 'uses' => 'TruckController@edit']);
         Route::patch('/trucks/update/{id}', ['as' => 'trucks.update', 'uses' => 'TruckController@update']);
-
-        /*
-        |--------------------------------------------------------------------------
-        | Subscription Routes
-        |--------------------------------------------------------------------------
-        | All the routes related to subscription
-        |
-        */
-
-        Route::get('/plan/{plan}', ['as' => 'selected.plan', 'uses' => 'PlansController@show']);
-        Route::get('/user/profile', ['as' => 'dashboard.profile', 'uses' => 'ProfileController@profile']);
-        Route::post('/subscribe', ['as' => 'user.subscribe', 'uses' => 'SubscriptionsController@store']);
-        Route::post('/subscription/cancel', ['as' => 'subscription.cancel', 'uses' => 'SubscriptionsController@cancel']);
-        Route::post('/subscription/resume', ['as' => 'subscription.resume', 'uses' => 'SubscriptionsController@resume']);
-
-
             Route::middleware(['hasExcalibur'])->group(function () {
                 /*
                 |--------------------------------------------------------------------------
