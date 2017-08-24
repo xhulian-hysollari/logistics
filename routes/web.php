@@ -66,26 +66,42 @@ Route::middleware(['guest'])->group(function () {
         Route::post('/subscription/cancel', ['as' => 'subscription.cancel', 'uses' => 'SubscriptionsController@cancel']);
         Route::post('/subscription/resume', ['as' => 'subscription.resume', 'uses' => 'SubscriptionsController@resume']);
         Route::middleware(['lastKnight'])->group(function () {
-        /*
-        |--------------------------------------------------------------------------
-        | User activity Routes
-        |--------------------------------------------------------------------------
-        | All the routes related to user activities
-        |
-        */
+            /*
+            |--------------------------------------------------------------------------
+            | User activity Routes
+            |--------------------------------------------------------------------------
+            | All the routes related to user activities
+            |
+            */
 
-        Route::get('/freights/index', ['as' => 'freight.index', 'uses' => 'FreightController@index']);
-        Route::get('/freights/create', ['as' => 'freight.create', 'uses' => 'FreightController@create']);
-        Route::post('/freights/save', ['as' => 'freight.store', 'uses' => 'FreightController@store']);
-        Route::get('/freights/show/{id}', ['as' => 'freight.show', 'uses' => 'FreightController@show']);
-        Route::get('/freights/edit/{id}', ['as' => 'freight.edit', 'uses' => 'FreightController@edit']);
-        Route::patch('/freights/update/{id}', ['as' => 'freight.update', 'uses' => 'FreightController@update']);
-        Route::get('/trucks/index', ['as' => 'trucks.index', 'uses' => 'TruckController@index']);
-        Route::get('/trucks/create', ['as' => 'trucks.create', 'uses' => 'TruckController@create']);
-        Route::post('/trucks/store', ['as' => 'trucks.store', 'uses' => 'TruckController@store']);
-        Route::get('/trucks/show/{id}', ['as' => 'trucks.show', 'uses' => 'TruckController@show']);
-        Route::get('/trucks/edit/{id}', ['as' => 'trucks.edit', 'uses' => 'TruckController@edit']);
-        Route::patch('/trucks/update/{id}', ['as' => 'trucks.update', 'uses' => 'TruckController@update']);
+            Route::get('/freights/index', ['as' => 'freight.index', 'uses' => 'FreightController@index']);
+            Route::get('/freights/create', ['as' => 'freight.create', 'uses' => 'FreightController@create']);
+            Route::post('/freights/save', ['as' => 'freight.store', 'uses' => 'FreightController@store']);
+            Route::get('/freights/show/{id}', ['as' => 'freight.show', 'uses' => 'FreightController@show']);
+            Route::get('/freights/edit/{id}', ['as' => 'freight.edit', 'uses' => 'FreightController@edit']);
+            Route::patch('/freights/update/{id}', ['as' => 'freight.update', 'uses' => 'FreightController@update']);
+            Route::get('/trucks/index', ['as' => 'trucks.index', 'uses' => 'TruckController@index']);
+            Route::get('/trucks/create', ['as' => 'trucks.create', 'uses' => 'TruckController@create']);
+            Route::post('/trucks/store', ['as' => 'trucks.store', 'uses' => 'TruckController@store']);
+            Route::get('/trucks/show/{id}', ['as' => 'trucks.show', 'uses' => 'TruckController@show']);
+            Route::get('/trucks/edit/{id}', ['as' => 'trucks.edit', 'uses' => 'TruckController@edit']);
+            Route::patch('/trucks/update/{id}', ['as' => 'trucks.update', 'uses' => 'TruckController@update']);
+
+            /*
+            |--------------------------------------------------------------------------
+            | Contract Routes
+            |--------------------------------------------------------------------------
+            | All the routes related to contracts
+            |
+            */
+
+            Route::get('/contracts', ['as' => 'contracts.index', 'uses' => 'ContractsController@index']);
+            Route::get('/contracts/create', ['as' => 'contracts.create', 'uses' => 'ContractsController@create']);
+            Route::post('/contracts/save', ['as' => 'contracts.store', 'uses' => 'ContractsController@store']);
+            Route::get('/contracts/show/{id}', ['as' => 'contracts.show', 'uses' => 'ContractsController@show']);
+            Route::get('/contracts/edit/{id}', ['as' => 'contracts.edit', 'uses' => 'ContractsController@edit']);
+            Route::patch('/contracts/update/{id}', ['as' => 'contracts.update', 'uses' => 'ContractsController@update']);
+
             Route::middleware(['hasExcalibur'])->group(function () {
                 /*
                 |--------------------------------------------------------------------------
@@ -116,22 +132,6 @@ Route::middleware(['guest'])->group(function () {
     Route::middleware(['optimus'])->group(function () {
 
         Route::get('users', ['as' => 'user_list', 'uses' => 'NavigationController@getUserList']);
-
-
-        /*
-        |--------------------------------------------------------------------------
-        | Contract Routes
-        |--------------------------------------------------------------------------
-        | All the routes related to contracts
-        |
-        */
-
-        Route::get('/contracts', ['as' => 'contracts.index', 'uses' => 'ContractsController@index']);
-        Route::get('/contracts/create', ['as' => 'contracts.create', 'uses' => 'ContractsController@create']);
-        Route::post('/contracts/save', ['as' => 'contracts.store', 'uses' => 'ContractsController@store']);
-        Route::get('/contracts/show/{id}', ['as' => 'contracts.show', 'uses' => 'ContractsController@show']);
-        Route::get('/contracts/edit/{id}', ['as' => 'contracts.edit', 'uses' => 'ContractsController@edit']);
-        Route::patch('/contracts/update/{id}', ['as' => 'contracts.update', 'uses' => 'ContractsController@update']);
 
         /*
         |--------------------------------------------------------------------------
