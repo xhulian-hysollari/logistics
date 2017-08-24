@@ -44,6 +44,27 @@
                 <!-- Simple post content example. -->
                 <div class="panel panel-default">
                     <div class="panel-body">
+                        <h4><strong>Invoices </strong></h4>
+                        <hr>
+                        <div class="post-content">
+                            <div class="table-responsive">
+                                <table class="table v-middle">
+                                    @foreach(Sentinel::getUser()->invoicesIncludingPending() as $invoice)
+                                        <tr>
+                                            <td>{{ $invoice->date()->toFormattedDateString() }}</td>
+                                            <td>{{ $invoice->total() }}</td>
+                                            <td><a href="/user/invoice/{{ $invoice->id }}">Download</a></td>
+                                        </tr>
+                                    @endforeach
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simple post content example. -->
+                <div class="panel panel-default">
+                    <div class="panel-body">
                         <h4><strong>Subscriptions</strong></h4>
                         <hr>
                         <div class="post-content">

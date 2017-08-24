@@ -78,8 +78,8 @@ class TruckController extends Controller
     public function show($id)
     {
         try {
-            $results = Truck::where('id', $id)->first();
-            return view('admin.truck.show', compact('results'));
+            $result = Truck::where('id', $id)->first();
+            return view('admin.truck.show', compact('result'));
         } catch (Exception $ex) {
             return redirect()->back()->with('error', $ex->getMessage());
         }

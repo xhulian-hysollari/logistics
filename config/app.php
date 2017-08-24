@@ -171,6 +171,7 @@ return [
         Dimsav\Translatable\TranslatableServiceProvider::class,
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Laravel\Cashier\CashierServiceProvider::class,
         /*
          * Application Service Providers...
          */

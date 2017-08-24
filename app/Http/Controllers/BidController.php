@@ -25,6 +25,7 @@ class BidController extends Controller
 
     public function bidTruck($id)
     {
+        dd(Input::all());
         try {
             $truck = Truck::where('id', $id)->first();
             $bid = new Bid();
@@ -40,6 +41,23 @@ class BidController extends Controller
     }
 
     public function bidFreight($id)
+    {
+        try {
+            $truck = Freight::where('id', $id)->first();
+            $bid = new Bid();
+            $bid->user_id = Sentinel::getUser()->id;
+            $bid->owner_id = $truck->user_id;
+            $bid->freight_id = $id;
+            $bid->description = Input::get('description');
+            $bid->save();
+            return redirect()->back()->with('success', 'bid.success');
+        } catch (\Exception $ex) {
+            dd($ex->getMessage());
+            return redirect()->back()->withInput()->with('error', 'bid.error');
+        }
+    }
+
+    public function bidContract($id)
     {
         try {
             $truck = Freight::where('id', $id)->first();

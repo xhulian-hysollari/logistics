@@ -79,8 +79,8 @@ class FreightController extends Controller
     public function show($id)
     {
         try{
-            $results = Freight::where('id', $id)->first();
-            return view('admin.freight.show', compact('results'));
+            $result = Freight::where('id', $id)->first();
+            return view('admin.freight.show', compact('result'));
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }

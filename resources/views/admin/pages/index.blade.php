@@ -1,41 +1,46 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="block-content" style="padding-left: 20px; padding-right: 20px;">
-        <div class="row main-grid">
+    <a href="{{route('freight.create')}}" class="btn btn-success pull-right" style="margin-bottom: 20px"> <i
+                class="fa fa-plus"></i>
+        Create
+        new</a>
+    <div class="row">
+        <div class="col-md-12">
 
-            <form id="create" style="float: right">
-                <a href="{{route('pages.create')}}" class="btn btn-success btn-default">Create new</a>
-            </form>
+            <div class="panel panel-default">
 
-            <table class="table table-responsive table-striped">
-                <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Slug</th>
-                    <th>Body</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                @if(isset($results))
-                    @foreach($results as $pages)
-                        <tr class="table-row">
-                            <td>{{$pages->page_title}}</td>
-                            <td>{{$pages->slug}}</td>
-                            <td>{!! $pages->body !!}</td>
-                            <td><a href="{{ route('pages.edit', [$pages->id]) }}">Edit</a></td>
-                        {{--<!--| <a href="{{route('pages.delete')}}">Delete</a>-->--}}
+                <div class="table-responsive">
+                    <table class="table v-middle">
+                        <thead>
                         <tr>
-                    @endforeach
-                @else
-                    <tr>
-                        <td colspan="4">No results</td>
-                    </tr>
-                @endif
-                </tbody>
-            </table>
+                            <th>Title</th>
+                            <th>Slug</th>
+                            <th>Body</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @if(isset($results) && count($results) > 0)
+                            @foreach($results as $pages)
+                                <tr class="table-row">
+                                    <td>{{$pages->page_title}}</td>
+                                    <td>{{$pages->slug}}</td>
+                                    <td>{!! $pages->body !!}</td>
+                                    <td><a href="{{ route('pages.edit', [$pages->id]) }}">Edit</a></td>
+                                {{--<!--| <a href="{{route('pages.delete')}}">Delete</a>-->--}}
+                                <tr>
+                            @endforeach
+                        @else
+                            <tr>
+                                <td colspan="4">No results</td>
+                            </tr>
+                        @endif
+                        </tbody>
+                    </table>
 
+                </div>
+            </div>
         </div>
     </div>
 @stop

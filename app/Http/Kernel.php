@@ -60,6 +60,9 @@ class Kernel extends HttpKernel
         'localeSessionRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
         'localize' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
         'profile' => \App\Http\Middleware\ProfileCompleted::class,
+        'optimus' => \App\Http\Middleware\IsOptimus::class,
+        'lastKnight' => \App\Http\Middleware\LastKnight::class,
+        'hasExcalibur' => \App\Http\Middleware\Excalibur::class,
     ];
 }
 

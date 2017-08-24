@@ -2,9 +2,10 @@
 
 namespace App\Http\Middleware;
 
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Closure;
 
-class Subscribed
+class IsOptimus
 {
     /**
      * Handle an incoming request.
@@ -15,12 +16,9 @@ class Subscribed
      */
     public function handle($request, Closure $next)
     {
-        if (!$request->user()->subscribed('main')) {
-            if ($request->ajax() || $request->wantsJson()) {
-                return response('Unauthorized.', 401);
-            }
-            return redirect()->route('plans');
+        if (Sentinel::inRole('admin')) {
+            return $next($request);
         }
-        return $next($request);
+        return redirect()->back()->with('error', 'Shame on You :@ !');
     }
 }

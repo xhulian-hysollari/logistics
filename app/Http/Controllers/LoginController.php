@@ -41,6 +41,6 @@ class LoginController extends Controller
     {
         $user = \Cartalyst\Sentinel\Laravel\Facades\Sentinel::getUser();
         $this->user->logout($user);
-        return redirect()->route('home');
+        return redirect()->back();
     }
 }

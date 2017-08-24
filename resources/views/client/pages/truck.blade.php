@@ -28,7 +28,7 @@
                                     <td>{{$truck->type}}</td>
                                     <td>{{$truck->location}}</td>
                                     <td>{{$truck->status}}</td>
-                                    <td><a href="{{route('truck.show', $truck->id)}}"><i
+                                    <td><a href="{{route('trucks.show', $truck->id)}}"><i
                                                     class="fa fa-eye fa-2x"></i></a>
                                     </td>
                             @endforeach
