@@ -52,7 +52,7 @@ Route::middleware(['guest'])->group(function () {
         ]);
     });
     Route::middleware(['profile'])->group(function () {
-
+        Route::middleware(['lastKnight'])->group(function () {
         /*
         |--------------------------------------------------------------------------
         | User activity Routes
@@ -88,7 +88,7 @@ Route::middleware(['guest'])->group(function () {
         Route::post('/subscription/cancel', ['as' => 'subscription.cancel', 'uses' => 'SubscriptionsController@cancel']);
         Route::post('/subscription/resume', ['as' => 'subscription.resume', 'uses' => 'SubscriptionsController@resume']);
 
-        Route::middleware(['lastKnight'])->group(function () {
+
             Route::middleware(['hasExcalibur'])->group(function () {
                 /*
                 |--------------------------------------------------------------------------
