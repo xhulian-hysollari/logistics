@@ -16,7 +16,7 @@
                         <th><i class="fa fa-map-marker"></i> Place of unloading</th>
                         <th><i class="fa fa-cube"></i> {{trans('freight.volume')}}</th>
                         <th><i class="fa fa-truck"></i> {{trans('freight.lorry_type')}}</th>
-                        <th><i class="fa fa-clock-o"></i> {{trans('freight.listed_at')}}</th>
+                        <th><i class="fa fa-clock-o"></i> Listed at</th>
                         <th></th>
                     </tr>
                     </thead>
