@@ -21,7 +21,8 @@
                             <th>{{trans('freight.length')}}</th>
                             <th>{{trans('freight.height')}}</th>
                             <th>{{trans('freight.volume')}}</th>
-                            <th>{{trans('freight.location')}}</th>
+                            <th>Place of loading</th>
+                            <th>Place of unloading</th>
                             <th>{{trans('freight.lorry_type')}}</th>
                             <th>{{trans('freight.quantity')}}</th>
                             <th>{{trans('freight.description')}}</th>
@@ -33,7 +34,6 @@
                             @foreach($results as $result)
                                 <tr>
                                     <td>{{$result->freight_id}}</td>
-
                                     @if(Sentinel::inRole('admin'))
                                         <td>{{$result->owner->full_name }}</td>
                                     @endif
@@ -41,7 +41,8 @@
                                     <td>{{$result->length}}</td>
                                     <td>{{$result->height}}</td>
                                     <td>{{$result->volume}}</td>
-                                    <td>{{$result->location}}</td>
+                                    <td>{{$result->loading}}</td>
+                                    <td>{{$result->unloading}}</td>
                                     <td>{{$result->type}}</td>
                                     <td>{{$result->quantity}}</td>
                                     <td>{{$result->description}}</td>
