@@ -9,7 +9,21 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group form-control-default">
-                    <label for="weight">{{trans('freight.weight')}}</label>
+                    <label for="loading">Place of Loading</label>
+                    <input class="form-control" type="text" name="loading" id="loading" value="{{$results->loading}}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group form-control-default">
+                    <label for="unloading">Place of Unloading</label>
+                    <input class="form-control" type="text" name="unloading" id="unloading" value="{{$results->unloading}}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group form-control-default">
+                    <label for="weight">Weight</label>
                     <input class="form-control" type="text" name="weight" id="weight" value="{{$results->weight}}">
                 </div>
             </div>
@@ -17,13 +31,13 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group form-control-default">
-                    <label for="length">{{trans('freight.length')}}</label>
+                    <label for="length">Length</label>
                     <input class="form-control" type="text" name="length" id="length" value="{{$results->length}}">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group form-control-default">
-                    <label for="height">{{trans('freight.height')}}</label>
+                    <label for="height">Height</label>
                     <input class="form-control" type="text" name="height" id="height" value="{{$results->height}}">
                 </div>
             </div>
@@ -31,14 +45,14 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group form-control-default">
-                    <label for="volume">{{trans('freight.volume')}}</label>
+                    <label for="volume">Volume</label>
                     <input class="form-control" type="text" name="volume" id="volume" value="{{$results->volume}}">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group form-control-default">
-                    <label for="location">{{trans('freight.location')}}</label>
-                    <input class="form-control" type="text" name="location" id="location" value="{{$results->location}}">
+                    <label for="width">Width</label>
+                    <input class="form-control" type="text" name="width" id="width" value="{{$results->width}}">
                 </div>
             </div>
         </div>
