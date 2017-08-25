@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="#" class="navbar-brand hidden-xs navbar-brand-primary">Logistics</a>
+      <a href="{{route('home')}}" class="navbar-brand hidden-xs navbar-brand-primary">Logistics</a>
     </div>
     <div class="navbar-collapse collapse" id="collapse">
       <ul class="nav navbar-nav navbar-right">
