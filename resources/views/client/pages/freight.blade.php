@@ -12,8 +12,8 @@
                 <table class="table table-responsive table-striped">
                     <thead>
                     <tr>
-                        <th>{{trans('freight.location')}}</th>
-                        <th>{{trans('freight.destination')}}</th>
+                        <th>Place of loading</th>
+                        <th>Place of unloading</th>
                         <th>{{trans('freight.volume')}}</th>
                         <th>{{trans('freight.lorry_type')}}</th>
                         <th>{{trans('freight.listed_at')}}</th>
@@ -25,8 +25,8 @@
                         @if(count($results) > 0)
                             @foreach($results as $freight)
                                 <tr class="table-row">
-                                    <th>{{$freight->location}}</th>
-                                    <th>{{$freight->destination}}</th>
+                                    <th>{{$freight->loading}}</th>
+                                    <th>{{$freight->unloading}}</th>
                                     <th>{{$freight->volume}}</th>
                                     <th>{{$freight->type}}</th>
                                     <th>{{$freight->created_at}}</th>
