@@ -28,7 +28,7 @@ class BidController extends Controller
     {
         try {
             $user = Sentinel::getUser();
-            $files = Input::file('images');
+            $files = Input::file('images[]');
             $truck = Truck::where('id', $id)->first();
             $bid = new Bid();
             $bid->user_id = $user->id;
