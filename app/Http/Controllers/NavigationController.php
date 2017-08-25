@@ -34,7 +34,7 @@ class NavigationController extends Controller
     public function getFreightPage()
     {
 //        $user = Sentinel::getUser();
-        $results = Freight::all();
+        $results = Freight::orderBy('created_at', 'desc')->get();
         return view('client.pages.freight', compact('results'));
     }
 
