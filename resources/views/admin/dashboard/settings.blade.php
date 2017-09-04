@@ -29,8 +29,8 @@
                     @if(isset($contacts) && count($contacts) > 0)
                         @foreach($contacts as $contact)
                             <tr>
-                                <td>{{$contact->getTranslation()->title}}</td>
-                                <td>{{$contact->getTranslation()->value}}</td>
+                                <td>{{$contact->title}}</td>
+                                <td>{{$contact->value}}</td>
                             </tr>
                         @endforeach
                     @else
@@ -79,8 +79,8 @@
                     @if(isset($socials) && count($socials) > 0)
                         @foreach($socials as $social)
                             <tr>
-                                <td>{{$social->getTranslation()->title}}</td>
-                                <td>{{$social->getTranslation()->value}}</td>
+                                <td>{{$social->title}}</td>
+                                <td>{{$social->value}}</td>
                             </tr>
                         @endforeach
                     @else
@@ -119,18 +119,11 @@
             <div id="about" class="tab-pane">
                 <form action="{{route('settings.about')}}" method="post">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group form-control-default">
-                                <label for="value_sq">About SQ</label>
-                                <textarea name="value_sq" id="value_sq"
-                                          class="form-control summernote">{{ (count ($about) > 0 && isset($about->hasTranslation('sq')->value)) ? $about->getTranslation('sq')->value : null }}</textarea>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-control-default">
-                                <label for="value_en">About EN</label>
-                                <textarea name="value_en" id="value_en"
-                                          class="form-control summernote">{{ (count ($about) > 0 && isset($about->hasTranslation('en')->value)) ? $about->getTranslation('en')->value : null }}</textarea>
+                                <label for="value">About</label>
+                                <textarea name="value" id="value"
+                                          class="form-control summernote">{{ (count ($about) > 0 ? $about->value : null }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -150,18 +143,8 @@
                     @if(isset($sliders) && count($sliders) > 0)
                         @foreach($sliders as $slider)
                             <tr>
-                                <td>
-                                    <table class="table table-responsive">
-                                        <tr>
-                                            <td>{{$slider->getTranslation('en')->title}}</td>
-                                            <td>{{$slider->getTranslation('en')->value}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>{{$slider->getTranslation('sq')->title}}</td>
-                                            <td>{{$slider->getTranslation('sq')->value}}</td>
-                                        </tr>
-                                    </table>
-                                </td>
+                                <td>{{$slider->title}}</td>
+                                <td>{{$slider->value}}</td>
                                 <td><a href="{{asset('storage/'.$slider->optional)}}" target="_blank">Open</a></td>
                                 <td><a href="{{route('setting.delete', $slider->id)}}" class="btn btn-danger"><i
                                                 class="fa fa-trash"></i></a></td>
@@ -178,42 +161,24 @@
                 </table>
                 <form action="{{route('settings.slider')}}" method="post" enctype="multipart/form-data">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group form-control-default{!! ($errors->has('title_sq')) ? ' has-error' : '' !!}">
-                                <label for="title_sq">Slider Title SQ</label>
-                                <input type="text" class="form-control" id="title_sq" name="title_sq"
+                        <div class="col-md-12">
+                            <div class="form-group form-control-default{!! ($errors->has('title')) ? ' has-error' : '' !!}">
+                                <label for="title">Slider Title SQ</label>
+                                <input type="text" class="form-control" id="title" name="title"
                                        placeholder=""
-                                       value="{{\Illuminate\Support\Facades\Input::old('title_sq')}}">
-                                {!! ($errors->has('title_sq') ? $errors->first('title_sq') : '') !!}
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-control-default{!! ($errors->has('title_en')) ? ' has-error' : '' !!}">
-                                <label for="title_en">Slider Title EN</label>
-                                <input type="text" class="form-control" id="title_en" name="title_en"
-                                       placeholder=""
-                                       value="{{\Illuminate\Support\Facades\Input::old('title_en')}}">
-                                {!! ($errors->has('title_en') ? $errors->first('title_en') : '') !!}
+                                       value="{{\Illuminate\Support\Facades\Input::old('title')}}">
+                                {!! ($errors->has('title') ? $errors->first('title') : '') !!}
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group form-control-default{!! ($errors->has('value_sq')) ? ' has-error' : '' !!}">
-                                <label for="value_sq">Slider Caption SQ</label>
-                                <input type="text" class="form-control" id="value_sq" name="value_sq"
+                        <div class="col-md-12">
+                            <div class="form-group form-control-default{!! ($errors->has('value')) ? ' has-error' : '' !!}">
+                                <label for="value">Slider Caption SQ</label>
+                                <input type="text" class="form-control" id="value" name="value"
                                        placeholder=""
-                                       value="{{\Illuminate\Support\Facades\Input::old('value_sq')}}">
-                                {!! ($errors->has('value_sq') ? $errors->first('value_sq') : '') !!}
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-control-default{!! ($errors->has('value_en')) ? ' has-error' : '' !!}">
-                                <label for="value_en">Slider Caption EN</label>
-                                <input type="text" class="form-control" id="value_en" name="value_en"
-                                       placeholder=""
-                                       value="{{\Illuminate\Support\Facades\Input::old('value_en')}}">
-                                {!! ($errors->has('value_en') ? $errors->first('value_en') : '') !!}
+                                       value="{{\Illuminate\Support\Facades\Input::old('value')}}">
+                                {!! ($errors->has('value') ? $errors->first('value') : '') !!}
                             </div>
                         </div>
                     </div>
@@ -231,29 +196,12 @@
             </div>
             <div id="service" class="tab-pane">
                 <table class="table table-responsive table-striped">
-                    {{--<thead>--}}
-                    {{--<tr>--}}
-                    {{--<th>{{trans('settings.website')}}</th>--}}
-                    {{--<th>{{trans('settings.link')}}</th>--}}
-                    {{--<th>{{trans('settings.link')}}</th>--}}
-                    {{--</tr>--}}
-                    {{--</thead>--}}
                     <tbody>
                     @if(isset($services) && count($services) > 0)
                         @foreach($services as $service)
                             <tr>
-                                <td>
-                                    <table class="table table-responsive">
-                                        <tr>
-                                            <td>{{$service->getTranslation('sq')->title}}</td>
-                                            <td>{{$service->getTranslation('sq')->value}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>{{$service->getTranslation('en')->title}}</td>
-                                            <td>{{$service->getTranslation('en')->value}}</td>
-                                        </tr>
-                                    </table>
-                                </td>
+                                <td>{{$service->title}}</td>
+                                <td>{{$service->value}}</td>
                                 <td><a href="{{asset('storage/'.$service->optional)}}" target="_blank">Open</a></td>
                                 <td><a href="{{route('setting.delete',$service->id)}}" class="btn btn-danger"><i
                                                 class="fa fa-trash"></i></a></td>
@@ -271,41 +219,21 @@
                 <form action="{{route('settings.service')}}" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group form-control-default{!! ($errors->has('title_sq')) ? ' has-error' : '' !!}">
-                                <label for="title_sq">Service Title SQ</label>
-                                <input type="text" class="form-control" id="title_sq" name="title_sq"
+                            <div class="form-group form-control-default{!! ($errors->has('title')) ? ' has-error' : '' !!}">
+                                <label for="title">Service Title SQ</label>
+                                <input type="text" class="form-control" id="title" name="title"
                                        placeholder=""
-                                       value="{{\Illuminate\Support\Facades\Input::old('title_sq')}}">
-                                {!! ($errors->has('title_sq') ? $errors->first('title_sq') : '') !!}
+                                       value="{{\Illuminate\Support\Facades\Input::old('title')}}">
+                                {!! ($errors->has('title') ? $errors->first('title') : '') !!}
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group form-control-default{!! ($errors->has('title_en')) ? ' has-error' : '' !!}">
-                                <label for="title_en">Service Title EN</label>
-                                <input type="text" class="form-control" id="title_en" name="title_en"
+                            <div class="form-group form-control-default{!! ($errors->has('value')) ? ' has-error' : '' !!}">
+                                <label for="value">Service Caption SQ</label>
+                                <input type="text" class="form-control" id="value" name="value"
                                        placeholder=""
-                                       value="{{\Illuminate\Support\Facades\Input::old('title_en')}}">
-                                {!! ($errors->has('title_en') ? $errors->first('title_en') : '') !!}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group form-control-default{!! ($errors->has('value_sq')) ? ' has-error' : '' !!}">
-                                <label for="value_sq">Service Caption SQ</label>
-                                <input type="text" class="form-control" id="value_sq" name="value_sq"
-                                       placeholder=""
-                                       value="{{\Illuminate\Support\Facades\Input::old('value_sq')}}">
-                                {!! ($errors->has('value_sq') ? $errors->first('value_sq') : '') !!}
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-control-default{!! ($errors->has('value_en')) ? ' has-error' : '' !!}">
-                                <label for="value_en">Service Caption EN</label>
-                                <input type="text" class="form-control" id="value_en" name="value_en"
-                                       placeholder=""
-                                       value="{{\Illuminate\Support\Facades\Input::old('value_en')}}">
-                                {!! ($errors->has('value_en') ? $errors->first('value_en') : '') !!}
+                                       value="{{\Illuminate\Support\Facades\Input::old('value')}}">
+                                {!! ($errors->has('value') ? $errors->first('value') : '') !!}
                             </div>
                         </div>
                     </div>
@@ -324,18 +252,11 @@
             <div id="mission" class="tab-pane">
                 <form action="{{route('settings.mission')}}" method="post">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group form-control-default">
-                                <label for="value_sq">Mission Statement SQ</label>
-                                <textarea name="value_sq" id="value_sq"
-                                          class="form-control summernote">{{ (count ($mission) > 0 && isset($mission->hasTranslation('sq')->value)) ? $mission->getTranslation('sq')->value : null }}</textarea>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-control-default">
-                                <label for="value_en">Mission Statement EN</label>
-                                <textarea name="value_en" id="value_en"
-                                          class="form-control summernote">{{ (count ($mission) > 0 && isset($mission->hasTranslation('en')->value)) ? $mission->getTranslation('en')->value : null }}</textarea>
+                                <label for="value">Mission Statement</label>
+                                <textarea name="value" id="value"
+                                          class="form-control summernote">{{ (count ($mission) > 0 ? $mission->value : null }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -354,9 +275,9 @@
                     @if(isset($plans) && count($plans) > 0)
                         @foreach($plans as $plan)
                             <tr>
-                                <td>{{$plan->getTranslation()->title}}</td>
-                                <td>{{$plan->getTranslation()->value}}</td>
-                                <td>{{$plan->getTranslation()->optional}}</td>
+                                <td>{{$plan->title}}</td>
+                                <td>{{$plan->value}}</td>
+                                <td>{{$plan->optional}}</td>
                             </tr>
                         @endforeach
                     @else
