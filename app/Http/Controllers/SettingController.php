@@ -126,12 +126,10 @@ class SettingController extends Controller
     {
         try {
             $value = Input::get('value');
-            $value_en = Input::get('value_en');
             $title = Input::get('title');
             $ads = Setting::where('title', $title)->where('type', 6)->first();
             if ($ads) {
                 $ads->value = $value;
-                $ads->value = $value_en;
             } else {
                 $ads = new Setting();
                 $ads->type = 6;
