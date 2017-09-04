@@ -38,7 +38,7 @@
                     <span><strong>Max LOGISTICS LTD.</strong></span>
                     @if(count($contacts = \App\Models\Setting::where('type',0)->get()) > 0)
                         @foreach($contacts as $contact)
-                            <span><i class="fa fa-{{trans('settings.icon_'.$contact->getTranslation()->title)}}"></i> {{$contact->getTranslation()->value}}</span>
+                            <span><i class="fa fa-{{trans('settings.icon_'.$contact->title)}}"></i> {{$contact->value}}</span>
                         @endforeach
                     @endif
                 </div>
