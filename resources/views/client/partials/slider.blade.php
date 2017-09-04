@@ -12,11 +12,11 @@
                                 <a class="next"><i class="fa fa-angle-right"></i></a>
                             </div>
                             <div style="display:table-cell;">
-                                <h1>{{$slide->getTranslation(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale())->title}}</h1>
+                                <h1>{{$slide->title}}</h1>
                                 {{--<h1>{{$slide->title}}</h1>--}}
                             </div>
                         </div>
-                        <p>{{$slide->getTranslation(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale())->value}}</p>
+                        <p>{{$slide->value}}</p>
                         {{--<p>{{$slide->value}}</p>--}}
                         {{--<br>--}}
                         {{--<a class="btn btn-success" href="#">LEARN MORE</a></p>--}}
