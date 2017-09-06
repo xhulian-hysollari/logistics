@@ -78,6 +78,10 @@
             text-decoration: none;
             background-color: #5bc0de;
         }
+
+        .alert{
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
