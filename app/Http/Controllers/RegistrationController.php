@@ -25,7 +25,6 @@ class RegistrationController extends Controller
             $email = Input::get('email');
             $password = Input::get('password');
             $company_logo = Input::file('company_logo');
-            $logo = $company_logo->store('clogos');
             $validator = Validator::make(Input::all(), [
                 'email' => 'email|required|unique:users',
                 'password' => 'required',
@@ -33,10 +32,13 @@ class RegistrationController extends Controller
                 'full_name' => 'required',
                 'company_logo' => 'required',
             ]);
+
             if ($validator->fails()) {
                 return response($validator->getMessageBag()->toArray(), 500)
                     ->header('Content-Type', 'application/json');
             }
+
+            $logo = $company_logo->store('clogos');
             $user = $this->user->create([
                 'full_name' => $full_name,
                 'email' => $email,
