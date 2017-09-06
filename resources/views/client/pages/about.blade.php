@@ -7,7 +7,7 @@
             </div>
             <div>
                 @if($about)
-                    {!! $about->getTranslation(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale())->value !!}
+                    {!! $about->value !!}
                 @endif
             </div>
         </div>
