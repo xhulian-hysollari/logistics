@@ -123,7 +123,7 @@
                             <div class="form-group form-control-default">
                                 <label for="value">About</label>
                                 <textarea name="value" id="value"
-                                          class="form-control summernote">{{ (count ($about) > 0 ? $about->value : null }}</textarea>
+                                          class="form-control summernote">{{ (count ($about) > 0) ? $about->value : null }}</textarea>
                             </div>
                         </div>
                     </div>
