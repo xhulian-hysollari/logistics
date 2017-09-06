@@ -2,7 +2,7 @@
     <div class="text-center hgroup">
         @if(count($statements = \App\Models\Setting::where('type',3)->get()) > 0)
             @foreach($statements as $statement)
-                <h1>{{$statement->getTranslation(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale())->value}}</h1>
+                <h1>{{$statement->value}}</h1>
             @endforeach
         @else
             <h1>OUR SERVICES</h1>
@@ -19,8 +19,8 @@
                     <div class="col-sm-4 col-md-4 col-lg-4 wow fadeInRight" data-wow-delay="3.3s">
                         <img src="{{asset('storage/'.$service->optional)}}" alt="Img">
                         <span></span>
-                        <h3>{{$service->getTranslation(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale())->title}}</h3>
-                        <p>{{$service->getTranslation(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale())->value}}</p>
+                        <h3>{{$service->title}}</h3>
+                        <p>{{$service->value}}</p>
                         {{--<h3>{{$service->title}}</h3>--}}
                         {{--<p>{{$service->content}}</p>--}}
                 </div>
