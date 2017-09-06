@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegistrationRequest;
 use App\Models\User;
 use Cartalyst\Sentinel\Laravel\Facades\Activation;
 use Cartalyst\Sentinel\Native\Facades\Sentinel;
@@ -18,13 +19,13 @@ class RegistrationController extends Controller
         $this->user = $user;
     }
 
-    public function register()
+    public function register(RegistrationRequest $request)
     {
         try {
-            $full_name = Input::get('full_name');
-            $email = Input::get('email');
-            $password = Input::get('password');
-            $company_logo = Input::file('company_logo');
+            $full_name = $request->full_name;
+            $email = $request->email;
+            $password = $request->password;
+            $company_logo = $request->company_logo;
             $logo = $company_logo->store('clogos');
             $user = $this->user->create([
                 'full_name' => $full_name,
