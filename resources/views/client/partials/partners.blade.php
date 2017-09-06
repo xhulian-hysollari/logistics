@@ -8,7 +8,7 @@
         @if(count($partners = \App\Models\Partner::all()) > 0)
             @foreach($partners as $partner)
                 <div class="wow rotateIn" data-wow-delay="0.3s"><a href="{{$partner->website}}"><img
-                                src="{{asset($partner->logo)}}" alt="Img"></a></div>
+                                src="{{asset('storage/'.$partner->logo)}}" alt="Img"></a></div>
             @endforeach
         @else
             <div class="wow rotateIn" data-wow-delay="0.3s"><a href="#"><img style="width: 100%; height:118px  "
