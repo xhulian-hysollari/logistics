@@ -86,7 +86,7 @@ class PartnerController extends Controller
     {
         try {
 
-            $partner_logo = $request->file('logo');
+            $partner_logo = $request->logo;
             $logo = $partner_logo->store('partners');
             $partner = Partner::where('id', $id)->first();
             $partner->name = $request->name;
