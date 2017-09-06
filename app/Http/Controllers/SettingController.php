@@ -187,7 +187,6 @@ class SettingController extends Controller
     {
         try {
             $setting = Setting::find($id);
-            $setting->deleteTranslations();
             $setting->delete();
             return redirect()->back()->with('success', 'Success');
         } catch (\Exception $ex) {
