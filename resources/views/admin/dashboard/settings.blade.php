@@ -256,7 +256,7 @@
                             <div class="form-group form-control-default">
                                 <label for="value">Mission Statement</label>
                                 <textarea name="value" id="value"
-                                          class="form-control summernote">{{ (count ($mission) > 0 ? $mission->value : null }}</textarea>
+                                          class="form-control summernote">{{ (count ($mission) > 0) ? $mission->value : null }}</textarea>
                             </div>
                         </div>
                     </div>
