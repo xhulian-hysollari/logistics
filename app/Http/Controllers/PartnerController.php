@@ -38,7 +38,7 @@ class PartnerController extends Controller
     public function store(PartnerRequest $request)
     {
         try {
-            $partner_logo = $request->logo;
+            $partner_logo = $request->file('logo');
             $logo = $partner_logo->store('partners');
             $partner = new Partner();
             $partner->name = $request->name;
@@ -86,7 +86,7 @@ class PartnerController extends Controller
     {
         try {
 
-            $partner_logo = $request->logo;
+            $partner_logo = $request->file('logo');
             $logo = $partner_logo->store('partners');
             $partner = Partner::where('id', $id)->first();
             $partner->name = $request->name;
