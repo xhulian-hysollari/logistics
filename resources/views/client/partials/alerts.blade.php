@@ -15,7 +15,7 @@
     <div class="alert alert-danger">
         <a class="close" data-dismiss="alert">×</a>
 
-        @foreach ($errors->all() as $error)
+        @foreach ($errors as $error)
             <p> {{ $error }} </p>
         @endforeach
     </div>
