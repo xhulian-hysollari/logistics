@@ -34,7 +34,7 @@ class RegistrationController extends Controller
             ]);
 
             if ($validator->fails()) {
-                return redirect()->back()->withInput()->with('error', $validator->getMessageBag()->toArray());
+                return redirect()->back()->withInput()->with('errors', $validator->getMessageBag()->toArray());
             }
 
             $logo = $company_logo->store('clogos');
