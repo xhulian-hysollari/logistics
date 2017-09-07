@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Foundation\Http\FormRequest;
 
 class SliderRequest extends FormRequest
@@ -13,7 +14,7 @@ class SliderRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return Sentinel::check() && Sentinel::inRole('admin');
     }
 
     /**
