@@ -10,7 +10,6 @@
             <li><a href="#about" data-toggle="tab"><i class="fa fa-fw fa-building"></i> About Us</a></li>
             <li><a href="#mission" data-toggle="tab"><i class="fa fa-fw fa-file-text"></i> Mission Statement</a></li>
             <li><a href="#service" data-toggle="tab"><i class="fa fa-fw fa-file-text"></i> Services</a></li>
-            {{--<li><a href="#payments" data-toggle="tab"><i class="fa fa-fw fa-money"></i> Subscription Plans</a></li>--}}
             <li><a href="#ads" data-toggle="tab"><i class="fa fa-fw fa-money"></i> Advertisments</a></li>
         </ul>
         <!-- // END Tabs -->
@@ -19,12 +18,6 @@
         <div class="tab-content">
             <div id="contact" class="tab-pane active">
                 <table class="table table-responsive table-striped">
-                    {{--<thead>--}}
-                    {{--<tr>--}}
-                    {{--<th>{{trans('settings.website')}}</th>--}}
-                    {{--<th>{{trans('settings.link')}}</th>--}}
-                    {{--</tr>--}}
-                    {{--</thead>--}}
                     <tbody>
                     @if(isset($contacts) && count($contacts) > 0)
                         @foreach($contacts as $contact)
@@ -132,13 +125,6 @@
             </div>
             <div id="slider" class="tab-pane">
                 <table class="table table-responsive table-striped">
-                    {{--<thead>--}}
-                    {{--<tr>--}}
-                    {{--<th>{{trans('settings.website')}}</th>--}}
-                    {{--<th>{{trans('settings.link')}}</th>--}}
-                    {{--<th>{{trans('settings.link')}}</th>--}}
-                    {{--</tr>--}}
-                    {{--</thead>--}}
                     <tbody>
                     @if(isset($sliders) && count($sliders) > 0)
                         @foreach($sliders as $slider)
@@ -265,12 +251,6 @@
             </div>
             <div id="payments" class="tab-pane">
                 <table class="table table-responsive table-striped">
-                    {{--<thead>--}}
-                    {{--<tr>--}}
-                    {{--<th>{{trans('settings.website')}}</th>--}}
-                    {{--<th>{{trans('settings.link')}}</th>--}}
-                    {{--</tr>--}}
-                    {{--</thead>--}}
                     <tbody>
                     @if(isset($plans) && count($plans) > 0)
                         @foreach($plans as $plan)
@@ -325,12 +305,6 @@
             </div>
             <div id="ads" class="tab-pane">
                 <table class="table table-responsive table-striped">
-                    {{--<thead>--}}
-                    {{--<tr>--}}
-                    {{--<th>{{trans('settings.website')}}</th>--}}
-                    {{--<th>{{trans('settings.link')}}</th>--}}
-                    {{--</tr>--}}
-                    {{--</thead>--}}
                     <tbody>
                     @if(isset($ads) && count($ads) > 0)
                         @foreach($ads as $ad)
