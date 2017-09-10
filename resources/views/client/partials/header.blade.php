@@ -10,7 +10,9 @@
             <nav class="main-menu navbar-main-slide" style="padding-right: 5em">
                 <ul class="nav navbar-nav navbar-main">
                     <li><a href="{{route('home')}}">{{trans('navigation.home')}}</a></li>
-                    <li><a href="{{route('about')}}">About</a></li>
+                    @if(\App\Models\Pages::where('slug', 'about-us')->first())
+                        <li><a href="{{route('pages', ['about-us'])}}">About</a></li>
+                    @endif
                     <li><a href="{{route('plans')}}">Pricing</a></li>
                     <li><a href="{{route('contact')}}">{{trans('navigation.contact')}}</a></li>
                     @if(\Cartalyst\Sentinel\Laravel\Facades\Sentinel::check())

@@ -75,6 +75,22 @@ class PagesController extends Controller
     }
 
     /**
+     * Display the specified resource on frontend.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function getPage($slug)
+    {
+        try{
+            $result = Pages::where('slug', $slug)->first();
+            return view('client.pages.page', compact('result'));
+        } catch (Exception $ex) {
+            return redirect()->back()->with('error', $ex->getMessage());
+        }
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id

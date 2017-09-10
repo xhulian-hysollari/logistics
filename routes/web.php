@@ -37,7 +37,7 @@ Route::post('/login/autobot', ['as' => 'login.autobot', 'uses' => 'LoginControll
 Route::get('/activate/{id}/{code}', ['as' => 'activate.autobot', 'uses' => 'ActivationController@activate']);
 Route::post('/braintree/webhooks', '\Laravel\Cashier\Http\Controllers\WebhookController@handleWebhook');
 Route::get('/freights', ['as' => 'freight', 'uses' => 'NavigationController@getFreightPage']);
-Route::get('/about-us', ['as' => 'about', 'uses' => 'NavigationController@getAboutPage']);
+Route::get('/page/{slug}', ['as' => 'pages', 'uses' => 'PagesController@getPage']);
 Route::get('/contact-us', ['as' => 'contact', 'uses' => 'NavigationController@getContactPage']);
 Route::get('/trucks', ['as' => 'truck', 'uses' => 'NavigationController@getTruckPage']);
 Route::get('/braintree/token', 'BraintreeTokenController@token');
