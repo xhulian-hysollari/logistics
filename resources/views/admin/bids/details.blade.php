@@ -9,16 +9,16 @@
                 <thead>
                 <tr>
                     <th>{{trans('bid.id')}}</th>
-                    <th>{{trans('bid.bidder')}}</th>
+                    <th>{{trans('bid.owner')}}</th>
                     <th>{{trans('bid.item')}}</th>
                     <th>Click for more info</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($offers as $bid)
+                @foreach($bids as $bid)
                     <tr>
                         <td>#{{$bid->id}}</td>
-                        <td>{{$bid->bidder->full_name}}</td>
+                        <td>{{$bid->owner}}</td>
                         @if(!empty($bid->truck_id))
                             <td>Truck: {{$bid->item_name}}</td>
                         @endif
