@@ -55,7 +55,7 @@ class MessagesController extends Controller
      */
     public function create()
     {
-        $users = User::where('id', '!=', Auth::id())->get();
+        $users = User::where('id', '!=', Sentinel::getUser()->id)->get();
         return view('admin.inbox.create', compact('users'));
     }
     /**
