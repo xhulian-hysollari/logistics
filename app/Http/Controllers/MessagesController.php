@@ -21,9 +21,9 @@ class MessagesController extends Controller
         // All threads, ignore deleted/archived participants
         $threads = Thread::getAllLatest()->get();
         // All threads that user is participating in
-        // $threads = Thread::forUser(Auth::id())->latest('updated_at')->get();
+        // $threads = Thread::forUser(Sentinel::getUser()->id)->latest('updated_at')->get();
         // All threads that user is participating in, with new messages
-        // $threads = Thread::forUserWithNewMessages(Auth::id())->latest('updated_at')->get();
+        // $threads = Thread::forUserWithNewMessages(Sentinel::getUser()->id)->latest('updated_at')->get();
         return view('admin.inbox.index', compact('threads'));
     }
     /**
@@ -43,7 +43,7 @@ class MessagesController extends Controller
         // show current user in list if not a current participant
         // $users = User::whereNotIn('id', $thread->participantsUserIds())->get();
         // don't show the current user in list
-        $userId = Auth::id();
+        $userId = Sentinel::getUser()->id;
         $users = User::whereNotIn('id', $thread->participantsUserIds($userId))->get();
         $thread->markAsRead($userId);
         return view('admin.inbox.show', compact('thread', 'users'));
@@ -72,13 +72,13 @@ class MessagesController extends Controller
         // Message
         Message::create([
             'thread_id' => $thread->id,
-            'user_id' => Auth::id(),
+            'user_id' => Sentinel::getUser()->id,
             'body' => $input['message'],
         ]);
         // Sender
         Participant::create([
             'thread_id' => $thread->id,
-            'user_id' => Auth::id(),
+            'user_id' => Sentinel::getUser()->id,
             'last_read' => new Carbon,
         ]);
         // Recipients
@@ -105,13 +105,13 @@ class MessagesController extends Controller
         // Message
         Message::create([
             'thread_id' => $thread->id,
-            'user_id' => Auth::id(),
+            'user_id' => Sentinel::getUser()->id,
             'body' => Input::get('message'),
         ]);
         // Add replier as a participant
         $participant = Participant::firstOrCreate([
             'thread_id' => $thread->id,
-            'user_id' => Auth::id(),
+            'user_id' => Sentinel::getUser()->id,
         ]);
         $participant->last_read = new Carbon;
         $participant->save();
