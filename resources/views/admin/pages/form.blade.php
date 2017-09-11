@@ -18,7 +18,7 @@
                 <div class="col-md-6">
                     <div class="form-group form-control-default">
                         <label for="slug">Is this the About Us page?</label>
-                        <input name="about_page" type="checkbox" value="1">
+                        <input name="about_page" class="form-control" type="checkbox" value="1">
                     </div>
                 </div>
             @endif
