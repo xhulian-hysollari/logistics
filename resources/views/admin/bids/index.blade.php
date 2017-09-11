@@ -2,10 +2,10 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <h4>My Bids</h4>
-            <table class="table table-row table-responsive table-striped">
+            <table class="table table-responsive table-striped">
                 <thead>
                 <tr>
                     <th>{{trans('bid.id')}}</th>
