@@ -4,31 +4,30 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
+
+                <h4>
+                    {{$details->full_name}}</h4>
                 <div class="col-xs-12 col-sm-6 col-md-6">
                     <div>
-                        <h4>
-                            {{$details->full_name}}</h4>
                         <p>
                             <i class="fa fa-envelope"></i> {{$details->email}}
                             <br/>
-                            <i class="fa fa-phone"></i> {{$details->profile->telephone}}<br/>
-                            <i class="fa fa-skype"></i> {{$details->profile->skype}}</p>
+                            <i class="fa fa-phone"></i> {{$details->profile->telephone}}
+                            <br/>
+                            <i class="fa fa-skype"></i> {{$details->profile->skype}}
+                        </p>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6">
                     <div>
-                        <div>
-                            <h4>
-                                {{$details->profile->name}}</h4>
-                            <p>
-                                <i class="fa fa-phone"></i> {{$details->profile->telephone}}
-                                <br/>
-                                <i class="fa fa-fax"></i> {{$details->profile->fax}}
-                                <br/>
-                                <i class="fa fa-globe"></i><a
-                                        href="{{$details->profile->website}}">{{$details->profile->website}}</a>
-                            </p>
-                        </div>
+                        <p>
+                            <i class="fa fa-phone"></i> {{$details->profile->telephone}}
+                            <br/>
+                            <i class="fa fa-fax"></i> {{$details->profile->fax}}
+                            <br/>
+                            <i class="fa fa-globe"></i><a
+                                    href="{{$details->profile->website}}">{{$details->profile->website}}</a>
+                        </p>
                     </div>
                 </div>
                 <hr>
