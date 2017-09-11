@@ -46,9 +46,16 @@ class PagesController extends Controller
     public function store(Request $request)
     {
         try{
+            $slug = strtolower( str_replace(' ', '-',Input::get('title')));
+            if (Pages::where('slug', $slug)->first()){
+                $slug = $slug . str_random(5);
+            }
+            if(Input::get('about_page')){
+                $slug = 'about-us';
+            }
             $pages = new Pages();
             $pages->page_title = Input::get('title');
-            $pages->slug = Input::get('slug');
+            $pages->slug = $slug;
             $pages->body = Input::get('body');
             $pages->save();
             return redirect()->back()->with('success');
@@ -118,7 +125,6 @@ class PagesController extends Controller
         try {
             $pages = Pages::where('id', $id)->first();
             $pages->page_title = Input::get('title');
-            $pages->slug = Input::get('slug');
             $pages->body = Input::get('body');
             $pages->save();
             return redirect()->back()->with('success', 'Success');
