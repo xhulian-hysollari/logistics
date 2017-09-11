@@ -4,6 +4,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default" style="padding: 15px;">
+                <h2>Personal Details</h2>
 
                 <h4>
                     {{$details->full_name}}</h4>
@@ -32,6 +33,7 @@
                 </div>
                 <hr>
                 <div class="row main-grid">
+                    <h2>Item Details</h2>
                     <div class="col-sm-12">
                         <div>
                             <div class="col-sm-12">
@@ -67,6 +69,20 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="row main-grid">
+                    <h2>Bid Info</h2>
+                    <div class="col-sm-12">
+                        {{$bid->description}}
+                    </div>
+                    <div class="col-sm-12">
+                        @if(count($bid->files) > 0)
+                            @foreach($bid->files as $file)
+                                <i class="fa fa-file-archive-o"></i> <a href="{{asset('storage/'.$file->path)}}" target="_blank">View Attachment</a>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
                 {{--<hr>--}}
