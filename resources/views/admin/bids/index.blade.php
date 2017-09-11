@@ -11,7 +11,7 @@
                     <th>{{trans('bid.id')}}</th>
                     <th>{{trans('bid.owner')}}</th>
                     <th>{{trans('bid.item')}}</th>
-                    <th>{{trans('bid.description')}}</th>
+                    <th>Click for more info</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -28,7 +28,7 @@
                         @if(!empty($bid->contract_id))
                             <td>Contract: {{$bid->item_name}}</td>
                         @endif
-                        <td>{{$bid->description}}</td>
+                        <td><a href="{{route('bid.details')}}">View details</a></td>
                     </tr>
                 @endforeach
                 </tbody>
