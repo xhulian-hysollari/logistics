@@ -58,7 +58,7 @@ class PagesController extends Controller
             $pages->slug = $slug;
             $pages->body = Input::get('body');
             $pages->save();
-            return redirect()->back()->with('success');
+            return redirect()->route('pages.index')->with('success','Page was created succesfully!');
         } catch (\Exception $ex) {
             dd($ex);
         return redirect()->back()->with('error', $ex->getMessage());
