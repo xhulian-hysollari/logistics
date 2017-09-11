@@ -1,18 +1,27 @@
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="row">
-            <div class="col-md-6">
-                <div class="form-group form-control-default">
-                    <label for="title">Title</label>
-                    <input class="form-control"  type="text" name="title"  id="title" value="{{$result->page_title}}">
+            @if(\App\Models\Pages::where('slug', 'about-us')->first())
+                <div class="col-md-12">
+                    <div class="form-group form-control-default">
+                        <label for="title">Title</label>
+                        <input class="form-control" type="text" name="title" id="title" value="{{$result->page_title}}">
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group form-control-default">
-                    <label for="slug">Slug</label>
-                    <input class="form-control"  type="text" name="slug" id="slug" value="{{$result->slug}}">
+            @else
+                <div class="col-md-6">
+                    <div class="form-group form-control-default">
+                        <label for="title">Title</label>
+                        <input class="form-control" type="text" name="title" id="title" value="{{$result->page_title}}">
+                    </div>
                 </div>
-            </div>
+                <div class="col-md-6">
+                    <div class="form-group form-control-default">
+                        <label for="slug">Is about Page?</label>
+                        <input name="about_page" type="checkbox" value="1">
+                    </div>
+                </div>
+            @endif
         </div>
         <div class="row">
             <div class="col-md-12">
