@@ -20,13 +20,13 @@
                         <td>#{{$bid->id}}</td>
                         <td>{{$bid->owner->full_name}}</td>
                         @if(!empty($bid->truck_id))
-                            <td>Truck: {{$bid->item_name}}</td>
+                            <td>Truck: {{$bid->item->plate}}</td>
                         @endif
                         @if(!empty($bid->freight_id))
-                            <td>Freight: {{$bid->item_name}}</td>
+                            <td>Freight: {{$bid->item->freight_id}}</td>
                         @endif
                         @if(!empty($bid->contract_id))
-                            <td>Contract: {{$bid->item_name}}</td>
+                            <td>Contract: {{$bid->item->id}}</td>
                         @endif
                         <td><a href="{{route('bid.details', $bid->id)}}">View details</a></td>
                     </tr>

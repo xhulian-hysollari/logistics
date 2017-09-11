@@ -22,12 +22,12 @@ class Bid extends Model
         return User::where('id', $this->attributes['user_id'])->first();
     }
 
-    public function getItemNameAttribute()
+    public function getItemAttribute()
     {
         if (!empty($this->attributes['freight_id'])) {
-            return Freight::where('id', $this->attributes['freight_id'])->first()->freight_id;
+            return Freight::where('id', $this->attributes['freight_id'])->first();
         } else if (!empty($this->attributes['truck_id'])){
-            return Truck::where('id', $this->attributes['truck_id'])->first()->plate;
+            return Truck::where('id', $this->attributes['truck_id'])->first();
         } else{
             return Contracts::where('id', $this->attributes['contract_id'])->first();
         }
