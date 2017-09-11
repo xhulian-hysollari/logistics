@@ -13,16 +13,17 @@
                 </div>
                 <a href="{{route('register')}}" class="btn btn-lg btn-danger">{{trans('navigation.register')}}</a>
             </div>
-            {{--<div class="col-sm-2 wow zoomIn" data-wow-delay="0.3s">--}}
-            {{--<h4>{{trans('navigation.service')}}</h4>--}}
-            {{--<nav>--}}
-            {{--@if(isset($services))--}}
-            {{--@foreach($services as $service)--}}
-            {{--<a href="{{route('service')}}">{{$service->title}}</a>--}}
-            {{--@endforeach--}}
-            {{--@endif--}}
-            {{--</nav>--}}
-            {{--</div>--}}
+            @if($pages = \App\Models\Pages::all())
+                <div class="col-sm-2 wow zoomIn" data-wow-delay="0.3s">
+                    <h4>{{trans('navigation.service')}}</h4>
+                    <nav>
+                        @foreach($pages as $page)
+                            <a href="{{route('pages', [$page->slug])}}">{{$page->page_title}}</a>
+                        @endforeach
+
+                    </nav>
+                </div>
+            @endif
             <div class="col-sm-2 wow zoomIn" data-wow-delay="0.3s">
                 <h4>{{trans('navigation.main')}}</h4>
                 <nav>
