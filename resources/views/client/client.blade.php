@@ -82,6 +82,10 @@
         .alert{
             margin-bottom: 0;
         }
+
+        footer, footer a, footer .copy {
+            color: white;
+        }
     </style>
 </head>
 <body>
