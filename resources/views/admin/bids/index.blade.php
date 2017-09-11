@@ -17,7 +17,7 @@
                 <tbody>
                 @foreach($bids as $bid)
                     <tr>
-                        <td>{{$bid->freight_id}}</td>
+                        <td>#{{$bid->id}}</td>
                         <td>{{$bid->owner}}</td>
                         @if(!empty($bid->truck_id))
                             <td>Truck: {{$bid->item_name}}</td>
