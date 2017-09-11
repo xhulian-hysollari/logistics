@@ -9,7 +9,7 @@
                             <ul class="sidebar-menu sm-icons-right sm-icons-block">
                                 <li class="active"><a href="{{route('dashboard')}}"><i class="fa fa-home"></i>
                                         <span>{{trans('admin.dashboard')}}</span></a></li>
-                                <li><a href="{{route('admin', 'inbox')}}"><i class="fa fa-envelope"></i>
+                                <li><a href="{{route('messages')}}"><i class="fa fa-envelope"></i>
                                         <span>{{trans('admin.inbox')}}</span></a>
                                 </li>
                             </ul>

@@ -90,12 +90,16 @@
                         @endif
                     </div>
                 </div>
-                {{--<hr>--}}
-                {{--<div class="row main-grid">--}}
-                {{--{!! Form::model($bid = new \App\Models\Bid(), ['route' => ['bid.freight', $bid->item->id, 0], 'method' => 'POST', 'class' => 'form-horizontal', 'novalidate']) !!}--}}
-                {{--@include('client.bid.form')--}}
-                {{--{!! Form::close() !!}--}}
-                {{--</div>--}}
+                @if(Sentinel::getUser()->id == $bid->owner_id)
+                    <a href="{{route('bid.refuse')}}" class="btn btn-danger"> Refuse bid</a>
+                    <a href="{{route('bid.accept')}}" class="btn btn-danger"> Accept bid</a>
+                    <hr>
+                    <div class="row main-grid">
+                    {!! Form::model($bid = new \App\Models\Bid(), ['route' => ['bid.freight', $bid->item->id, 0], 'method' => 'POST', 'class' => 'form-horizontal', 'novalidate']) !!}
+                    @include('client.bid.form')
+                    {!! Form::close() !!}
+                    </div>
+                @endif
             </div>
         </div>
     </div>
