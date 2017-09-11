@@ -1,38 +1,88 @@
 @extends('admin.admin')
 
 @section('content')
-
-    <div class="container-fluid">
-        <div class="row">
-            <h4>My Bids</h4>
-            <table class="table table-responsive table-striped">
-                <thead>
-                <tr>
-                    <th>{{trans('bid.id')}}</th>
-                    <th>{{trans('bid.owner')}}</th>
-                    <th>{{trans('bid.item')}}</th>
-                    <th>Click for more info</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($bids as $bid)
-                    <tr>
-                        <td>#{{$bid->id}}</td>
-                        <td>{{$bid->owner}}</td>
-                        @if(!empty($bid->truck_id))
-                            <td>Truck: {{$bid->item_name}}</td>
-                        @endif
-                        @if(!empty($bid->freight_id))
-                            <td>Freight: {{$bid->item_name}}</td>
-                        @endif
-                        @if(!empty($bid->contract_id))
-                            <td>Contract: {{$bid->item_name}}</td>
-                        @endif
-                        <td><a href="{{route('bid.details')}}">View details</a></td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
+    <div class="container block-content" style="padding-left: 20px; padding-right: 20px;">
+        <div class="row main-grid">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="well well-sm">
+                    <div>
+                        <h4>
+                            {{$details->full_name}}</h4>
+                        <p>
+                            <i class="fa fa-envelope"></i> {{$details->email}}
+                            <br/>
+                            <i class="fa fa-phone"></i> {{$details->phone}}<br/>
+                            <i class="fa fa-skype"></i> {{$details->skype}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="well well-sm">
+                    <div>
+                        <div>
+                            <h4>
+                                {{$details->company->name}}</h4>
+                            <p>
+                                <i class="fa fa-envelope"></i> {{$details->company->email}}
+                                <br/>
+                                <i class="fa fa-phone"></i> {{$details->company->telephone}}
+                                <br/>
+                                <i class="fa fa-fax"></i> {{$details->company->fax}}
+                                <br/>
+                                <i class="fa fa-globe"></i><a
+                                        href="{{$details->company->website}}">{{$details->company->website}}</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row main-grid">
+            <div class="col-sm-12">
+                <div class="well well-sm clearfix">
+                    <div>
+                        <div class="col-sm-12">
+                            <label>{{trans('freight.description')}}</label>
+                            <label>{{$bid->description}}</label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="default-inp">
+                                <label>{{trans('truck.height')}}</label>
+                                <label>{{$bid->height}}</label>
+                            </div>
+                            <div class="default-inp">
+                                <label>{{trans('truck.length')}}</label>
+                                <label>{{$bid->length}}</label>
+                            </div>
+                            <div class="default-inp">
+                                <label>{{trans('truck.lorry_type')}}</label>
+                                <label>{{$bid->type}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="default-inp">
+                                <label>{{trans('truck.weight')}}</label>
+                                <<label>{{$bid->weight}}</label>
+                            </div>
+                            <div class="default-inp">
+                                <label>{{trans('truck.plate')}}</label>
+                                <label>{{$bid->plate}}</label>
+                            </div>
+                            <div class="default-inp">
+                                <label>{{trans('truck.location')}}</label>
+                                <label>{{$bid->location}}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row main-grid">
+            {!! Form::model($bid = new \App\Models\Bid(), ['route' => ['bid.freight', $bid->id, 0], 'method' => 'POST', 'class' => 'form-horizontal', 'novalidate']) !!}
+            @include('client.bid.form')
+            {!! Form::close() !!}
         </div>
     </div>
 @stop
