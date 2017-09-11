@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Carbon\Carbon;
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Cmgmyr\Messenger\Models\Message;
 use Cmgmyr\Messenger\Models\Participant;
 use Cmgmyr\Messenger\Models\Thread;
