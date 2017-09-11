@@ -15,13 +15,13 @@ class Bid extends Model
     public function getOwnerAttribute()
     {
         $user = User::where('id', $this->attributes['owner_id'])->first();
-        return $user->first_name . ' ' . $user->last_name;
+        return $user->full_name;
     }
 
     public function getBidderAttribute()
     {
         $user = User::where('id', $this->attributes['user_id'])->first();
-        return $user->first_name . ' ' . $user->last_name;
+        return $user->full_name;
     }
 
     public function getItemNameAttribute()
