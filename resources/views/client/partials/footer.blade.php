@@ -15,7 +15,7 @@
             </div>
             @if($pages = \App\Models\Pages::all())
                 <div class="col-sm-2 wow zoomIn" data-wow-delay="0.3s">
-                    <h4>{{trans('navigation.service')}}</h4>
+                    <h4>Useful Links</h4>
                     <nav>
                         @foreach($pages as $page)
                             <a href="{{route('pages', [$page->slug])}}">{{$page->page_title}}</a>
