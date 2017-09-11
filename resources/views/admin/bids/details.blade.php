@@ -81,7 +81,7 @@
                         @if(count($bid->files) > 0)
                             Attachments: <br>
                             @foreach($bid->files as $file)
-                                <div style="padding: 20px;">
+                                <div style="padding: 10px 20px;">
                                     <i class="fa fa-file-archive-o"></i> <a href="{{asset('storage/'.$file->path)}}"
                                                                             target="_blank">View Attachment</a>
                                     <br>
