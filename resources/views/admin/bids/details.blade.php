@@ -23,14 +23,14 @@
                             <h4>
                                 {{$details->profile->name}}</h4>
                             <p>
-                                <i class="fa fa-envelope"></i> {{$details->company->email}}
+                                <i class="fa fa-envelope"></i> {{$details->profile->email}}
                                 <br/>
-                                <i class="fa fa-phone"></i> {{$details->company->telephone}}
+                                <i class="fa fa-phone"></i> {{$details->profile->telephone}}
                                 <br/>
-                                <i class="fa fa-fax"></i> {{$details->company->fax}}
+                                <i class="fa fa-fax"></i> {{$details->profile->fax}}
                                 <br/>
                                 <i class="fa fa-globe"></i><a
-                                        href="{{$details->company->website}}">{{$details->company->website}}</a>
+                                        href="{{$details->profile->website}}">{{$details->profile->website}}</a>
                             </p>
                         </div>
                     </div>
