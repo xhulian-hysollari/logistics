@@ -42,45 +42,45 @@
             <div class="col-sm-12">
                 <div class="well well-sm clearfix">
                     <div>
-                        {{--<div class="col-sm-12">--}}
-                            {{--<label>{{trans('freight.description')}}</label>--}}
-                            {{--<label>{{$bid->description}}</label>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-md-6">--}}
-                            {{--<div class="default-inp">--}}
-                                {{--<label>{{trans('truck.height')}}</label>--}}
-                                {{--<label>{{$bid->height}}</label>--}}
-                            {{--</div>--}}
-                            {{--<div class="default-inp">--}}
-                                {{--<label>{{trans('truck.length')}}</label>--}}
-                                {{--<label>{{$bid->length}}</label>--}}
-                            {{--</div>--}}
-                            {{--<div class="default-inp">--}}
-                                {{--<label>{{trans('truck.lorry_type')}}</label>--}}
-                                {{--<label>{{$bid->type}}</label>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-md-6">--}}
-                            {{--<div class="default-inp">--}}
-                                {{--<label>{{trans('truck.weight')}}</label>--}}
-                                {{--<<label>{{$bid->weight}}</label>--}}
-                            {{--</div>--}}
-                            {{--<div class="default-inp">--}}
-                                {{--<label>{{trans('truck.plate')}}</label>--}}
-                                {{--<label>{{$bid->plate}}</label>--}}
-                            {{--</div>--}}
-                            {{--<div class="default-inp">--}}
-                                {{--<label>{{trans('truck.location')}}</label>--}}
-                                {{--<label>{{$bid->location}}</label>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
+                        <div class="col-sm-12">
+                            <label>{{trans('freight.description')}}</label>
+                            <label>{{$bid->item->description}}</label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="default-inp">
+                                <label>{{trans('truck.height')}}</label>
+                                <label>{{$bid->item->height}}</label>
+                            </div>
+                            <div class="default-inp">
+                                <label>{{trans('truck.length')}}</label>
+                                <label>{{$bid->item->length}}</label>
+                            </div>
+                            <div class="default-inp">
+                                <label>{{trans('truck.lorry_type')}}</label>
+                                <label>{{$bid->item->type}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="default-inp">
+                                <label>{{trans('truck.weight')}}</label>
+                                <<label>{{$bid->item->weight}}</label>
+                            </div>
+                            <div class="default-inp">
+                                <label>{{trans('truck.plate')}}</label>
+                                <label>{{$bid->item->plate}}</label>
+                            </div>
+                            <div class="default-inp">
+                                <label>{{trans('truck.location')}}</label>
+                                <label>{{$bid->item->location}}</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <hr>
         {{--<div class="row main-grid">--}}
-            {{--{!! Form::model($bid = new \App\Models\Bid(), ['route' => ['bid.freight', $bid->id, 0], 'method' => 'POST', 'class' => 'form-horizontal', 'novalidate']) !!}--}}
+            {{--{!! Form::model($bid = new \App\Models\Bid(), ['route' => ['bid.freight', $bid->item->id, 0], 'method' => 'POST', 'class' => 'form-horizontal', 'novalidate']) !!}--}}
             {{--@include('client.bid.form')--}}
             {{--{!! Form::close() !!}--}}
         {{--</div>--}}
