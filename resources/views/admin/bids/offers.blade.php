@@ -2,10 +2,12 @@
 
 @section('content')
 
-    <div class="container-fluid">
-        <div class="row">
-            <h4>My Bids</h4>
-            <table class="table table-responsive table-striped">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="panel panel-default">
+            <h4>My Offers</h4>
+            <table class="table-responsive">
                 <thead>
                 <tr>
                     <th>{{trans('bid.id')}}</th>
@@ -34,5 +36,6 @@
                 </tbody>
             </table>
         </div>
+    </div>
     </div>
 @stop

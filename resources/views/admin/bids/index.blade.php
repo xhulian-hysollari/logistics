@@ -6,7 +6,7 @@
 
             <div class="panel panel-default">
                 <h4>My Bids</h4>
-                <table class="table table-responsive table-striped">
+                <table class="table-responsive">
                     <thead>
                     <tr>
                         <th>{{trans('bid.id')}}</th>
