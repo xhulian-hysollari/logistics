@@ -6,6 +6,7 @@ use App\Models\Bid;
 use App\Models\BidFile;
 use App\Models\Freight;
 use App\Models\Truck;
+use App\Models\User;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -22,6 +23,18 @@ class BidController extends Controller
     {
         $offers = Bid::where('owner_id', Sentinel::getUser()->id)->get();
         return view('admin.bids.offers', compact('offers'));
+    }
+
+    public function details($id)
+    {
+        $bid = Bid::where('id', $id)->first();
+        $user = Sentinel::getUser();
+        if( $user->id == $bid->owner_id){
+            $details = User::where('id', $bid->user_id)->first();
+        }else{
+            $details = User::where('id', $bid->owner_id)->first();
+        }
+        return view('admin.bids.details', compact('bid','details'));
     }
 
     public function bidTruck($id)

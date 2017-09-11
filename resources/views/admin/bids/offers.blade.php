@@ -28,7 +28,7 @@
                         @if(!empty($bid->contract_id))
                             <td>Contract: {{$bid->item_name}}</td>
                         @endif
-                        <td><a href="{{route('bid.details')}}">View details</a></td>
+                        <td><a href="{{route('bid.details', $bid->id)}}">View details</a></td>
                     </tr>
                 @endforeach
                 </tbody>
