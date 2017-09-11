@@ -1,7 +1,7 @@
 @extends('admin.admin')
 
 @section('content')
-    <a href="{{route('freight.create')}}" class="btn btn-success pull-right" style="margin-bottom: 20px"> <i
+    <a href="{{route('pages.create')}}" class="btn btn-success pull-right" style="margin-bottom: 20px"> <i
                 class="fa fa-plus"></i>
         Create
         new</a>
