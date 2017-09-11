@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
+            <div class="panel panel-default" style="padding: 15px;">
 
                 <h4>
                     {{$details->full_name}}</h4>
