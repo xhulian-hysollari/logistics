@@ -21,7 +21,7 @@
                     <div>
                         <div>
                             <h4>
-                                {{$details->company->name}}</h4>
+                                {{$details->profile->name}}</h4>
                             <p>
                                 <i class="fa fa-envelope"></i> {{$details->company->email}}
                                 <br/>
