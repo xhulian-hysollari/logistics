@@ -1,9 +1,13 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="container block-content" style="padding-left: 20px; padding-right: 20px;">
-        <div class="row main-grid">
-            <div class="col-xs-12 col-sm-6 col-md-6">
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="panel panel-default">
+
+                <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="well well-sm">
                     <div>
                         <h4>
@@ -84,5 +88,6 @@
         {{--@include('client.bid.form')--}}
         {{--{!! Form::close() !!}--}}
         {{--</div>--}}
+    </div>
     </div>
 @stop
