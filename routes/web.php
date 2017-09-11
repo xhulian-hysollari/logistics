@@ -114,6 +114,9 @@ Route::middleware(['guest'])->group(function () {
                 Route::post('/freight/{id}/bid', ['as' => 'freight.bid', 'uses' => 'BidController@bidFreight']);
                 Route::post('/contract/{id}/bid', ['as' => 'contract.bid', 'uses' => 'BidController@bidContract']);
             });
+
+            Route::get('/my-bids', ['as' => 'bid.index', 'uses' => 'BidController@index']);
+            Route::get('/my-offers', ['as' => 'bid.offer', 'uses' => 'BidController@offers']);
         });
     });
 
@@ -186,7 +189,5 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.admin'), ['as' => 'admin', 'uses' => 'NavigationController@getAdminPages']);
-Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.bid_index'), ['as' => 'bid.index', 'uses' => 'BidController@index']);
-Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.offer_index'), ['as' => 'bid.offer', 'uses' => 'BidController@offers']);
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.getFreightList'), ['as' => 'freight_list', 'uses' => 'NavigationController@getFreightList']);
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.getTruckList'), ['as' => 'truck_list', 'uses' => 'NavigationController@getTruckList']);

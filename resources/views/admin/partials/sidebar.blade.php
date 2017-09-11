@@ -19,6 +19,10 @@
                                 <li><a href="{{route('trucks.index')}}"><i class="fa fa-list"></i>{{trans('admin.trucks')}}</a></li>
                                 <li><a href="{{route('contracts.index')}}"><i class="fa fa-list"></i>Contracts</a>
                                 </li>
+                                <li><a href="{{route('bid.offers')}}"><i class="fa fa-list"></i>My Offers</a>
+                                </li>
+                                <li><a href="{{route('bid.index')}}"><i class="fa fa-list"></i>My Bids</a>
+                                </li>
                                 @if(Sentinel::inRole('admin'))
                                     <li><a href="{{route('user_list')}}"><i class="fa fa-users"></i>
                                             <span>{{trans('admin.users')}}</span></a></li>
