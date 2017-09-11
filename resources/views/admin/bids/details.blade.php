@@ -79,10 +79,10 @@
             </div>
         </div>
         <hr>
-        <div class="row main-grid">
-            {!! Form::model($bid = new \App\Models\Bid(), ['route' => ['bid.freight', $bid->id, 0], 'method' => 'POST', 'class' => 'form-horizontal', 'novalidate']) !!}
-            @include('client.bid.form')
-            {!! Form::close() !!}
-        </div>
+        {{--<div class="row main-grid">--}}
+            {{--{!! Form::model($bid = new \App\Models\Bid(), ['route' => ['bid.freight', $bid->id, 0], 'method' => 'POST', 'class' => 'form-horizontal', 'novalidate']) !!}--}}
+            {{--@include('client.bid.form')--}}
+            {{--{!! Form::close() !!}--}}
+        {{--</div>--}}
     </div>
 @stop
