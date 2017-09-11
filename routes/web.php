@@ -117,7 +117,7 @@ Route::middleware(['guest'])->group(function () {
 
             Route::get('/my-bids', ['as' => 'bid.index', 'uses' => 'BidController@index']);
             Route::get('/my-offers', ['as' => 'bid.offer', 'uses' => 'BidController@offers']);
-            Route::get('/bid/{id}/details', ['as' => 'bid.details', 'uses' => 'BidController@offers']);
+            Route::get('/bid/{id}/details', ['as' => 'bid.details', 'uses' => 'BidController@details']);
         });
     });
 
