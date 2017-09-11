@@ -15,13 +15,13 @@ class BidController extends Controller
     public function index()
     {
         $bids = Bid::where('user_id', Sentinel::getUser()->id)->get();
-        return view('client.bid.index', compact('bids'));
+        return view('admin.bids.index', compact('bids'));
     }
 
     public function offers()
     {
         $offers = Bid::where('owner_id', Sentinel::getUser()->id)->get();
-        return view('client.pages.listings', compact('offers'));
+        return view('admin.bids.offers', compact('offers'));
     }
 
     public function bidTruck($id)
