@@ -22,8 +22,9 @@
                         </thead>
                         <tbody>
                         @if(isset($results) && count($results) > 0)
-                            <tr>
-                                @foreach($results as $result)
+                            @foreach($results as $result)
+                                <tr>
+
                                     <td>{{$result->id}}</td>
                                     <td>{{$result->logo}}</td>
                                     <td>{{$result->name}}</td>
@@ -33,8 +34,8 @@
                                                 href="{{route('partner.delete', $result->id)}}"
                                                 class="btn btn-info"><i
                                                     class="fa fa-trash"></i></a></td>
-                                @endforeach
-                            </tr>
+                                </tr>
+                            @endforeach
                         @else
                             <tr>
                                 <td colspan="5">

@@ -7,10 +7,9 @@
             <li class="active"><a href="#contact" data-toggle="tab"><i class="fa fa-fw fa-home"></i> Contacts</a></li>
             <li><a href="#socials" data-toggle="tab"><i class="fa fa-fw fa-user"></i> Social links</a></li>
             <li><a href="#slider" data-toggle="tab"><i class="fa fa-fw fa-sliders"></i> Slider</a></li>
-            <li><a href="#about" data-toggle="tab"><i class="fa fa-fw fa-building"></i> About Us</a></li>
+            {{--<li><a href="#about" data-toggle="tab"><i class="fa fa-fw fa-building"></i> About Us</a></li>--}}
             <li><a href="#mission" data-toggle="tab"><i class="fa fa-fw fa-file-text"></i> Mission Statement</a></li>
             <li><a href="#service" data-toggle="tab"><i class="fa fa-fw fa-file-text"></i> Services</a></li>
-            {{--<li><a href="#payments" data-toggle="tab"><i class="fa fa-fw fa-money"></i> Subscription Plans</a></li>--}}
             <li><a href="#ads" data-toggle="tab"><i class="fa fa-fw fa-money"></i> Advertisments</a></li>
         </ul>
         <!-- // END Tabs -->
@@ -19,12 +18,6 @@
         <div class="tab-content">
             <div id="contact" class="tab-pane active">
                 <table class="table table-responsive table-striped">
-                    {{--<thead>--}}
-                    {{--<tr>--}}
-                    {{--<th>{{trans('settings.website')}}</th>--}}
-                    {{--<th>{{trans('settings.link')}}</th>--}}
-                    {{--</tr>--}}
-                    {{--</thead>--}}
                     <tbody>
                     @if(isset($contacts) && count($contacts) > 0)
                         @foreach($contacts as $contact)
@@ -116,29 +109,22 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
-            <div id="about" class="tab-pane">
-                <form action="{{route('settings.about')}}" method="post">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group form-control-default">
-                                <label for="value">About</label>
-                                <textarea name="value" id="value"
-                                          class="form-control summernote">{{ (count ($about) > 0) ? $about->value : null }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
+            {{--<div id="about" class="tab-pane">--}}
+                {{--<form action="{{route('settings.about')}}" method="post">--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="col-md-12">--}}
+                            {{--<div class="form-group form-control-default">--}}
+                                {{--<label for="value">About</label>--}}
+                                {{--<textarea name="value" id="value"--}}
+                                          {{--class="form-control summernote">{{ (count ($about) > 0) ? $about->value : null }}</textarea>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<button type="submit" class="btn btn-primary">Submit</button>--}}
+                {{--</form>--}}
+            {{--</div>--}}
             <div id="slider" class="tab-pane">
                 <table class="table table-responsive table-striped">
-                    {{--<thead>--}}
-                    {{--<tr>--}}
-                    {{--<th>{{trans('settings.website')}}</th>--}}
-                    {{--<th>{{trans('settings.link')}}</th>--}}
-                    {{--<th>{{trans('settings.link')}}</th>--}}
-                    {{--</tr>--}}
-                    {{--</thead>--}}
                     <tbody>
                     @if(isset($sliders) && count($sliders) > 0)
                         @foreach($sliders as $slider)
@@ -163,7 +149,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group form-control-default{!! ($errors->has('title')) ? ' has-error' : '' !!}">
-                                <label for="title">Slider Title SQ</label>
+                                <label for="title">Slider Title </label>
                                 <input type="text" class="form-control" id="title" name="title"
                                        placeholder=""
                                        value="{{\Illuminate\Support\Facades\Input::old('title')}}">
@@ -174,7 +160,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group form-control-default{!! ($errors->has('value')) ? ' has-error' : '' !!}">
-                                <label for="value">Slider Caption SQ</label>
+                                <label for="value">Slider Caption </label>
                                 <input type="text" class="form-control" id="value" name="value"
                                        placeholder=""
                                        value="{{\Illuminate\Support\Facades\Input::old('value')}}">
@@ -220,7 +206,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group form-control-default{!! ($errors->has('title')) ? ' has-error' : '' !!}">
-                                <label for="title">Service Title SQ</label>
+                                <label for="title">Service Title </label>
                                 <input type="text" class="form-control" id="title" name="title"
                                        placeholder=""
                                        value="{{\Illuminate\Support\Facades\Input::old('title')}}">
@@ -229,7 +215,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-control-default{!! ($errors->has('value')) ? ' has-error' : '' !!}">
-                                <label for="value">Service Caption SQ</label>
+                                <label for="value">Service Caption </label>
                                 <input type="text" class="form-control" id="value" name="value"
                                        placeholder=""
                                        value="{{\Illuminate\Support\Facades\Input::old('value')}}">
@@ -265,12 +251,6 @@
             </div>
             <div id="payments" class="tab-pane">
                 <table class="table table-responsive table-striped">
-                    {{--<thead>--}}
-                    {{--<tr>--}}
-                    {{--<th>{{trans('settings.website')}}</th>--}}
-                    {{--<th>{{trans('settings.link')}}</th>--}}
-                    {{--</tr>--}}
-                    {{--</thead>--}}
                     <tbody>
                     @if(isset($plans) && count($plans) > 0)
                         @foreach($plans as $plan)
@@ -325,12 +305,6 @@
             </div>
             <div id="ads" class="tab-pane">
                 <table class="table table-responsive table-striped">
-                    {{--<thead>--}}
-                    {{--<tr>--}}
-                    {{--<th>{{trans('settings.website')}}</th>--}}
-                    {{--<th>{{trans('settings.link')}}</th>--}}
-                    {{--</tr>--}}
-                    {{--</thead>--}}
                     <tbody>
                     @if(isset($ads) && count($ads) > 0)
                         @foreach($ads as $ad)

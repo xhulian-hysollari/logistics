@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PartnerRequest;
 use App\Models\Partner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -34,12 +35,15 @@ class PartnerController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PartnerRequest $request)
     {
         try {
+            $partner_logo = $request->file('logo');
+            $logo = $partner_logo->store('partners');
             $partner = new Partner();
-            $partner->name = Input::get('name');
-            $partner->website = Input::get('website');
+            $partner->name = $request->name;
+            $partner->website = $request->website;
+            $partner->logo = $logo;
             $partner->save();
             return redirect()->back()->with('success', 'Success');
         } catch (\Exception $e) {
@@ -78,12 +82,16 @@ class PartnerController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PartnerRequest $request, $id)
     {
         try {
+
+            $partner_logo = $request->file('logo');
+            $logo = $partner_logo->store('partners');
             $partner = Partner::where('id', $id)->first();
-            $partner->name = Input::get('name');
-            $partner->website = Input::get('website');
+            $partner->name = $request->name;
+            $partner->website = $request->website;
+            $partner->logo = $logo;
             $partner->save();
             return redirect()->back()->with('success', 'Success');
         } catch (\Exception $e) {

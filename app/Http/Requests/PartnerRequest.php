@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Foundation\Http\FormRequest;
 
-class SliderRequest extends FormRequest
+class PartnerRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,9 +25,9 @@ class SliderRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'value' => 'required',
-            'optional' => 'required|file|image',
+            'name' => 'required',
+            'website' => 'url|nullable',
+            'logo' => 'required|file|image',
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ServiceRequest extends FormRequest
@@ -13,7 +14,7 @@ class ServiceRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return Sentinel::check() && Sentinel::inRole('admin');
     }
 
     /**
@@ -24,11 +25,9 @@ class ServiceRequest extends FormRequest
     public function rules()
     {
         return [
-            'title_sq' => 'required',
-            'title_en' => 'required',
-            'value_sq' => 'required',
-            'value_en' => 'required',
-            'optional' => 'required|image',
+            'title' => 'required',
+            'value' => 'required',
+            'optional' => 'required|file|image',
         ];
     }
 }
