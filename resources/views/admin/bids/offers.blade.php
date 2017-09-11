@@ -7,7 +7,8 @@
 
             <div class="panel panel-default">
             <h4>My Offers</h4>
-            <table class="table-responsive">
+                <div class="table-responsive">
+                    <table class="table v-middle">
                 <thead>
                 <tr>
                     <th>{{trans('bid.id')}}</th>
@@ -35,6 +36,7 @@
                 @endforeach
                 </tbody>
             </table>
+        </div>
         </div>
     </div>
     </div>
