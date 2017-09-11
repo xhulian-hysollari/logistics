@@ -11,8 +11,8 @@
                         <p>
                             <i class="fa fa-envelope"></i> {{$details->email}}
                             <br/>
-                            <i class="fa fa-phone"></i> {{$details->phone}}<br/>
-                            <i class="fa fa-skype"></i> {{$details->skype}}</p>
+                            <i class="fa fa-phone"></i> {{$details->profile->phone}}<br/>
+                            <i class="fa fa-skype"></i> {{$details->profile->skype}}</p>
                     </div>
                 </div>
             </div>
