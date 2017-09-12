@@ -45,7 +45,7 @@ class Conversation extends Model
     public function getBuddyAttribute(){
         $conversation = DB::table('conversation_user')->where('conversation_id', $this->attributes['id'])->where('user_id','!=',Sentinel::getUser()->id)->first();
         if($conversation){
-            $user = User::where('id', $conversation->eloquent_user_id)->first();
+            $user = User::where('id', $conversation->user_id)->first();
             return $user;
         }
         return Sentinel::getUser();
