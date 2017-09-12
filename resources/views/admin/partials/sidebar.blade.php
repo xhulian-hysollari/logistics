@@ -1,43 +1,99 @@
-<div class="sidebar left sidebar-size-2 sidebar-offset-0 sidebar-skin-blue sidebar-visible-desktop" id=sidebar-menu
-     data-type=collapse>
-    <div class="split-vertical">
-        <div class="split-vertical-body">
-            <div class="split-vertical-cell">
-                <div class="tab-content">
-                    <div class="tab-pane active" id="sidebar-tabs-menu">
-                        <div data-scrollable>
-                            <ul class="sidebar-menu sm-icons-right sm-icons-block">
-                                <li class="active"><a href="{{route('dashboard')}}"><i class="fa fa-home"></i>
-                                        <span>{{trans('admin.dashboard')}}</span></a></li>
-                                {{--<li><a href="{{route('messages')}}"><i class="fa fa-envelope"></i>--}}
-                                        {{--<span>{{trans('admin.inbox')}}</span></a>--}}
-                                </li>
-                            </ul>
-                            <ul class="sidebar-menu sm-bordered sm-active-item-bg">
-                                <li><a href="{{route('freight.index')}}"><i class="fa fa-list"></i>
-                                        <span>{{trans('admin.listings')}}</span></a></li>
-                                <li><a href="{{route('trucks.index')}}"><i class="fa fa-list"></i>{{trans('admin.trucks')}}</a></li>
-                                <li><a href="{{route('contracts.index')}}"><i class="fa fa-list"></i>Contracts</a>
-                                </li>
-                                <li><a href="{{route('bid.offer')}}"><i class="fa fa-list"></i>My Offers</a>
-                                </li>
-                                <li><a href="{{route('bid.index')}}"><i class="fa fa-list"></i>My Bids</a>
-                                </li>
-                                @if(Sentinel::inRole('admin'))
-                                    <li><a href="{{route('user_list')}}"><i class="fa fa-users"></i>
-                                            <span>{{trans('admin.users')}}</span></a></li>
-                                    <li><a href="{{route('settings')}}"><i class="fa fa-cogs"></i>
-                                            <span>{{trans('admin.settings')}}</span></a></li>
-                                    <li><a href="{{route('pages.index')}}"><i class="fa fa-list"></i>Pages</a>
-                                    </li>
-                                    <li><a href="{{route('partner_list')}}"><i class="fa fa-user-secret"></i>
-                                            <span>{{trans('admin.partners')}}</span></a></li>
-                                @endif
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div id="menubar" class="menubar-inverse ">
+    <div class="menubar-fixed-panel">
+        <div>
+            <a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+                <i class="fa fa-bars"></i>
+            </a>
         </div>
+        <div class="expanded">
+            <a href="{{route('home')}}">
+                <span class="text-lg text-bold text-primary ">MAX Logistics</span>
+            </a>
+        </div>
+    </div>
+    <div class="menubar-scroll-panel">
+        <ul id="main-menu" class="gui-controls">
+            <li>
+                <a href="{{route('dashboard')}}" class="active">
+                    <div class="gui-icon"><i class="md md-home"></i></div>
+                    <span class="title">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('messages')}}" class="active">
+                    <div class="gui-icon"><i class="md md-email"></i></div>
+                    <span class="title">Email</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('freight.index')}}" class="active">
+                    <div class="gui-icon"><i class="md md-view-list"></i></div>
+                    <span class="title">Freights</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('trucks.index')}}" class="active">
+                    <div class="gui-icon"><i class="md md-local-shipping"></i></div>
+                    <span class="title">Trucks</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('contracts.index')}}" class="active">
+                    <div class="gui-icon"><i class="md md-recent-actors"></i></div>
+                    <span class="title">Tender</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('bid.offer')}}" class="active">
+                    <div class="gui-icon"><i class="md md-keyboard-return"></i></div>
+                    <span class="title">My Offers</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('bid.index')}}" class="active">
+                    <div class="gui-icon"><i class="md md-keyboard-tab"></i></div>
+                    <span class="title">My Bids</span>
+                </a>
+            </li>
+            @if(Sentinel::inRole('admin'))
+                <li>
+                    <a href="{{route('user_list')}}" class="active">
+                        <div class="gui-icon"><i class="md md-people"></i></div>
+                        <span class="title">Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('admin.settings')}}" class="active">
+                        <div class="gui-icon"><i class="md md-settings"></i></div>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('pages.index')}}" class="active">
+                        <div class="gui-icon"><i class="md md-folder"></i></div>
+                        <span class="title">Pages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('partner_list')}}" class="active">
+                        <div class="gui-icon"><i class="md md-account-child"></i></div>
+                        <span class="title">Partners</span>
+                    </a>
+                </li>
+
+            @endif
+        </ul>
+        <ul class="sidebar-menu sm-bordered sm-active-item-bg">
+            @if(Sentinel::inRole('admin'))
+                <li><a href="{{route('user_list')}}"><i class="fa fa-users"></i>
+                        <span>{{trans('admin.users')}}</span></a></li>
+                <li><a href="{{route('settings')}}"><i class="fa fa-cogs"></i>
+                        <span>{{trans('admin.settings')}}</span></a></li>
+                <li><a href="{{route('pages.index')}}"><i class="fa fa-list"></i>Pages</a>
+                </li>
+                <li><a href="{{route('partner_list')}}"><i class="fa fa-user-secret"></i>
+                        <span>{{trans('admin.partners')}}</span></a></li>
+            @endif
+        </ul>
     </div>
 </div>

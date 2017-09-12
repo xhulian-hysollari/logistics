@@ -1,30 +1,46 @@
-<!-- Fixed navbar -->
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="{{route('home')}}" class="navbar-brand hidden-xs navbar-brand-primary">Logistics</a>
-    </div>
-    <div class="navbar-collapse collapse" id="collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <!-- user -->
-        <li class="dropdown user">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{asset('storage/'. Sentinel::getUser()->company_logo)}}" alt=""
-                   class="img-circle"/> <span
-                    class="caret"></span>
+<header id="header" >
+  <div class="headerbar">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="headerbar-left">
+      <ul class="header-nav header-nav-options">
+        <li class="header-nav-brand" >
+          <div class="brand-holder">
+            <a href="{{route('home')}}">
+              <span class="text-lg text-bold text-primary">MAX Logistics</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+            <i class="fa fa-bars"></i>
           </a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="{{route('dashboard.profile')}}"><i class="fa fa-user"></i>Profile</a></li>
-            <li><a href="{{route('logout')}}"><i class="fa fa-sign-out"></i>Logout</a></li>
-          </ul>
         </li>
       </ul>
     </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="headerbar-right">
+      <ul class="header-nav header-nav-profile">
+        <li class="dropdown">
+          <a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
+            <img src="{{asset('storage/'. Sentinel::getUser()->company_logo)}}" alt="" />
+            <span class="profile-info">
+									{{Sentinel::getUser()->full_name}}
+								</span>
+          </a>
+          <ul class="dropdown-menu animation-dock">
+            <li><a href="{{route('dashboard.profile')}}">My profile</a></li>
+            <li><a href="{{route('logout')}}">Logout</a></li>
+          </ul><!--end .dropdown-menu -->
+        </li><!--end .dropdown -->
+      </ul><!--end .header-nav-profile -->
+      <ul class="header-nav header-nav-toggle">
+        <li>
+          <a class="btn btn-icon-toggle btn-default" href="#offcanvas-search" data-toggle="offcanvas" data-backdrop="false">
+            <i class="fa fa-ellipsis-v"></i>
+          </a>
+        </li>
+      </ul><!--end .header-nav-toggle -->
+    </div><!--end #header-navbar-collapse -->
   </div>
-</div>
+</header>
+<!-- END HEADER-->
