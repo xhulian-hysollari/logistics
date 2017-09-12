@@ -9,11 +9,7 @@ class MessageController extends Controller
 {
     public function index(){
         $user = Sentinel::getUser();
-        foreach ($user->conversations as $conversation){
-            var_dump('first \n' . $conversation->messages);
-        }
-
-//        dd($user->conversations);
-//        return response($user->conversations(), 200);
+        $conversations = $user->conversations;
+        return view('admin.inbox.index', compact('conversations'));
     }
 }

@@ -1,7 +1,7 @@
 @extends('admin.admin')
 
 @section('content')
-    @include('admin.inbox.partials.flash')
-
-    @each('admin.inbox.partials.thread', $threads, 'thread', 'admin.inbox.partials.no-threads')
+    @foreach($conversations as $conversation)
+        {{$conversation->messages}}
+    @endforeach
 @stop

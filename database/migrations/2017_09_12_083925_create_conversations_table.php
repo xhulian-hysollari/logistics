@@ -19,6 +19,7 @@ class CreateConversationsTable extends Migration
             $table->timestamps();
         });
         Schema::create('conversation_user', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('conversation_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->enum('status', [0,1,2,3])->default(0);
