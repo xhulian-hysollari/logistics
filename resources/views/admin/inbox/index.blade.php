@@ -11,7 +11,7 @@
                             <small>MAILBOXES</small>
                         </li>
                         <li><a href="{{route('messages')}}"><span class="glyphicon glyphicon-inbox"></span>Inbox
-                                <small>{{Sentinel::getUser()->unread_conversations}}</small>
+                                <small>{{Sentinel::getUser()->unread_conversations->count}}</small>
                             </a></li>
                         <li><a href="{{route('messages')}}">Sent</a></li>
                     </ul>
