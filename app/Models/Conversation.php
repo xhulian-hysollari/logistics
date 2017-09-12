@@ -14,4 +14,10 @@ class Conversation extends Model
     public function messages(){
         return $this->hasMany(Message::class);
     }
+
+    public function getLatestMessageAttribute(){
+        dd($this->messages()->latest() . '  | |  ' . Message::where('conversation_id', $this->attributes['id'])->latest());
+        return Message::where('conversation_id', $this->attributes['id'])->latest();
+
+    }
 }
