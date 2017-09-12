@@ -9,6 +9,7 @@ class MessageController extends Controller
 {
     public function index(){
         $user = Sentinel::getUser();
+        dd($user->conversations());
         return response($user->conversations(), 200);
     }
 }
