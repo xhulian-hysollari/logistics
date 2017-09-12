@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <a href="{{route('contracts.create')}}" class="btn ink-reaction btn-primary" style="margin-bottom: 20px"> <i
+    <a href="{{route('contracts.create')}}" class="btn ink-reaction btn-primary pull-right" style="margin-bottom: 20px"> <i
             class="fa fa-plus"></i>
     Create
     new</a>
