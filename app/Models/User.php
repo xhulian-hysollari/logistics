@@ -62,7 +62,7 @@ class User extends EloquentUser
         {
             $q->where('user_id', '=', $this->attributes['id'])->where('status', '=', 0);
 
-        })->groupBy('conversation_id')->get();
+        })->groupBy('conversation_id')->select(['conversation_id'])->get();
         return count($unreadConversations);
     }
 
