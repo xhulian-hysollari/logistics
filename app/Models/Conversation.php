@@ -16,6 +16,6 @@ class Conversation extends Model
     }
 
     public function getLatestMessageAttribute(){
-        return Message::where('conversation_id', $this->attributes['id'])->latest();
+        return Message::where('conversation_id', $this->attributes['id'])->latest()->first();
     }
 }
