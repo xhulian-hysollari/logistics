@@ -13,7 +13,7 @@ class MessageController extends Controller
             dd('first \n' . $conversation->id);
         }
 
-        dd($user->conversations());
+        dd($user->conversations);
 //        return response($user->conversations(), 200);
     }
 }
