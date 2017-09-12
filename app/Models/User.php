@@ -46,8 +46,7 @@ class User extends EloquentUser
             ->join('conversation_user','message_statuses.conversation_id','=','conversation_user.conversation_id')
             ->where('messages.sent_by', '!=', $this->attributes['id'])
             ->where('conversation_user.user_id', $this->attributes['id'])
-            ->select('messages.conversation_id', DB::raw('count(*) as count'))
-            ->groupBy('messages.conversation_id')
+            ->select(DB::raw('count(*) as count'))
             ->get();
     }
 
