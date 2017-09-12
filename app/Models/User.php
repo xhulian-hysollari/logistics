@@ -64,7 +64,7 @@ class User extends EloquentUser
 //            $q->where('user_id', '=', $this->attributes['id'])->where('status', '=', 0);
 //
 //        })->groupBy('conversation_id')->select(['conversation_id'])->get();
-        return MessageState::whereRaw('status = 0')->get()->count();
+        return MessageState::whereRaw('status == 0')->get()->count();
     }
 
     public function getUnreadMessagesAttribute(){
