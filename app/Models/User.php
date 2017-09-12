@@ -35,4 +35,8 @@ class User extends EloquentUser
         return Profile::where('user_id', $this->attributes['id'])->first();
     }
 
+    public function conversations(){
+        return $this->belongsToMany(User::class, 'conversation_user');
+    }
+
 }
