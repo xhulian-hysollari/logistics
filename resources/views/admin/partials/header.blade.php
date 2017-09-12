@@ -33,13 +33,6 @@
           </ul><!--end .dropdown-menu -->
         </li><!--end .dropdown -->
       </ul><!--end .header-nav-profile -->
-      <ul class="header-nav header-nav-toggle">
-        <li>
-          <a class="btn btn-icon-toggle btn-default" href="#offcanvas-search" data-toggle="offcanvas" data-backdrop="false">
-            <i class="fa fa-ellipsis-v"></i>
-          </a>
-        </li>
-      </ul><!--end .header-nav-toggle -->
     </div><!--end #header-navbar-collapse -->
   </div>
 </header>
