@@ -25,7 +25,7 @@
                             <div class="list-group list-email list-gray">
                                 @foreach($conversations as $conversation)
                                     <a class="list-group-item">
-                                        <h5>{{$conversation->name}}</h5>
+                                        <h5>{{$conversation->buddy->full_name}} {{Sentinel::getUser()->unread_messages}}</h5>
                                         <h4>{{$conversation->subject}}</h4>
                                         <p class="hidden-xs hidden-sm">{{$conversation->latest_message->message}}</p>
                                         <div class="stick-top-right small-padding text-default-light text-sm">{{\Carbon\Carbon::parse($conversation->latest_message->created_at)->format('d M y H:i a')}}</div>

@@ -37,7 +37,52 @@ class User extends EloquentUser
     }
 
     public function conversations(){
-        return $this->belongsToMany(Conversation::class, 'conversation_user');
+        return $this->belongsToMany(Conversation::class, 'conversation_user')->withTimestamps()->orderBy('updated_at', 'desc');
+    }
+
+    public function messageStates()
+    {
+        return $this->hasMany(MessageState::class)->orderBy('updated_at', 'desc');
+    }
+
+    public function unreadMessageStates(){
+        return $this->messageStates()->where('state', '=', 0)->where('user_id',$this->attributes['id'])->orderBy('updated_at', 'desc')->get();
+    }
+
+    public function getUnreadMessagesCountAttribute(){
+        return count($this->unreadMessageStates());
+    }
+
+    public function hasUnreadMessages(){
+        return $this->unreadMessagesCount() > 0;
+    }
+
+    public function getUnreadConversationsAttribute(){
+        $unreadConversations = Message::whereHas('messageStates', function($q)
+        {
+            $q->where('user_id', '=', $this->attributes['id'])->where('state', '=', 0);
+
+        })->groupBy('conversation_id')->get();
+        return count($unreadConversations);
+    }
+
+    public function getUnreadMessagesAttribute(){
+        return $this->findMessages('unread');
+    }
+
+    public function findMessages($state = false){
+        $user_id = $this->id;
+
+        $unreadMessages = Message::whereHas('messageStates', function($q) use( &$user_id, &$state)
+        {
+            $q->where('user_id', '=', $user_id);
+
+            if($state)
+                $q->where('state', '=', MessageState::indexOf($state));
+
+        })->with('conversation')->get();
+
+        return $unreadMessages;
     }
 
 }
