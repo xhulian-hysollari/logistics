@@ -63,7 +63,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('admin.settings')}}" class="active">
+                    <a href="{{route('settings')}}" class="active">
                         <div class="gui-icon"><i class="md md-settings"></i></div>
                         <span class="title">Settings</span>
                     </a>
@@ -81,18 +81,6 @@
                     </a>
                 </li>
 
-            @endif
-        </ul>
-        <ul class="sidebar-menu sm-bordered sm-active-item-bg">
-            @if(Sentinel::inRole('admin'))
-                <li><a href="{{route('user_list')}}"><i class="fa fa-users"></i>
-                        <span>{{trans('admin.users')}}</span></a></li>
-                <li><a href="{{route('settings')}}"><i class="fa fa-cogs"></i>
-                        <span>{{trans('admin.settings')}}</span></a></li>
-                <li><a href="{{route('pages.index')}}"><i class="fa fa-list"></i>Pages</a>
-                </li>
-                <li><a href="{{route('partner_list')}}"><i class="fa fa-user-secret"></i>
-                        <span>{{trans('admin.partners')}}</span></a></li>
             @endif
         </ul>
     </div>
