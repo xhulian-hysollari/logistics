@@ -119,13 +119,13 @@ Route::middleware(['guest'])->group(function () {
             Route::get('/my-offers', ['as' => 'bid.offer', 'uses' => 'BidController@offers']);
             Route::get('/bid/{id}/details', ['as' => 'bid.details', 'uses' => 'BidController@details']);
 
-            Route::group(['prefix' => 'messages'], function () {
-                Route::get('/', ['as' => 'messages', 'uses' => 'MessagesController@index']);
-                Route::get('create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
-                Route::post('/', ['as' => 'messages.store', 'uses' => 'MessagesController@store']);
-                Route::get('{id}', ['as' => 'messages.show', 'uses' => 'MessagesController@show']);
-                Route::put('{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update']);
-            });
+//            Route::group(['prefix' => 'messages'], function () {
+//                Route::get('/', ['as' => 'messages', 'uses' => 'MessagesController@index']);
+//                Route::get('create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
+//                Route::post('/', ['as' => 'messages.store', 'uses' => 'MessagesController@store']);
+//                Route::get('{id}', ['as' => 'messages.show', 'uses' => 'MessagesController@show']);
+//                Route::put('{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update']);
+//            });
         });
     });
 

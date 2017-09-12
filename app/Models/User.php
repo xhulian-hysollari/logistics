@@ -3,13 +3,12 @@
 namespace App\Models;
 
 use Cartalyst\Sentinel\Users\EloquentUser;
-use Cmgmyr\Messenger\Traits\Messagable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Cashier\Billable;
 
 class User extends EloquentUser
 {
-    use SoftDeletes, Billable, Messagable;
+    use SoftDeletes, Billable;
 
     public $timestamps = true;
 

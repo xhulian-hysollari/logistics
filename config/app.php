@@ -172,7 +172,6 @@ return [
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Laravel\Cashier\CashierServiceProvider::class,
-        Cmgmyr\Messenger\MessengerServiceProvider::class,
         /*
          * Application Service Providers...
          */
