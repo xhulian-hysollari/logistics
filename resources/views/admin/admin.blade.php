@@ -71,7 +71,7 @@
         }
     };
 </script>
-<script src="{{asset('admin/js/vendor/all.js')}}"></script>
+{{--<script src="{{asset('admin/js/vendor/all.js')}}"></script>--}}
 <script src="{{asset('admin/js/app/app.js')}}"></script>
 @section('js')
 @show
