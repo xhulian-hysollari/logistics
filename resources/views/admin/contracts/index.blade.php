@@ -6,10 +6,7 @@
             class="fa fa-plus"></i>
     Create
     new</a>
-
     <div class="col-lg-12">
-
-
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
