@@ -2,6 +2,6 @@
 
 @section('content')
     @foreach($conversations as $conversation)
-        {{$conversation->messages}}
+        {{$conversation->name}} <br> {{$conversation->messages->message}}
     @endforeach
 @stop
