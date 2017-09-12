@@ -122,7 +122,7 @@ Route::middleware(['guest'])->group(function () {
             Route::get('/bid/{id}/accept', ['as' => 'bid.accept', 'uses' => 'BidController@details']);
 
 //            Route::group(['prefix' => 'messages'], function () {
-//                Route::get('/', ['as' => 'messages', 'uses' => 'MessagesController@index']);
+                Route::get('/messages', ['as' => 'messages', 'uses' => 'MessageController@index']);
 //                Route::get('create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
 //                Route::post('/', ['as' => 'messages.store', 'uses' => 'MessagesController@store']);
 //                Route::get('{id}', ['as' => 'messages.show', 'uses' => 'MessagesController@show']);
