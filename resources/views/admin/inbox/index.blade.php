@@ -26,9 +26,9 @@
                                 @foreach($conversations as $conversation)
                                     <a class="list-group-item">
                                         <h5>{{$conversation->name}}</h5>
-                                        <h4>{{$conversation->latest_message}}</h4>
-                                        {{--<p class="hidden-xs hidden-sm">{{$conversation->messages->message}}</p>--}}
-                                        <div class="stick-top-right small-padding text-default-light text-sm">{{\Carbon\Carbon::parse($conversation->updated_at)->format('d M y H:i a')}}</div>
+                                        <h4>{{$conversation->subject}}</h4>
+                                        <p class="hidden-xs hidden-sm">{{$conversation->latest_message->message}}</p>
+                                        <div class="stick-top-right small-padding text-default-light text-sm">{{\Carbon\Carbon::parse($conversation->latest_message->created_at)->format('d M y H:i a')}}</div>
                                         <div class="stick-bottom-right small-padding"><span
                                                     class="glyphicon glyphicon-paperclip"></span></div>
                                     </a>
