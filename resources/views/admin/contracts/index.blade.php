@@ -1,17 +1,16 @@
 @extends('admin.admin')
 
 @section('content')
-    <a href="{{route('contracts.create')}}" class="btn btn-success pull-right" style="margin-bottom: 20px"> <i
-                class="fa fa-plus"></i>
-        Create
-        new</a>
-    <div class="row">
-        <div class="col-md-12">
 
-            <div class="panel panel-default">
-
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <a href="{{route('contracts.create')}}" class="btn btn-success pull-right" style="margin-bottom: 20px"> <i
+                            class="fa fa-plus"></i>
+                    Create
+                    new</a>
                 <div class="table-responsive">
-                    <table class="table v-middle">
+                    <table class="table no-margin">
                         <thead>
                         <tr>
                             <th>Status</th>
