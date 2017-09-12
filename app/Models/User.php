@@ -36,7 +36,7 @@ class User extends EloquentUser
     }
 
     public function conversations(){
-        return $this->belongsToMany(User::class, 'conversation_user');
+        return $this->belongsToMany(Conversation::class, 'conversation_user');
     }
 
 }
