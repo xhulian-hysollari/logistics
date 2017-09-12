@@ -27,7 +27,7 @@
                             <h4>{{$conversation->subject}}</h4>
                             <p class="hidden-xs hidden-sm">Donec id elit non mi porta gravida at eget metus. Maecenas sed
                                 diam eget risus varius blandit...</p>
-                            <div class="stick-top-right small-padding text-default-light text-sm">{{\Carbon\Carbon::parse($conversation->updated_at)->format('d MMM yy H:i a')}}</div>
+                            <div class="stick-top-right small-padding text-default-light text-sm">{{\Carbon\Carbon::parse($conversation->updated_at)->format('d M y H:i a')}}</div>
                             <div class="stick-bottom-right small-padding"><span
                                         class="glyphicon glyphicon-paperclip"></span></div>
                         </a>
