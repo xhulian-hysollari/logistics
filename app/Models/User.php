@@ -49,7 +49,7 @@ class User extends EloquentUser
             ->select('messages.conversation_id', DB::raw('count(*) as count'))
             ->groupBy('messages.conversation_id')
             ->get();
-        return $res->count;
+        return $res['count'];
     }
 
 }
