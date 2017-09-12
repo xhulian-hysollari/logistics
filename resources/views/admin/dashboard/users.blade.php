@@ -1,10 +1,10 @@
 @extends('admin.admin')
 @section('content')
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table v-middle">
+                    <table class="table no-margin">
                         <thead>
                         <tr>
                             <th>Registration Date</th>
