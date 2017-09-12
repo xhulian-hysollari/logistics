@@ -10,7 +10,7 @@ class MessageController extends Controller
     public function index(){
         $user = Sentinel::getUser();
         foreach ($user->conversations() as $conversation){
-            dd($conversation);
+            dd($conversation->id);
         }
 
         return response($user->conversations(), 200);
