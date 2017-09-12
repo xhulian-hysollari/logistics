@@ -2,12 +2,14 @@
 
 @section('content')
 
+    <a href="{{route('contracts.create')}}" class="btn ink-reaction btn-primary pull-right" style="margin-bottom: 20px"> <i
+            class="fa fa-plus"></i>
+    Create
+    new</a>
+
     <div class="col-lg-12">
 
-        <a href="{{route('contracts.create')}}" class="btn ink-reaction btn-primary pull-right" style="margin-bottom: 20px"> <i
-                    class="fa fa-plus"></i>
-            Create
-            new</a>
+
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
