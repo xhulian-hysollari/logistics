@@ -41,7 +41,7 @@ class User extends EloquentUser
     }
 
     public function getUnreadConversationsAttribute(){
-        $res = DB::table('message_statuses')
+        return DB::table('message_statuses')
             ->join('messages','message_statuses.message_id','=','messages.id')
             ->join('conversation_user','message_statuses.conversation_id','=','conversation_user.conversation_id')
             ->where('messages.sent_by', '!=', $this->attributes['id'])
@@ -49,7 +49,6 @@ class User extends EloquentUser
             ->select('messages.conversation_id', DB::raw('count(*) as count'))
             ->groupBy('messages.conversation_id')
             ->get();
-        return $res['count'];
     }
 
 }
