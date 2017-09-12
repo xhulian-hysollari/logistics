@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Cartalyst\Sentinel\Users\EloquentUser;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 use Laravel\Cashier\Billable;
 
 class User extends EloquentUser
@@ -37,6 +38,17 @@ class User extends EloquentUser
 
     public function conversations(){
         return $this->belongsToMany(Conversation::class, 'conversation_user');
+    }
+
+    public function getUnreadConversationsAttribute(){
+        return DB::table('message_statuses')
+            ->join('messages','message_state.message_id','=','messages.id')
+            ->join('conversation_user','message_statuses.conversation_id','=','conversation_user.conversation_id')
+            ->where('messages.sent_by', '!=', $this->attributes['id'])
+            ->where('conversation_user.user_id', $this->attributes['id'])
+            ->select('messages.conversation_id', DB::raw('count(*) as count'))
+            ->groupBy('messages.conversation_id')
+            ->get();
     }
 
 }
