@@ -15,15 +15,12 @@ class CreateConversationsTable extends Migration
     {
         Schema::create('conversations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('initiated_by')->unsigned();
-            $table->string('name')->nullable();
             $table->timestamps();
         });
         Schema::create('conversation_user', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('conversation_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->enum('status', [0,1,2,3])->default(0);
             $table->timestamps();
         });
     }

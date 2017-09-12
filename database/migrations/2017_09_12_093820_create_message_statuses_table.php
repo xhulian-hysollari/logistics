@@ -13,10 +13,10 @@ class CreateMessageStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('message_statuses', function (Blueprint $table) {
+        Schema::create('message_states', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('message_id')->unsigned();
-            $table->integer('conversation_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->enum('status', [0,1,2,3])->default(0);
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateMessageStatusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('message_statuses');
+        Schema::dropIfExists('message_states');
     }
 }
