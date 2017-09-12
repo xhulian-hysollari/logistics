@@ -32,10 +32,10 @@ class Conversation extends Model
             $newMessageState->user_id = $convUser->id;
             $newMessageState->message_id = $newMessage->id;
             if($user == $convUser->id){
-                $newMessageState->state = MessageState::indexOf('unread');
+                $newMessageState->status = MessageState::indexOf('unread');
             }
             if(Sentinel::getUser()->id == $convUser->id){
-                $newMessageState->state = MessageState::indexOf('own');
+                $newMessageState->status = MessageState::indexOf('own');
             }
             $newMessageState->save();
         }

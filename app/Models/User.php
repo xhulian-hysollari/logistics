@@ -46,7 +46,7 @@ class User extends EloquentUser
     }
 
     public function unreadMessageStates(){
-        return $this->messageStates()->where('state', '=', 0)->where('user_id',$this->attributes['id'])->orderBy('updated_at', 'desc')->get();
+        return $this->messageStates()->where('status', '=', 0)->where('user_id',$this->attributes['id'])->orderBy('updated_at', 'desc')->get();
     }
 
     public function getUnreadMessagesCountAttribute(){
@@ -60,7 +60,7 @@ class User extends EloquentUser
     public function getUnreadConversationsAttribute(){
         $unreadConversations = Message::whereHas('messageStates', function($q)
         {
-            $q->where('user_id', '=', $this->attributes['id'])->where('state', '=', 0);
+            $q->where('user_id', '=', $this->attributes['id'])->where('status', '=', 0);
 
         })->groupBy('conversation_id')->get();
         return count($unreadConversations);
@@ -78,7 +78,7 @@ class User extends EloquentUser
             $q->where('user_id', '=', $user_id);
 
             if($state)
-                $q->where('state', '=', MessageState::indexOf($state));
+                $q->where('status', '=', MessageState::indexOf($state));
 
         })->with('conversation')->get();
 
