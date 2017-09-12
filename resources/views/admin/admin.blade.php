@@ -73,7 +73,7 @@
 </script>
 <script src="{{asset('client/js/jquery-1.11.3.min.js')}}"></script>
 {{--<script src="{{asset('admin/js/vendor/all.js')}}"></script>--}}
-{{--<script src="{{asset('admin/js/app/app.js')}}"></script>--}}
+<script src="{{asset('admin/js/app/app.js')}}"></script>
 @section('js')
 @show
 </body>

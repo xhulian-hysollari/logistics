@@ -1290,14 +1290,7 @@ require('./_bars-stacked');
 require('./_pie');
 require('./_autoupdate');
 },{"./_autoupdate":"/Code/html/themes/themekit/lib/charts/js/flot/_autoupdate.js","./_bars-ordered":"/Code/html/themes/themekit/lib/charts/js/flot/_bars-ordered.js","./_bars-stacked":"/Code/html/themes/themekit/lib/charts/js/flot/_bars-stacked.js","./_donut":"/Code/html/themes/themekit/lib/charts/js/flot/_donut.js","./_horizontal":"/Code/html/themes/themekit/lib/charts/js/flot/_horizontal.js","./_line":"/Code/html/themes/themekit/lib/charts/js/flot/_line.js","./_line_fill_nopoints":"/Code/html/themes/themekit/lib/charts/js/flot/_line_fill_nopoints.js","./_line_fill_nopoints_2":"/Code/html/themes/themekit/lib/charts/js/flot/_line_fill_nopoints_2.js","./_mixed":"/Code/html/themes/themekit/lib/charts/js/flot/_mixed.js","./_pie":"/Code/html/themes/themekit/lib/charts/js/flot/_pie.js","./_simple":"/Code/html/themes/themekit/lib/charts/js/flot/_simple.js"}],"/Code/html/themes/themekit/lib/charts/js/lib/_skin.js":[function(require,module,exports){
-module.exports = (function () {
-    var skin = $.cookie('skin');
 
-    if (typeof skin == 'undefined') {
-        skin = 'default';
-    }
-    return skin;
-});
 },{}],"/Code/html/themes/themekit/lib/charts/js/main.js":[function(require,module,exports){
 require('./morris/main');
 require('./sparkline/main');
@@ -3318,41 +3311,6 @@ module.exports=require("/Code/html/themes/themekit/lib/charts/js/lib/_skin.js")
 },{"/Code/html/themes/themekit/lib/charts/js/lib/_skin.js":"/Code/html/themes/themekit/lib/charts/js/lib/_skin.js"}],"/Code/html/themes/themekit/lib/layout/js/_skins.js":[function(require,module,exports){
 var asyncLoader = require('./_async');
 
-(function ($) {
-
-    var changeSkin = function () {
-        var skin = $.cookie("skin"),
-            file = $.cookie("skin-file");
-        if (typeof skin != 'undefined') {
-            asyncLoader([ 'css/' + file + '.css' ], function () {
-                $('[data-skin]').removeProp('disabled').parent().removeClass('loading');
-            });
-        }
-    };
-
-    $('[data-skin]').on('click', function () {
-
-        if ($(this).prop('disabled')) return;
-
-        $('[data-skin]').prop('disabled', true);
-
-        $(this).parent().addClass('loading');
-
-        $.cookie("skin", $(this).data('skin'));
-
-        $.cookie("skin-file", $(this).data('file'));
-
-        changeSkin();
-
-    });
-
-    var skin = $.cookie("skin");
-
-    if (typeof skin != 'undefined' && skin != 'default') {
-        changeSkin();
-    }
-
-})(jQuery);
 },{"./_async":"/Code/html/themes/themekit/lib/layout/js/_async.js"}],"/Code/html/themes/themekit/lib/layout/js/main.js":[function(require,module,exports){
 require('./_breakpoints.js');
 require('./_gridalicious.js');
