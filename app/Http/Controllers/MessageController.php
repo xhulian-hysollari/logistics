@@ -9,7 +9,7 @@ class MessageController extends Controller
 {
     public function index(){
         $user = Sentinel::getUser();
-        foreach ($user->conversations() as $conversation){
+        foreach ($user->with('conversations') as $conversation){
             dd('first \n' . $conversation->id);
         }
 
