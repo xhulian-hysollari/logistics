@@ -17,7 +17,6 @@
                     </ul>
                 </div><!--end . -->
                 <!-- END INBOX NAV -->
-
                 <div class="col-sm-8 col-md-9 col-lg-10">
                     <div class="text-divider visible-xs"><span>Email list</span></div>
                     <div class="row">
@@ -27,10 +26,8 @@
                                 @foreach($conversations as $conversation)
                                     <a class="list-group-item">
                                         <h5>{{$conversation->name}}</h5>
-                                        <h4>{{$conversation->subject}}</h4>
-                                        <p class="hidden-xs hidden-sm">Donec id elit non mi porta gravida at eget metus.
-                                            Maecenas sed
-                                            diam eget risus varius blandit...</p>
+                                        <h4>{{$conversation->latest_message}}</h4>
+                                        <p class="hidden-xs hidden-sm">{{$conversation->messages->message}}</p>
                                         <div class="stick-top-right small-padding text-default-light text-sm">{{\Carbon\Carbon::parse($conversation->updated_at)->format('d M y H:i a')}}</div>
                                         <div class="stick-bottom-right small-padding"><span
                                                     class="glyphicon glyphicon-paperclip"></span></div>
