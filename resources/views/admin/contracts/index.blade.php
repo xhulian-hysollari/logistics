@@ -4,7 +4,7 @@
 
     <div class="col-lg-12">
         <div class="card">
-            <a href="{{route('contracts.create')}}" class="btn btn-success pull-right" style="margin-bottom: 20px"> <i
+            <a href="{{route('contracts.create')}}" class="btn ink-reaction btn-primary pull-right" style="margin-bottom: 20px"> <i
                         class="fa fa-plus"></i>
                 Create
                 new</a>
