@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Cartalyst\Sentinel\Users\EloquentUser;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
@@ -63,7 +64,7 @@ class User extends EloquentUser
 //            $q->where('user_id', '=', $this->attributes['id'])->where('status', '=', 0);
 //
 //        })->groupBy('conversation_id')->select(['conversation_id'])->get();
-        return MessageState::where('user_id', $this->attributes['id'])->where('status',  0)->get()->count();
+        return MessageState::where('user_id', Sentinel::getUser()->id)->where('status',  0)->get()->count();
     }
 
     public function getUnreadMessagesAttribute(){
