@@ -17,7 +17,7 @@ class CreateMessagesTable extends Migration
             $table->increments('id');
             $table->integer('conversation_id')->unsigned();
             $table->integer('sent_by')->unsigned();
-            $table->text('message')->unsigned();
+            $table->text('message');
             $table->timestamps();
         });
     }
