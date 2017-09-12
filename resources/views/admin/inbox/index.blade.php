@@ -29,8 +29,6 @@
                                         <h4>{{$conversation->subject}}</h4>
                                         <p class="hidden-xs hidden-sm">{{$conversation->latest_message->message}}</p>
                                         <div class="stick-top-right small-padding text-default-light text-sm">{{\Carbon\Carbon::parse($conversation->latest_message->created_at)->format('d M y H:i a')}}</div>
-                                        <div class="stick-bottom-right small-padding"><span
-                                                    class="glyphicon glyphicon-paperclip"></span></div>
                                     </a>
                                 @endforeach
                             </div><!--end .list-group -->
