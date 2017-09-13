@@ -5,7 +5,7 @@
                 <div class="col-md-12">
                     <div class="form-group form-control-default">
                         <label for="title">Title</label>
-                        <textarea class="form-control summernote" type="text" name="title" id="title">{{$result->page_title}}</textarea>
+                        <textarea class="form-control summernote" type="text" rows="1" cols="1" name="title" id="title">{{$result->page_title}}</textarea>
                     </div>
                 </div>
             @else
