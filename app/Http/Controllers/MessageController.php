@@ -42,4 +42,28 @@ class MessageController extends Controller
         return view('admin.inbox.show', compact('result', 'buddy_id'));
     }
 
+    public function store($id = null, $receiver_id){
+        $data = Input::all();
+        $message = [];
+            $user = Sentinel::getUser();
+            if ($id != null){
+                if(!$conversation = Conversation::where('id', $id)->first()){
+                    $conversation = Conversation::startConversation($user->id, $receiver_id);
+                }
+            }else{
+                $conversation = Conversation::startConversation($user->id, $receiver_id);
+            }
+            $result = $conversation->addMessage($data['message'], $receiver_id);
+            if ($result) {
+                $data = array_merge($data, $message);
+                return response($data, 200)
+                    ->header('Content-Type', 'application/json');
+            }
+            $message = array('message' => 'Error. Please try again','status' => 'error');
+            $data = array_merge($data, $message);
+            return response($data, 500 )
+                ->header('Content-Type', 'application/json');
+
+    }
+
 }

@@ -5,34 +5,27 @@
         <div class="card">
             <div class="card-body">
                 <p class="col-lg-12">
-                    <h1 class="no-margin">{{$result->buddy->full_name}}</h1>
-                    <div class="btn-group stick-top-right">
-                        <a href="" class="btn btn-icon-toggle btn-default"><i class="md md-delete"></i></a>
-                    </div>
-                    @foreach($result->messages as $message)
-                        @if($message->user_id == Sentinel::getUser()->id)
-                            <p style="background-color: #cbe6fc; padding: 15px; width: 85%" class="pull-right">
-                                {{$message->message}}<span class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span>
-                            </p>
-                        @else
-                            <p style="background-color: #D1E5BB; padding: 15px; width: 85%" class="pull-left">
-                                {{$message->message}}<span class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span>
-                            </p>
-                        @endif
-                    @endforeach
-                    {{--<span class="pull-right text-default-light">Today, 08:12 am</span>--}}
-                    {{--<strong>{{$conversation->sender}}</strong>--}}
-                    {{--<hr/>--}}
-                    {{--<div class="text-columns">--}}
-                        {{--<p class="lead">We are already halfway there. There are still some obstacles that we must take, but I do not expect any problems. Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>--}}
-                        {{--<p><img class="img-responsive" src="../../assets/img/img14.jpg?1404589160" alt="" /></p>--}}
-                        {{--<p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.</p>--}}
-                        {{--<p>Fusce convallis, mauris imperdiet gravida bibendum, nisl turpis suscipit mauris, sed placerat ipsum urna sed risus. In convallis tellus a mauris. Curabitur non elit ut libero tristique sodales. Mauris a lacus. Donec mattis semper leo. In hac habitasse platea dictumst. Vivamus facilisis diam at odio. Mauris dictum, nisi eget consequat elementum, lacus ligula molestie metus, non feugiat orci magna ac sem. Donec turpis. Donec vitae metus. Morbi tristique neque eu mauris. Quisque gravida ipsum non sapien. Proin turpis lacus, scelerisque vitae, elementum at, lobortis ac, quam. Aliquam dictum eleifend risus. In hac habitasse platea dictumst. Etiam sit amet diam. Suspendisse odio. Suspendisse nunc. In semper bibendum libero.</p>--}}
-                        {{--<p>Proin nonummy, lacus eget pulvinar lacinia, pede felis dignissim leo, vitae tristique magna lacus sit amet eros. Nullam ornare. Praesent odio ligula, dapibus sed, tincidunt eget, dictum ac, nibh. Nam quis lacus. Nunc eleifend molestie velit. Morbi lobortis quam eu velit. Donec euismod vestibulum massa. Donec non lectus. Aliquam commodo lacus sit amet nulla. Cras dignissim elit et augue. Nullam non diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In hac habitasse platea dictumst. Aenean vestibulum. Sed lobortis elit quis lectus. Nunc sed lacus at augue bibendum dapibus.</p>--}}
-                        {{--<p>Aliquam vehicula sem ut pede. Cras purus lectus, egestas eu, vehicula at, imperdiet sed, nibh. Morbi consectetuer luctus felis. Donec vitae nisi. Aliquam tincidunt feugiat elit. Duis sed elit ut turpis ullamcorper feugiat. Praesent pretium, mauris sed fermentum hendrerit, nulla lorem iaculis magna, pulvinar scelerisque urna tellus a justo. Suspendisse pulvinar massa in metus. Duis quis quam. Proin justo. Curabitur ac sapien. Nam erat. Praesent ut quam.</p>--}}
-                    {{--</div>--}}
-                </div><!--end .col -->
-            </div>
+                <h1 class="no-margin">{{$result->buddy->full_name}}</h1>
+                <div class="btn-group stick-top-right">
+                    <a href="" class="btn btn-icon-toggle btn-default"><i class="md md-delete"></i></a>
+                </div>
+                @foreach($result->messages as $message)
+                    @if($message->user_id == Sentinel::getUser()->id)
+                        <p style="background-color: #cbe6fc; padding: 15px; width: 85%" class="pull-right">
+                            {{$message->message}}<span
+                                    class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span>
+                        </p>
+                    @else
+                        <p style="background-color: #D1E5BB; padding: 15px; width: 85%" class="pull-left">
+                            {{$message->message}}<span
+                                    class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span>
+                        </p>
+                    @endif
+                @endforeach
+                <form action="{{route('messages.store', ['id' => $result->id, 'receiver_id' => $result->buddy->id])}}" class="form" method="post">
+                    @include('admin.inbox.partials.form')
+                </form>
+            </div><!--end .col -->
         </div>
     </div>
 @stop
