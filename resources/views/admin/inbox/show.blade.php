@@ -10,8 +10,15 @@
                         <a href="" class="btn btn-icon-toggle btn-default"><i class="md md-delete"></i></a>
                     </div>
                     @foreach($result->messages as $message)
-                        <p>{{$message->message}}<span class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span></p>
-
+                        @if($message->user_id == Sentinel::getUser()->id)
+                            <div style="background-color: #cbe6fc; padding: 15px;" class="pull-right">
+                                <p>{{$message->message}}<span class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span></p>
+                            </div>
+                        @else
+                            <div style="background-color: #D1E5BB; padding: 15px;" class="pull-left">
+                                <p>{{$message->message}}<span class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span></p>
+                            </div>
+                        @endif
                     @endforeach
                     {{--<span class="pull-right text-default-light">Today, 08:12 am</span>--}}
                     {{--<strong>{{$conversation->sender}}</strong>--}}
