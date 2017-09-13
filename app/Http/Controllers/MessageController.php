@@ -44,7 +44,6 @@ class MessageController extends Controller
 
     public function store($id = null, $receiver_id){
         $data = Input::all();
-        $message = [];
             $user = Sentinel::getUser();
             if ($id != null){
                 if(!$conversation = Conversation::where('id', $id)->first()){
