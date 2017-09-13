@@ -4,20 +4,20 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <div class="col-lg-12">
+                <p class="col-lg-12">
                     <h1 class="no-margin">{{$result->buddy->full_name}}</h1>
                     <div class="btn-group stick-top-right">
                         <a href="" class="btn btn-icon-toggle btn-default"><i class="md md-delete"></i></a>
                     </div>
                     @foreach($result->messages as $message)
                         @if($message->user_id == Sentinel::getUser()->id)
-                            <div style="background-color: #cbe6fc; padding: 15px;" class="pull-right">
-                                <p>{{$message->message}}<span class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span></p>
-                            </div>
+                            <p style="background-color: #cbe6fc; padding: 15px;" class="pull-right">
+                                {{$message->message}}<span class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span>
+                            </p>
                         @else
-                            <div style="background-color: #D1E5BB; padding: 15px;" class="pull-left">
-                                <p>{{$message->message}}<span class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span></p>
-                            </div>
+                            <p style="background-color: #D1E5BB; padding: 15px;" class="pull-left">
+                                {{$message->message}}<span class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span>
+                            </p>
                         @endif
                     @endforeach
                     {{--<span class="pull-right text-default-light">Today, 08:12 am</span>--}}
