@@ -12,7 +12,7 @@
                 <div class="col-md-6">
                     <div class="form-group form-control-default">
                         <label for="title">Title</label>
-                        <input class="form-control" type="text" name="title" id="title" value="{{$result->page_title}}">
+                        <input class="form-control summernote" type="text" name="title" id="title" value="{{$result->page_title}}">
                     </div>
                 </div>
                 <div class="col-md-6">
