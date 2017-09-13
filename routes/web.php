@@ -123,10 +123,10 @@ Route::middleware(['guest'])->group(function () {
 
             Route::group(['prefix' => 'messages'], function () {
                 Route::get('/', ['as' => 'messages', 'uses' => 'MessageController@index']);
-//                Route::get('create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
-//                Route::post('/', ['as' => 'messages.store', 'uses' => 'MessagesController@store']);
-                Route::get('{id}', ['as' => 'messages.show', 'uses' => 'MessagesController@show']);
-//                Route::put('{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update']);
+//                Route::get('create', ['as' => 'messages.create', 'uses' => 'MessageController@create']);
+//                Route::post('/', ['as' => 'messages.store', 'uses' => 'MessageController@store']);
+                Route::get('{id}', ['as' => 'messages.show', 'uses' => 'MessageController@show']);
+//                Route::put('{id}', ['as' => 'messages.update', 'uses' => 'MessageController@update']);
             });
         });
     });
