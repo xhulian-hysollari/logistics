@@ -5,12 +5,11 @@
         <div class="card">
             <div class="card-body">
                 <div class="col-sm-8 col-md-9 col-lg-10">
-                    <h1 class="no-margin">{{$conversation->subject}}</h1>
                     <div class="btn-group stick-top-right">
                         <a href="" class="btn btn-icon-toggle btn-default"><i class="md md-delete"></i></a>
                     </div>
                     <span class="pull-right text-default-light">Today, 08:12 am</span>
-                    <strong>{{$conversation->sender}}</strong>
+                    <strong></strong>
                     <hr/>
                     <div class="text-columns">
                         <p class="lead">We are already halfway there. There are still some obstacles that we must take, but I do not expect any problems. Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
