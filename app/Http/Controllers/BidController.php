@@ -49,8 +49,10 @@ class BidController extends Controller
             $bid->truck_id = $id;
             $bid->description = Input::get('description');
             $bid->save();
-            foreach ($files as $file){
-                $this->saveFiles($file, $bid, $user);
+            if(Input::hasFile('files')){
+                foreach ($files as $file){
+                    $this->saveFiles($file, $bid, $user);
+                }
             }
             return redirect()->back()->with('success', 'bid.success');
         } catch (\Exception $ex) {
@@ -70,9 +72,10 @@ class BidController extends Controller
             $bid->freight_id = $id;
             $bid->description = Input::get('description');
             $bid->save();
-            if(Input::hasFile('files'))
-            foreach ($files as $file){
-                $this->saveFiles($file, $bid, $user);
+            if(Input::hasFile('files')){
+                foreach ($files as $file){
+                    $this->saveFiles($file, $bid, $user);
+                }
             }
             return redirect()->back()->with('success', 'bid.success');
         } catch (\Exception $ex) {
@@ -93,8 +96,10 @@ class BidController extends Controller
             $bid->freight_id = $id;
             $bid->description = Input::get('description');
             $bid->save();
-            foreach ($files as $file){
-                $this->saveFiles($file, $bid, $user);
+            if(Input::hasFile('files')){
+                foreach ($files as $file){
+                    $this->saveFiles($file, $bid, $user);
+                }
             }
             return redirect()->back()->with('success', 'bid.success');
         } catch (\Exception $ex) {
