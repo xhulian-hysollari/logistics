@@ -10,6 +10,7 @@
                         <a href="" class="btn btn-icon-toggle btn-default"><i class="md md-delete"></i></a>
                     </div>
                     @foreach($result->messages as $message)
+                        <p><span class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span></p>
                         {{$message->message}}
                     @endforeach
                     {{--<span class="pull-right text-default-light">Today, 08:12 am</span>--}}
