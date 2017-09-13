@@ -70,6 +70,7 @@ class BidController extends Controller
             $bid->freight_id = $id;
             $bid->description = Input::get('description');
             $bid->save();
+            if(Input::hasFile('files'))
             foreach ($files as $file){
                 $this->saveFiles($file, $bid, $user);
             }
