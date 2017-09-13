@@ -14,7 +14,7 @@
                         <tr>
                             <th>Title</th>
                             <th>Slug</th>
-                            <th>Body</th>
+                            <th>URL</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
@@ -24,7 +24,7 @@
                                 <tr class="table-row">
                                     <td>{{$pages->page_title}}</td>
                                     <td>{{$pages->slug}}</td>
-                                    <td>{!! $pages->body !!}</td>
+                                    <td><a href="{{route('pages', $pages->slug)}}">{{route('pages', $pages->slug)}}</a></td>
                                     <td><a href="{{ route('pages.edit', [$pages->id]) }}">Edit</a></td>
                                 {{--<!--| <a href="{{route('pages.delete')}}">Delete</a>-->--}}
                                 <tr>
