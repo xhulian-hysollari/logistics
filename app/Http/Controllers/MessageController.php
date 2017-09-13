@@ -55,14 +55,10 @@ class MessageController extends Controller
             }
             $result = $conversation->addMessage($data['message'], $receiver_id);
             if ($result) {
-                $data = array_merge($data, $message);
-                return response($data, 200)
-                    ->header('Content-Type', 'application/json');
+                return redirect()->back();
             }
             $message = array('message' => 'Error. Please try again','status' => 'error');
-            $data = array_merge($data, $message);
-            return response($data, 500 )
-                ->header('Content-Type', 'application/json');
+            return redirect()->back();
 
     }
 
