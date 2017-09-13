@@ -9,6 +9,9 @@
                     <div class="btn-group stick-top-right">
                         <a href="" class="btn btn-icon-toggle btn-default"><i class="md md-delete"></i></a>
                     </div>
+                    @foreach($result->messages as $message)
+                        {{$message}}
+                    @endforeach
                     {{--<span class="pull-right text-default-light">Today, 08:12 am</span>--}}
                     {{--<strong>{{$conversation->sender}}</strong>--}}
                     {{--<hr/>--}}
