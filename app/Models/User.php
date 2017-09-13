@@ -84,7 +84,7 @@ class User extends EloquentUser
 
         })->with('conversation')->get();
 
-        return $unreadMessages;
+        return count($unreadMessages);
     }
 
 }
