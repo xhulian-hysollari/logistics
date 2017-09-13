@@ -25,7 +25,7 @@ class Conversation extends Model
         $newMessage = new Message();
         $newMessage->user_id = $user;
         $newMessage->conversation_id = $this->id;
-        $newMessage->content = $content;
+        $newMessage->message = $content;
         $newMessage->save();
         foreach($this->users as $convUser){
             $newMessageState = new MessageState();
