@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bid;
 use App\Models\BidFile;
+use App\Models\Conversation;
 use App\Models\Freight;
 use App\Models\Truck;
 use App\Models\User;
@@ -54,6 +55,7 @@ class BidController extends Controller
                     $this->saveFiles($file, $bid, $user);
                 }
             }
+            $this->notifyForBid($truck->user_id, $bid->description);
             return redirect()->back()->with('success', 'bid.success');
         } catch (\Exception $ex) {
             return redirect()->back()->withInput()->with('error', 'bid.error');
@@ -77,6 +79,7 @@ class BidController extends Controller
                     $this->saveFiles($file, $bid, $user);
                 }
             }
+            $this->notifyForBid($truck->user_id, $bid->description);
             return redirect()->back()->with('success', 'bid.success');
         } catch (\Exception $ex) {
             dd($ex->getMessage());
@@ -101,6 +104,7 @@ class BidController extends Controller
                     $this->saveFiles($file, $bid, $user);
                 }
             }
+            $this->notifyForBid($truck->user_id, $bid->description);
             return redirect()->back()->with('success', 'bid.success');
         } catch (\Exception $ex) {
             dd($ex->getMessage());
@@ -122,5 +126,17 @@ class BidController extends Controller
         $image->path = $filename;
         $image->name = $filename;
         $image->save();
+    }
+
+    private function notifyForBid($receiver_id, $message){
+        $data = Input::all();
+        $user = Sentinel::getUser();
+        $conversation = Conversation::startConversation($user->id, $receiver_id);
+        $result = $conversation->addMessage($message, $receiver_id);
+        if ($result) {
+            return true;
+        }
+        return false;
+
     }
 }
