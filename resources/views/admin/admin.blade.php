@@ -28,7 +28,7 @@
     @section('css')
     @show
 </head>
-<body class="menubar-hoverable header-fixed ">
+<body class="menubar-hoverable header-fixed menubar-pin">
 @include('admin.partials.header')
 <!-- BEGIN BASE-->
 <div id="base">
