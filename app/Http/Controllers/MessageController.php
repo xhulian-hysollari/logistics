@@ -32,9 +32,9 @@ class MessageController extends Controller
         $result = Conversation::startConversation($user->id, $buddy_id);
         if ($result) {
             foreach ($result->messages as $message) {
-                if ($message->message_state->state == 0) {
+                if ($message->message_state->status == 0) {
                     $state = MessageState::where('message_id', $message->id)->where('user_id', $user->id)->first();
-                    $state->state = 1;
+                    $state->status = 1;
                     $state->save();
                 }
             }
