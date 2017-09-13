@@ -6,6 +6,7 @@
             <div class="card-body">
                 <p class="col-lg-12">
                 <h1 class="no-margin">{{$result->buddy->full_name}}</h1>
+                <hr>
                 <div class="btn-group stick-top-right">
                     <a href="" class="btn btn-icon-toggle btn-default"><i class="md md-delete"></i></a>
                 </div>
