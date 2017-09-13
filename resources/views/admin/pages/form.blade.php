@@ -5,14 +5,14 @@
                 <div class="col-md-12">
                     <div class="form-group form-control-default">
                         <label for="title">Title</label>
-                        <textarea class="form-control summernote" type="text" rows="1" cols="1" name="title" id="title">{{$result->page_title}}</textarea>
+                        <textarea class="form-control summernote" type="text" rows="1" name="title" id="title">{{$result->page_title}}</textarea>
                     </div>
                 </div>
             @else
                 <div class="col-md-6">
                     <div class="form-group form-control-default">
                         <label for="title">Title</label>
-                        <textarea class="form-control summernote" type="text" name="title" id="title">{{$result->page_title}}</textarea>
+                        <textarea class="form-control summernote" type="text" rows="1" name="title" id="title">{{$result->page_title}}</textarea>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -27,7 +27,7 @@
             <div class="col-md-12">
                 <div class="form-group form-control-default">
                     <label for="body">Body</label>
-                    {{--<textarea class="form-control summernote" name="body" id="body">{{$result->body}}</textarea>--}}
+                    <textarea class="form-control summernote" name="body" id="body">{{$result->body}}</textarea>
                 </div>
             </div>
             <button type="submit" class="btn btn-success btn-default">{{$button}}</button>
