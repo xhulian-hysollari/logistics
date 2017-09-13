@@ -24,7 +24,7 @@
                         <div class="col-md-12 scroll-sm">
                             <div class="list-group list-email list-gray">
                                 @foreach($conversations as $conversation)
-                                    <a class="list-group-item">
+                                    <a href="{{route('message.show', $conversation->buddy->id)}}" class="list-group-item">
                                         <h5>{{$conversation->buddy->full_name}} {{Sentinel::getUser()->unread_messages}}</h5>
                                         <h4>{{$conversation->subject}}</h4>
                                         <p class="hidden-xs hidden-sm">{{$conversation->latest_message->message}}</p>
