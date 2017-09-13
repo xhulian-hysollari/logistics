@@ -11,12 +11,12 @@
                 </div>
                 @foreach($result->messages as $message)
                     @if($message->user_id == Sentinel::getUser()->id)
-                        <p style="background-color: #cbe6fc; padding: 15px; width: 85%" class="pull-right">
+                        <p style="background-color: #D1E5BB; padding: 15px; width: 85%" class="pull-left">
                             {{$message->message}}<span
                                     class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span>
                         </p>
                     @else
-                        <p style="background-color: #D1E5BB; padding: 15px; width: 85%" class="pull-left">
+                        <p style="background-color: #cbe6fc; padding: 15px; width: 85%" class="pull-right">
                             {{$message->message}}<span
                                     class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span>
                         </p>
