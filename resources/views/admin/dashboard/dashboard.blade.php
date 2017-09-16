@@ -161,8 +161,7 @@
         var data = [
             {
                 label: 'Registrations',
-                data: datas,
-                last: true
+                data: datas
             }
         ];
 
