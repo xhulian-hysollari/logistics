@@ -140,4 +140,5 @@
     <script src="{{asset('js/libs/flot/jquery.flot.orderBars.js')}}"></script>
     <script src="{{asset('js/libs/flot/jquery.flot.pie.js')}}"></script>
     <script src="{{asset('js/libs/flot/curvedLines.js')}}"></script>
+    <script src="{{asset('js/core/demo/DemoDashboard.js')}}"></script>
 @stop
