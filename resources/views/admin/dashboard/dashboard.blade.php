@@ -153,7 +153,7 @@
         var datas = [];
 
         for (var i = 1; i < 13; i++) {
-            datas.push([moment(i, 'M').format('MMMM') + moment('YY'), Math.floor((Math.random() * 100))]);
+            datas.push([moment(i, 'M').format('MMMM'), Math.floor((Math.random() * 100))]);
         }
 
         // Chart data
@@ -185,7 +185,7 @@
             },
             xaxis: {
                 mode: "time",
-                timeformat: "%b %y",
+                timeformat: "%m",
                 color: 'rgba(0, 0, 0, 0)',
                 font: {color: labelColor}
             },
