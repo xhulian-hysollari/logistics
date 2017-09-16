@@ -146,7 +146,7 @@
 
         // Elements check
         if (!$.isFunction($.fn.plot) || chart.length === 0) {
-            return;
+//            return false;
         }
 
         // Chart data
