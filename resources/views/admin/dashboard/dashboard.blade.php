@@ -152,8 +152,8 @@
 
         var datas = [];
 
-        for (var i = 1; i <= 12; i++) {
-            datas.push([moment().month(i).format('MM'), Math.floor((Math.random() * 100))]);
+        for (var i = 0; i <= 11; i++) {
+            datas.push([moment().month(i), Math.floor((Math.random() * 100))]);
         }
 
         // Chart data
