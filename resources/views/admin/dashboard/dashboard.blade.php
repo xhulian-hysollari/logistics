@@ -153,7 +153,7 @@
         var datas = [];
 
         for (var i = 0; i < 11; i++) {
-            datas.push([moment().month(i), Math.floor((Math.random() * 100))]);
+            datas.push([moment(i, 'M').format('MMMM'), Math.floor((Math.random() * 100))]);
         }
 
         // Chart data
