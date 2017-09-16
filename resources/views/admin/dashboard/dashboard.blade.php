@@ -155,7 +155,7 @@
             {
                 label: 'Registrations',
                 data: [
-                    [moment().subtract(11, 'month').valueOf(), {{count(\App\Models\User::whereMonth('created_at', \Carbon\Carbon::now()->format('M')->subMonths(11))->whereYear('created_at', \Carbon\Carbon::now()->format('Y'))->get())}}],
+                    [moment().subtract(11, 'month').valueOf(), {{count(\App\Models\User::whereMonth('created_at', \Carbon\Carbon::now()->subMonths(11)->format('M'))->whereYear('created_at', \Carbon\Carbon::now()->format('Y'))->get())}}],
                     [moment().subtract(10, 'month').valueOf(), 2450],
                     [moment().subtract(9, 'month').valueOf(), 3800],
                     [moment().subtract(8, 'month').valueOf(), 2650],
