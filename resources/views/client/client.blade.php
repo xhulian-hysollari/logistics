@@ -113,21 +113,22 @@
             </ul>
             <hr>
             <div style="padding: 15px">
-                <div style="text-align: center">
-                    <h4><p style="color:white">Like what you see?</p>
-                        <p style="color:white">Login to make the most of it</p></h4>
-                </div>
-                @if(\Cartalyst\Sentinel\Laravel\Facades\Sentinel::guest())
+                @if(Sentinel::guest())
+                    <div style="text-align: center">
+                        <h4><p style="color:white">Like what you see?</p>
+                            <p style="color:white">Login to make the most of it</p></h4>
+                    </div>
                     @include('client.partials.login')
+
+
+                    <div style="text-align: center; margin-top: 20px;">
+                        <h4><p style="color:white">Don't have an account yet?</p>
+                            <a class="btn btn-success" href="{{route('register')}}">{{trans('navigation.register')}}</a>
+                        </h4>
+                    </div>
                 @else
                     @include('client.partials.profile')
                 @endif
-
-                <div style="text-align: center; margin-top: 20px;">
-                    <h4><p style="color:white">Don't have an account yet?</p>
-                        <a class="btn btn-success" href="{{route('register')}}">{{trans('navigation.register')}}</a>
-                    </h4>
-                </div>
             </div>
         </div>
         <div id="main" class="col-md-8" style="background-color:white; padding: 30px">
@@ -150,9 +151,9 @@
             </ul>
             <hr>
             <div style="padding: 15px">
-                @if(!Sentinel::getUser())
+                @if(Sentinel::guest())
                     <div style="text-align: center">
-                        {{--<h4><p style="color:white">Like what you see?</p>--}}
+                        <h4><p style="color:white">Like what you see?</p>
                             <p style="color:white">Login to make the most of it</p></h4>
                     </div>
                     @include('client.partials.login')
