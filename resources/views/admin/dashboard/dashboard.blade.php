@@ -150,24 +150,17 @@
 //            return false;
         }
 
+        var datas = [];
+
+        for (var i = 0; i < 12; i++) {
+            datas.push([moment().month(i), Math.floor((Math.random() * 100) + 1)])
+        }
+
         // Chart data
         var data = [
             {
                 label: 'Registrations',
-                data: [
-                    [moment().subtract(11, 'month').valueOf(), {{count(\App\Models\User::whereMonth('created_at', \Carbon\Carbon::now()->subMonths(11)->format('M'))->whereYear('created_at', \Carbon\Carbon::now()->format('Y'))->get())}}],
-                    [moment().subtract(10, 'month').valueOf(), 2450],
-                    [moment().subtract(9, 'month').valueOf(), 3800],
-                    [moment().subtract(8, 'month').valueOf(), 2650],
-                    [moment().subtract(7, 'month').valueOf(), 3905],
-                    [moment().subtract(6, 'month').valueOf(), 5250],
-                    [moment().subtract(5, 'month').valueOf(), 3600],
-                    [moment().subtract(4, 'month').valueOf(), 4900],
-                    [moment().subtract(3, 'month').valueOf(), 6200],
-                    [moment().subtract(2, 'month').valueOf(), 5195],
-                    [moment().subtract(1, 'month').valueOf(), 6500],
-                    [moment().valueOf(), 7805]
-                ],
+                data: datas,
                 last: true
             }
         ];
