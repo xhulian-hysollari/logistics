@@ -134,6 +134,7 @@
         });
     </script>
 
+    <script src="{{asset('admin/js/libs/moment/moment.min.js')}}"></script>
     <script src="{{asset('admin/js/libs/flot/jquery.flot.min.js')}}"></script>
     <script src="{{asset('admin/js/libs/flot/jquery.flot.time.min.js')}}"></script>
     <script src="{{asset('admin/js/libs/flot/jquery.flot.resize.min.js')}}"></script>
