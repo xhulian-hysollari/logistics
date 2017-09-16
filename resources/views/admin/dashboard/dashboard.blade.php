@@ -153,7 +153,7 @@
         var datas = [];
 
         for (var i = 0; i <= 11; i++) {
-            datas.push([moment().getMonth(i), Math.floor((Math.random() * 100))])
+            datas.push([moment().month(i).format('MMM'), Math.floor((Math.random() * 100))])
             console.log(moment().month(i));
         }
 
