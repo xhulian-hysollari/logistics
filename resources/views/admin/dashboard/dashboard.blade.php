@@ -133,4 +133,10 @@
 
         });
     </script>
+
+    <script src="{{asset('admin/js/libs/flot/jquery.flot.min.js')}}"></script>
+    <script src="{{asset('js/libs/flot/jquery.flot.time.min.js')}}"></script>
+    <script src="{{asset('js/libs/flot/jquery.flot.resize.min.js')}}"></script>
+    <script src="{{asset('js/libs/flot/jquery.flot.orderBars.js')}}"></script>
+    <script src="{{asset('js/libs/flot/jquery.flot.pie.js')}}"></script>
 @stop
