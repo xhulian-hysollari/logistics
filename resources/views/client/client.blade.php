@@ -146,21 +146,22 @@
             </ul>
             <hr>
             <div style="padding: 15px">
+                @if(\Cartalyst\Sentinel\Laravel\Facades\Sentinel::guest())
                 <div style="text-align: center">
                     <h4><p style="color:white">Like what you see?</p>
                         <p style="color:white">Login to make the most of it</p></h4>
                 </div>
-                @if(\Cartalyst\Sentinel\Laravel\Facades\Sentinel::guest())
                     @include('client.partials.login')
+
+
+                    <div style="text-align: center; margin-top: 20px;">
+                        <h4><p style="color:white">Don't have an account yet?</p>
+                            <a class="btn btn-success" href="{{route('register')}}">{{trans('navigation.register')}}</a>
+                        </h4>
+                    </div>
                 @else
                     @include('client.partials.profile')
                 @endif
-
-                <div style="text-align: center; margin-top: 20px;">
-                    <h4><p style="color:white">Don't have an account yet?</p>
-                        <a class="btn btn-success" href="{{route('register')}}">{{trans('navigation.register')}}</a>
-                    </h4>
-                </div>
             </div>
         </div>
         <div class="col-md-2">
@@ -178,11 +179,14 @@
                 <div class="wow rotateIn" data-wow-delay="0.3s"><a href="#"><img style="width: 100%; height:118px  "
                                                                                  src="{{asset('client/img/partner1.jpg')}}"
                                                                                  alt="Img"></a></div>
+
+
+            </div>
+            <div id="partners" class="owl-carousel enable-owl-carousel" data-pagination="false" data-navigation="true"
+                 data-min450="1" data-min600="1" data-min768="1" style="margin-top: 50px;">
+
                 <div class="wow rotateIn" data-wow-delay="0.3s"><a href="#"><img style="width: 100%; height:118px  "
-                                                                                 src="{{asset('client/img/partner2.jpg')}}"
-                                                                                 alt="Img"></a></div>
-                <div class="wow rotateIn" data-wow-delay="0.3s"><a href="#"><img style="width: 100%; height:118px "
-                                                                                 src="{{asset('client/img/partner3.jpg')}}"
+                                                                                 src="{{asset('client/img/partner1.jpg')}}"
                                                                                  alt="Img"></a></div>
 
 
