@@ -185,8 +185,6 @@
                 show: false
             },
             xaxis: {
-                mode: "time",
-                timeformat: "%b",
                 color: 'rgba(0, 0, 0, 0)',
                 font: {color: labelColor}
             },
