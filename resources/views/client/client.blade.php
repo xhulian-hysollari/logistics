@@ -152,7 +152,7 @@
             <div style="padding: 15px">
                 @if(!Sentinel::getUser())
                     <div style="text-align: center">
-                        <h4><p style="color:white">Like what you see?</p>
+                        {{--<h4><p style="color:white">Like what you see?</p>--}}
                             <p style="color:white">Login to make the most of it</p></h4>
                     </div>
                     @include('client.partials.login')
