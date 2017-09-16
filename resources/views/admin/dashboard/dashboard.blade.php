@@ -135,11 +135,11 @@
     </script>
 
     <script src="{{asset('admin/js/libs/flot/jquery.flot.min.js')}}"></script>
-    <script src="{{asset('js/libs/flot/jquery.flot.time.min.js')}}"></script>
-    <script src="{{asset('js/libs/flot/jquery.flot.resize.min.js')}}"></script>
-    <script src="{{asset('js/libs/flot/jquery.flot.orderBars.js')}}"></script>
-    <script src="{{asset('js/libs/flot/jquery.flot.pie.js')}}"></script>
-    <script src="{{asset('js/libs/flot/curvedLines.js')}}"></script>
-    <script src="{{asset('js/core/demo/Demo.js')}}"></script>
-    <script src="{{asset('js/core/demo/DemoDashboard.js')}}"></script>
+    <script src="{{asset('admin/js/libs/flot/jquery.flot.time.min.js')}}"></script>
+    <script src="{{asset('admin/js/libs/flot/jquery.flot.resize.min.js')}}"></script>
+    <script src="{{asset('admin/js/libs/flot/jquery.flot.orderBars.js')}}"></script>
+    <script src="{{asset('admin/js/libs/flot/jquery.flot.pie.js')}}"></script>
+    <script src="{{asset('admin/js/libs/flot/curvedLines.js')}}"></script>
+    <script src="{{asset('admin/js/core/demo/Demo.js')}}"></script>
+    <script src="{{asset('admin/js/core/demo/DemoDashboard.js')}}"></script>
 @stop
