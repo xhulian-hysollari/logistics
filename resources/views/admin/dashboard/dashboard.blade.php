@@ -184,6 +184,7 @@
                 show: false
             },
             xaxis: {
+                mode: 'time',
                 color: 'rgba(0, 0, 0, 0)',
                 font: {color: labelColor}
             },
