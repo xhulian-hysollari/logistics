@@ -18,7 +18,7 @@
                     <h4>Useful Links</h4>
                     <nav>
                         @foreach($pages as $page)
-                            <a href="{{route('pages', [$page->slug])}}">{{$page->page_title}}</a>
+                            <a href="{{route('pages', [$page->slug])}}">{!! strip_tags($page->page_title) !!}</a>
                         @endforeach
 
                     </nav>
