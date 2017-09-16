@@ -139,4 +139,5 @@
     <script src="{{asset('js/libs/flot/jquery.flot.resize.min.js')}}"></script>
     <script src="{{asset('js/libs/flot/jquery.flot.orderBars.js')}}"></script>
     <script src="{{asset('js/libs/flot/jquery.flot.pie.js')}}"></script>
+    <script src="{{asset('js/libs/flot/curvedLines.js')}}"></script>
 @stop
