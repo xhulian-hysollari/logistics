@@ -152,7 +152,7 @@
 
         var datas = [];
 
-        for (var i = 0; i < 11; i++) {
+        for (var i = 1; i < 13; i++) {
             datas.push([moment(i, 'M').format('MMMM'), Math.floor((Math.random() * 100))]);
         }
 
