@@ -12,19 +12,23 @@
     @section('css')
     @show
     <style>
-        #this-is-top{
-            border-top:none;
+        #this-is-top {
+            border-top: none;
         }
+
         .slider-content {
             background: rgba(0, 0, 0, 0.5);
             padding: 15px;
         }
+
         .navbar-nav {
             margin: 0;
         }
+
         .why-us li span, .topmenu nav, .topmenu:before, footer, #to-top, .two-news > div div:last-child > div {
             background-color: #5bc0de;
         }
+
         header, .topmenu nav:first-child:before {
             border-top-color: #5bc0de;
         }
@@ -79,7 +83,7 @@
             background-color: #5bc0de;
         }
 
-        .alert{
+        .alert {
             margin-bottom: 0;
         }
 
@@ -146,11 +150,11 @@
             </ul>
             <hr>
             <div style="padding: 15px">
-                @if(\Cartalyst\Sentinel\Laravel\Facades\Sentinel::guest())
-                <div style="text-align: center">
-                    <h4><p style="color:white">Like what you see?</p>
-                        <p style="color:white">Login to make the most of it</p></h4>
-                </div>
+                @if(Sentinel::guest())
+                    <div style="text-align: center">
+                        <h4><p style="color:white">Like what you see?</p>
+                            <p style="color:white">Login to make the most of it</p></h4>
+                    </div>
                     @include('client.partials.login')
 
 
