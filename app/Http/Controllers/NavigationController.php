@@ -64,7 +64,7 @@ class NavigationController extends Controller
             var_dump('I : ' . $i);
             $res = DB::table('users')->select(DB::raw('count(id) as `data`'),DB::raw('YEAR(created_at) year, MONTH(created_at) month'))
                 ->whereYear('created_at', Carbon::now()->format('Y'))
-//                ->whereMonth('created_at', $i)
+                ->whereRaw('MONTH(created_at) = '. $i)
                 ->groupby('year','month')
                 ->first();
             dd($res);
