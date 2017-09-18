@@ -60,6 +60,9 @@ class NavigationController extends Controller
     public function getDashboardPage()
     {
         $registrations = [];
+        $freights = [];
+        $trucks = [];
+        $tenders = [];
         for ($i = 1; $i <= 12; $i++){
             $res = DB::table('users')->select(DB::raw('count(id) as `data`'),DB::raw('YEAR(created_at) year, MONTH(created_at) month'))
                 ->whereYear('created_at', Carbon::now()->format('Y'))
@@ -73,7 +76,46 @@ class NavigationController extends Controller
                 }
                 array_push($registrations, $value);
         }
-        return view('admin.dashboard.dashboard', compact('registrations'));
+        for ($i = 1; $i <= 12; $i++){
+            $res = DB::table('freights')->select(DB::raw('count(id) as `data`'),DB::raw('YEAR(created_at) year, MONTH(created_at) month'))
+                ->whereYear('created_at', Carbon::now()->format('Y'))
+                ->whereRaw('MONTH(created_at) = '. $i)
+                ->groupby('year','month')
+                ->first();
+                if($res){
+                    $value = $res->data;
+                }else{
+                    $value = 0;
+                }
+                array_push($freights, $value);
+        }
+        for ($i = 1; $i <= 12; $i++){
+            $res = DB::table('trucks')->select(DB::raw('count(id) as `data`'),DB::raw('YEAR(created_at) year, MONTH(created_at) month'))
+                ->whereYear('created_at', Carbon::now()->format('Y'))
+                ->whereRaw('MONTH(created_at) = '. $i)
+                ->groupby('year','month')
+                ->first();
+                if($res){
+                    $value = $res->data;
+                }else{
+                    $value = 0;
+                }
+                array_push($trucks, $value);
+        }
+        for ($i = 1; $i <= 12; $i++){
+            $res = DB::table('contracts')->select(DB::raw('count(id) as `data`'),DB::raw('YEAR(created_at) year, MONTH(created_at) month'))
+                ->whereYear('created_at', Carbon::now()->format('Y'))
+                ->whereRaw('MONTH(created_at) = '. $i)
+                ->groupby('year','month')
+                ->first();
+                if($res){
+                    $value = $res->data;
+                }else{
+                    $value = 0;
+                }
+                array_push($tenders, $value);
+        }
+        return view('admin.dashboard.dashboard', compact('registrations','freights','trucks','tenders'));
     }
 
     public function getDashboardPages($page = 'dashboard')

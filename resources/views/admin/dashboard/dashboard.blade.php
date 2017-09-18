@@ -33,6 +33,24 @@
             </div><!--end .card -->
         </div><!--end .col -->
 
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-head">
+                    <header>Activity history</header>
+                    <div class="tools">
+                        <a class="btn btn-icon-toggle btn-refresh"><i class="md md-refresh"></i></a>
+                        <a class="btn btn-icon-toggle btn-collapse"><i class="fa fa-angle-down"></i></a>
+                        <a class="btn btn-icon-toggle btn-close"><i class="md md-close"></i></a>
+                    </div>
+                </div><!--end .card-head -->
+                <div class="card-body no-padding height-9">
+                    <div class="stick-bottom-left-right force-padding">
+                        <div id="visitor-chart" class="flot height-8" data-title="Activity visits" data-color="#9C27B0,#0aa89e"></div>
+                    </div>
+                </div><!--end .card-body -->
+            </div><!--end .card -->
+        </div><!--end .col -->
+
     @else
 
 
@@ -186,6 +204,106 @@
         var plot = $.plot(chart, data, options);
 
         // Hover function
+        var tip, previousPoint = null;
+        chart.bind("plothover", function (event, pos, item) {
+            if (item) {
+                if (previousPoint !== item.dataIndex) {
+                    previousPoint = item.dataIndex;
+
+                    var x = item.datapoint[0];
+                    var y = item.datapoint[1];
+                    var tipLabel = '<strong>' + $(this).data('title') + '</strong>';
+                    var tipContent = y + " " + item.series.label.toLowerCase() + " on " + moment(x).format('dddd');
+
+                    if (tip !== undefined) {
+                        $(tip).popover('destroy');
+                    }
+                    tip = $('<div></div>').appendTo('body').css({left: item.pageX, top: item.pageY - 5, position: 'absolute'});
+                    tip.popover({html: true, title: tipLabel, content: tipContent, placement: 'top'}).popover('show');
+                }
+            }
+            else {
+                if (tip !== undefined) {
+                    $(tip).popover('destroy');
+                }
+                previousPoint = null;
+            }
+        });
+    </script>
+    <script>
+        var chart = $("#visitor-chart");
+        if (!$.isFunction($.fn.plot) || chart.length === 0) {
+//            return;
+        }
+
+        var o = this;
+        var labelColor = chart.css('color');
+        var data = [
+            {
+                label: 'Freights',
+                data: [
+                        @foreach($freights as $key => $registration)
+                    [moment({{$key + 1}}, 'M').valueOf(), {{$registration}}],
+                    @endforeach
+                ],
+                last: true
+            },
+            {
+                label: 'Trucks',
+                data: [
+                        @foreach($trucks as $key => $registration)
+                    [moment({{$key + 1}}, 'M').valueOf(), {{$registration}}],
+                    @endforeach
+                ],
+                last: true
+            },
+            {
+                label: 'Tenders',
+                data: [
+                        @foreach($tenders as $key => $registration)
+                    [moment({{$key + 1}}, 'M').valueOf(), {{$registration}}],
+                    @endforeach
+                ],
+                last: true
+            }
+        ];
+
+        var options = {
+            colors: chart.data('color').split(','),
+            series: {
+                shadowSize: 0,
+                lines: {
+                    show: true,
+                    lineWidth: 2
+                },
+                points: {
+                    show: true,
+                    radius: 3,
+                    lineWidth: 2
+                }
+            },
+            legend: {
+                show: true
+            },
+            xaxis: {
+                mode: "time",
+                timeformat: "%b",
+                color: 'rgba(0, 0, 0, 0)',
+                font: {color: labelColor}
+            },
+            yaxis: {
+                font: {color: labelColor}
+            },
+            grid: {
+                borderWidth: 0,
+                color: labelColor,
+                hoverable: true
+            }
+        };
+
+        chart.width('100%');
+        var plot = $.plot(chart, data, options);
+
         var tip, previousPoint = null;
         chart.bind("plothover", function (event, pos, item) {
             if (item) {
