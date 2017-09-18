@@ -139,7 +139,7 @@
                 data: [
 
                         @foreach($registrations as $key => $registration)
-                            [moment({{$key + 1}}, 'month').valueOf(), {{$registration}}]
+                            [moment({{$key + 1}}, 'month').valueOf(), {{$registration}}],
                         @endforeach
                 ],
                 last: true
