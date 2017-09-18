@@ -143,7 +143,12 @@
         var data = [
             {
                 label: 'Registrations',
-                data: {!! $registrations !!},
+                data: [
+                        @foreach($registrations as $registration)
+                        [moment({{$registration->month}}, 'M').valueOf(), {{$registration->data}}],
+                        {!! $registrations !!}
+                        @endforeach
+                ],
                 last: true
             }
         ];
@@ -168,8 +173,8 @@
                 show: false
             },
             xaxis: {
-//                mode: "time",
-//                timeformat: "%b %y",
+                mode: "time",
+                timeformat: "%b %y",
                 color: 'rgba(0, 0, 0, 0)',
                 font: {color: labelColor}
             },
