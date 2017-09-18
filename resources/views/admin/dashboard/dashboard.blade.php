@@ -143,7 +143,7 @@
         var data = [
             {
                 label: 'Registrations',
-                data: {{$registrations}},
+                data: {!! $registrations !!},
                 last: true
             }
         ];
