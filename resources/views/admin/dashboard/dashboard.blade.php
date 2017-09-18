@@ -146,7 +146,6 @@
                 data: [
                         @foreach($registrations as $registration)
                         [moment({{$registration->month}}, 'M').valueOf(), {{$registration->data}}],
-                        {!! $registrations !!}
                         @endforeach
                 ],
                 last: true
