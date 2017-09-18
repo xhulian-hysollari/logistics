@@ -63,7 +63,7 @@ class NavigationController extends Controller
         for ($i = 1; $i <= 12; $i++){
             array_add($registrations, $i, DB::table('users')->select(DB::raw('count(id) as `data`'),DB::raw('YEAR(created_at) year, MONTH(created_at) month'))
                 ->whereYear('created_at', Carbon::now()->format('Y'))
-                ->whereMonth('created_at', Carbon::create(null, $i, null)->format('m'))
+                ->whereMonth('created_at', $i)
                 ->groupby('year','month')
                 ->get());
         }
