@@ -73,7 +73,7 @@ class NavigationController extends Controller
                 }
                 array_push($registrations, ['month' => $i, 'data' => $value]);
         }
-        foreach($registrations as $registration => $key){
+        foreach($registrations as $key => $registration){
             var_dump($registration[$key]);
         }
         return view('admin.dashboard.dashboard', compact('registrations'));
