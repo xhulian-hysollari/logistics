@@ -133,13 +133,6 @@
 //            return false;
         }
 
-        var datas = [];
-
-//        for (var i = 1; i < 13; i++) {
-//            datas.push([moment(i, 'M').valueOf(), Math.floor((Math.random() * 100))]);
-//        }
-
-        // Chart data
         var data = [
             {
                 label: 'Registrations',

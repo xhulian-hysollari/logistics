@@ -11,6 +11,7 @@ use App\Models\Setting;
 use App\Models\SocialLink;
 use App\Models\Truck;
 use App\Models\User;
+use Carbon\Carbon;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Support\Facades\DB;
 
@@ -58,7 +59,7 @@ class NavigationController extends Controller
 
     public function getDashboardPage()
     {
-        $registrations = DB::table('users')->select(DB::raw('count(id) as `data`'),DB::raw('YEAR(created_at) year, MONTH(created_at) month'))
+        $registrations = DB::table('users')->select(DB::raw('count(id) as `data`'),DB::raw('YEAR(created_at) year, MONTH(created_at) month'))->whereYear('created_at', Carbon::now()->format('Y'))
         ->groupby('year','month')
         ->get();
         return view('admin.dashboard.dashboard', compact('registrations'));
