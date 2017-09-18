@@ -67,9 +67,6 @@ class NavigationController extends Controller
                 ->groupby('year','month')
                 ->get());
         }
-        $registrations = DB::table('users')->select(DB::raw('count(id) as `data`'),DB::raw('YEAR(created_at) year, MONTH(created_at) month'))->whereYear('created_at', Carbon::now()->format('Y'))
-        ->groupby('year','month')
-        ->get();
         return view('admin.dashboard.dashboard', compact('registrations'));
     }
 
