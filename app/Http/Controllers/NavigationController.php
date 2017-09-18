@@ -67,6 +67,7 @@ class NavigationController extends Controller
                 ->whereMonth('created_at', $i)
                 ->groupby('year','month')
                 ->first();
+            dd($res);
                 if($res){
                     $value = $res->data;
                 }else{
