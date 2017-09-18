@@ -138,7 +138,7 @@
                 label: 'Registrations',
                 data: [
                         @foreach($registrations as $registration => $key)
-                    {{$registration[0]}} {{$key[0]}}
+                    {{$registration[0]}}
                         {{--[moment({{$registration[$key]->month}}, 'M').valueOf(), {{$registration[$key]->data}}],--}}
                         @endforeach
                     [moment().valueOf(), '']
