@@ -67,6 +67,7 @@ class NavigationController extends Controller
                 ->groupby('year','month')
                 ->get());
         }
+        dd($registrations);
         return view('admin.dashboard.dashboard', compact('registrations'));
     }
 
