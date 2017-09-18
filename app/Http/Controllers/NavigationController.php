@@ -61,7 +61,6 @@ class NavigationController extends Controller
     {
         $registrations = [];
         for ($i = 1; $i <= 12; $i++){
-            var_dump('I : ' . $i);
             $res = DB::table('users')->select(DB::raw('count(id) as `data`'),DB::raw('YEAR(created_at) year, MONTH(created_at) month'))
                 ->whereYear('created_at', Carbon::now()->format('Y'))
                 ->whereRaw('MONTH(created_at) = '. $i)
