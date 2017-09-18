@@ -71,9 +71,8 @@ class NavigationController extends Controller
                 }else{
                     $value = 0;
                 }
-            array_add($registrations, $i, $value);
+                array_push($registrations, ['month' => $i, 'data' => $value]);
         }
-        dd($registrations);
         return view('admin.dashboard.dashboard', compact('registrations'));
     }
 
