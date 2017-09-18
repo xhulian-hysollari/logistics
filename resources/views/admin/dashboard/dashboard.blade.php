@@ -45,7 +45,7 @@
                 </div><!--end .card-head -->
                 <div class="card-body no-padding height-9">
                     <div class="stick-bottom-left-right force-padding">
-                        <div id="visitor-chart" class="flot height-8" data-title="Activity visits" data-color="#9C27B0,#0aa89e"></div>
+                        <div id="visitor-chart" class="flot height-8" data-title="Activity visits" data-color="#9C27B0,#0aa89e,#e26161"></div>
                     </div>
                 </div><!--end .card-body -->
             </div><!--end .card -->
