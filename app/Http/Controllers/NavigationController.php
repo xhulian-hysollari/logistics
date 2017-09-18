@@ -69,7 +69,7 @@ class NavigationController extends Controller
                 ->first();
                 if($res){
                     $value = $res->data;
-                    dd($res);
+                    dd($res->data);
                 }else{
                     $value = 0;
 
