@@ -140,6 +140,7 @@
                         @foreach($registrations as $registration)
                         [moment({{$registration->month}}, 'M').valueOf(), {{$registration->data}}],
                         @endforeach
+                    [moment().valueOf(), '']
                 ],
                 last: true
             }
