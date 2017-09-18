@@ -69,13 +69,10 @@ class NavigationController extends Controller
                 ->first();
                 if($res){
                     $value = $res->data;
-                    dd($value);
                 }else{
                     $value = 0;
-
                 }
             array_add($registrations, $i, $value);
-            var_dump($registrations);
         }
         dd($registrations);
         return view('admin.dashboard.dashboard', compact('registrations'));
