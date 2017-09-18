@@ -71,7 +71,7 @@ class NavigationController extends Controller
                 }else{
                     $value = 0;
                 }
-                array_push($registrations[$i], $value);
+                array_push($registrations, $value);
         }
         foreach($registrations as $key => $registration){
             var_dump('key' . $key);
