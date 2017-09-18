@@ -59,6 +59,14 @@ class NavigationController extends Controller
 
     public function getDashboardPage()
     {
+        $registrations = [];
+        for ($i = 1; $i <= 12; $i++){
+            $registrations = array_add(DB::table('users')->select(DB::raw('count(id) as `data`'),DB::raw('YEAR(created_at) year, MONTH(created_at) month'))
+                ->whereYear('created_at', Carbon::now()->format('Y'))
+                ->whereMonth('created_at', Carbon::create(null, $i, null)->format('m'))
+                ->groupby('year','month')
+                ->get());
+        }
         $registrations = DB::table('users')->select(DB::raw('count(id) as `data`'),DB::raw('YEAR(created_at) year, MONTH(created_at) month'))->whereYear('created_at', Carbon::now()->format('Y'))
         ->groupby('year','month')
         ->get();
