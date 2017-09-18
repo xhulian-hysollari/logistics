@@ -67,11 +67,13 @@ class NavigationController extends Controller
                 ->whereRaw('MONTH(created_at) = '. $i)
                 ->groupby('year','month')
                 ->first();
-            dd($res);
                 if($res){
                     $value = $res->data;
+
+                    dd($i . $res);
                 }else{
                     $value = 0;
+
                 }
             array_add($registrations, $i, $value);
             var_dump($registrations);
