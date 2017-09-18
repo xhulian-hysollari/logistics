@@ -26,7 +26,7 @@
                 </div><!--end .card-head -->
                 <div class="card-body no-padding height-9">
                     <div class="stick-bottom-left-right force-padding">
-                        <div id="flot-registrations" class="flot height-5" data-title="Registration history"
+                        <div id="flot-registrations" class="flot height-8" data-title="Registration history"
                              data-color="#0aa89e"></div>
                     </div>
                 </div><!--end .card-body -->
