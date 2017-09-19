@@ -33,6 +33,8 @@
                 <div class="form-group form-control-default">
                     <label for="location">{{trans('truck.location')}}</label>
                     <input class="form-control"  type="text" name="location" id="location" value="{{$result->location}}">
+                    <input class="form-control"  type="hidden" name="location_lng" id="location_lng" value="{{$result->location_lng}}">
+                    <input class="form-control"  type="hidden" name="location_lat" id="location_lat" value="{{$result->location_lat}}">
                 </div>
             </div>
             <div class="col-md-6">
