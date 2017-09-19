@@ -5,3 +5,11 @@
         @include('admin.freight.form', [$button = trans('freight.save')])
     {!! Form::close() !!}
 @stop
+
+@section('css')
+    <style>
+        .col-md-6{
+            padding: 15px;
+        }
+    </style>
+@endsection
