@@ -44,7 +44,13 @@
                                     <td>{{$result->type}}</td>
                                     <td>{{$result->quantity}}</td>
                                     <td>{{$result->description}}</td>
-                                    <td><a href="{{route('freight.edit', $result->id)}}">  <i  class="fa fa-pencil-square fa-2x"></i></a><a href="{{}}" class="fa"></a><a href="" class="fa"></a>
+                                    <td>
+                                        @if(Sentinel::getUser()->id == $result->user_id)
+                                            <a href="{{route('freight.edit', $result->id)}}"> <i  class="fa fa-pencil-square fa-2x"></i>
+                                            </a><a href="{{}}" class="fa"></a>
+                                        @else
+                                            <a href="" class="fa"></a>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
