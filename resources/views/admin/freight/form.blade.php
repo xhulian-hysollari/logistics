@@ -1,5 +1,4 @@
-<div class="panel panel-default">
-    <div class="panel-body">
+
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -83,7 +82,4 @@
             </div>
         </div>
         <button type="submit" class="btn btn-success btn-default">{{$button}}</button>
-    </div>
-</div>
-
 
