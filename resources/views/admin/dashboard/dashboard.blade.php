@@ -8,8 +8,6 @@
                     <div id="embed-api-auth-container"></div>
                     <div id="chart-container"></div>
                     <div id="view-selector-container"></div>
-
-
                 </div>
             </div>
         </div>
