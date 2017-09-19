@@ -8,6 +8,7 @@
     <title>@section('title') @show</title>
     <meta name="keywords" content="your,keywords">
     <meta name="description" content="Short explanation about this website">
+    <meta name="google-site-verification" content="MNU86okUooSjxq47xzlfpKFUQJ54QnPSxZYDkf38W2w" />
     <!-- END META -->
 
     <!-- BEGIN STYLESHEETS -->

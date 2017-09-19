@@ -9,6 +9,7 @@
     <title>@section('title') @show</title>
     <link rel="stylesheet" href="{{asset('client/css/master.css')}}">
     <link rel="stylesheet" href="{{asset('client/css/font-icons.css')}}">
+    <meta name="google-site-verification" content="MNU86okUooSjxq47xzlfpKFUQJ54QnPSxZYDkf38W2w" />
     @section('css')
     @show
     <style>
