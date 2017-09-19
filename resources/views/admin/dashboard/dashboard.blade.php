@@ -50,7 +50,7 @@
         </div><!--end .col -->
 
     @endif
-    @if(Sentinel::inRole('user'))
+    {{--@if(Sentinel::inRole('user'))--}}
 
         <div class="col-md-4 col-sm-6">
             <div class="card">
@@ -107,7 +107,7 @@
             </div><!--end .card -->
         </div><!--end .col -->
 
-    @endif
+    {{--@endif--}}
 @stop
 
 @section('js')
