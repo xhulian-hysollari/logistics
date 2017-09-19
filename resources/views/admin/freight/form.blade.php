@@ -11,6 +11,8 @@
                 <div class="form-group form-control-default">
                     <label for="loading">Place of Loading</label>
                     <input class="form-control" type="text" name="loading" id="loading" value="{{$results->loading}}">
+                    <input class="form-control" type="hidden" name="loading_lng" id="loading_lng" value="{{$results->loading_lng}}">
+                    <input class="form-control" type="hidden" name="loading_lat" id="loading_lat" value="{{$results->loading_lat}}">
                 </div>
             </div>
         </div>
@@ -19,6 +21,8 @@
                 <div class="form-group form-control-default">
                     <label for="unloading">Place of Unloading</label>
                     <input class="form-control" type="text" name="unloading" id="unloading" value="{{$results->unloading}}">
+                    <input class="form-control" type="hidden" name="unloading_lng" id="unloading_lng" value="{{$results->unloading_lng}}">
+                    <input class="form-control" type="hidden" name="unloading_lat" id="unloading_lat" value="{{$results->unloading_lat}}">
                 </div>
             </div>
             <div class="col-md-6">
