@@ -7,6 +7,16 @@
     <meta name="author" content="width=device-width, initial-scale=1">
     <meta name="_token" content="{!! csrf_token() !!}"/>
     <title>@section('title') @show</title>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106781453-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments)};
+        gtag('js', new Date());
+
+        gtag('config', 'UA-106781453-1');
+    </script>
+
     <link rel="stylesheet" href="{{asset('client/css/master.css')}}">
     <link rel="stylesheet" href="{{asset('client/css/font-icons.css')}}">
     <meta name="google-site-verification" content="MNU86okUooSjxq47xzlfpKFUQJ54QnPSxZYDkf38W2w" />
