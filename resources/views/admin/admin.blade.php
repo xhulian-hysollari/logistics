@@ -9,6 +9,14 @@
     <meta name="keywords" content="your,keywords">
     <meta name="description" content="Short explanation about this website">
     <meta name="google-site-verification" content="MNU86okUooSjxq47xzlfpKFUQJ54QnPSxZYDkf38W2w" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106781453-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments)};
+        gtag('js', new Date());
+
+        gtag('config', 'UA-106781453-1');
+    </script>
     <!-- END META -->
 
     <!-- BEGIN STYLESHEETS -->
