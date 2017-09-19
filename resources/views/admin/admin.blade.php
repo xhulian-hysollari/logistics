@@ -20,7 +20,7 @@
     <!-- END META -->
 
     <!-- BEGIN STYLESHEETS -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet'
+    <link href='//fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet'
           type='text/css'/>
     <link type="text/css" rel="stylesheet" href="{{asset('admin/css/theme-default/bootstrap.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('admin/css/theme-default/materialadmin.css')}}"/>
