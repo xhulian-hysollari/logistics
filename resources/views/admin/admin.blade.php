@@ -25,11 +25,16 @@
     <link type="text/css" rel="stylesheet" href="{{asset('admin/css/theme-default/bootstrap.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('admin/css/theme-default/materialadmin.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('admin/css/theme-default/font-awesome.min.css')}}"/>
-    <link type="text/css" rel="stylesheet"
-          href="{{asset('admin/css/theme-default/material-design-iconic-font.min.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('admin/css/theme-default/material-design-iconic-font.min.css')}}"/>
+    <!--[if lt IE 9]>
     <script type="text/javascript" src="{{asset('admin/js/libs/utils/html5shiv.js')}}"></script>
     <script type="text/javascript" src="{{asset('admin/js/libs/utils/respond.min.js')}}"></script>
     <![endif]-->
+    <style>
+        .form-group{
+            padding: 0 15px;
+        }
+    </style>
     @section('css')
     @show
 </head>
