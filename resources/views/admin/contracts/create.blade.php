@@ -3,7 +3,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            {!! Form::model($result = new \App\Models\Contracts(), ['route' => ['contracts.store'], 'method' => 'POST', 'class' => ' form-inline', 'novalidate']) !!}
+            {!! Form::model($result = new \App\Models\Contracts(), ['route' => ['contracts.store'], 'method' => 'POST', 'class' => ' form-horizontal', 'novalidate']) !!}
             @include('admin.contracts.form', [$button = trans('Save')])
             {!! Form::close() !!}
         </div>
