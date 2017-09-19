@@ -1,7 +1,8 @@
 @extends('admin.admin')
 
 @section('content')
-    <a href="{{route('trucks.create')}}" class="btn ink-reaction btn-primary pull-right" style="margin-bottom: 20px"> <i class="fa fa-plus"></i>
+    <a href="{{route('trucks.create')}}" class="btn ink-reaction btn-primary pull-right" style="margin-bottom: 20px"> <i
+                class="fa fa-plus"></i>
         Create
         new</a>
     <div class="col-lg-12">
@@ -32,8 +33,15 @@
                                     <td>{{$truck->type}}</td>
                                     <td>{{$truck->location}}</td>
                                     <td>{{$truck->status}}</td>
-                                    <td><a href="{{route('trucks.edit', $truck->id)}}"><i
-                                                    class="fa fa-pencil-square fa-2x"></i></a></td>
+                                    <td>
+                                        @if(Sentinel::getUser()->id == $truck->user_id)
+                                            <a href="{{route('trucks.edit', $truck->id)}}"><i
+                                                        class="fa fa-pencil-square fa-2x"></i></a>
+                                            <a href=""></a>
+                                        @else
+                                            <a href=""></a>
+                                        @endif
+                                    </td>
                                 <tr>
                             @endforeach
                         @else

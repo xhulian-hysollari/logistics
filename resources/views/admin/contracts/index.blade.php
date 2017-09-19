@@ -2,10 +2,11 @@
 
 @section('content')
 
-    <a href="{{route('contracts.create')}}" class="btn ink-reaction btn-primary pull-right" style="margin-bottom: 20px"> <i
-            class="fa fa-plus"></i>
-    Create
-    new</a>
+    <a href="{{route('contracts.create')}}" class="btn ink-reaction btn-primary pull-right" style="margin-bottom: 20px">
+        <i
+                class="fa fa-plus"></i>
+        Create
+        new</a>
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
@@ -36,7 +37,15 @@
                                     <td>{{$contract->requirements}}</td>
                                     <td>{{$contract->duration}}</td>
                                     <td>{{$contract->deadline}}</td>
-                                    <td><a href="{{ route('contracts.edit', [$contract->id]) }}"><i  class="fa fa-pencil-square fa-2x"></i></a></td>
+                                    <td>
+                                        @if(Sentinel::getUser()->id == $result->user_id)
+                                            <a href="{{ route('contracts.edit', [$contract->id]) }}"><i
+                                                        class="fa fa-pencil-square fa-2x"></i></a>
+                                            <a href=""></a>
+                                        @else
+                                            <a href=""></a>
+                                        @endif
+                                    </td>
                                 {{--<!--| <a href="{{route('contracts.delete')}}">Delete</a>-->--}}
                                 <tr>
                             @endforeach
