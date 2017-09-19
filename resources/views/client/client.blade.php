@@ -232,7 +232,6 @@
     });
     $(document).ready(function () {
         $('#main').css('min-height', $('#left-side').height());
-        console.log($('#main').height());
     });
 </script>
 @section('js')
