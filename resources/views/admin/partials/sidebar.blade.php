@@ -22,7 +22,7 @@
             <li>
                 <a href="{{route('messages')}}">
                     <div class="gui-icon"><i class="md md-email"></i></div>
-                    <span class="title">Email</span>
+                    <span class="title">Email</span><span class="badge"> {{Sentinel::getUser()->unread_conversations}}</span>
                 </a>
             </li>
             <li>

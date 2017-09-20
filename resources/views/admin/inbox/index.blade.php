@@ -5,19 +5,7 @@
         <div class="card">
             <div class="card-body">
                 <!-- BEGIN INBOX NAV -->
-                <div class="col-sm-4 col-md-3 col-lg-2">
-                    <ul class="nav nav-pills nav-stacked nav-icon">
-                        <li>
-                            <small>MAILBOXES</small>
-                        </li>
-                        <li><a href="{{route('messages')}}"><span class="glyphicon glyphicon-inbox"></span>Inbox
-                                <small>{{Sentinel::getUser()->unread_conversations}}</small>
-                            </a></li>
-                        <li><a href="{{route('messages')}}">Sent</a></li>
-                    </ul>
-                </div><!--end . -->
-                <!-- END INBOX NAV -->
-                <div class="col-sm-8 col-md-9 col-lg-10">
+                <div class="col-lg-12">
                     <div class="text-divider visible-xs"><span>Email list</span></div>
                     <div class="row">
                         <!-- BEGIN INBOX EMAIL LIST -->
