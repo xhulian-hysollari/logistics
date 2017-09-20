@@ -22,7 +22,7 @@
                         @if(isset($results) && count($results) > 0)
                             @foreach($results as $pages)
                                 <tr class="table-row">
-                                    <td>{!! $pages->page_title !!}</td>
+                                    <td>{!! strip_tags($pages->page_title) !!}</td>
                                     <td>{{$pages->slug}}</td>
                                     <td><a href="{{route('pages', $pages->slug)}}" target="_blank">{{route('pages', $pages->slug)}}</a></td>
                                     <td><a href="{{ route('pages.edit', [$pages->id]) }}">Edit</a></td>
