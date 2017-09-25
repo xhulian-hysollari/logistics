@@ -17,12 +17,9 @@
                         <th><i class="fa fa-cube"></i> {{trans('freight.volume')}}</th>
                         <th><i class="fa fa-truck"></i> {{trans('freight.lorry_type')}}</th>
                         <th><i class="fa fa-clock-o"></i> Listed at</th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    @if(isset($results))
-                        @if(count($results) > 0)
                             @foreach($results as $freight)
                                 <tr class="table-row">
                                     <th>{{$freight->loading}}</th>
@@ -30,16 +27,8 @@
                                     <th>{{$freight->volume}}</th>
                                     <th>{{$freight->type}}</th>
                                     <th>{{$freight->created_at}}</th>
-                                    <th><a href="{{route('freight.show', $freight->id)}}"><i class="fa fa-eye"></i></a>
-                                    </th>
                                 <tr>
                             @endforeach
-                        @else
-                            <tr>
-                                <td colspan="5">{{trans('freight.no_results')}}</td>
-                            </tr>
-                        @endif
-                    @endif
                     </tbody>
                 </table>
             </div>
