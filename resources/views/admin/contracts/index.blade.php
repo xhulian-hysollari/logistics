@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="data-table" class="table no-margin">
+                    <table id="data_table" class="table no-margin">
                         <thead>
                         <tr>
                             <th>Status</th>
@@ -78,7 +78,7 @@
     <script>
 
         $(document).ready(function() {
-            $('#data-table').dataTable({
+            $('#data_table').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
                     'copyHtml5',
