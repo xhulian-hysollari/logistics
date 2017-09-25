@@ -12,6 +12,14 @@
                         <th>Deadline</th>
                     </tr>
                     </thead>
+                    <tfoot>
+                    <tr>
+                        <th>Owner</th>
+                        <th>Description</th>
+                        <th>Duration</th>
+                        <th>Deadline</th>
+                    </tr>
+                    </tfoot>
                     <tbody>
                     @foreach($results as $contract)
                         <tr>
@@ -51,8 +59,25 @@
     <script>
 
         $(document).ready(function() {
-            $('#data-table').dataTable({
+            $('#data-table thead th').each(function() {
+                var title = $('#data-table thead th').eq($(this).index()).text();
+                $(this).html('&lt;input type=&quot;text&quot; placeholder=&quot;Search ' + title + '&quot; /&gt;');
+            });
+            var table = $('#data-table').dataTable({
                 dom: 'frtip'
+            });
+
+        table.columns().eq(0).each(function(colIdx) {
+                $('input', example.column(colIdx).header()).on('keyup change', function() {
+                    table
+                        .column(colIdx)
+                        .search(this.value)
+                        .draw();
+                });
+
+                $('input', table.column(colIdx).header()).on('click', function(e) {
+                    e.stopPropagation();
+                });
             });
         });
 
