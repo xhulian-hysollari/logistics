@@ -25,10 +25,10 @@
                         {{--@if(count($results) > 0)--}}
                             @foreach($results as $contract)
                                 <tr>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
+                                    <td>{{$contract->requirements}}</td>
+                                    <td>{{str_limit($contract->description,'35','...')}}</td>
+                                    <td>{{$contract->duration}}</td>
+                                    <td>{{$contract->deadline}}</td>
                                 <tr>
                             @endforeach
                         {{--@else--}}
@@ -72,7 +72,13 @@
 
         $(document).ready(function () {
             $('#tendersTable').dataTable({
-                dom: 'Bfrtip'
+                dom: 'Bfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ]
             });
         });
 
