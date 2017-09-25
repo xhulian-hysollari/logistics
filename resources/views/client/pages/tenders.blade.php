@@ -17,12 +17,12 @@
                     @if(isset($results))
                         @if(count($results) > 0)
                             <tr class="table-row">
-                                @foreach($results as $truck)
+                                @foreach($results as $contract)
                                     <td>{{$contract->owner->full_name}}</td>
                                     <td>{{str_limit($contract->description,'35','...')}}</td>
                                     <td>{{$contract->duration}}</td>
                                     <td>{{$contract->deadline}}</td>
-                                    <td><a href="{{route('contracts.show', $truck->id)}}"><i
+                                    <td><a href="{{route('contracts.show', $contract->id)}}"><i
                                                     class="fa fa-eye fa-2x"></i></a>
                                     </td>
                             @endforeach
