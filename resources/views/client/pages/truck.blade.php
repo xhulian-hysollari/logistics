@@ -51,7 +51,7 @@
                 var title = $('#data-table thead th').eq($(this).index()).text();
                 $(this).html('<input type="text" class="form-control" placeholder="Search ' + title + '" />');
             });
-            var table = $('#data-table').DataTable();
+            var table = $('#data-table').dataTable();
 
             table.columns().eq(0).each(function (colIdx) {
                 $('input', table.column(colIdx).header()).on('keyup change', function () {
