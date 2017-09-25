@@ -3,7 +3,7 @@
     <div class="block-content" style="padding-left: 20px; padding-right: 20px;">
         <div class="row main-grid">
             <div class="col-sm-12">
-                <table id="tender-table" class="table table-responsive table-striped">
+                <table id="data-table" class="table table-responsive table-striped">
                     <thead>
                     <tr>
                         <th>Owner</th>
@@ -42,8 +42,8 @@
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
     <script>
 
-        $(document).ready(function () {
-            $('#tender-table').dataTable({
+        $(document).ready(function() {
+            $('#data-table').dataTable({
                 dom: 'Bfrtip',
                 buttons: [
                     'copyHtml5',
