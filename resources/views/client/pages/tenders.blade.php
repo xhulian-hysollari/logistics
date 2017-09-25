@@ -48,33 +48,31 @@
     </div>
 @stop
 
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/components/bs-datatable.css')}}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
+
+@stop
 @section('js')
-    <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="{{asset('js/components/bs-datatable.js')}}"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
     <script>
+
         $(document).ready(function() {
-            // Setup - add a text input to each footer cell
-//            $('#tendersTable tfoot th').each( function () {
-//                var title = $(this).text();
-//                $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
-//            } );
-
-            // DataTable
-            var table = $('#tendersTable').DataTable({
-                dom: 'Bfrtip'
+            $('#tendersTable').dataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ]
             });
+        });
 
-            // Apply the search
-//            table.columns().every( function () {
-//                var that = this;
-//
-//                $( 'input', this.footer() ).on( 'keyup change', function () {
-//                    if ( that.search() !== this.value ) {
-//                        that
-//                            .search( this.value )
-//                            .draw();
-//                    }
-//                } );
-//            } );
-        } );
     </script>
 @stop
