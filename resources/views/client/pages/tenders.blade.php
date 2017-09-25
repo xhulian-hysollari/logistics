@@ -72,10 +72,7 @@
 
         $(document).ready(function () {
             $('#tendersTable').dataTable({
-                dom: 'Bfrtip',
-                columnDefs: [{
-                    targets: [ 3 ]
-                }]
+                dom: 'Bfrtip'
             });
         });
 
