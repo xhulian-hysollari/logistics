@@ -7,17 +7,17 @@
                     <thead>
                     <tr>
                         <th>Owner</th>
-                        {{--<th>Description</th>--}}
-                        {{--<th>Duration</th>--}}
-                        {{--<th>Deadline</th>--}}
+                        <th>Description</th>
+                        <th>Duration</th>
+                        <th>Deadline</th>
                     </tr>
                     </thead>
                     <tfoot>
                     <tr>
                         <th>Owner</th>
-                        {{--<th>Description</th>--}}
-                        {{--<th>Duration</th>--}}
-                        {{--<th>Deadline</th>--}}
+                        <th>Description</th>
+                        <th>Duration</th>
+                        <th>Deadline</th>
                     </tr>
                     </tfoot>
                     <tbody>
@@ -37,12 +37,12 @@
                             {{--</tr>--}}
                         @endif
                     @endif
-                    {{--<tr>--}}
-                    {{--<td>Test</td>--}}
-                    {{--<td>Test</td>--}}
-                    {{--<td>Test</td>--}}
-                    {{--<td>Test</td>--}}
-                    {{--</tr>--}}
+                    <tr>
+                    <td>Test</td>
+                    <td>Test</td>
+                    <td>Test</td>
+                    <td>Test</td>
+                    </tr>
                     {{--<tr>--}}
                     {{--<td>Test</td>--}}
                     {{--<td>Test</td>--}}
