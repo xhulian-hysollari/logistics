@@ -175,7 +175,7 @@
     </div>
     <div class="container-fluid block-content">
         <div class="row main-grid">
-            <form action="{{route('contracts.bid', $result->id)}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('contract.bid', $result->id)}}" method="post" enctype="multipart/form-data">
                 @include('client.partials.bid')
             </form>
         </div>
