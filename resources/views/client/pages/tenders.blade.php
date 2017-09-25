@@ -19,7 +19,6 @@
                         <th>Description</th>
                         <th>Duration</th>
                         <th>Deadline</th>
-                        <th></th>
                     </tr>
                     </tfoot>
                     <tbody>
