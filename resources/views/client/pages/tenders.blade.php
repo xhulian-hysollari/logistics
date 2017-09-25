@@ -15,7 +15,7 @@
                     <tbody>
                     @foreach($results as $contract)
                         <tr>
-                            <td>Hi</td>
+                            <td>{{$contract->owner->full_name}}</td>
                             <td>Hi</td>
                             <td>{{$contract->duration}}</td>
                             <td>{{$contract->deadline}}</td>
