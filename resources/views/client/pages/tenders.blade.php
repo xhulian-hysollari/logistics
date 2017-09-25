@@ -24,7 +24,7 @@
                     {{--@if(isset($results))--}}
                         {{--@if(count($results) > 0)--}}
                             @foreach($results as $contract)
-                                <tr class="table-row">
+                                <tr>
                                     <td>{{$contract->owner->full_name}}</td>
                                     <td>{{str_limit($contract->description,'35','...')}}</td>
                                     <td>{{$contract->duration}}</td>
