@@ -22,7 +22,7 @@
                     </tfoot>
                     <tbody>
                     {{--@if(isset($results))--}}
-                        @if(count($results) > 0)
+                        {{--@if(count($results) > 0)--}}
                             @foreach($results as $contract)
                                 <tr class="table-row">
                                     <td>{{$contract->owner->full_name}}</td>
@@ -35,7 +35,7 @@
                             {{--<tr>--}}
                                 {{--<td colspan="4">{{trans('truck.no_results')}}</td>--}}
                             {{--</tr>--}}
-                        @endif
+                        {{--@endif--}}
                     {{--@endif--}}
                     <tr>
                     <td>Test</td>
