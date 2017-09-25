@@ -52,7 +52,7 @@ class NavigationController extends Controller
 //        $user = Sentinel::getUser();
         $results = Contracts::all();
 
-        return view('client.pages.tenders', compact('results'));
+        return view('client.pages.tenders', compact('results'))->render();
     }
 
     public function getTenders(){
