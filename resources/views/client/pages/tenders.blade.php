@@ -6,10 +6,10 @@
                 <table id="data-table" class="table table-responsive table-striped">
                     <thead>
                     <tr>
-                        <th>Owner</th>
-                        <th>Description</th>
-                        <th>Duration</th>
-                        <th>Deadline</th>
+                        <td>Owner</td>
+                        <td>Description</td>
+                        <td>Duration</td>
+                        <td>Deadline</td>
                     </tr>
                     </thead>
                     <tbody>
