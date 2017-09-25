@@ -2,12 +2,6 @@
 @section('content')
     <div class="block-content" style="padding-left: 20px; padding-right: 20px;">
         <div class="row main-grid">
-            @if(\Cartalyst\Sentinel\Laravel\Facades\Sentinel::check())
-                @if(\Cartalyst\Sentinel\Laravel\Facades\Sentinel::inRole('truck'))
-                    <a href="{{route('truck.create')}}" class="btn btn-info"><i
-                                class="fa fa-plus"></i>{{trans('truck.add')}}</a>
-                @endif
-            @endif
             <div class="col-sm-12">
                 <table id="data-table" class="table table-responsive table-striped">
                     <thead>
@@ -23,11 +17,11 @@
                     {{--@foreach($results as $truck)--}}
                     @for($i = 0; $i <= 15; $i++)
                         <tr>
-                            <td>Hi</td>
-                            <td>Hi</td>
-                            <td>Hi</td>
-                            <td>Hi</td>
-                            <td>Hi</td>
+                            <td>Hi {{$i}}</td>
+                            <td>Hi {{$i}}</td>
+                            <td>Hi {{$i}}</td>
+                            <td>Hi {{$i}}</td>
+                            <td>Hi {{$i}}</td>
                         <tr>
                         @endfor
                     {{--@endforeach--}}
