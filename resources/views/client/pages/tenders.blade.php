@@ -10,7 +10,7 @@
                         <th>Description</th>
                         <th>Duration</th>
                         <th>Deadline</th>
-                        <th></th>
+                        {{--<th></th>--}}
                     </tr>
                     </thead>
                     <tfoot>
@@ -30,9 +30,9 @@
                                     <td>{{str_limit($contract->description,'35','...')}}</td>
                                     <td>{{$contract->duration}}</td>
                                     <td>{{$contract->deadline}}</td>
-                                    <td><a href="{{route('contracts.show', $contract->id)}}"><i
-                                                    class="fa fa-eye fa-2x"></i></a>
-                                    </td>
+                                    {{--<td><a href="{{route('contracts.show', $contract->id)}}"><i--}}
+                                                    {{--class="fa fa-eye fa-2x"></i></a>--}}
+                                    {{--</td>--}}
                             @endforeach
                             <tr>
                         @else
