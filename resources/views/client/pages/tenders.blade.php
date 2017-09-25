@@ -6,49 +6,21 @@
                 <table id="tendersTable" class="table table-responsive table-striped">
                     <thead>
                     <tr>
-                        <th>Owner</th>
-                        <th>Description</th>
-                        <th>Duration</th>
-                        <th>Deadline</th>
+                        <th>{{trans('staff.full_name')}}</th>
+                        <th>{{trans('staff.father_name')}}</th>
+                        <th>{{trans('staff.id_card')}}</th>
+                        <th>{{trans('staff.birth_date')}}</th>
                     </tr>
                     </thead>
-                    <tfoot>
-                    <tr>
-                        <th>Owner</th>
-                        <th>Description</th>
-                        <th>Duration</th>
-                        <th>Deadline</th>
-                    </tr>
-                    </tfoot>
                     <tbody>
-                    {{--@if(isset($results))--}}
-                        {{--@if(count($results) > 0)--}}
-                            @foreach($results as $contract)
-                                <tr>
-                                    <td>{{$contract->requirements}}</td>
-                                    <td>{{str_limit($contract->description,'35','...')}}</td>
-                                    <td>{{$contract->duration}}</td>
-                                    <td>{{$contract->deadline}}</td>
-                                <tr>
-                            @endforeach
-                        {{--@else--}}
-                            {{--<tr>--}}
-                                {{--<td colspan="4">{{trans('truck.no_results')}}</td>--}}
-                            {{--</tr>--}}
-                        {{--@endif--}}
-                    {{--@endif--}}
-                    <tr>
-                    <td>Test</td>
-                    <td>Test</td>
-                    <td>Test</td>
-                    <td>Test</td>
-                    </tr>
-                    {{--<tr>--}}
-                    {{--<td>Test</td>--}}
-                    {{--<td>Test</td>--}}
-                    {{--<td>Test</td>--}}
-                    {{--<td>Test</td>--}}
-                    {{--</tr>--}}
+                    @foreach($results as $contract)
+                        <tr>
+                            <td>{{$contract->owner->full_name}}</td>
+                            <td>{{str_limit($contract->description,'35','...')}}</td>
+                            <td>{{$contract->duration}}</td>
+                            <td>{{$contract->deadline}}</td>
+                        <tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
