@@ -37,7 +37,7 @@
                             <tr>
                         @else
                             <tr>
-                                <td colspan="5">{{trans('truck.no_results')}}</td>
+                                <td colspan="4">{{trans('truck.no_results')}}</td>
                             </tr>
                         @endif
                     @endif
