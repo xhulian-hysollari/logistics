@@ -46,6 +46,12 @@ class NavigationController extends Controller
         $results = Truck::all();
         return view('client.pages.truck', compact('results'));
     }
+    public function getTenderPage()
+    {
+//        $user = Sentinel::getUser();
+        $results = Truck::all();
+        return view('client.pages.tenders', compact('results'));
+    }
 
     public function getRegistrationPage()
     {

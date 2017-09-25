@@ -40,6 +40,7 @@ Route::get('/freights', ['as' => 'freight', 'uses' => 'NavigationController@getF
 Route::get('/page/{slug}', ['as' => 'pages', 'uses' => 'PagesController@getPage']);
 Route::get('/contact-us', ['as' => 'contact', 'uses' => 'NavigationController@getContactPage']);
 Route::get('/trucks', ['as' => 'truck', 'uses' => 'NavigationController@getTruckPage']);
+Route::get('/tenders', ['as' => 'tender', 'uses' => 'NavigationController@getTenderPage']);
 Route::get('/braintree/token', 'BraintreeTokenController@token');
 
 Route::middleware(['guest'])->group(function () {
