@@ -63,9 +63,7 @@
                 var title = $('#data-table thead th').eq($(this).index()).text();
                 $(this).html('<input type="text" placeholder="Search ' + title + '" />');
             });
-            var table = $('#data-table').dataTable({
-                dom: 'frtip'
-            });
+            var table = $('#data-table').DataTable();
 
         table.columns().eq(0).each(function(colIdx) {
                 $('input', example.column(colIdx).header()).on('keyup change', function() {
