@@ -59,7 +59,9 @@
 //            } );
 
             // DataTable
-            var table = $('#tendersTable').DataTable();
+            var table = $('#tendersTable').DataTable({
+                dom: 'Bfrtip'
+            });
 
             // Apply the search
 //            table.columns().every( function () {
