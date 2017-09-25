@@ -58,7 +58,7 @@ class ContractsController extends Controller
             $contracts->duration = $request->duration;
             $contracts->deadline = Carbon::parse($request->deadline);
             $contracts->save();
-            return redirect()->back()->withInput()->with('success', 'Contract listed successfully!');
+            return redirect()->route('contracts.index')->with('success', 'Contract listed successfully!');
         } catch (\Exception $ex) {
             return redirect()->back()->withInput()->with('error', $ex->getMessage());
         }
@@ -112,7 +112,7 @@ class ContractsController extends Controller
             $contracts->duration = $request->duration;
             $contracts->deadline = Carbon::parse($request->deadline);
             $contracts->save();
-            return redirect()->back()->with('success', 'Contract modified successfully');
+            return redirect()->route('contracts.index')->with('success', 'Contract modified successfully');
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }
