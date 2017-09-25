@@ -13,6 +13,15 @@
                         <th></th>
                     </tr>
                     </thead>
+                    <tfoot>
+                    <tr>
+                        <th>Owner</th>
+                        <th>Description</th>
+                        <th>Duration</th>
+                        <th>Deadline</th>
+                        <th></th>
+                    </tr>
+                    </tfoot>
                     <tbody>
                     @if(isset($results))
                         @if(count($results) > 0)
