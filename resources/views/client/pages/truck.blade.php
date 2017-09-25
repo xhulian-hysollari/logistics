@@ -10,6 +10,7 @@
                         <th>{{trans('truck.type')}}</th>
                         <th>{{trans('truck.location')}}</th>
                         <th>{{trans('truck.status')}}</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -19,6 +20,7 @@
                             <td>{{$truck->type}}</td>
                             <td>{{$truck->location}}</td>
                             <td>{{$truck->status}}</td>
+                            <td><a href="{{route('trucks.show', $truck->id)}}"><i class="fa fa-eye fa-2x"></i></a></td>
                         <tr>
                     @endforeach
                     </tbody>
