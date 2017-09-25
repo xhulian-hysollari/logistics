@@ -1,12 +1,6 @@
 @extends('client.client')
 @section('content')
     <div class="block-content" style="padding-left: 20px; padding-right: 20px;">
-        @if(\Cartalyst\Sentinel\Laravel\Facades\Sentinel::check())
-            @if(\Cartalyst\Sentinel\Laravel\Facades\Sentinel::inRole('freight'))
-                <a href="{{route('freight.create')}}" class="btn btn-info"><i
-                            class="fa fa-plus"></i>{{trans('freight.add')}}</a>
-            @endif
-        @endif
         <div class="row main-grid">
             <div class="col-sm-12">
                 <table id="data-table" class="table table-responsive table-striped">

@@ -6,13 +6,19 @@
                 <table id="data-table" class="table table-responsive table-striped">
                     <thead>
                     <tr>
-                        <th>1</th>
+                        <th>{{trans('truck.plate')}}</th>
+                        <th>{{trans('truck.type')}}</th>
+                        <th>{{trans('truck.location')}}</th>
+                        <th>{{trans('truck.status')}}</th>
                     </tr>
                     </thead>
                     <tbody>
                     {{--@foreach($results as $truck)--}}
                     @for($i = 0; $i <= 15; $i++)
                         <tr>
+                            <td>Hi {{$i}}</td>
+                            <td>Hi {{$i}}</td>
+                            <td>Hi {{$i}}</td>
                             <td>Hi {{$i}}</td>
                         <tr>
                         @endfor
@@ -51,7 +57,7 @@
                 var title = $('#data-table thead th').eq($(this).index()).text();
                 $(this).html('<input type="text" class="form-control" placeholder="Search ' + title + '" />');
             });
-            var table = $('#data-table').dataTable();
+            var table = $('#data-table').DataTable();
 
             table.columns().eq(0).each(function (colIdx) {
                 $('input', table.column(colIdx).header()).on('keyup change', function () {
