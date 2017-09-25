@@ -101,6 +101,9 @@
         footer, footer a, footer .copy {
             color: white;
         }
+        select.form-control.input-sm{
+            padding: 0;
+        }
     </style>
 </head>
 <body>
