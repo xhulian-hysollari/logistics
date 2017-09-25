@@ -61,7 +61,7 @@
         $(document).ready(function() {
             $('#data-table thead th').each(function() {
                 var title = $('#data-table thead th').eq($(this).index()).text();
-                $(this).html('&lt;input type=&quot;text&quot; placeholder=&quot;Search ' + title + '&quot; /&gt;');
+                $(this).html('<input type="text" placeholder="Search ' + title + '" />');
             });
             var table = $('#data-table').dataTable({
                 dom: 'frtip'
