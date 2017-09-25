@@ -3,13 +3,13 @@
     <div class="block-content" style="padding-left: 20px; padding-right: 20px;">
         <div class="row main-grid">
             <div class="col-sm-12">
-                <table id="tendersTable" class="table table-responsive table-striped">
+                <table id="tender-table" class="table table-responsive table-striped">
                     <thead>
                     <tr>
-                        <th>{{trans('staff.full_name')}}</th>
-                        <th>{{trans('staff.father_name')}}</th>
-                        <th>{{trans('staff.id_card')}}</th>
-                        <th>{{trans('staff.birth_date')}}</th>
+                        <th>Owner</th>
+                        <th>Description</th>
+                        <th>Duration</th>
+                        <th>Deadline</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -43,7 +43,7 @@
     <script>
 
         $(document).ready(function () {
-            $('#tendersTable').dataTable({
+            $('#tender-table').dataTable({
                 dom: 'Bfrtip',
                 buttons: [
                     'copyHtml5',
