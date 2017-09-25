@@ -13,14 +13,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @for($i = 0; $i <= 15; $i++)
+                    @foreach($results as $truck)
                         <tr>
-                            <td>Hi {{$i}}</td>
-                            <td>Hi {{$i}}</td>
-                            <td>Hi {{$i}}</td>
-                            <td>Hi {{$i}}</td>
+                            <td>{{$truck->plate}}</td>
+                            <td>{{$truck->type}}</td>
+                            <td>{{$truck->location}}</td>
+                            <td>{{$truck->status}}</td>
                         <tr>
-                    @endfor
+                    @endforeach
                     </tbody>
                 </table>
             </div>
