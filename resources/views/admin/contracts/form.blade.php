@@ -17,13 +17,13 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="requirements">Requirements</label>
-                    <textarea name="requirements" id="requirements" rows="3">{{$result->requirements}}</textarea>
+                    <textarea name="requirements" class="form-control" id="requirements" rows="3">{{$result->requirements}}</textarea>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea name="description" id="description" rows="3">{{$result->description}}</textarea>
+                    <textarea name="description" class="form-control" id="description" rows="3">{{$result->description}}</textarea>
                 </div>
             </div>
         </div>
