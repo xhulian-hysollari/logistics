@@ -2,14 +2,14 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="status">Status</label>
-                    <input class="form-control"  type="text" name="status"  id="status" value="{{$result->status}}">
+                    <label for="title">Title</label>
+                    <input class="form-control"  type="text" name="title" id="title" value="{{$result->title}}">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="description">Description</label>
-                    <input class="form-control"  type="text" name="description" id="description" value="{{$result->description}}">
+                    <label for="duration">Duration</label>
+                    <input class="form-control"  type="number" name="duration" id="duration" value="{{$result->duration}}">
                 </div>
             </div>
         </div>
@@ -17,21 +17,21 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="requirements">Requirements</label>
-                    <input class="form-control"  type="text" name="requirements" id="requirements" value="{{$result->requirements}}">
+                    <textarea name="requirements" id="requirements" cols="30" rows="10">{{$result->requirements}}</textarea>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="duration">Duration</label>
-                    <input class="form-control"  type="text" name="duration" id="duration" value="{{$result->duration}}">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" cols="30" rows="10">{{$result->description}}</textarea>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label for="deadline">Deadline</label>
-                    <input class="form-control"  type="text" name="deadline" id="deadline" value="{{$result->deadline}}">
+                    <label for="deadline">Application Deadline</label>
+                    <input class="form-control"  type="date" name="deadline" id="deadline" value="{{$result->deadline}}">
                 </div>
             </div>
         <button type="submit" class="btn btn-success btn-default">{{$button}}</button>

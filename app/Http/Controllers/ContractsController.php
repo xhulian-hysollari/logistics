@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\ContractRequest;
 use App\Models\Contracts;
 use Carbon\Carbon;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
@@ -44,21 +45,21 @@ class ContractsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContractRequest $request)
     {
         $user = Sentinel::getUser();
         try {
             $contracts = new Contracts();
             $contracts->user_id = $user->id;
-            $contracts->status = Input::get('status');
-            $contracts->description = Input::get('description');
-            $contracts->requirements = Input::get('requirements');
-            $contracts->duration = Input::get('duration');
-            $contracts->deadline = Carbon::parse(Input::get('deadline'));
+            $contracts->status = 1;
+            $contracts->title = $request->title;
+            $contracts->description = $request->description;
+            $contracts->requirements = $request->requirements;
+            $contracts->duration = $request->duration;
+            $contracts->deadline = Carbon::parse($request->deadline);
             $contracts->save();
             return redirect()->back()->withInput()->with('success', 'Contract listed successfully!');
         } catch (\Exception $ex) {
-            dd($ex);
             return redirect()->back()->withInput()->with('error', $ex->getMessage());
         }
     }
@@ -102,14 +103,14 @@ class ContractsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ContractRequest $request, $id)
     {
         try{
             $contracts = Contracts::where('id', $id)->first();
-            $contracts->description = Input::get('description');
-            $contracts->requirements = Input::get('requirements');
-            $contracts->duration = Input::get('duration');
-            $contracts->deadline = Input::get('deadline');
+            $contracts->description = $request->description;
+            $contracts->requirements = $request->requirements;
+            $contracts->duration = $request->duration;
+            $contracts->deadline = Carbon::parse($request->deadline);
             $contracts->save();
             return redirect()->back()->with('success', 'Contract modified successfully');
         }catch (\Exception $ex){

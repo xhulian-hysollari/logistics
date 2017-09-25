@@ -24,7 +24,11 @@ class ContractRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required',
+            'duration' => 'required',
+            'requirements' => 'required',
+            'description' => 'required',
+            'deadline' => 'required|date',
         ];
     }
 }
