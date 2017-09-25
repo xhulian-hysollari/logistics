@@ -13,14 +13,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @for($i = 0; $i <= 15; $i++)
+                    @foreach($results as $contract)
                         <tr>
-                            <td>Hi {{$i}}</td>
-                            <td>Hi {{$i}}</td>
-                            <td>Hi {{$i}}</td>
-                            <td>Hi {{$i}}</td>
+                            <td>Hi</td>
+                            <td>Hi</td>
+                            <td>Hi</td>
+                            <td>Hi</td>
                         </tr>
-                    @endfor
+                    @endforeach
                     {{--@foreach($results as $contract)--}}
                         {{--<tr>--}}
                             {{--<td>{{$contract->owner->full_name}}</td>--}}
