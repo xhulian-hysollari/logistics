@@ -66,7 +66,7 @@
             var table = $('#data-table').DataTable();
 
         table.columns().eq(0).each(function(colIdx) {
-                $('input', example.column(colIdx).header()).on('keyup change', function() {
+                $('input', table.column(colIdx).header()).on('keyup change', function() {
                     table
                         .column(colIdx)
                         .search(this.value)
