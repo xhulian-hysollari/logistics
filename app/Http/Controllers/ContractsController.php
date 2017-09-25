@@ -73,8 +73,8 @@ class ContractsController extends Controller
     public function show($id)
     {
         try{
-            $results = Contracts::where('id', $id)->first();
-            return view('admin.contracts.show', compact('results'));
+            $result = Contracts::where('id', $id)->first();
+            return view('admin.contracts.show', compact('result'));
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());
         }
