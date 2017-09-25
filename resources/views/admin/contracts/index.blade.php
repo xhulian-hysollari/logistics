@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table no-margin">
+                    <table id="data-table" class="table no-margin">
                         <thead>
                         <tr>
                             <th>Status</th>
