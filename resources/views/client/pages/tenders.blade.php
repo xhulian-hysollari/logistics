@@ -18,7 +18,7 @@
                             <td>Hi</td>
                             <td>Hi</td>
                             <td>Hi</td>
-                            <td>Hi</td>
+                            <td>{{$contract->deadline}}</td>
                         </tr>
                     @endforeach
                     {{--@foreach($results as $contract)--}}
