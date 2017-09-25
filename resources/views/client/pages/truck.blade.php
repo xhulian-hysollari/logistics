@@ -7,20 +7,12 @@
                     <thead>
                     <tr>
                         <th>1</th>
-                        <th>1</th>
-                        <th>1</th>
-                        <th>1</th>
-                        <th>1</th>
                     </tr>
                     </thead>
                     <tbody>
                     {{--@foreach($results as $truck)--}}
                     @for($i = 0; $i <= 15; $i++)
                         <tr>
-                            <td>Hi {{$i}}</td>
-                            <td>Hi {{$i}}</td>
-                            <td>Hi {{$i}}</td>
-                            <td>Hi {{$i}}</td>
                             <td>Hi {{$i}}</td>
                         <tr>
                         @endfor
