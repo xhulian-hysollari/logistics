@@ -23,14 +23,14 @@
                     <tbody>
                     @if(isset($results))
                         @if(count($results) > 0)
-                            <tr class="table-row">
                                 @foreach($results as $contract)
+                                <tr class="table-row">
                                     <td>{{$contract->owner->full_name}}</td>
                                     <td>{{str_limit($contract->description,'35','...')}}</td>
                                     <td>{{$contract->duration}}</td>
                                     <td>{{$contract->deadline}}</td>
-                            @endforeach
                             <tr>
+                            @endforeach
                         @else
                             <tr>
                                 <td colspan="4">{{trans('truck.no_results')}}</td>
