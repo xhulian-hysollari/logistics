@@ -33,8 +33,8 @@
                                     @if(Sentinel::inRole('admin'))
                                         <td>{{$contract->owner->full_name}}</td>
                                     @endif
-                                    <td>{{$contract->description}}</td>
-                                    <td>{{$contract->requirements}}</td>
+                                    <td>{{str_limit($contract->description,'100','...')}}</td>
+                                    <td>{{str_limit($contract->requirements,'100','...')}}</td>
                                     <td>{{$contract->duration}}</td>
                                     <td>{{$contract->deadline}}</td>
                                     <td>
