@@ -38,7 +38,7 @@
                                     <td>{{$contract->duration}}</td>
                                     <td>{{$contract->deadline}}</td>
                                     <td>
-                                        @if(Sentinel::getUser()->id == $result->user_id)
+                                        @if(Sentinel::getUser()->id == $contract->user_id)
                                             <a href="{{ route('contracts.edit', [$contract->id]) }}"><i
                                                         class="fa fa-pencil-square fa-2x"></i></a>
                                             <a href=""></a>
