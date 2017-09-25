@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Contracts;
 use App\Models\Freight;
 use App\Models\Legal;
 use App\Models\Partner;
@@ -49,7 +50,7 @@ class NavigationController extends Controller
     public function getTenderPage()
     {
 //        $user = Sentinel::getUser();
-        $results = Truck::all();
+        $results = Contracts::all();
         return view('client.pages.tenders', compact('results'));
     }
 
