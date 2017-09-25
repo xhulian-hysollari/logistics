@@ -3,7 +3,7 @@
     <div class="block-content" style="padding-left: 20px; padding-right: 20px;">
         <div class="row main-grid">
             <div class="col-sm-12">
-                <table class="table table-responsive table-striped">
+                <table id="tendersTable" class="table table-responsive table-striped">
                     <thead>
                     <tr>
                         <th>Owner</th>
@@ -38,4 +38,33 @@
             </div>
         </div>
     </div>
+@stop
+
+@section('js')
+    <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Setup - add a text input to each footer cell
+            $('#tendersTable tfoot th').each( function () {
+                var title = $(this).text();
+                $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+            } );
+
+            // DataTable
+            var table = $('#tendersTable').DataTable();
+
+            // Apply the search
+            table.columns().every( function () {
+                var that = this;
+
+                $( 'input', this.footer() ).on( 'keyup change', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        } );
+    </script>
 @stop
