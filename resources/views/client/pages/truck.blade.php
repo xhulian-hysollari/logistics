@@ -20,10 +20,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @if(isset($results))
-                        @if(count($results) > 0)
-                            <tr class="table-row">
                                 @foreach($results as $truck)
+                                <tr>
                                     <td>{{$truck->plate}}</td>
                                     <td>{{$truck->type}}</td>
                                     <td>{{$truck->location}}</td>
@@ -31,14 +29,8 @@
                                     <td><a href="{{route('trucks.show', $truck->id)}}"><i
                                                     class="fa fa-eye fa-2x"></i></a>
                                     </td>
+                            <tr>
                             @endforeach
-                            <tr>
-                        @else
-                            <tr>
-                                <td colspan="5">{{trans('truck.no_results')}}</td>
-                            </tr>
-                        @endif
-                    @endif
                     </tbody>
                 </table>
             </div>
