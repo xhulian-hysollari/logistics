@@ -12,11 +12,11 @@
                 <table id="data-table" class="table table-responsive table-striped">
                     <thead>
                     <tr>
-                        <th>{{trans('truck.plate')}}</th>
-                        <th>{{trans('truck.type')}}</th>
-                        <th>{{trans('truck.location')}}</th>
-                        <th>{{trans('truck.status')}}</th>
-                        <th>Actions</th>
+                        <th>1</th>
+                        <th>1</th>
+                        <th>1</th>
+                        <th>1</th>
+                        <th>1</th>
                     </tr>
                     </thead>
                     <tbody>
