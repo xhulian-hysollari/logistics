@@ -23,13 +23,13 @@
                     <tbody>
                     @if(isset($results))
                         @if(count($results) > 0)
-                                @foreach($results as $contract)
+                            @foreach($results as $contract)
                                 <tr class="table-row">
                                     <td>{{$contract->owner->full_name}}</td>
                                     <td>{{str_limit($contract->description,'35','...')}}</td>
                                     <td>{{$contract->duration}}</td>
                                     <td>{{$contract->deadline}}</td>
-                            <tr>
+                                <tr>
                             @endforeach
                         @else
                             <tr>
@@ -38,16 +38,16 @@
                         @endif
                     @endif
                     {{--<tr>--}}
-                        {{--<td>Test</td>--}}
-                        {{--<td>Test</td>--}}
-                        {{--<td>Test</td>--}}
-                        {{--<td>Test</td>--}}
+                    {{--<td>Test</td>--}}
+                    {{--<td>Test</td>--}}
+                    {{--<td>Test</td>--}}
+                    {{--<td>Test</td>--}}
                     {{--</tr>--}}
                     {{--<tr>--}}
-                        {{--<td>Test</td>--}}
-                        {{--<td>Test</td>--}}
-                        {{--<td>Test</td>--}}
-                        {{--<td>Test</td>--}}
+                    {{--<td>Test</td>--}}
+                    {{--<td>Test</td>--}}
+                    {{--<td>Test</td>--}}
+                    {{--<td>Test</td>--}}
                     {{--</tr>--}}
                     </tbody>
                 </table>
@@ -70,7 +70,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
     <script>
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#tendersTable').dataTable({
                 dom: 'Bfrtip',
                 buttons: [
