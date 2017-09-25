@@ -13,7 +13,6 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {{--@foreach($results as $truck)--}}
                     @for($i = 0; $i <= 15; $i++)
                         <tr>
                             <td>Hi {{$i}}</td>
@@ -21,15 +20,7 @@
                             <td>Hi {{$i}}</td>
                             <td>Hi {{$i}}</td>
                         <tr>
-                        @endfor
-                    {{--@endforeach--}}
-                            {{--<td>{{$truck->plate}}</td>--}}
-                            {{--<td>{{$truck->type}}</td>--}}
-                            {{--<td>{{$truck->location}}</td>--}}
-                            {{--<td>{{$truck->status}}</td>--}}
-                            {{--<td><a href="{{route('trucks.show', $truck->id)}}"><i--}}
-                                            {{--class="fa fa-eye fa-2x"></i></a>--}}
-                            {{--</td>--}}
+                    @endfor
                     </tbody>
                 </table>
             </div>
@@ -37,6 +28,14 @@
     </div>
 @stop
 
+{{--@endforeach--}}
+{{--<td>{{$truck->plate}}</td>--}}
+{{--<td>{{$truck->type}}</td>--}}
+{{--<td>{{$truck->location}}</td>--}}
+{{--<td>{{$truck->status}}</td>--}}
+{{--<td><a href="{{route('trucks.show', $truck->id)}}"><i--}}
+{{--class="fa fa-eye fa-2x"></i></a>--}}
+{{--</td>--}}
 
 @section('css')
     <link rel="stylesheet" href="{{asset('css/components/bs-datatable.css')}}">
