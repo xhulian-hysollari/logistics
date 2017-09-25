@@ -6,21 +6,29 @@
                 <table id="data-table" class="table table-responsive table-striped">
                     <thead>
                     <tr>
-                        <td>Owner</td>
-                        <td>Description</td>
-                        <td>Duration</td>
-                        <td>Deadline</td>
+                        <th>Owner</th>
+                        <th>Description</th>
+                        <th>Duration</th>
+                        <th>Deadline</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($results as $contract)
+                    @for($i = 0; $i <= 15; $i++)
                         <tr>
-                            <td>{{$contract->owner->full_name}}</td>
-                            <td>{{str_limit($contract->description,'35','...')}}</td>
-                            <td>{{$contract->duration}}</td>
-                            <td>{{$contract->deadline}}</td>
-                        <tr>
-                    @endforeach
+                            <td>Hi {{$i}}</td>
+                            <td>Hi {{$i}}</td>
+                            <td>Hi {{$i}}</td>
+                            <td>Hi {{$i}}</td>
+                        </tr>
+                    @endfor
+                    {{--@foreach($results as $contract)--}}
+                        {{--<tr>--}}
+                            {{--<td>{{$contract->owner->full_name}}</td>--}}
+                            {{--<td>{{str_limit($contract->description,'35','...')}}</td>--}}
+                            {{--<td>{{$contract->duration}}</td>--}}
+                            {{--<td>{{$contract->deadline}}</td>--}}
+                        {{--<tr>--}}
+                    {{--@endforeach--}}
                     </tbody>
                 </table>
             </div>
