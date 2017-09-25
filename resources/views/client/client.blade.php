@@ -157,7 +157,7 @@
                 </li>
                 <li><a style="padding:0 20px; color:white" href="{{route('truck')}}">{{trans('navigation.gps')}}</a>
                 </li>
-                <li><a style="padding:0 20px; color:white" href="{{route('truck')}}">{{trans('navigation.tenders')}}</a>
+                <li><a style="padding:0 20px; color:white" href="{{route('tender')}}">{{trans('navigation.tenders')}}</a>
                 </li>
             </ul>
             <hr>
