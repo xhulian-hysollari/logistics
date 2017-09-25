@@ -78,15 +78,8 @@
     <script>
 
         $(document).ready(function() {
-            $('#data_table').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    'copyHtml5',
-                    'excelHtml5',
-                    'csvHtml5',
-                    'pdfHtml5'
-                ]
-            });
+            $('#data_table').DataTable();
+            $('#data_table').dataTable();
         });
 
     </script>
