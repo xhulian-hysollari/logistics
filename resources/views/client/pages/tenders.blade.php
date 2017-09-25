@@ -31,10 +31,10 @@
                                     <td>{{$contract->deadline}}</td>
                                 <tr>
                             @endforeach
-                        @else
-                            <tr>
-                                <td colspan="4">{{trans('truck.no_results')}}</td>
-                            </tr>
+                        {{--@else--}}
+                            {{--<tr>--}}
+                                {{--<td colspan="4">{{trans('truck.no_results')}}</td>--}}
+                            {{--</tr>--}}
                         @endif
                     @endif
                     {{--<tr>--}}
