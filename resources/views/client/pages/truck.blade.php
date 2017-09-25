@@ -20,17 +20,22 @@
                     </tr>
                     </thead>
                     <tbody>
-                                @foreach($results as $truck)
-                                <tr>
-                                    <td>{{$truck->plate}}</td>
-                                    <td>{{$truck->type}}</td>
-                                    <td>{{$truck->location}}</td>
-                                    <td>{{$truck->status}}</td>
-                                    <td><a href="{{route('trucks.show', $truck->id)}}"><i
-                                                    class="fa fa-eye fa-2x"></i></a>
-                                    </td>
-                            <tr>
-                            @endforeach
+                    @foreach($results as $truck)
+                        <tr>
+                            <td>Hi</td>
+                            <td>Hi</td>
+                            <td>Hi</td>
+                            <td>Hi</td>
+                            <td>Hi</td>
+                        <tr>
+                    @endforeach
+                            {{--<td>{{$truck->plate}}</td>--}}
+                            {{--<td>{{$truck->type}}</td>--}}
+                            {{--<td>{{$truck->location}}</td>--}}
+                            {{--<td>{{$truck->status}}</td>--}}
+                            {{--<td><a href="{{route('trucks.show', $truck->id)}}"><i--}}
+                                            {{--class="fa fa-eye fa-2x"></i></a>--}}
+                            {{--</td>--}}
                     </tbody>
                 </table>
             </div>
@@ -53,22 +58,22 @@
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
     <script>
 
-        $(document).ready(function() {
-            $('#data-table thead th').each(function() {
+        $(document).ready(function () {
+            $('#data-table thead th').each(function () {
                 var title = $('#data-table thead th').eq($(this).index()).text();
                 $(this).html('<input type="text" class="form-control" placeholder="Search ' + title + '" />');
             });
             var table = $('#data-table').DataTable();
 
-            table.columns().eq(0).each(function(colIdx) {
-                $('input', table.column(colIdx).header()).on('keyup change', function() {
+            table.columns().eq(0).each(function (colIdx) {
+                $('input', table.column(colIdx).header()).on('keyup change', function () {
                     table
                         .column(colIdx)
                         .search(this.value)
                         .draw();
                 });
 
-                $('input', table.column(colIdx).header()).on('click', function(e) {
+                $('input', table.column(colIdx).header()).on('click', function (e) {
                     e.stopPropagation();
                 });
             });
