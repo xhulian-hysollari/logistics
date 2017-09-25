@@ -3,7 +3,7 @@
     <div class="block-content" style="padding-left: 20px; padding-right: 20px;">
         <div class="row main-grid">
             <div class="col-sm-12">
-                <table id="data-table" class="table table-responsive table-striped">
+                <table id="data_table" class="table table-responsive table-striped">
                     <thead>
                     <tr>
                         <th>{{trans('truck.plate')}}</th>
@@ -52,24 +52,24 @@
     <script>
 
         $(document).ready(function () {
-            $('#data-table thead th').each(function () {
-                var title = $('#data-table thead th').eq($(this).index()).text();
-                $(this).html('<input type="text" class="form-control" placeholder="Search ' + title + '" />');
-            });
-            var table = $('#data-table').DataTable();
+//            $('#data-table thead th').each(function () {
+//                var title = $('#data-table thead th').eq($(this).index()).text();
+//                $(this).html('<input type="text" class="form-control" placeholder="Search ' + title + '" />');
+//            });
+            var table = $('#data_table').DataTable();
 
-            table.columns().eq(0).each(function (colIdx) {
-                $('input', table.column(colIdx).header()).on('keyup change', function () {
-                    table
-                        .column(colIdx)
-                        .search(this.value)
-                        .draw();
-                });
-
-                $('input', table.column(colIdx).header()).on('click', function (e) {
-                    e.stopPropagation();
-                });
-            });
+//            table.columns().eq(0).each(function (colIdx) {
+//                $('input', table.column(colIdx).header()).on('keyup change', function () {
+//                    table
+//                        .column(colIdx)
+//                        .search(this.value)
+//                        .draw();
+//                });
+//
+//                $('input', table.column(colIdx).header()).on('click', function (e) {
+//                    e.stopPropagation();
+//                });
+//            });
         });
 
     </script>
