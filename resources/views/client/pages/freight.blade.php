@@ -18,7 +18,7 @@
                     @foreach($results as $freight)
                         <tr>
                             <td>{{$freight->loading}}</td>
-                            <td>Hi</td>
+                            <td>{{$freight->unloading}}</td>
                             <td>Hi</td>
                             <td>Hi</td>
                             <td>Hi</td>
