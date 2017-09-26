@@ -202,7 +202,7 @@
             // Create a map object and specify the DOM element for display.
             var map = new google.maps.Map(document.getElementById('location-map'), {
                 center: {lat: parseFloat('{{$result->location_lat}}'), lng: parseFloat('{{$result->location_lng}}')},
-                zoom: 8
+                zoom: 12
             });
             var marker = new google.maps.Marker({
                 position: {lat: parseFloat('{{$result->location_lat}}'), lng: parseFloat('{{$result->location_lng}}')},
