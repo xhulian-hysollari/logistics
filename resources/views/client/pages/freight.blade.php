@@ -19,9 +19,9 @@
                         <tr>
                             <td>{{$freight->loading}}</td>
                             <td>{{$freight->unloading}}</td>
-                            <td>Hi</td>
-                            <td>Hi</td>
-                            <td>Hi</td>
+                            <td>{{$freight->volume}}</td>
+                            <td>{{$freight->type}}</td>
+                            <td>{{\Carbon\Carbon::parse($freight->created_at)->diffForHumans()}}</td>
                             <td>Hi</td>
                         </tr>
                     @endforeach
