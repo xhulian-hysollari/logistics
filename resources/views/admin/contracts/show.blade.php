@@ -143,7 +143,7 @@
                                 <label class="control-label">Contract Duration: </label>
                             </div>
                             <div class="col-md-8">
-                               {{$result->duration}}
+                                {{$result->duration}}
                             </div>
                         </div>
                     </div>
@@ -175,14 +175,6 @@
     </div>
     @if(Sentinel::check())
         @if(Sentinel::getUser()->id != $result->owner->id)
-        <div class="container-fluid block-content">
-            <div class="row main-grid">
-                <form action="{{route('contract.bid', $result->id)}}" method="post" enctype="multipart/form-data">
-                    @include('client.partials.bid')
-                </form>
-            </div>
-        </div>
-        @else
             <div class="container-fluid block-content">
                 <div class="row main-grid">
                     <form action="{{route('contract.bid', $result->id)}}" method="post" enctype="multipart/form-data">
@@ -191,6 +183,14 @@
                 </div>
             </div>
         @endif
+    @else
+        <div class="container-fluid block-content">
+            <div class="row main-grid">
+                <form action="{{route('contract.bid', $result->id)}}" method="post" enctype="multipart/form-data">
+                    @include('client.partials.bid')
+                </form>
+            </div>
+        </div>
     @endif
 @stop
 
