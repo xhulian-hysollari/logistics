@@ -61,7 +61,11 @@ class FreightController extends Controller
             $freight->type = Input::get('lorry_type');
             $freight->width = Input::get('width');
             $freight->loading = Input::get('loading');
+            $freight->loading_lat = Input::get('loading_lat');
+            $freight->loading_lng = Input::get('loading_lng');
             $freight->unloading = Input::get('unloading');
+            $freight->unloading_lng = Input::get('unloading_lat');
+            $freight->unloading_lat = Input::get('unloading_lng');
             $freight->description = Input::get('description');
             $freight->quantity = Input::get('quantity');
             $freight->status = 0;
@@ -122,7 +126,11 @@ class FreightController extends Controller
             $freight->type = Input::get('lorry_type');
             $freight->width = Input::get('width');
             $freight->loading = Input::get('loading');
+            $freight->loading_lat = Input::get('loading_lat');
+            $freight->loading_lng = Input::get('loading_lng');
             $freight->unloading = Input::get('unloading');
+            $freight->unloading_lng = Input::get('unloading_lat');
+            $freight->unloading_lat = Input::get('unloading_lng');
             $freight->description = Input::get('description');
             $freight->volume = Input::get('volume');
             $freight->quantity = Input::get('quantity');
