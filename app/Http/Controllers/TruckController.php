@@ -57,6 +57,8 @@ class TruckController extends Controller
             $trucks->type = Input::get('lorry_type');
             $trucks->plate = Input::get('plate');
             $trucks->location = Input::get('location');
+            $trucks->location_lat = Input::get('location_lat');
+            $trucks->location_lng = Input::get('location_lng');
             $trucks->description = Input::get('description');
             $trucks->status = 0;
             $trucks->save();
@@ -119,6 +121,8 @@ class TruckController extends Controller
             $trucks->type = Input::get('lorry_type');
             $trucks->plate = Input::get('plate');
             $trucks->location = Input::get('location');
+            $trucks->location_lat = Input::get('location_lat');
+            $trucks->location_lng = Input::get('location_lng');
             $trucks->description = Input::get('description');
             $trucks->save();
 
