@@ -20,7 +20,7 @@
             var locationcomplete = new google.maps.places.Autocomplete(location, options);
 
             locationcomplete.addListener('place_changed', function () {
-                var place = autocomplete.getPlace();
+                var place = locationcomplete.getPlace();
                 document.getElementById("location_lat").value = place.geometry.location.lat();
                 console.log(place.geometry.location.lat());
                 console.log(document.getElementById("location_lat").value);

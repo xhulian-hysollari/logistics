@@ -22,7 +22,7 @@
 
 
             locationcomplete.addListener('place_changed', function () {
-                var place = autocomplete.getPlace();
+                var place = locationcomplete.getPlace();
                 document.getElementById("location_lat").value = place.geometry.location.lat();
                 document.getElementById("location_lng").value = place.geometry.location.lng();
             });
