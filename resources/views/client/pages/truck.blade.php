@@ -14,7 +14,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                        @for($i = 0; $i <= 5; $i++)
+                        @foreach($results as $truck)
                             <tr>
                                 <td>{{$i}}</td>
                                 <td>{{$i}}</td>
@@ -22,7 +22,7 @@
                                 <td>{{$i}}</td>
                                 <td>{{$i}}</td>
                             </tr>
-                        @endfor
+                        @endforeach
                     {{--@foreach($results as $truck)--}}
                         {{--<tr>--}}
                             {{--<td>{{$truck->plate}}</td>--}}
