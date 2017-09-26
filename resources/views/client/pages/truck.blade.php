@@ -14,15 +14,24 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($results as $truck)
-                        <tr>
-                            <td>{{$truck->plate}}</td>
-                            <td>{{$truck->type}}</td>
-                            <td>{{$truck->location}}</td>
-                            <td>{{$truck->status}}</td>
-                            <td><a href="{{route('trucks.show', $truck->id)}}"><i class="fa fa-eye fa-2x"></i></a></td>
-                        <tr>
-                    @endforeach
+                        @for($i = 0; $i <= 5; $i++)
+                            <tr>
+                                <td>{{$i}}</td>
+                                <td>{{$i}}</td>
+                                <td>{{$i}}</td>
+                                <td>{{$i}}</td>
+                                <td>{{$i}}</td>
+                            </tr>
+                        @endfor
+                    {{--@foreach($results as $truck)--}}
+                        {{--<tr>--}}
+                            {{--<td>{{$truck->plate}}</td>--}}
+                            {{--<td>{{$truck->type}}</td>--}}
+                            {{--<td>{{$truck->location}}</td>--}}
+                            {{--<td>{{$truck->status}}</td>--}}
+                            {{--<td><a href="{{route('trucks.show', $truck->id)}}"><i class="fa fa-eye fa-2x"></i></a></td>--}}
+                        {{--<tr>--}}
+                    {{--@endforeach--}}
                     </tbody>
                 </table>
             </div>

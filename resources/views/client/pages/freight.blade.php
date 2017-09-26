@@ -55,7 +55,6 @@
     <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
     <script>
-
         $(document).ready(function () {
             $('#data_table thead th').each(function () {
                 var title = $('#data_table thead th').eq($(this).index()).text();
@@ -74,6 +73,5 @@
                 });
             });
         });
-
     </script>
 @stop
