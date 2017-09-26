@@ -209,10 +209,32 @@
     <script>
         function initMap() {
             // Create a map object and specify the DOM element for display.
+            var directionsService = new google.maps.DirectionsService;
+            var directionsDisplay = new google.maps.DirectionsRenderer;
+
             var map = new google.maps.Map(document.getElementById('location-map'), {
                 center: {lat: -34.397, lng: 150.644},
                 zoom: 8
             });
+
+
+            directionsDisplay.setMap(map);
+            calculateAndDisplayRoute(directionsService, directionsDisplay);
+
+            function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+                directionsService.route({
+                    origin: {lat: parseFloat('{{$result->loading_lat}}'), lng: parseFloat('{{$result->loading_lng}}')},
+                    destination: {lat: parseFloat('{{$result->unloading_lat}}'), lng: parseFloat('{{$result->unloading_lng}}')},
+                    travelMode: 'DRIVING'
+                }, function(response, status) {
+                    if (status === 'OK') {
+                        directionsDisplay.setDirections(response);
+                    } else {
+                        window.alert('Directions request failed due to ' + status);
+                    }
+                });
+            }
+
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiBlCK2sTv0-Dq_V098HVSJ7-lhLV13yU&callback=initMap"
