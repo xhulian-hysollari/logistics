@@ -69,14 +69,22 @@
     <script>
 
         $(document).ready(function() {
-            $('#data_table').dataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    'copyHtml5',
-                    'excelHtml5',
-                    'csvHtml5',
-                    'pdfHtml5'
-                ]
+            $('#data_table thead th').each(function () {
+                var title = $('#data_table thead th').eq($(this).index()).text();
+                $(this).html('<input type="text" class="form-control" placeholder="Search ' + title + '" />');
+            });
+            var table = $('#data_table').dataTable();
+            table.columns().eq(0).each(function (colIdx) {
+                $('input', table.column(colIdx).header()).on('keyup change', function () {
+                    table
+                        .column(colIdx)
+                        .search(this.value)
+                        .draw();
+                });
+
+                $('input', table.column(colIdx).header()).on('click', function (e) {
+                    e.stopPropagation();
+                });
             });
         });
 
