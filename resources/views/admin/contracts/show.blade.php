@@ -151,20 +151,20 @@
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <label class="control-label">Description: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 {{$result->description}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <label class="control-label">Requirements: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 {{$result->requirements}}
                             </div>
                         </div>
