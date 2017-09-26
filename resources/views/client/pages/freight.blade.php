@@ -17,12 +17,12 @@
                     <tbody>
                     @foreach($results as $freight)
                         <tr>
-                            <td>{{$i}}</td>
-                            <td>{{$i}}</td>
-                            <td>{{$i}}</td>
-                            <td>{{$i}}</td>
-                            <td>{{$i}}</td>
-                            <td>{{$i}}</td>
+                            <td>Hi</td>
+                            <td>Hi</td>
+                            <td>Hi</td>
+                            <td>Hi</td>
+                            <td>Hi</td>
+                            <td>Hi</td>
                         </tr>
                     @endforeach
                             {{--@foreach($results as $freight)--}}
