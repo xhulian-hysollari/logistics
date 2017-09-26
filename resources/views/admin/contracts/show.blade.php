@@ -173,6 +173,7 @@
             </div>
         </div>
     </div>
+    @if(Sentinel::getUser()->id != $result->owner->id)
     <div class="container-fluid block-content">
         <div class="row main-grid">
             <form action="{{route('contract.bid', $result->id)}}" method="post" enctype="multipart/form-data">
@@ -180,6 +181,7 @@
             </form>
         </div>
     </div>
+    @endif
 @stop
 
 @section('js')
