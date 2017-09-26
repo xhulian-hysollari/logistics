@@ -172,13 +172,26 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid block-content">
-        <div class="row main-grid">
-            <form action="{{route('truck.bid', $result->id)}}" method="post" enctype="multipart/form-data">
-                @include('client.partials.bid')
-            </form>
+
+    @if(Sentinel::check())
+        @if(Sentinel::getUser()->id != $result->owner->id)
+            <div class="container-fluid block-content">
+                <div class="row main-grid">
+                    <form action="{{route('truck.bid', $result->id)}}" method="post" enctype="multipart/form-data">
+                        @include('client.partials.bid')
+                    </form>
+                </div>
+            </div>
+        @endif
+    @else
+        <div class="container-fluid block-content">
+            <div class="row main-grid">
+                <form action="{{route('truck.bid', $result->id)}}" method="post" enctype="multipart/form-data">
+                    @include('client.partials.bid')
+                </form>
+            </div>
         </div>
-    </div>
+    @endif
 @stop
 
 
