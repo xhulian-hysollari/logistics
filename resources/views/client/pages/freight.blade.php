@@ -15,18 +15,38 @@
                     </tr>
                     </thead>
                     <tbody>
-                            @foreach($results as $freight)
-                                <tr>
-                                    <th>{{$freight->loading}}</th>
-                                    <th>{{$freight->unloading}}</th>
-                                    <th>{{$freight->volume}}</th>
-                                    <th>{{$freight->type}}</th>
-                                    <th>{{$freight->created_at}}</th>
-                                    <th>
-                                        HI
-                                    </th>
-                                <tr>
-                            @endforeach
+                    @for($i = 0; $i <= 5; $i ++)
+                        <tr>
+                            <td>{{$i}}</td>
+                            <td>{{$i}}</td>
+                            <td>{{$i}}</td>
+                            <td>{{$i}}</td>
+                            <td>{{$i}}</td>
+                            <td>{{$i}}</td>
+                        </tr>
+                    @endfor
+                            {{--@foreach($results as $freight)--}}
+                                {{--<tr>--}}
+                                    {{--<th>--}}
+                                        {{--{{$freight->loading}}--}}
+                                    {{--</th>--}}
+                                    {{--<th>--}}
+                                        {{--{{$freight->unloading}}--}}
+                                    {{--</th>--}}
+                                    {{--<th>--}}
+                                        {{--{{$freight->volume}}--}}
+                                    {{--</th>--}}
+                                    {{--<th>--}}
+                                        {{--{{$freight->type}}--}}
+                                    {{--</th>--}}
+                                    {{--<th>--}}
+                                        {{--{{$freight->created_at}}--}}
+                                    {{--</th>--}}
+                                    {{--<th>--}}
+                                        {{--HI--}}
+                                    {{--</th>--}}
+                                {{--<tr>--}}
+                            {{--@endforeach--}}
                     </tbody>
                 </table>
             </div>
