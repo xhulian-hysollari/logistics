@@ -201,7 +201,7 @@
         function initMap() {
             // Create a map object and specify the DOM element for display.
             var map = new google.maps.Map(document.getElementById('location-map'), {
-                center: {lat: '{{$result->location_lat}}', lng: '{{$result->location_lng}}'},
+                center: {lat: parseFloat('{{$result->location_lat}}'), lng: parseFloat('{{$result->location_lng}}')},
                 zoom: 8
             });
         }
