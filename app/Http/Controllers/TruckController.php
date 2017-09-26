@@ -114,6 +114,7 @@ class TruckController extends Controller
     {
 
         try {
+            dd(Input::all());
             $trucks = Truck::where('id', $id)->first();
             $trucks->weight = Input::get('weight');
             $trucks->length = Input::get('length');
