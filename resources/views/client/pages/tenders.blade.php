@@ -10,6 +10,7 @@
                         <th>Description</th>
                         <th>Duration</th>
                         <th>Deadline</th>
+                        <th style="display: none">Actions</th>
                     </tr>
                     </thead>
                     <tfoot>
@@ -18,6 +19,7 @@
                         <th>Description</th>
                         <th>Duration</th>
                         <th>Deadline</th>
+                        <th style="display: none">Actions</th>
                     </tr>
                     </tfoot>
                     <tbody>
@@ -27,6 +29,7 @@
                             <td>{{str_limit($contract->description,'35','...')}}</td>
                             <td>{{$contract->duration}}</td>
                             <td>{{$contract->deadline}}</td>
+                            <td><a href="{{route('contracts.show', $contract->id)}}"><i class="fa fa-eye fa-2x"></i></a></td>
                         </tr>
                     @endforeach
                     {{--@foreach($results as $contract)--}}
@@ -34,7 +37,7 @@
                             {{--<td>{{$contract->owner->full_name}}</td>--}}
                             {{--<td>{{str_limit($contract->description,'35','...')}}</td>--}}
                             {{--<td>{{$contract->duration}}</td>--}}
-                            {{--<td>{{$contract->deadline}}</td>--}}
+                            {{--<td>{{$contract->deadline fa-2x}}</td>--}}
                         {{--<tr>--}}
                     {{--@endforeach--}}
                     </tbody>
