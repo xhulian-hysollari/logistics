@@ -75,16 +75,17 @@
             });
             var table = $('#data_table').DataTable();
             table.columns().eq(0).each(function (colIdx) {
-                $('input', table.column(colIdx).header()).on('keyup change', function () {
-                    table
-                        .column(colIdx)
-                        .search(this.value)
-                        .draw();
-                });
-
-                $('input', table.column(colIdx).header()).on('click', function (e) {
-                    e.stopPropagation();
-                });
+                if(colIdx !== 5){
+                    $('input', table.column(colIdx).header()).on('keyup change', function () {
+                        table
+                            .column(colIdx)
+                            .search(this.value)
+                            .draw();
+                    });
+                    $('input', table.column(colIdx).header()).on('click', function (e) {
+                        e.stopPropagation();
+                    });
+                }
             });
         });
 
