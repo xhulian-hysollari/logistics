@@ -22,7 +22,7 @@
                             <td>{{$freight->volume}}</td>
                             <td>{{$freight->type}}</td>
                             <td>{{\Carbon\Carbon::parse($freight->created_at)->diffForHumans()}}</td>
-                            <td>Hi</td>
+                            <td><a href="{{route('freight.show', $freight->id)}}"><i class="fa fa-eye"></i></a></td>
                         </tr>
                     @endforeach
                             {{--@foreach($results as $freight)--}}
