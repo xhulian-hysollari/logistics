@@ -22,6 +22,8 @@
             locationcomplete.addListener('place_changed', function () {
                 var place = autocomplete.getPlace();
                 document.getElementById("location_lat").value = place.geometry.location.lat();
+                console.log(place.geometry.location.lat());
+                console.log(document.getElementById("location_lat").value);
                 document.getElementById("location_lng").value = place.geometry.location.lng();
             });
         }
