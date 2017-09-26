@@ -16,11 +16,11 @@
                     <tbody>
                         @foreach($results as $truck)
                             <tr>
-                                <td>{{$i}}</td>
-                                <td>{{$i}}</td>
-                                <td>{{$i}}</td>
-                                <td>{{$i}}</td>
-                                <td>{{$i}}</td>
+                                <td>{{$i = 0}}</td>
+                                <td>{{$i = 0}}</td>
+                                <td>{{$i = 0}}</td>
+                                <td>{{$i = 0}}</td>
+                                <td>{{$i = 0}}</td>
                             </tr>
                         @endforeach
                     {{--@foreach($results as $truck)--}}
