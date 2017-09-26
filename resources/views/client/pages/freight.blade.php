@@ -17,7 +17,7 @@
                     <tbody>
                     @foreach($results as $freight)
                         <tr>
-                            <td>Hi</td>
+                            <td>{{$freight->loading}}</td>
                             <td>Hi</td>
                             <td>Hi</td>
                             <td>Hi</td>
