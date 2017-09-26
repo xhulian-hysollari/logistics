@@ -204,6 +204,11 @@
                 center: {lat: parseFloat('{{$result->location_lat}}'), lng: parseFloat('{{$result->location_lng}}')},
                 zoom: 8
             });
+            var marker = new google.maps.Marker({
+                position: {lat: parseFloat('{{$result->location_lat}}'), lng: parseFloat('{{$result->location_lng}}')},
+                map: map,
+                title: '{{$result->plate}}, {{$result->location}}'
+            });
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiBlCK2sTv0-Dq_V098HVSJ7-lhLV13yU&callback=initMap"
