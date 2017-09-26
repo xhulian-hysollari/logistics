@@ -11,7 +11,7 @@
                         <th><i class="fa fa-cube"></i> {{trans('freight.volume')}}</th>
                         <th><i class="fa fa-truck"></i> {{trans('freight.lorry_type')}}</th>
                         <th><i class="fa fa-clock-o"></i> Listed at</th>
-                        <th>Actions</th>
+                        <th style="display: none">Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -25,28 +25,6 @@
                             <td><a href="{{route('freight.show', $freight->id)}}"><i class="fa fa-eye"></i></a></td>
                         </tr>
                     @endforeach
-                            {{--@foreach($results as $freight)--}}
-                                {{--<tr>--}}
-                                    {{--<th>--}}
-                                        {{--{{$freight->loading}}--}}
-                                    {{--</th>--}}
-                                    {{--<th>--}}
-                                        {{--{{$freight->unloading}}--}}
-                                    {{--</th>--}}
-                                    {{--<th>--}}
-                                        {{--{{$freight->volume}}--}}
-                                    {{--</th>--}}
-                                    {{--<th>--}}
-                                        {{--{{$freight->type}}--}}
-                                    {{--</th>--}}
-                                    {{--<th>--}}
-                                        {{--{{$freight->created_at}}--}}
-                                    {{--</th>--}}
-                                    {{--<th>--}}
-                                        {{--HI--}}
-                                    {{--</th>--}}
-                                {{--<tr>--}}
-                            {{--@endforeach--}}
                     </tbody>
                 </table>
             </div>
