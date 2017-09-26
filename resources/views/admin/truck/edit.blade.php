@@ -19,6 +19,13 @@
 
             var location = document.getElementById('location');
             var locationcomplete = new google.maps.places.Autocomplete(location, options);
+
+
+            locationcomplete.addListener('place_changed', function () {
+                var place = autocomplete.getPlace();
+                document.getElementById("location_lat").value = place.geometry.location.lat();
+                document.getElementById("location_lng").value = place.geometry.location.lng();
+            });
         }
 
         google.maps.event.addDomListener(window, 'load', initDestination);
