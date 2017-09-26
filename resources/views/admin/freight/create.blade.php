@@ -21,8 +21,6 @@
             var unloading = document.getElementById('unloading');
             var loadcomplete = new google.maps.places.Autocomplete(loading, options);
             var unloadcomplete = new google.maps.places.Autocomplete(unloading, options);
-
-
             loadcomplete.addListener('place_changed', function () {
                 var place = loadcomplete.getPlace();
                 document.getElementById("loading_lat").value = place.geometry.location.lat();
@@ -33,8 +31,6 @@
                 document.getElementById("unloading_lat").value = place.geometry.location.lat();
                 document.getElementById("unloading_lng").value = place.geometry.location.lng();
             });
-
-
         }
         google.maps.event.addDomListener(window, 'load', initDestination);
     </script>
