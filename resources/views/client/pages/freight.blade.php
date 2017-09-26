@@ -14,6 +14,16 @@
                         <th style="display: none">Actions</th>
                     </tr>
                     </thead>
+                    <tfoot>
+                    <tr>
+                        <th><i class="fa fa-map-marker"></i> Place of loading</th>
+                        <th><i class="fa fa-map-marker"></i> Place of unloading</th>
+                        <th><i class="fa fa-cube"></i> {{trans('freight.volume')}}</th>
+                        <th><i class="fa fa-truck"></i> {{trans('freight.lorry_type')}}</th>
+                        <th><i class="fa fa-clock-o"></i> Listed at</th>
+                        <th style="display: none">Actions</th>
+                    </tr>
+                    </tfoot>
                     <tbody>
                     @foreach($results as $freight)
                         <tr>
@@ -47,8 +57,8 @@
     <script>
 
         $(document).ready(function() {
-            $('#data_table thead th').each(function () {
-                var title = $('#data_table thead th').eq($(this).index()).text();
+            $('#data_table tfoot th').each(function () {
+                var title = $('#data_table tfoot th').eq($(this).index()).text();
                 $(this).html('<input type="text" class="form-control" placeholder="Search ' + title + '" />');
             });
             var table = $('#data_table').DataTable();
