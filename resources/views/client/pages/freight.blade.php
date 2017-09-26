@@ -57,8 +57,8 @@
     <script>
 
         $(document).ready(function() {
-            $('#data_table tfoot th').each(function () {
-                var title = $('#data_table tfoot th').eq($(this).index()).text();
+            $('#data_table thead th').each(function () {
+                var title = $('#data_table thead th').eq($(this).index()).text();
                 $(this).html('<input type="text" class="form-control" placeholder="Search ' + title + '" />');
             });
             var table = $('#data_table').DataTable();
