@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FreightRequest;
 use App\Models\Freight;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Http\Request;
@@ -48,26 +49,26 @@ class FreightController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FreightRequest $request)
     {
         try{
             $freight = new Freight();
             $freight->user_id = Sentinel::getUser()->id;
-            $freight->freight_id = Input::get('freight_id');
-            $freight->weight = Input::get('weight');
-            $freight->height = Input::get('height');
-            $freight->length = Input::get('length');
-            $freight->volume = Input::get('volume');
-            $freight->type = Input::get('lorry_type');
-            $freight->width = Input::get('width');
-            $freight->loading = Input::get('loading');
-            $freight->loading_lat = Input::get('loading_lat');
-            $freight->loading_lng = Input::get('loading_lng');
-            $freight->unloading = Input::get('unloading');
-            $freight->unloading_lng = Input::get('unloading_lat');
-            $freight->unloading_lat = Input::get('unloading_lng');
-            $freight->description = Input::get('description');
-            $freight->quantity = Input::get('quantity');
+            $freight->freight_id = $request->freight_id;
+            $freight->weight = $request->weight;
+            $freight->height = $request->height;
+            $freight->length = $request->length;
+            $freight->volume = $request->volume;
+            $freight->type = $request->lorry_type;
+            $freight->width = $request->width;
+            $freight->loading = $request->loading;
+            $freight->loading_lat = $request->loading_lat;
+            $freight->loading_lng = $request->loading_lng;
+            $freight->unloading = $request->unloading;
+            $freight->unloading_lng = $request->unloading_lat;
+            $freight->unloading_lat = $request->unloading_lng;
+            $freight->description = $request->description;
+            $freight->quantity = $request->quantity;
             $freight->status = 0;
             $freight->save();
             return redirect()->route('freight.index')->with('success', 'The Freight has been listed successfully!');
@@ -115,25 +116,25 @@ class FreightController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FreightRequest $request, $id)
     {
         try{
             $freight = Freight::where('id', $id)->first();
-            $freight->freight_id = Input::get('freight_id');
-            $freight->weight = Input::get('weight');
-            $freight->length = Input::get('length');
-            $freight->height = Input::get('height');
-            $freight->type = Input::get('lorry_type');
-            $freight->width = Input::get('width');
-            $freight->loading = Input::get('loading');
-            $freight->loading_lat = Input::get('loading_lat');
-            $freight->loading_lng = Input::get('loading_lng');
-            $freight->unloading = Input::get('unloading');
-            $freight->unloading_lng = Input::get('unloading_lat');
-            $freight->unloading_lat = Input::get('unloading_lng');
-            $freight->description = Input::get('description');
-            $freight->volume = Input::get('volume');
-            $freight->quantity = Input::get('quantity');
+            $freight->freight_id = $request->freight_id;
+            $freight->weight = $request->weight;
+            $freight->length = $request->length;
+            $freight->height = $request->height;
+            $freight->type = $request->lorry_type;
+            $freight->width = $request->width;
+            $freight->loading = $request->loading;
+            $freight->loading_lat = $request->loading_lat;
+            $freight->loading_lng = $request->loading_lng;
+            $freight->unloading = $request->unloading;
+            $freight->unloading_lng = $request->unloading_lat;
+            $freight->unloading_lat = $request->unloading_lng;
+            $freight->description = $request->description;
+            $freight->volume = $request->volume;
+            $freight->quantity = $request->quantity;
             $freight->save();
             return redirect()->route('freight.index')->with('success', 'Freight modification completed successfully!');
         }catch (\Exception $ex){
