@@ -224,7 +224,8 @@
             function calculateAndDisplayRoute(directionsService, directionsDisplay) {
                 directionsService.route({
                     origin: '{{$result->loading}}',
-                    destination: '{{$result->unloading}}'
+                    destination: '{{$result->unloading}}',
+                    travelMode: 'transit'
                 }, function(response, status) {
                     if (status === 'OK') {
                         directionsDisplay.setDirections(response);
