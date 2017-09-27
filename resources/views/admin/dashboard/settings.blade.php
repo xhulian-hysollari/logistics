@@ -13,7 +13,7 @@
         <!-- // END Tabs -->
 
         <!-- Panes -->
-        <div class="tab-content">
+        <div class="card-body tab-content style-default-bright">
             <div id="contact" class="tab-pane active">
                 <table class="table table-responsive table-striped">
                     <tbody>
