@@ -15,7 +15,7 @@
                                     <a href="{{route('messages.show', $conversation->buddy->id)}}" class="list-group-item">
                                         <h5>{{$conversation->buddy->full_name}} </h5>
                                         @if(Sentinel::getUser()->unread_messages > 0)
-                                            <span class="badge"> {{Sentinel::getUser()->findMessages('unread',$conversation->id)}}</span>
+                                            <span class="badge"> {{dd(Sentinel::getUser()->findMessages('unread',$conversation->id))}}</span>
                                         @endif
                                         <h4>{{$conversation->subject}}</h4>
                                         <p class="hidden-xs hidden-sm">{{$conversation->latest_message->message}}</p>
