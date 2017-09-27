@@ -97,7 +97,7 @@ class User extends EloquentUser
             if($state)
                 $q->where('status', '=', MessageState::indexOf($state));
 
-        })->with('conversation')->groupBy('conversation_id')->get();
+        })->with('conversation')->groupBy('conversation_id')->select('conversation_id')->get();
 
         return count($unreadMessages);
     }
