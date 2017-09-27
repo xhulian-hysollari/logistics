@@ -54,6 +54,7 @@
         <section>
             <div class="section-body">
                 <div class="row">
+                    @include('admin.partials.alerts')
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
