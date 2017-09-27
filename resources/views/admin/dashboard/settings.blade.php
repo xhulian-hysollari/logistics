@@ -1,16 +1,14 @@
 @extends('admin.admin')
 @section('content')
-    <div class="tabbable tabs-vertical tabs-left">
-
-        <!-- Tabs -->
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#contact" data-toggle="tab"><i class="fa fa-fw fa-home"></i> Contacts</a></li>
-            <li><a href="#socials" data-toggle="tab"><i class="fa fa-fw fa-user"></i> Social links</a></li>
-            <li><a href="#slider" data-toggle="tab"><i class="fa fa-fw fa-sliders"></i> Slider</a></li>
-            {{--<li><a href="#about" data-toggle="tab"><i class="fa fa-fw fa-building"></i> About Us</a></li>--}}
-            <li><a href="#mission" data-toggle="tab"><i class="fa fa-fw fa-file-text"></i> Mission Statement</a></li>
-            <li><a href="#service" data-toggle="tab"><i class="fa fa-fw fa-file-text"></i> Services</a></li>
-            <li><a href="#ads" data-toggle="tab"><i class="fa fa-fw fa-money"></i> Advertisments</a></li>
+    <div class="card tabs-left style-default-light">
+        <ul class="card-head nav nav-tabs" data-toggle="tabs">
+            <li class="active"><a href="#contact" ><i class="fa fa-fw fa-home"></i> Contacts</a></li>
+            <li><a href="#socials" ><i class="fa fa-fw fa-user"></i> Social links</a></li>
+            <li><a href="#slider" ><i class="fa fa-fw fa-sliders"></i> Slider</a></li>
+            {{--<li><a href="#about" ><i class="fa fa-fw fa-building"></i> About Us</a></li>--}}
+            <li><a href="#mission" ><i class="fa fa-fw fa-file-text"></i> Mission Statement</a></li>
+            <li><a href="#service" ><i class="fa fa-fw fa-file-text"></i> Services</a></li>
+            <li><a href="#ads" ><i class="fa fa-fw fa-money"></i> Advertisments</a></li>
         </ul>
         <!-- // END Tabs -->
 
