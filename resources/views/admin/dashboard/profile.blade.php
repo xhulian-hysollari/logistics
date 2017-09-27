@@ -78,12 +78,14 @@
                         <h4><strong>Subscriptions</strong></h4>
                         <hr>
                         <div class="post-content">
-                            @if (Sentinel::getUser()->subscription('main')->cancelled())
-                                <p>Your subscription ends
-                                    on {{ Sentinel::getUser()->subscription('main')->ends_at->format('dS M Y') }}</p>
-                            @else
-                                <p>You are currently subscribed
-                                    to {{ Sentinel::getUser()->subscription('main')->braintree_plan }} plan</p>
+                            @if(Sentinel::getUser()->subscription('main'))
+                                @if (Sentinel::getUser()->subscription('main')->cancelled())
+                                    <p>Your subscription ends
+                                        on {{ Sentinel::getUser()->subscription('main')->ends_at->format('dS M Y') }}</p>
+                                @else
+                                    <p>You are currently subscribed
+                                        to {{ Sentinel::getUser()->subscription('main')->braintree_plan }} plan</p>
+                                @endif
                             @endif
                             <ul class="list-group">
                                 @foreach (\App\Models\Plan::orderBy('cost','asc')->get() as $plan)
