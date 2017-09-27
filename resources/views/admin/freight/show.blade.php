@@ -223,8 +223,8 @@
 
             function calculateAndDisplayRoute(directionsService, directionsDisplay) {
                 directionsService.route({
-                    origin: {parseFloat({{$result->loading_lat}}), parseFloat({{$result->loading_lng}})},
-                    destination: {parseFloat({{$result->unloading_lat}}), parseFloat({{$result->unloading_lng}})},
+                    origin: { {{$result->loading_lat}},{{$result->loading_lng}} },
+                    destination: { {{$result->unloading_lat}},{{$result->unloading_lng}} },
                     travelMode: 'DRIVING'
                 }, function(response, status) {
                     if (status === 'OK') {
