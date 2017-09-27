@@ -22,9 +22,9 @@
             <li>
                 <a href="{{route('messages')}}">
                     <div class="gui-icon"><i class="md md-email"></i></div>
-                    <span class="title">Email</span>
+                    <span class="title">Inbox</span>
                     @if(Sentinel::getUser()->unread_conversations > 0)
-                        <span class="badge"> {{Sentinel::getUser()->unread_conversations}}</span>
+                        <span class="badge danger"> {{Sentinel::getUser()->unread_conversations}}</span>
                     @endif
                 </a>
             </li>
