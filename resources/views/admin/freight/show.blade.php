@@ -225,7 +225,7 @@
                 directionsService.route({
                     origin: '{{$result->loading}}',
                     destination: '{{$result->unloading}}',
-                    travelMode: 'transit'
+                    travelMode: 'TRANSIT'
                 }, function(response, status) {
                     if (status === 'OK') {
                         directionsDisplay.setDirections(response);
