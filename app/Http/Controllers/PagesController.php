@@ -46,7 +46,7 @@ class PagesController extends Controller
     public function store(Request $request)
     {
         try{
-            $slug = strtolower( str_replace(' ', '-',Input::get('title')));
+            $slug = strtolower( str_replace(' ', '-',strip_tags(Input::get('title'))));
             if (Pages::where('slug', $slug)->first()){
                 $slug = $slug . str_random(5);
             }
