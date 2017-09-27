@@ -38,7 +38,7 @@
                 <form action="{{route('settings.contact')}}" method="post">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group form-control-default">
+                            <div class="form-group">
                                 <label for="title">Select Contact Type</label>
                                 <select name="title" id="social" class="form-control">
                                     <option value="phone"> Phone</option>
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group form-control-default">
+                            <div class="form-group">
                                 <label for="value">Contact</label>
                                 <input type="text" class="form-control" id="value" name="value"
                                        placeholder=""
@@ -88,7 +88,7 @@
                 <form action="{{route('settings.social')}}" method="post">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group form-control-default">
+                            <div class="form-group">
                                 <label for="title">Social Page Type</label>
                                 <select name="title" id="title" class="form-control">
                                     <option value="facebook"> Facebook</option>
@@ -98,7 +98,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group form-control-default">
+                            <div class="form-group">
                                 <label for="value">Social Page Link</label>
                                 <input type="text" class="form-control" id="value" name="value"
                                        placeholder=""
@@ -113,7 +113,7 @@
                 {{--<form action="{{route('settings.about')}}" method="post">--}}
                     {{--<div class="row">--}}
                         {{--<div class="col-md-12">--}}
-                            {{--<div class="form-group form-control-default">--}}
+                            {{--<div class="form-group">--}}
                                 {{--<label for="value">About</label>--}}
                                 {{--<textarea name="value" id="value"--}}
                                           {{--class="form-control summernote">{{ (count ($about) > 0) ? $about->value : null }}</textarea>--}}
@@ -148,7 +148,7 @@
                 <form action="{{route('settings.slider')}}" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group form-control-default{!! ($errors->has('title')) ? ' has-error' : '' !!}">
+                            <div class="form-group{!! ($errors->has('title')) ? ' has-error' : '' !!}">
                                 <label for="title">Slider Title </label>
                                 <input type="text" class="form-control" id="title" name="title"
                                        placeholder=""
@@ -159,7 +159,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group form-control-default{!! ($errors->has('value')) ? ' has-error' : '' !!}">
+                            <div class="form-group{!! ($errors->has('value')) ? ' has-error' : '' !!}">
                                 <label for="value">Slider Caption </label>
                                 <input type="text" class="form-control" id="value" name="value"
                                        placeholder=""
@@ -170,7 +170,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group form-control-default{!! ($errors->has('optional')) ? ' has-error' : '' !!}">
+                            <div class="form-group{!! ($errors->has('optional')) ? ' has-error' : '' !!}">
                                 <label for="optional">Slider Image</label>
                                 <input type="file" accept="image/*" class="form-control" id="optional" name="optional">
                                 {!! ($errors->has('optional') ? $errors->first('optional') : '') !!}
@@ -205,7 +205,7 @@
                 <form action="{{route('settings.service')}}" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group form-control-default{!! ($errors->has('title')) ? ' has-error' : '' !!}">
+                            <div class="form-group{!! ($errors->has('title')) ? ' has-error' : '' !!}">
                                 <label for="title">Service Title </label>
                                 <input type="text" class="form-control" id="title" name="title"
                                        placeholder=""
@@ -214,7 +214,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group form-control-default{!! ($errors->has('value')) ? ' has-error' : '' !!}">
+                            <div class="form-group{!! ($errors->has('value')) ? ' has-error' : '' !!}">
                                 <label for="value">Service Caption </label>
                                 <input type="text" class="form-control" id="value" name="value"
                                        placeholder=""
@@ -225,7 +225,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group form-control-default{!! ($errors->has('optional')) ? ' has-error' : '' !!}">
+                            <div class="form-group{!! ($errors->has('optional')) ? ' has-error' : '' !!}">
                                 <label for="optional">Service Image</label>
                                 <input type="file" accept="image/*" class="form-control" id="optional" name="optional">
                                 {!! ($errors->has('optional') ? $errors->first('optional') : '') !!}
@@ -239,7 +239,7 @@
                 <form action="{{route('settings.mission')}}" method="post">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group form-control-default">
+                            <div class="form-group">
                                 <label for="value">Mission Statement</label>
                                 <textarea name="value" id="value"
                                           class="form-control summernote">{{ (count ($mission) > 0) ? $mission->value : null }}</textarea>
@@ -272,7 +272,7 @@
                 <form action="{{route('settings.payment')}}" method="post">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group form-control-default">
+                            <div class="form-group">
                                 <label for="title">Plan Type</label>
                                 <select name="title" id="title" class="form-control">
                                     <option value="trial"> Trial</option>
@@ -282,7 +282,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group form-control-default">
+                            <div class="form-group">
                                 <label for="value">Plan Price</label>
                                 <input type="text" class="form-control" id="value" name="value"
                                        placeholder=""
@@ -292,7 +292,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group form-control-default">
+                            <div class="form-group">
                                 <label for="optional">Duration</label>
                                 <input type="text" class="form-control" id="optional" name="optional"
                                        placeholder=""
@@ -325,7 +325,7 @@
                 <form action="{{route('settings.ads')}}" method="post">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group form-control-default">
+                            <div class="form-group">
                                 <label for="title">Ads Type</label>
                                 <select name="title" id="title" class="form-control">
                                     <option value="1-time"> 1 Time</option>
@@ -335,7 +335,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group form-control-default">
+                            <div class="form-group">
                                 <label for="value">Ads Cost</label>
                                 <input type="text" class="form-control" id="value" name="value"
                                        placeholder=""
