@@ -90,7 +90,7 @@
                 <div class="card-body no-padding">
                     <div class="alert alert-callout alert-danger no-margin">
                         <strong class="pull-right text-danger text-lg">Total bids</strong>
-                        <strong class="text-xl">{{count(Sentinel::getUser()->bids)}}</strong><br/>
+                        <strong class="text-xl">{{count(Sentinel::getUser()->my_bids)}}</strong><br/>
                     </div>
                 </div><!--end .card-body -->
             </div><!--end .card -->
@@ -101,7 +101,7 @@
                 <div class="card-body no-padding">
                     <div class="alert alert-callout alert-danger no-margin">
                         <strong class="pull-right text-danger text-lg">Total Offers Received</strong>
-                        <strong class="text-xl">{{count(Sentinel::getUser()->offers)}}</strong><br/>
+                        <strong class="text-xl">{{count(Sentinel::getUser()->offer)}}</strong><br/>
                     </div>
                 </div><!--end .card-body -->
             </div><!--end .card -->

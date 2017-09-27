@@ -27,6 +27,21 @@ class User extends EloquentUser
         return Bid::where('user_id', $this->attributes['id'])->get();
     }
 
+    public function getFreightsAttribute()
+    {
+        return Freight::where('user_id', $this->attributes['id'])->get();
+    }
+
+    public function getTrucksAttribute()
+    {
+        return Truck::where('user_id', $this->attributes['id'])->get();
+    }
+
+    public function getContractsAttribute()
+    {
+        return Contracts::where('user_id', $this->attributes['id'])->get();
+    }
+
     public function getOfferAttribute()
     {
         return Bid::where('owner_id', $this->attributes['id'])->get();
