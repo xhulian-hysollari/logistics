@@ -34,6 +34,9 @@
         .form-group{
             padding: 0 15px;
         }
+        .badge{
+            background-color: #f44336;
+        }
     </style>
     @section('css')
     @show
