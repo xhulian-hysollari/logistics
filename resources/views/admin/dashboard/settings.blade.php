@@ -13,9 +13,15 @@
         <!-- // END Tabs -->
 
         <!-- Panes -->
-        <div class="card-body tab-content style-default-bright">
+        <div class="card-body tab-content style-default-bright" style="min-height:500px;">
             <div id="contact" class="tab-pane active">
                 <table class="table table-responsive table-striped">
+                    <thead>
+                        <tr>
+                            <td>Contact Type</td>
+                            <td>Contact</td>
+                        </tr>
+                    </thead>
                     <tbody>
                     @if(isset($contacts) && count($contacts) > 0)
                         @foreach($contacts as $contact)
@@ -123,6 +129,13 @@
             {{--</div>--}}
             <div id="slider" class="tab-pane">
                 <table class="table table-responsive table-striped">
+                    <thead>
+                    <tr>
+                        <td>Slider Title</td>
+                        <td>Slider Caption</td>
+                        <td colspan="2">Slider Image</td>
+                    </tr>
+                    </thead>
                     <tbody>
                     @if(isset($sliders) && count($sliders) > 0)
                         @foreach($sliders as $slider)
@@ -137,7 +150,7 @@
                     @else
                         <tr>
                             <td colspan="3">
-                                No social media pages
+                                No sliders available
                             </td>
                         </tr>
                     @endif
@@ -180,6 +193,13 @@
             </div>
             <div id="service" class="tab-pane">
                 <table class="table table-responsive table-striped">
+                    <thead>
+                    <tr>
+                        <td>Service Title</td>
+                        <td>Service Text</td>
+                        <td colspan="2">Service Image</td>
+                    </tr>
+                    </thead>
                     <tbody>
                     @if(isset($services) && count($services) > 0)
                         @foreach($services as $service)
@@ -194,7 +214,7 @@
                     @else
                         <tr>
                             <td colspan="3">
-                                No social media pages
+                                No services available
                             </td>
                         </tr>
                     @endif
@@ -247,74 +267,80 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
-            <div id="payments" class="tab-pane">
-                <table class="table table-responsive table-striped">
-                    <tbody>
-                    @if(isset($plans) && count($plans) > 0)
-                        @foreach($plans as $plan)
-                            <tr>
-                                <td>{{$plan->title}}</td>
-                                <td>{{$plan->value}}</td>
-                                <td>{{$plan->optional}}</td>
-                            </tr>
-                        @endforeach
-                    @else
-                        <tr>
-                            <td colspan="3">
-                                No subscription plans
-                            </td>
-                        </tr>
-                    @endif
-                    </tbody>
-                </table>
-                <form action="{{route('settings.payment')}}" method="post">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="title">Plan Type</label>
-                                <select name="title" id="title" class="form-control">
-                                    <option value="trial"> Trial</option>
-                                    <option value="monthly"> Monthly</option>
-                                    <option value="yearly"> Yearly</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="value">Plan Price</label>
-                                <input type="text" class="form-control" id="value" name="value"
-                                       placeholder=""
-                                       value="{{\Illuminate\Support\Facades\Input::old('value')}}">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="optional">Duration</label>
-                                <input type="text" class="form-control" id="optional" name="optional"
-                                       placeholder=""
-                                       value="{{\Illuminate\Support\Facades\Input::old('optional')}}">
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
+            {{--<div id="payments" class="tab-pane">--}}
+                {{--<table class="table table-responsive table-striped">--}}
+                    {{--<tbody>--}}
+                    {{--@if(isset($plans) && count($plans) > 0)--}}
+                        {{--@foreach($plans as $plan)--}}
+                            {{--<tr>--}}
+                                {{--<td>{{$plan->title}}</td>--}}
+                                {{--<td>{{$plan->value}}</td>--}}
+                                {{--<td>{{$plan->optional}}</td>--}}
+                            {{--</tr>--}}
+                        {{--@endforeach--}}
+                    {{--@else--}}
+                        {{--<tr>--}}
+                            {{--<td colspan="3">--}}
+                                {{--No subscription plans--}}
+                            {{--</td>--}}
+                        {{--</tr>--}}
+                    {{--@endif--}}
+                    {{--</tbody>--}}
+                {{--</table>--}}
+                {{--<form action="{{route('settings.payment')}}" method="post">--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="col-md-6">--}}
+                            {{--<div class="form-group">--}}
+                                {{--<label for="title">Plan Type</label>--}}
+                                {{--<select name="title" id="title" class="form-control">--}}
+                                    {{--<option value="trial"> Trial</option>--}}
+                                    {{--<option value="monthly"> Monthly</option>--}}
+                                    {{--<option value="yearly"> Yearly</option>--}}
+                                {{--</select>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="col-md-6">--}}
+                            {{--<div class="form-group">--}}
+                                {{--<label for="value">Plan Price</label>--}}
+                                {{--<input type="text" class="form-control" id="value" name="value"--}}
+                                       {{--placeholder=""--}}
+                                       {{--value="{{\Illuminate\Support\Facades\Input::old('value')}}">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="col-md-12">--}}
+                            {{--<div class="form-group">--}}
+                                {{--<label for="optional">Duration</label>--}}
+                                {{--<input type="text" class="form-control" id="optional" name="optional"--}}
+                                       {{--placeholder=""--}}
+                                       {{--value="{{\Illuminate\Support\Facades\Input::old('optional')}}">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<button type="submit" class="btn btn-primary">Submit</button>--}}
+                {{--</form>--}}
+            {{--</div>--}}
             <div id="ads" class="tab-pane">
                 <table class="table table-responsive table-striped">
+                    <thead>
+                        <tr>
+                            <td>Ad Plan Name</td>
+                            <td>Ad value</td>
+                        </tr>
+                    </thead>
                     <tbody>
                     @if(isset($ads) && count($ads) > 0)
                         @foreach($ads as $ad)
                             <tr>
-                                <td>{{$ad->getTransaltion()->title}}</td>
-                                <td>{{$ad->getTransaltion()->value}}</td>
+                                <td>{{$ad->title}}</td>
+                                <td>{{$ad->value}}</td>
                             </tr>
                         @endforeach
                     @else
                         <tr>
                             <td colspan="2">
-                                No ad settings
+                                No ads available
                             </td>
                         </tr>
                     @endif
