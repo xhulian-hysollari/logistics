@@ -64,7 +64,7 @@
         $(document).ready(function() {
             $('#data-table thead th').each(function() {
                 var title = $('#data-table thead th').eq($(this).index()).text();
-                $(this).html('<input type="text" class="form-control" placeholder="Search ' + title + '" />');
+                $(this).html('<input type="text" placeholder="Search ' + title + '" />');
             });
             var table = $('#data-table').DataTable();
 
