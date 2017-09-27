@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="title">Select Contact Type</label>
+                                <label for="social">Select Contact Type</label>
                                 <select name="title" id="social" class="form-control">
                                     <option value="phone"> Phone</option>
                                     <option value="email"> Email</option>
