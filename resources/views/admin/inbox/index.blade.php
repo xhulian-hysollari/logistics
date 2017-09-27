@@ -14,7 +14,7 @@
                                 @foreach($conversations as $conversation)
                                     <a href="{{route('messages.show', $conversation->buddy->id)}}" class="list-group-item">
                                         <h5>{{$conversation->buddy->full_name}} </h5>
-                                        @if(Sentinel::getUser()->unread_messages > 0)
+                                        @if(Sentinel::getUser()->UnreadMessages($conversation->id) > 0)
                                             <span class="badge"> {{dd(Sentinel::getUser()->findMessages('unread',$conversation->id))}}</span>
                                         @endif
                                         <h4>{{$conversation->subject}}</h4>
