@@ -83,21 +83,22 @@ class User extends EloquentUser
 //        MessageState::whereRaw('status = 0')->get()->count();
     }
 
-    public function getUnreadMessagesAttribute(){
-        return $this->findMessages('unread');
+    public function getUnreadMessagesAttribute($conversation_id){
+        return $this->findMessages('unread', $conversation_id);
     }
 
-    public function findMessages($state = false){
+    public function findMessages($state = false, $conversation_id){
         $user_id = $this->id;
 
-        $unreadMessages = Message::whereHas('messageStates', function($q) use( &$user_id, &$state)
+        $unreadMessages = Message::whereHas('messageStates', function($q) use( &$user_id, &$state, &$conversation_id)
         {
             $q->where('user_id', '=', $user_id);
+            $q->where('conversation_id', '=', $conversation_id);
 
             if($state)
                 $q->where('status', '=', MessageState::indexOf($state));
 
-        })->with('conversation')->groupBy('conversation_id')->select('conversation_id')->get();
+        })->with('conversation')->get();
 
         return count($unreadMessages);
     }
