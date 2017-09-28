@@ -104,6 +104,10 @@
         select.form-control.input-sm{
             padding: 0;
         }
+        .column-info img {
+            width: 100%;
+            height: 200px;
+        }
     </style>
 </head>
 <body>
