@@ -17,7 +17,7 @@
                             {!! $message->message !!}
                         </div>
                     @else
-                        <div style="background-color: #cbe6fc; padding: 15px; width: 85%" class="pull-right">
+                        <div style="background-color: #cbe6fc; padding: 15px; margin:15px; width: 85%" class="pull-right">
                             {!! $message->message !!}
                         </div>
                     @endif
