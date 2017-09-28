@@ -11,25 +11,25 @@
             @endforeach
         @else
             <div class="col-sm-6 col-md-3 col-lg-3">
-                <div class="chart" data-percent="27">
+                <div class="chart" data-percent="{{count(\App\Models\Bid::all())}}">
                     <span><i class="fa fa-folder-open"></i></span>
-                    <span class="percent"></span>Transactions in progress
+                    <span class="percent"></span>Total Transactions
                 </div>
             </div>
             <div class="col-sm-6 col-md-3 col-lg-3">
-                <div class="chart" data-percent="68">
+                <div class="chart" data-percent="{{count(\App\Models\User::all())}}">
                     <span><i class="fa fa-users"></i></span>
-                    <span class="percent"></span>Clients In Europe
+                    <span class="percent"></span>Clients Registered
                 </div>
             </div>
             <div class="col-sm-6 col-md-3 col-lg-3">
-                <div class="chart" data-percent="31">
+                <div class="chart" data-percent="{{count(\App\Models\Truck::all())}}">
                     <span><i class="fa fa-truck"></i></span>
-                    <span class="percent"></span>Registered Vehicles
+                    <span class="percent"></span>Vehicles Registered
                 </div>
             </div>
             <div class="col-sm-6 col-md-3 col-lg-3">
-                <div class="chart" data-percent="105">
+                <div class="chart" data-percent="{{count(\App\Models\Bid::where('status',1)->get())}}">
                     <span><i class="fa fa-archive"></i></span>
                     <span class="percent"></span>Deals Closed
                 </div>
