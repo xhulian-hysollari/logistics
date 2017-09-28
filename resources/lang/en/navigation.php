@@ -21,4 +21,5 @@ return [
     'listing' => 'My Listings',
     'logout' => 'Log Out',
     'offer' => 'My Offers',
+    'dashboard' => 'My Dashboard',
 ];
