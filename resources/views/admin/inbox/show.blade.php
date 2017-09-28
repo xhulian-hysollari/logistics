@@ -18,9 +18,10 @@
                         </p>
                     @else
                         <p style="background-color: #cbe6fc; padding: 15px; width: 85%" class="pull-right">
-                            {!! $message->message !!}<span
-                                    class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span>
+                            {!! $message->message !!}
                         </p>
+                        <span
+                                class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span>
                     @endif
                 @endforeach
                 <form action="{{route('messages.store', ['id' => $result->id, 'receiver_id' => $result->buddy->id])}}" class="form" method="post">
