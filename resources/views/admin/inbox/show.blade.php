@@ -8,20 +8,19 @@
                 <h1 class="no-margin">{{$result->buddy->full_name}}</h1>
                 <hr>
                 <div class="btn-group stick-top-right">
-                    <a href="" class="btn btn-icon-toggle btn-default"><i class="md md-delete"></i></a>
+                    {{--<a href="" class="btn btn-icon-toggle btn-default"><i class="md md-delete"></i></a>--}}
                 </div>
                 @foreach($result->messages as $message)
                     @if($message->user_id == Sentinel::getUser()->id)
-                        <p style="background-color: #D1E5BB; padding: 15px; width: 85%" class="pull-left">
+                        <div style="background-color: #D1E5BB; padding: 15px; width: 85%" class="pull-left">
                             {!! $message->message !!}<span
                                     class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span>
-                        </p>
+                        </div>
                     @else
-                        <p style="background-color: #cbe6fc; padding: 15px; width: 85%" class="pull-right">
-                            {!! $message->message !!}
-                        </p>
-                        <span
-                                class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span>
+                        <div style="background-color: #cbe6fc; padding: 15px; width: 85%" class="pull-right">
+                            {!! $message->message !!}<span
+                                    class="pull-right text-default-light">{{\Carbon\Carbon::parse($message->created_at)->format('d M y H:i a')}}</span>
+                        </div>
                     @endif
                 @endforeach
                 <form action="{{route('messages.store', ['id' => $result->id, 'receiver_id' => $result->buddy->id])}}" class="form" method="post">
