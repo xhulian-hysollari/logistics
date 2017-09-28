@@ -119,8 +119,8 @@ Route::middleware(['guest'])->group(function () {
             Route::get('/my-bids', ['as' => 'bid.index', 'uses' => 'BidController@index']);
             Route::get('/my-offers', ['as' => 'bid.offer', 'uses' => 'BidController@offers']);
             Route::get('/bid/{id}/details', ['as' => 'bid.details', 'uses' => 'BidController@details']);
-            Route::get('/bid/{id}/refuse', ['as' => 'bid.refuse', 'uses' => 'BidController@details']);
-            Route::get('/bid/{id}/accept', ['as' => 'bid.accept', 'uses' => 'BidController@details']);
+            Route::get('/bid/{id}/refuse', ['as' => 'bid.refuse', 'uses' => 'BidController@refuse']);
+            Route::get('/bid/{id}/accept', ['as' => 'bid.accept', 'uses' => 'BidController@accept']);
 
             Route::group(['prefix' => 'messages'], function () {
                 Route::get('/', ['as' => 'messages', 'uses' => 'MessageController@index']);

@@ -104,7 +104,7 @@ class BidController extends Controller
                     $this->saveFiles($file, $bid, $user);
                 }
             }
-            $this->notifyForBid($truck->user_id, $bid->description);
+            $this->notifyForBid($truck->user_id, $bid->description, "A bid has just been placed:");
             return redirect()->back()->with('success', 'bid.success');
         } catch (\Exception $ex) {
             dd($ex->getMessage());
@@ -128,15 +128,36 @@ class BidController extends Controller
         $image->save();
     }
 
-    private function notifyForBid($receiver_id, $message){
+    private function notifyForBid($receiver_id, $message, $type = null){
         $data = Input::all();
         $user = Sentinel::getUser();
+        $text = "$type <br> <blockquote> $message </blockquote>";
         $conversation = Conversation::startConversation($user->id, $receiver_id);
-        $result = $conversation->addMessage($message, $receiver_id);
+        $result = $conversation->addMessage($text, $receiver_id);
         if ($result) {
             return true;
         }
         return false;
 
+    }
+
+    public function refuse($id){
+        $bid = Bid::where('id', $id)->first();
+        $bid->status = 2;
+        $bid->save();
+        $receiver = User::where('id', $bid->user_id)->first();
+        $conversation = Conversation::startConversation(Sentinel::getUser()->id, $receiver->id);
+        $result = $conversation->addMessage("Your bid has been declined.", $receiver->id);
+        return redirect()->back()->with('success','The bid has been declined successfully.');
+    }
+
+    public function accept($id){
+        $bid = Bid::where('id', $id)->first();
+        $bid->status = 2;
+        $bid->save();
+        $receiver = User::where('id', $bid->user_id)->first();
+        $conversation = Conversation::startConversation(Sentinel::getUser()->id, $receiver->id);
+        $result = $conversation->addMessage("Your bid has been accepted.", $receiver->id);
+        return redirect()->back()->with('success','The bid has been accepted successfully.');
     }
 }
