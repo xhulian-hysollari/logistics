@@ -18,7 +18,7 @@
                                             <span class="badge danger"> {{Sentinel::getUser()->UnreadMessages($conversation->id)}}</span>
                                         @endif
                                         <h4>{{$conversation->subject}}</h4>
-                                        <p class="hidden-xs hidden-sm">{{$conversation->latest_message->message}}</p>
+                                        <p class="hidden-xs hidden-sm">{!! $conversation->latest_message->message !!}</p>
                                         <div class="stick-top-right small-padding text-default-light text-sm">{{\Carbon\Carbon::parse($conversation->latest_message->created_at)->format('d M y H:i a')}}</div>
                                     </a>
                                 @endforeach
