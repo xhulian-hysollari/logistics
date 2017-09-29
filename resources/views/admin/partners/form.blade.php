@@ -12,7 +12,7 @@
                 <div class="form-group form-control-default">
                     <label for="website">Partner Website</label>
                     <input type="text" value="{{$result->website}}" class="form-control" id="website" name="website"
-                           placeholder="Website">
+                           placeholder="https://website.com">
                 </div>
             </div>
         </div>
