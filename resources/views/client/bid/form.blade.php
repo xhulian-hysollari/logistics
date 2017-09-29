@@ -1,7 +1,7 @@
 <div class="default-inp form-elem">
-    <label for="description">{{trans('freight.description')}}</label>
-    <textarea name="description" id="description"
-              placeholder="{{trans('freight.description')}}"></textarea>
+    <label for="description">Bid info</label>
+    <textarea name="description" id="description" class="form-control"
+              placeholder="Write your bid in here..."></textarea>
 </div>
 
 <div class="form-elem">
