@@ -14,7 +14,6 @@
 //tuts https://www.sitepoint.com/laravel-and-braintree-sitting-in-a-tree/ https://www.sitepoint.com/laravel-and-braintree-middleware-and-other-advanced-concepts/ https://www.sitepoint.com/real-time-laravel-notifications-follows-sure-stream/
 use Illuminate\Http\Request;
 
-Route::get('/dashboard', ['as' => 'dashboard', 'uses' => 'NavigationController@getDashboardPage']);
 
 Route::get('/about', function () {
     return view('client.pages.about');
@@ -61,6 +60,7 @@ Route::middleware(['guest'])->group(function () {
         |
         */
 
+        Route::get('/dashboard', ['as' => 'dashboard', 'uses' => 'NavigationController@getDashboardPage']);
         Route::get('/plan/{plan}', ['as' => 'selected.plan', 'uses' => 'PlansController@show']);
         Route::get('/user/profile', ['as' => 'dashboard.profile', 'uses' => 'ProfileController@profile']);
         Route::post('/subscribe', ['as' => 'user.subscribe', 'uses' => 'SubscriptionsController@store']);
