@@ -153,7 +153,7 @@ class BidController extends Controller
 
     public function accept($id){
         $bid = Bid::where('id', $id)->first();
-        $bid->status = 2;
+        $bid->status = 1;
         $bid->save();
         $receiver = User::where('id', $bid->user_id)->first();
         $conversation = Conversation::startConversation(Sentinel::getUser()->id, $receiver->id);
