@@ -80,7 +80,7 @@
                                                 <label class="control-label">Freight ID: </label>
                                             </div>
                                             <div class="col-md-8">
-                                                {{$result->freight_id}}
+                                                {{$bid->item->freight_id}}
                                             </div>
                                         </div>
                                     </div>
@@ -90,7 +90,7 @@
                                                 <label class="control-label">Required Truck Type: </label>
                                             </div>
                                             <div class="col-md-8">
-                                                {{$result->type}}
+                                                {{$bid->item->type}}
                                             </div>
                                         </div>
                                     </div>
@@ -100,8 +100,9 @@
                                                 <label class="control-label">Dimensions: </label>
                                             </div>
                                             <div class="col-md-8">
-                                                L: {{$result->length}}, H: {{$result->height}}, W: {{$result->weight}},
-                                                V: {{$result->volume}}
+                                                L: {{$bid->item->length}}, H: {{$bid->item->height}},
+                                                W: {{$bid->item->weight}},
+                                                V: {{$bid->item->volume}}
                                             </div>
                                         </div>
                                     </div>
@@ -113,7 +114,7 @@
                                                 <label class="control-label">Current Location: </label>
                                             </div>
                                             <div class="col-md-8">
-                                                {{$result->location}}
+                                                {{$bid->item->location}}
                                             </div>
                                         </div>
                                     </div>
@@ -123,7 +124,7 @@
                                                 <label class="control-label">Quantity: </label>
                                             </div>
                                             <div class="col-md-8">
-                                                {{$result->quantity}}
+                                                {{$bid->item->quantity}}
                                             </div>
                                         </div>
                                     </div>
@@ -133,7 +134,7 @@
                                                 <label class="control-label">Description: </label>
                                             </div>
                                             <div class="col-md-8">
-                                                {{$result->description}}
+                                                {{$bid->item->description}}
                                             </div>
                                         </div>
                                     </div>
@@ -141,7 +142,62 @@
                             </div>
                         @endif
                         @if($bid->contract_id != null)
-
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-4">
+                                            <label class="control-label">Contract Title </label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            {{$bid->item->title}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-4">
+                                            <label class="control-label">Application Deadline </label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            {{\Carbon\Carbon::parse($bid->item->deadline)->format('d M Y')}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-4">
+                                            <label class="control-label">Contract Duration: </label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            {{$bid->item->duration}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="control-label">Description: </label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            {{$bid->item->description}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="control-label">Requirements: </label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            {{$bid->item->requirements}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         @endif
                     </div>
                 </div>
