@@ -73,36 +73,69 @@
                         @endif
                         @if($bid->freight_id != null)
                             <div>
-                                <div class="col-sm-12">
-                                    <label>{{trans('freight.description')}}</label>
-                                    <label>{{$bid->item->description}}</label>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Freight ID: </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                {{$result->freight_id}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Required Truck Type: </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                {{$result->type}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Dimensions: </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                L: {{$result->length}}, H: {{$result->height}}, W: {{$result->weight}},
+                                                V: {{$result->volume}}
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="default-inp">
-                                        <label>{{trans('truck.height')}}</label>
-                                        <label>{{$bid->item->height}}</label>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Current Location: </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                {{$result->location}}
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="default-inp">
-                                        <label>{{trans('truck.length')}}</label>
-                                        <label>{{$bid->item->length}}</label>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Quantity: </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                {{$result->quantity}}
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="default-inp">
-                                        <label>{{trans('truck.lorry_type')}}</label>
-                                        <label>{{$bid->item->type}}</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="default-inp">
-                                        <label>{{trans('truck.weight')}}</label>
-                                        <<label>{{$bid->item->weight}}</label>
-                                    </div>
-                                    <div class="default-inp">
-                                        <label>{{trans('truck.plate')}}</label>
-                                        <label>{{$bid->item->plate}}</label>
-                                    </div>
-                                    <div class="default-inp">
-                                        <label>{{trans('truck.location')}}</label>
-                                        <label>{{$bid->item->location}}</label>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Description: </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                {{$result->description}}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
