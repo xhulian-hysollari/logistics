@@ -77,7 +77,7 @@
                                     <div class="row">
                                         <div class="form-group">
                                             <div class="col-md-4">
-                                                <label class="control-label">Freight ID: </label>
+                                                <label>Freight ID: </label>
                                             </div>
                                             <div class="col-md-8">
                                                 {{$bid->item->freight_id}}
@@ -87,7 +87,7 @@
                                     <div class="row">
                                         <div class="form-group">
                                             <div class="col-md-4">
-                                                <label class="control-label">Required Truck Type: </label>
+                                                <label>Required Truck Type: </label>
                                             </div>
                                             <div class="col-md-8">
                                                 {{$bid->item->type}}
@@ -97,7 +97,7 @@
                                     <div class="row">
                                         <div class="form-group">
                                             <div class="col-md-4">
-                                                <label class="control-label">Dimensions: </label>
+                                                <label>Dimensions: </label>
                                             </div>
                                             <div class="col-md-8">
                                                 L: {{$bid->item->length}}, H: {{$bid->item->height}},
@@ -111,7 +111,7 @@
                                     <div class="row">
                                         <div class="form-group">
                                             <div class="col-md-4">
-                                                <label class="control-label">Current Location: </label>
+                                                <label>Current Location: </label>
                                             </div>
                                             <div class="col-md-8">
                                                 {{$bid->item->location}}
@@ -121,7 +121,7 @@
                                     <div class="row">
                                         <div class="form-group">
                                             <div class="col-md-4">
-                                                <label class="control-label">Quantity: </label>
+                                                <label>Quantity: </label>
                                             </div>
                                             <div class="col-md-8">
                                                 {{$bid->item->quantity}}
@@ -131,7 +131,7 @@
                                     <div class="row">
                                         <div class="form-group">
                                             <div class="col-md-4">
-                                                <label class="control-label">Description: </label>
+                                                <label>Description: </label>
                                             </div>
                                             <div class="col-md-8">
                                                 {{$bid->item->description}}
@@ -146,7 +146,7 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-4">
-                                            <label class="control-label">Contract Title </label>
+                                            <label>Contract Title </label>
                                         </div>
                                         <div class="col-md-8">
                                             {{$bid->item->title}}
@@ -156,7 +156,7 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-4">
-                                            <label class="control-label">Application Deadline </label>
+                                            <label>Application Deadline </label>
                                         </div>
                                         <div class="col-md-8">
                                             {{\Carbon\Carbon::parse($bid->item->deadline)->format('d M Y')}}
@@ -168,7 +168,7 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-4">
-                                            <label class="control-label">Contract Duration: </label>
+                                            <label>Contract Duration: </label>
                                         </div>
                                         <div class="col-md-8">
                                             {{$bid->item->duration}}
@@ -180,7 +180,7 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-12">
-                                            <label class="control-label">Description: </label>
+                                            <label>Description: </label>
                                         </div>
                                         <div class="col-md-12">
                                             {{$bid->item->description}}
@@ -190,7 +190,7 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-12">
-                                            <label class="control-label">Requirements: </label>
+                                            <label>Requirements: </label>
                                         </div>
                                         <div class="col-md-12">
                                             {{$bid->item->requirements}}
