@@ -90,7 +90,7 @@
                         @endif
                     </div>
                 </div>
-                @if(Sentinel::getUser()->id == $bid->owner_id)
+                @if(Sentinel::getUser()->id == $bid->owner_id && $bid->status != 1)
                     <a href="{{route('bid.refuse', $bid->id)}}" class="btn btn-danger"> Refuse bid</a>
                     <a href="{{route('bid.accept', $bid->id)}}" class="btn btn-danger"> Accept bid</a>
                     <hr>
