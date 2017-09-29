@@ -1,7 +1,7 @@
 <div class="default-inp form-elem">
-    <label for="description">Bid info</label>
+    <label for="description">Your Message</label>
     <textarea name="description" id="description" class="form-control"
-              placeholder="Write your bid in here..."></textarea>
+              placeholder="Write your message in here..."></textarea>
 </div>
 
 <div class="form-elem">
