@@ -224,9 +224,9 @@
                 <a href="{{route('bid.accept', $bid->id)}}" class="btn btn-success"> Accept bid</a>
                 <hr>
                 <div class="row main-grid">
-                    {{--{!! Form::model($bid = new \App\Models\Bid(), ['route' => ['bid.freight', $bid->item->id, 0], 'method' => 'POST', 'class' => 'form-horizontal', 'novalidate']) !!}--}}
+                    <form action="{{route('messages.store', ['id' => null, 'receiver_id' => $bid->user_id])}}" class="form" method="post">
                     @include('client.bid.form')
-                    {{--{!! Form::close() !!}--}}
+                    </form>
                 </div>
             @endif
         </div>
