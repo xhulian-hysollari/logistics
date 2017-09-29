@@ -162,7 +162,7 @@
                        href="{{route('freight')}}">{{trans('navigation.freight')}}</a></li>
                 <li><a style="padding:0 20px; color:white" href="{{route('truck')}}">{{trans('navigation.truck')}}</a>
                 </li>
-                <li><a style="padding:0 20px; color:white" href="{{route('tender')}}">{{trans('navigation.tenders')}}</a>
+                <li><a style="padding:0 20px; color:white" href="{{route('tender')}}">Tenders</a>
                 </li>
             </ul>
             <hr>
