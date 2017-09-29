@@ -35,6 +35,8 @@
                 <div class="row main-grid">
                     <h2>Item Details</h2>
                     <div class="col-sm-12">
+                        @if($bid->truck_id == null)
+                            test
                         <div>
                             <div class="col-sm-12">
                                 <label>{{trans('freight.description')}}</label>
@@ -69,6 +71,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
 
