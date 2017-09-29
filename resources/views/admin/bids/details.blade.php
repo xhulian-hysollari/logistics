@@ -92,7 +92,7 @@
                 </div>
                 @if(Sentinel::getUser()->id == $bid->owner_id && $bid->status != 1)
                     <a href="{{route('bid.refuse', $bid->id)}}" class="btn btn-danger"> Refuse bid</a>
-                    <a href="{{route('bid.accept', $bid->id)}}" class="btn btn-danger"> Accept bid</a>
+                    <a href="{{route('bid.accept', $bid->id)}}" class="btn btn-success"> Accept bid</a>
                     <hr>
                     <div class="row main-grid">
                     {{--{!! Form::model($bid = new \App\Models\Bid(), ['route' => ['bid.freight', $bid->item->id, 0], 'method' => 'POST', 'class' => 'form-horizontal', 'novalidate']) !!}--}}
