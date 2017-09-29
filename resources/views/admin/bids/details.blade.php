@@ -224,9 +224,9 @@
                 <a href="{{route('bid.accept', $bid->id)}}" class="btn btn-success"> Accept bid</a>
                 <hr>
                 <div class="row main-grid">
-                    <form action="{{route('messages.store', ['id' => null, 'receiver_id' => $bid->user_id])}}" class="form" method="post">
-                    @include('client.bid.form')
-                    </form>
+{{--                    <form action="{{route('bid.reply', ['id' => null, 'receiver_id' => $bid->user_id])}}" class="form" method="post">--}}
+{{--                    @include('client.bid.form')--}}
+                    {{--</form>--}}
                 </div>
             @endif
         </div>
