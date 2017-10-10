@@ -110,10 +110,20 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-4">
-                                            <label>Current Location: </label>
+                                            <label>Loading: </label>
                                         </div>
                                         <div class="col-md-8">
-                                            {{$bid->item->location}}
+                                            {{$bid->item->loading}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-4">
+                                            <label>UnLoading: </label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            {{$bid->item->unloading}}
                                         </div>
                                     </div>
                                 </div>
