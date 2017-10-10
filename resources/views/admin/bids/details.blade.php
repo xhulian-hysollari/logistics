@@ -129,7 +129,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
-                                        <div class="col-md-2">
+                                        <div class="col-md-4">
                                             <label>Quantity: </label>
                                         </div>
                                         <div class="col-md-8">
@@ -141,7 +141,7 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group">
-                                        <div class="col-md-4">
+                                        <div class="col-md-2">
                                             <label>Description: </label>
                                         </div>
                                         <div class="col-md-8">
