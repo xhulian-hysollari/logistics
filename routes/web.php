@@ -28,6 +28,7 @@ Route::get('/about', function () {
 */
 
 Route::get('/', ['as' => 'home', 'uses' => 'NavigationController@getHomePage']);
+Route::post('/contact', ['as' => 'contact', 'uses' => 'ContactController@contact']);
 Route::get('/plans', ['as' => 'plans', 'uses' => 'PlansController@index']);
 Route::get('/register', ['as' => 'register', 'uses' => 'NavigationController@getRegistrationPage']);
 Route::post('/register/autobot', ['as' => 'register.autobot', 'uses' => 'RegistrationController@register']);

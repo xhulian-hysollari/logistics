@@ -40,7 +40,7 @@
             <div class="col-sm-8 wow fadeInRight" data-wow-delay="0.3s">
                 <h4>{{trans('contact.send')}}</h4>
                 <div id="success"></div>
-                <form novalidate id="contactForm" class="reply-form form-inline">
+                <form novalidate id="contactForm" class="reply-form form-inline" action="{{action('ContactController@contact')}}" method="post">
                     <div class="row form-elem">
                         <div class="col-sm-6 form-elem">
                             <div class="default-inp form-elem">
@@ -70,7 +70,7 @@
                                placeholder="Topic">
                     </div>
                     <div class="form-elem default-inp">
-                        <textarea id="message" placeholder="Write your message here"></textarea>
+                        <textarea id="message" name="message" placeholder="Write your message here"></textarea>
                     </div>
                     <div class="form-elem">
                         <button type="submit" class="btn btn-success btn-default"> Contact us</button>
