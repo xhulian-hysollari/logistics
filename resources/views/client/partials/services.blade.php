@@ -2,7 +2,7 @@
     <div class="text-center hgroup">
         @if(count($statements = \App\Models\Setting::where('type',3)->get()) > 0)
             @foreach($statements as $statement)
-                <h1>{{$statement->value}}</h1>
+                <h1>{!! $statement->value !!}</h1>
             @endforeach
         @else
             <h1>OUR SERVICES</h1>
