@@ -14,11 +14,11 @@ class TruckController extends Controller
     public function index()
     {
         try {
-            if(Sentinel::inRole('admin')){
+//            if(Sentinel::inRole('admin')){
                 $results = Truck::all();
-            }else{
-                $results = Truck::where('user_id', Sentinel::getUser()->id)->get();
-            }
+//            }else{
+//                $results = Truck::where('user_id', Sentinel::getUser()->id)->get();
+//            }
             return view('admin.truck.index', compact('results'));
         } catch (Exception $ex) {
             dd($ex);

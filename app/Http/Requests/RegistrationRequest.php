@@ -29,7 +29,7 @@ class RegistrationRequest extends FormRequest
             'password' => 'required',
             'confirm_password' => 'required|same:password',
             'full_name' => 'required',
-            'company_logo' => 'required|image',
+//            'company_logo' => 'required|image',
         ];
     }
 }

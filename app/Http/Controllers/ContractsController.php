@@ -13,11 +13,11 @@ class ContractsController extends Controller
     public function index()
     {
         try{
-            if(Sentinel::inRole('admin')){
+            //if(Sentinel::inRole('admin')){
                 $results = Contracts::all();
-            }else{
-                $results = Contracts::where('user_id', Sentinel::getUser()->id)->get();
-            }
+            //}else{
+            //    $results = Contracts::where('user_id', Sentinel::getUser()->id)->get();
+            //}
             return view('admin.contracts.index', compact('results'));
         }catch (\Exception $ex){
             dd($ex);
