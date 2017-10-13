@@ -46,7 +46,7 @@
                                         @else
                                             <a href="{{route('contracts.show', $contract->id)}}"><i class="fa fa-eye fa-2x"></i></a>
                                         @endif
-                                        @if(Sentinel::inRole('admin'))
+                                        @if(Sentinel::inRole('admin') && Sentinel::getUser()->id != $contract->user_id)
                                                 <a href="{{route('contracts.delete', $contract->id)}}"><i
                                                             class="fa fa-trash-o fa-2x"></i></a>
                                         @endif
