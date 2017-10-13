@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\FreightRequest;
+use App\Models\Bid;
 use App\Models\Freight;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Http\Request;
@@ -153,6 +154,10 @@ class FreightController extends Controller
     {
         try{
             $freight = Freight::where('id', $id)->delete();
+            $bids = Bid::where('freight_id', $id)->get();
+            foreach ($bids as $bid){
+                $bid->delete();
+            }
             return redirect()->route('freight.index')->with('success', 'Freight has been removed from the listing!');
         }catch (\Exception $ex){
             return redirect()->back()->with('error', $ex->getMessage());

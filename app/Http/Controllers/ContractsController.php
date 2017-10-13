@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\ContractRequest;
+use App\Models\Bid;
 use App\Models\Contracts;
 use Carbon\Carbon;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
@@ -130,6 +131,10 @@ class ContractsController extends Controller
     {
         try {
         $contracts = Contracts::where('id', $id)->delete();
+        $bids = Bid::where('contract_id', $id)->get();
+        foreach ($bids as $bid){
+            $bid->delete();
+        }
         return redirect()->back()->with('success', 'Contract removed from listing');
         } catch (\Exception $ex) {
             return redirect()->back()->with('error', $ex->getMessage());

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bid;
 use App\Models\Truck;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Exception;
@@ -153,6 +154,10 @@ class TruckController extends Controller
     {
         try {
             Truck::where('id', $id)->delete();
+            $bids = Bid::where('truck_id', $id)->get();
+            foreach ($bids as $bid){
+                $bid->delete();
+            }
             return redirect()->route('trucks.index')->with('success', 'Truck has been removed from the listing!');
         } catch (Exception $ex) {
             return redirect()->back()->with('error', $ex->getMessage());
