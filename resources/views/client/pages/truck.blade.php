@@ -85,23 +85,16 @@
     <script>
 
         $(document).ready(function () {
-//            $('#data_table thead th').each(function () {
-//                var title = $('#data_table thead th').eq($(this).index()).text();
-//                $(this).html('<input type="text" placeholder="Search ' + title + '" />');
-//            });
-
             var table = $('#data_table').DataTable();
             var plate = $('#s-plate');
             var type = $('#s-type');
             var location = $('#s-location');
-//            table.columns().eq(0).each(function (colIdx) {
             plate.on('keyup change', function () {
                 table
                     .column(0)
                     .search(this.value)
                     .draw();
             });
-
             plate.on('click', function (e) {
                 e.stopPropagation();
             });
@@ -111,7 +104,6 @@
                     .search(this.value)
                     .draw();
             });
-
             $('#type').on('click', function (e) {
                 e.stopPropagation();
             });
@@ -121,11 +113,9 @@
                     .search(this.value)
                     .draw();
             });
-
             location.on('click', function (e) {
                 e.stopPropagation();
             });
-//            });
         });
 
     </script>
