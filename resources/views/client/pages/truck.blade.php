@@ -3,7 +3,7 @@
     <div class="block-content" style="padding-left: 20px; padding-right: 20px;">
         <div class="row main-grid">
             <div class="col-sm-12">
-                <div class="container-fluid block-content" style="background-color: lightgrey">
+                <div class="container-fluid block-content" style="background-color: rgba(136,136,136,0.17); padding: 30px">
                     <div class="row form-elem">
                         <div class="col-sm-6 form-elem">
                             <div class="default-inp form-elem">
