@@ -52,15 +52,6 @@
     </div>
 @stop
 
-{{--@endforeach--}}
-{{--<td>{{$truck->plate}}</td>--}}
-{{--<td>{{$truck->type}}</td>--}}
-{{--<td>{{$truck->location}}</td>--}}
-{{--<td>{{$truck->status}}</td>--}}
-{{--<td><a href="{{route('trucks.show', $truck->id)}}"><i--}}
-{{--class="fa fa-eye fa-2x"></i></a>--}}
-{{--</td>--}}
-
 @section('css')
     <link rel="stylesheet" href="{{asset('css/components/bs-datatable.css')}}">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
