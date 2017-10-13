@@ -47,16 +47,6 @@
                         <th style="display: none">Actions</th>
                     </tr>
                     </thead>
-                    <tfoot>
-                    <tr>
-                        <th><i class="fa fa-map-marker"></i> Place of loading</th>
-                        <th><i class="fa fa-map-marker"></i> Place of unloading</th>
-                        <th><i class="fa fa-cube"></i> {{trans('freight.volume')}}</th>
-                        <th><i class="fa fa-truck"></i> {{trans('freight.lorry_type')}}</th>
-                        <th><i class="fa fa-clock-o"></i> Listed at</th>
-                        <th style="display: none">Actions</th>
-                    </tr>
-                    </tfoot>
                     <tbody>
                     @foreach($results as $freight)
                         <tr>
