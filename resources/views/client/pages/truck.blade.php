@@ -3,6 +3,7 @@
     <div class="block-content" style="padding-left: 20px; padding-right: 20px;">
         <div class="row main-grid">
             <div class="col-sm-12">
+                <input type="text" id="s-plate" placeholder="Search plate" />
                 <table id="data_table" class="table table-responsive table-striped">
                     <thead>
                     <tr>
@@ -14,13 +15,13 @@
                     </tr>
                     </thead>
                     <tfoot>
-                    <tr>
-                        <th>{{trans('truck.plate')}}</th>
-                        <th>{{trans('truck.type')}}</th>
-                        <th>{{trans('truck.location')}}</th>
-                        <th>{{trans('truck.status')}}</th>
-                        <th style="display: none">Actions</th>
-                    </tr>
+                    {{--<tr>--}}
+                        {{--<th>{{trans('truck.plate')}}</th>--}}
+                        {{--<th>{{trans('truck.type')}}</th>--}}
+                        {{--<th>{{trans('truck.location')}}</th>--}}
+                        {{--<th>{{trans('truck.status')}}</th>--}}
+                        {{--<th style="display: none">Actions</th>--}}
+                    {{--</tr>--}}
                     </tfoot>
                     <tbody>
                         @foreach($results as $truck)
@@ -63,24 +64,25 @@
     <script>
 
         $(document).ready(function () {
-            $('#data_table thead th').each(function () {
-                var title = $('#data_table thead th').eq($(this).index()).text();
-                $(this).html('<input type="text" placeholder="Search ' + title + '" />');
-            });
+//            $('#data_table thead th').each(function () {
+//                var title = $('#data_table thead th').eq($(this).index()).text();
+//                $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+//            });
+
             var table = $('#data_table').DataTable();
 
-            table.columns().eq(0).each(function (colIdx) {
-                $('input', table.column(colIdx).header()).on('keyup change', function () {
+//            table.columns().eq(0).each(function (colIdx) {
+                $('#s-plate').on('keyup change', function () {
                     table
-                        .column(colIdx)
+                        .column(0)
                         .search(this.value)
                         .draw();
                 });
 
-                $('input', table.column(colIdx).header()).on('click', function (e) {
+                $('#s-plate').on('click', function (e) {
                     e.stopPropagation();
                 });
-            });
+//            });
         });
 
     </script>
