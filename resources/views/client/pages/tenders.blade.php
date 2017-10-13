@@ -7,7 +7,7 @@
                     <div class="row form-elem">
                         <div class="col-sm-6 form-elem">
                             <div class="default-inp form-elem">
-                                <input type="text" id="s-plate" placeholder="Search owner"/>
+                                <input type="text" id="s-owner" placeholder="Search owner"/>
                             </div>
                         </div>
                         <div class="col-sm-6 form-elem">
