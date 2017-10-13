@@ -36,6 +36,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="resp-table">
                 <table id="data_table" class="table table-responsive table-striped">
                     <thead>
                     <tr>
@@ -60,6 +61,7 @@
                     @endforeach
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>

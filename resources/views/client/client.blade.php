@@ -26,7 +26,20 @@
         #this-is-top {
             border-top: none;
         }
+        .resp-table{
+            overflow-x: auto;
+            min-height: 0.01%;
+        }
 
+        @media screen and (max-width: 768px){
+            .resp-table {
+                width: 100%;
+                margin-bottom: 18px;
+                overflow-y: hidden;
+                -ms-overflow-style: -ms-autohiding-scrollbar;
+                border: 1px solid rgba(189, 193, 193, 0.2);
+            }
+        }
         .slider-content {
             background: rgba(0, 0, 0, 0.5);
             padding: 15px;
