@@ -69,16 +69,16 @@
     <div class="content">
         <h4>Contact request by {{ucwords($input['full_name'])}}</h4>
         <p>
-            Phone Number: {{$input->phone}}
+            Phone Number: {{$input['phone']}}
         </p>
         <p>
-            Email: {{$input->email}}
+            Email: {{$input['email']}}
         </p>
         <p>
-            Topic: {{$input->subject}}
+            Topic: {{$input['subject']}}
         </p>
         <p>
-            Message: {{$input->message}}
+            Message: {{$input['message']}}
         </p>
     </div>
 </div>
