@@ -3,7 +3,7 @@
     <div class="block-content" style="padding-left: 20px; padding-right: 20px;">
         <div class="row main-grid">
             <div class="col-sm-12">
-                <div class="container-fluid block-content">
+                <div class="container-fluid block-content" style="background-color: lightgrey">
                     <div class="row form-elem">
                         <div class="col-sm-6 form-elem">
                             <div class="default-inp form-elem">
@@ -24,6 +24,7 @@
                         </div>
                     </div>
                 </div>
+
                 <table id="data_table" class="table table-responsive table-striped">
                     <thead>
                     <tr>
