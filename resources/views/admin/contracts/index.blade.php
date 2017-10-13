@@ -48,7 +48,7 @@
                                         @endif
                                         @if(Sentinel::inRole('admin'))
                                                 <a href="{{route('contracts.delete', $contract->id)}}"><i
-                                                            class="fa fa-fa-trash-o fa-2x"></i></a>
+                                                            class="fa fa-fa-trash-o fa-2x"></i> Delete</a>
                                         @endif
                                     </td>
                                 <tr>
