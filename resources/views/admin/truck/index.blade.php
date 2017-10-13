@@ -35,11 +35,16 @@
                                     <td>{{$truck->status}}</td>
                                     <td>
                                         @if(Sentinel::getUser()->id == $truck->user_id)
-                                            <a href="{{route('trucks.edit', $truck->id)}}"><i
+                                            <a href="{{ route('trucks.edit', [$truck->id]) }}"><i
                                                         class="fa fa-pencil-square fa-2x"></i></a>
-                                            <a href=""></a>
+                                            <a href="{{route('trucks.delete', $truck->id)}}"><i
+                                                        class="fa fa-trash-o fa-2x"></i></a>
                                         @else
-                                            <a href=""></a>
+                                            <a href="{{route('trucks.show', $truck->id)}}"><i class="fa fa-eye fa-2x"></i></a>
+                                        @endif
+                                        @if(Sentinel::inRole('admin') && Sentinel::getUser()->id != $truck->user_id)
+                                            <a href="{{route('trucks.delete', $truck->id)}}"><i
+                                                        class="fa fa-trash-o fa-2x"></i></a>
                                         @endif
                                     </td>
                                 <tr>
