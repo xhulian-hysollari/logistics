@@ -67,7 +67,7 @@
 <body>
 <div class="flex-center position-ref full-height well">
     <div class="content">
-        <h4>Contact request by {{ucwords($input->full_name)}}</h4>
+        <h4>Contact request by {{ucwords($input['full_name'])}}</h4>
         <p>
             Phone Number: {{$input->phone}}
         </p>
