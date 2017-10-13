@@ -4,20 +4,20 @@
     <div class="container-fluid">
         <div class="row" style="display: flex; justify-content: center; flex-wrap: wrap">
             @foreach ($results as $plan)
-                <div class="pricing-table">
+                <div class="pricing-table" style="display: flex; flex-direction: column;">
                     <div class="pricing-table-header">
                         <h1>{{ $plan->name }}</h1>
                     </div>
                     @if ($plan->description)
                     <div class="pricing-table-content">
-                        <ul>
+                        <ul style="padding: 0">
                             <li>
                                 {!!  str_replace(',','</li><li>', $plan->description)  !!}
                             </li>
                         </ul>
                     </div>
                     @endif
-                    <div class="pricing-table-footer">
+                    <div class="pricing-table-footer" style="margin: auto 0 0 0">
                         <span style="font-size: 16pt; font-weight: bold"><sup>	&euro;</sup>{{ number_format($plan->cost, 2) }}</span>
                         <p>per month</p>
                         @if(Sentinel::getUser())
