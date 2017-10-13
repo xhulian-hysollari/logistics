@@ -3,6 +3,39 @@
     <div class="block-content" style="padding-left: 20px; padding-right: 20px;">
         <div class="row main-grid">
             <div class="col-sm-12">
+                <div class="container-fluid block-content" style="background-color: rgba(136,136,136,0.17); padding: 30px">
+                    <div class="row form-elem">
+                        <div class="col-sm-6 form-elem">
+                            <div class="default-inp form-elem">
+                                <input type="text" id="s-loading" placeholder="From"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 form-elem">
+                            <div class="default-inp form-elem">
+                                <input type="text" id="s-unloading" placeholder="To"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-elem">
+                        <div class="col-sm-6 form-elem">
+                            <div class="default-inp form-elem">
+                                <input type="text" id="s-volume" placeholder="Search volume"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 form-elem">
+                            <div class="default-inp form-elem">
+                                <input type="text" id="s-type" placeholder="Search type"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-elem">
+                        <div class="col-sm-12 form-elem">
+                            <div class="default-inp form-elem">
+                                <input type="text" id="s-listed" placeholder="Search listing time"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <table id="data_table" class="table table-responsive table-striped">
                     <thead>
                     <tr>
@@ -56,21 +89,61 @@
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#data_table thead th').each(function () {
-                var title = $('#data_table thead th').eq($(this).index()).text();
-                $(this).html('<input type="text" placeholder="Search ' + title + '" />');
-            });
             var table = $('#data_table').DataTable();
-            table.columns().eq(0).each(function (colIdx) {
-                $('input', table.column(colIdx).header()).on('keyup change', function () {
-                    table
-                        .column(colIdx)
-                        .search(this.value)
-                        .draw();
-                });
-                $('input', table.column(colIdx).header()).on('click', function (e) {
-                    e.stopPropagation();
-                });
+            var loading = $('#s-loading');
+            var unloading = $('#s-unloading');
+            var volume = $('#s-volume');
+            var type = $('#s-type');
+            var listed = $('#s-listed');
+
+            loading.on('keyup change', function () {
+                table
+                    .column(0)
+                    .search(this.value)
+                    .draw();
+            });
+            loading.on('click', function (e) {
+                e.stopPropagation();
+            });
+
+            unloading.on('keyup change', function () {
+                table
+                    .column(1)
+                    .search(this.value)
+                    .draw();
+            });
+            unloading.on('click', function (e) {
+                e.stopPropagation();
+            });
+
+            volume.on('keyup change', function () {
+                table
+                    .column(2)
+                    .search(this.value)
+                    .draw();
+            });
+            volume.on('click', function (e) {
+                e.stopPropagation();
+            });
+
+            type.on('keyup change', function () {
+                table
+                    .column(3)
+                    .search(this.value)
+                    .draw();
+            });
+            type.on('click', function (e) {
+                e.stopPropagation();
+            });
+
+            listed.on('keyup change', function () {
+                table
+                    .column(3)
+                    .search(this.value)
+                    .draw();
+            });
+            listed.on('click', function (e) {
+                e.stopPropagation();
             });
         });
     </script>
