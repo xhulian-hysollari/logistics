@@ -3,9 +3,27 @@
     <div class="block-content" style="padding-left: 20px; padding-right: 20px;">
         <div class="row main-grid">
             <div class="col-sm-12">
-                <input type="text" id="s-plate" placeholder="Search plate"/>
-                <input type="text" id="s-type" placeholder="Search plate"/>
-                <input type="text" id="s-location" placeholder="Search plate"/>
+                <div class="container-fluid block-content">
+                    <div class="row form-elem">
+                        <div class="col-sm-6 form-elem">
+                            <div class="default-inp form-elem">
+                                <input type="text" id="s-plate" placeholder="Search plate"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 form-elem">
+                            <div class="default-inp form-elem">
+                                <input type="text" id="s-type" placeholder="Search truck type"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-elem">
+                        <div class="col-sm-12 form-elem">
+                            <div class="default-inp form-elem">
+                                <input type="text" id="s-location" placeholder="Search location"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <table id="data_table" class="table table-responsive table-striped">
                     <thead>
                     <tr>
