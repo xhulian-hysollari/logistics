@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="row" style="display: flex; justify-content: center">
+        <div class="row" style="display: flex; justify-content: center; flex-wrap: wrap">
             @foreach ($results as $plan)
                 <div class="pricing-table">
                     <div class="pricing-table-header">
