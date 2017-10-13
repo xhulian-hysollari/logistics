@@ -31,26 +31,15 @@
                         <th>{{trans('truck.plate')}}</th>
                         <th>{{trans('truck.type')}}</th>
                         <th>{{trans('truck.location')}}</th>
-                        {{--<th>{{trans('truck.status')}}</th>--}}
                         <th style="display: none">Actions</th>
                     </tr>
                     </thead>
-                    <tfoot>
-                    {{--<tr>--}}
-                    {{--<th>{{trans('truck.plate')}}</th>--}}
-                    {{--<th>{{trans('truck.type')}}</th>--}}
-                    {{--<th>{{trans('truck.location')}}</th>--}}
-                    {{--<th>{{trans('truck.status')}}</th>--}}
-                    {{--<th style="display: none">Actions</th>--}}
-                    {{--</tr>--}}
-                    </tfoot>
                     <tbody>
                     @foreach($results as $truck)
                         <tr>
                             <td>{{$truck->plate}}</td>
                             <td>{{$truck->type}}</td>
                             <td>{{$truck->location}}</td>
-                            {{--<td>{{$truck->status}}</td>--}}
                             <td><a href="{{route('trucks.show', $truck->id)}}"><i class="fa fa-eye fa-2x"></i></a></td>
                         </tr>
                     @endforeach
@@ -109,7 +98,7 @@
             });
             location.on('keyup change', function () {
                 table
-                    .column(0)
+                    .column(2)
                     .search(this.value)
                     .draw();
             });
