@@ -81,7 +81,7 @@ Route::middleware(['guest'])->group(function () {
             Route::get('/freights/show/{id}', ['as' => 'freight.show', 'uses' => 'FreightController@show']);
             Route::get('/freights/edit/{id}', ['as' => 'freight.edit', 'uses' => 'FreightController@edit']);
             Route::patch('/freights/update/{id}', ['as' => 'freight.update', 'uses' => 'FreightController@update']);
-            Route::delete('/freights/delete/{id}', ['as' => 'freight.delete', 'uses' => 'FreightController@destroy']);
+            Route::any('/freights/delete/{id}', ['as' => 'freight.delete', 'uses' => 'FreightController@destroy']);
 
             Route::get('/trucks/index', ['as' => 'trucks.index', 'uses' => 'TruckController@index']);
             Route::get('/trucks/create', ['as' => 'trucks.create', 'uses' => 'TruckController@create']);
@@ -89,7 +89,7 @@ Route::middleware(['guest'])->group(function () {
             Route::get('/trucks/show/{id}', ['as' => 'trucks.show', 'uses' => 'TruckController@show']);
             Route::get('/trucks/edit/{id}', ['as' => 'trucks.edit', 'uses' => 'TruckController@edit']);
             Route::patch('/trucks/update/{id}', ['as' => 'trucks.update', 'uses' => 'TruckController@update']);
-            Route::delete('/trucks/delete/{id}', ['as' => 'trucks.delete', 'uses' => 'TruckController@destroy']);
+            Route::any('/trucks/delete/{id}', ['as' => 'trucks.delete', 'uses' => 'TruckController@destroy']);
 
             /*
             |--------------------------------------------------------------------------
@@ -105,7 +105,7 @@ Route::middleware(['guest'])->group(function () {
             Route::get('/contracts/show/{id}', ['as' => 'contracts.show', 'uses' => 'ContractsController@show']);
             Route::get('/contracts/edit/{id}', ['as' => 'contracts.edit', 'uses' => 'ContractsController@edit']);
             Route::patch('/contracts/update/{id}', ['as' => 'contracts.update', 'uses' => 'ContractsController@update']);
-            Route::delete('/contracts/delete/{id}', ['as' => 'contracts.delete', 'uses' => 'ContractsController@destroy']);
+            Route::any('/contracts/delete/{id}', ['as' => 'contracts.delete', 'uses' => 'ContractsController@destroy']);
 
             Route::middleware(['hasExcalibur'])->group(function () {
                 /*
