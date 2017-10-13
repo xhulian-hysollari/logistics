@@ -18,7 +18,7 @@
                     </div>
                     @endif
                     <div class="pricing-table-footer">
-                        <span style="font-size: 16pt; font-weight: bold"><sup>$</sup>{{ number_format($plan->cost, 2) }}</span>
+                        <span style="font-size: 16pt; font-weight: bold"><sup>	&euro;</sup>{{ number_format($plan->cost, 2) }}</span>
                         <p>per month</p>
                         @if(Sentinel::getUser())
                             @if (!Sentinel::getUser()->subscribedToPlan($plan->braintree_plan, 'main'))
