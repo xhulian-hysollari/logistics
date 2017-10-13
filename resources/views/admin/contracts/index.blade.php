@@ -41,13 +41,13 @@
                                         @if(Sentinel::getUser()->id == $contract->user_id)
                                             <a href="{{ route('contracts.edit', [$contract->id]) }}"><i
                                                         class="fa fa-pencil-square fa-2x"></i></a>
-                                            <a href="{{route('contracts.delete')}}"><i
+                                            <a href="{{route('contracts.delete', $contract->id)}}"><i
                                                         class="fa fa-fa-trash-o fa-2x"></i></a>
                                         @else
                                             <a href="{{route('contracts.show', $contract->id)}}"><i class="fa fa-eye fa-2x"></i></a>
                                         @endif
                                         @if(Sentinel::inRole('admin'))
-                                                <a href="{{route('contracts.delete')}}"><i
+                                                <a href="{{route('contracts.delete', $contract->id)}}"><i
                                                             class="fa fa-fa-trash-o fa-2x"></i></a>
                                         @endif
                                     </td>
