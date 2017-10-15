@@ -50,13 +50,13 @@
                         <tbody>
                             {{--@foreach($results as $contract)--}}
                             {{--@for($i = 0; $i < 5; $i ++)--}}
-                                <tr class="table-row">
-                                <td>{2</td>
-                                <td>{2</td>
-                                <td>{2</td>
-                                <td>{2</td>
-                                <td>{2</td>
-                                <td>{2</td>
+                                {{--<tr class="table-row">--}}
+                                {{--<td>{2</td>--}}
+                                {{--<td>{2</td>--}}
+                                {{--<td>{2</td>--}}
+                                {{--<td>{2</td>--}}
+                                {{--<td>{2</td>--}}
+                                {{--<td>{2</td>--}}
                                     {{--<td>{{$contract->owner->full_name}}</td>--}}
                                     {{--<td>{{str_limit($contract->description,'35','...')}}</td>--}}
                                     {{--<td>{{str_limit($contract->requirements,'35','...')}}</td>--}}
