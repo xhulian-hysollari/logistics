@@ -40,23 +40,23 @@
                         <thead>
                         <tr>
                             <th>Owner</th>
-                            <th>Description</th>
-                            <th>Requirements</th>
-                            <th>Duration</th>
-                            <th>Deadline</th>
-                            <th>Actions</th>
+                            {{--<th>Description</th>--}}
+                            {{--<th>Requirements</th>--}}
+                            {{--<th>Duration</th>--}}
+                            {{--<th>Deadline</th>--}}
+                            {{--<th>Actions</th>--}}
                         </tr>
                         </thead>
                         <tbody>
                             {{--@foreach($results as $contract)--}}
                             {{--@for($i = 0; $i < 5; $i ++)--}}
-                                <tr class="table-row">
+                                <tr>
                                 <td> 2</td>
-                                <td> 2</td>
-                                <td> 2</td>
-                                <td> 2</td>
-                                <td> 2</td>
-                                <td> 2</td>
+                                {{--<td> 2</td>--}}
+                                {{--<td> 2</td>--}}
+                                {{--<td> 2</td>--}}
+                                {{--<td> 2</td>--}}
+                                {{--<td> 2</td>--}}
                                 <tr>
                                 {{--@endfor--}}
                             {{--@endforeach--}}
