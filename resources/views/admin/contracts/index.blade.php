@@ -94,7 +94,7 @@
 
         $(document).ready(function() {
 
-            $('#data_table').DataTable();
+            var table = $('#data_table').DataTable();
             var owner = $('#s-owner');
             var description = $('#s-description');
             var duration = $('#s-duration');
