@@ -8,6 +8,7 @@
                         class="fa fa-plus"></i>
                 Create
                 new</a>
+            <hr>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
@@ -37,10 +38,7 @@
                     <table id="data_table" class="table no-margin">
                         <thead>
                         <tr>
-                            {{--<th>Status</th>--}}
-                            {{--@if(Sentinel::inRole('admin'))--}}
-                                <th>Owner</th>
-                            {{--@endif--}}
+                            <th>Owner</th>
                             <th>Description</th>
                             <th>Requirements</th>
                             <th>Duration</th>
@@ -52,10 +50,7 @@
                         @if(isset($results))
                             @foreach($results as $contract)
                                 <tr class="table-row">
-                                    {{--<td>{{$contract->status}}</td>--}}
-                                    {{--@if(Sentinel::inRole('admin'))--}}
-                                        <td>{{$contract->owner->full_name}}</td>
-                                    {{--@endif--}}
+                                    <td>{{$contract->owner->full_name}}</td>
                                     <td>{{str_limit($contract->description,'35','...')}}</td>
                                     <td>{{str_limit($contract->requirements,'35','...')}}</td>
                                     <td>{{$contract->duration}}</td>
@@ -78,7 +73,7 @@
                             @endforeach
                         @else
                             <tr>
-                                <td colspan="5">No results</td>
+                                <td colspan="6">No results</td>
                             </tr>
                         @endif
                         </tbody>
