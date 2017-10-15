@@ -210,7 +210,9 @@
             <div id="partners" class="owl-carousel enable-owl-carousel" data-pagination="false" data-navigation="true"
                  data-min450="1" data-min600="1" data-min768="1" style="margin-top: 50px;">
 
-                <div class="wow rotateIn" data-wow-delay="0.3s" style="background-image: url('{{asset('client/img/logo.png')}}'); background-position: center; background-size: cover"></div>
+                <div class="wow rotateIn" data-wow-delay="0.3s"><a href="#"><img style="width: 100%; height:118px  "
+                                                                                 src="{{asset('client/img/logo.png')}}"
+                                                                                 alt="Img"></a></div>
 
 
             </div>
