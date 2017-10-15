@@ -3,11 +3,35 @@
 @section('content')
     <div class="col-lg-12">
         <div class="card">
+            <div class="row">
             <a href="{{route('trucks.create')}}" class="btn ink-reaction btn-primary pull-right" style="margin: 20px"> <i
                         class="fa fa-plus"></i>
                 Create
                 new</a>
+            </div>
             <div class="card-body">
+                <div class="container-fluid">
+                    <div class="well">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="text" id="s-plate" class="form-control" placeholder="Search plate"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="text" id="s-type" class="form-control" placeholder="Search truck type"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <input type="text" id="s-location" class="form-control" placeholder="Search location"/>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
                 <div class="table-responsive">
                     <table class="table no-margin">
                         <thead>

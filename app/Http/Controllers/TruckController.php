@@ -20,7 +20,7 @@ class TruckController extends Controller
 //            }else{
 //                $results = Truck::where('user_id', Sentinel::getUser()->id)->get();
 //            }
-            return view('admin.truck.index', compact('results'));
+            return view('admin.truck.index', compact('results'))->render();
         } catch (Exception $ex) {
             dd($ex);
             return redirect()->back()->with('error', $ex->getMessage());
