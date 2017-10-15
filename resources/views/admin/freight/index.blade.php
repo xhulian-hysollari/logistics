@@ -9,7 +9,8 @@
                 Create
                 new</a></div>
             <div class="card-body">
-                <div class="container-fluid" style="background-color: rgba(136,136,136,0.17); padding: 30px">
+                <div class="container-fluid">
+                    <div class="well">
                     <div class="row ">
                         <div class="col-sm-6 ">
                             <div class="form-group">
@@ -41,7 +42,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div></div>
                 <div class="table-responsive">
                     <table class="table no-margin" id="data_table">
                         <thead>
