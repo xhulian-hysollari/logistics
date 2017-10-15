@@ -63,7 +63,20 @@
                                 <td>{{$freight->volume}}</td>
                                 <td>{{$freight->type}}</td>
                                 <td>{{\Carbon\Carbon::parse($freight->created_at)->diffForHumans()}}</td>
-                                <td><a href="{{route('freight.show', $freight->id)}}"><i class="fa fa-eye fa-2x"></i></a></td>
+                                <td>
+                                    @if(Sentinel::getUser()->id == $result->user_id)
+                                        <a href="{{ route('freight.edit', [$result->id]) }}"><i
+                                                    class="fa fa-pencil-square fa-2x"></i></a>
+                                        <a href="{{route('freight.delete', $result->id)}}"><i
+                                                    class="fa fa-trash-o fa-2x"></i></a>
+                                    @else
+                                        <a href="{{route('freight.show', $result->id)}}"><i class="fa fa-eye fa-2x"></i></a>
+                                    @endif
+                                    @if(Sentinel::inRole('admin') && Sentinel::getUser()->id != $result->user_id)
+                                        <a href="{{route('freight.delete', $result->id)}}"><i
+                                                    class="fa fa-trash-o fa-2x"></i></a>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
