@@ -50,33 +50,14 @@
                         <tbody>
                             {{--@foreach($results as $contract)--}}
                             {{--@for($i = 0; $i < 5; $i ++)--}}
-                                {{--<tr class="table-row">--}}
-                                {{--<td>{2</td>--}}
-                                {{--<td>{2</td>--}}
-                                {{--<td>{2</td>--}}
-                                {{--<td>{2</td>--}}
-                                {{--<td>{2</td>--}}
-                                {{--<td>{2</td>--}}
-                                    {{--<td>{{$contract->owner->full_name}}</td>--}}
-                                    {{--<td>{{str_limit($contract->description,'35','...')}}</td>--}}
-                                    {{--<td>{{str_limit($contract->requirements,'35','...')}}</td>--}}
-                                    {{--<td>{{$contract->duration}}</td>--}}
-                                    {{--<td>{{$contract->deadline}}</td>--}}
-                                    {{--<td>--}}
-                                        {{--@if(Sentinel::getUser()->id == $contract->user_id)--}}
-                                            {{--<a href="{{ route('contracts.edit', [$contract->id]) }}"><i--}}
-                                                        {{--class="fa fa-pencil-square fa-2x"></i></a>--}}
-                                            {{--<a href="{{route('contracts.delete', $contract->id)}}"><i--}}
-                                                        {{--class="fa fa-trash-o fa-2x"></i></a>--}}
-                                        {{--@else--}}
-                                            {{--<a href="{{route('contracts.show', $contract->id)}}"><i class="fa fa-eye fa-2x"></i></a>--}}
-                                        {{--@endif--}}
-                                        {{--@if(Sentinel::inRole('admin') && Sentinel::getUser()->id != $contract->user_id)--}}
-                                                {{--<a href="{{route('contracts.delete', $contract->id)}}"><i--}}
-                                                            {{--class="fa fa-trash-o fa-2x"></i></a>--}}
-                                        {{--@endif--}}
-                                    {{--</td>--}}
-                                {{--<tr>t--}}
+                                <tr class="table-row">
+                                <td> 2</td>
+                                <td> 2</td>
+                                <td> 2</td>
+                                <td> 2</td>
+                                <td> 2</td>
+                                <td> 2</td>
+                                <tr>
                                 {{--@endfor--}}
                             {{--@endforeach--}}
                         </tbody>
