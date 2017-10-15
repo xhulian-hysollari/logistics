@@ -11,6 +11,8 @@
                     new</a>
             </div>
             <div class="card-body">
+                <div class="container-fluid">
+                    <div class="well">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -34,6 +36,7 @@
                             <input type="text" id="s-deadline" class="form-control" placeholder="Search deadline"/>
                         </div>
                     </div>
+                </div></div>
                 </div>
                 <div class="table-responsive">
 
