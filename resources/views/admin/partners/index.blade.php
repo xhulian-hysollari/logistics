@@ -1,11 +1,11 @@
 @extends('admin.admin')
 
 @section('content')
-    <a href="{{route('partner.add')}}" class="btn ink-reaction btn-primary pull-right" style="margin-bottom: 20px"> <i
-                class="fa fa-plus"></i>
-        Add another partner</a>
     <div class="col-lg-12">
         <div class="card">
+            <a href="{{route('partner.add')}}" class="btn ink-reaction btn-primary pull-right" style="margin: 20px"> <i
+                        class="fa fa-plus"></i>
+                Add another partner</a>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table no-margin">

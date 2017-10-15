@@ -9,14 +9,38 @@
                 Create
                 new</a>
             <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" id="s-owner" class="form-control" placeholder="Search owner"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" id="s-description" class="form-control" placeholder="Search description"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" id="s-duration" class="form-control" placeholder="Search duration"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" id="s-deadline" class="form-control" placeholder="Search deadline"/>
+                        </div>
+                    </div>
+                </div>
                 <div class="table-responsive">
                     <table id="data_table" class="table no-margin">
                         <thead>
                         <tr>
-                            <th>Status</th>
-                            @if(Sentinel::inRole('admin'))
+                            {{--<th>Status</th>--}}
+                            {{--@if(Sentinel::inRole('admin'))--}}
                                 <th>Owner</th>
-                            @endif
+                            {{--@endif--}}
                             <th>Description</th>
                             <th>Requirements</th>
                             <th>Duration</th>
@@ -28,10 +52,10 @@
                         @if(isset($results))
                             @foreach($results as $contract)
                                 <tr class="table-row">
-                                    <td>{{$contract->status}}</td>
-                                    @if(Sentinel::inRole('admin'))
+                                    {{--<td>{{$contract->status}}</td>--}}
+                                    {{--@if(Sentinel::inRole('admin'))--}}
                                         <td>{{$contract->owner->full_name}}</td>
-                                    @endif
+                                    {{--@endif--}}
                                     <td>{{str_limit($contract->description,'35','...')}}</td>
                                     <td>{{str_limit($contract->requirements,'35','...')}}</td>
                                     <td>{{$contract->duration}}</td>
@@ -69,8 +93,8 @@
 @section('css')
     <link rel="stylesheet" href="{{asset('css/components/bs-datatable.css')}}">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
-
 @stop
+
 @section('js')
     <script type="text/javascript" src="{{asset('js/components/bs-datatable.js')}}"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
@@ -81,9 +105,52 @@
     <script>
 
         $(document).ready(function() {
-            $('#data_table').DataTable();
-            $('#data_table').dataTable();
-        });
+            var table = $('#data-table').DataTable();
 
+            var owner = $('#s-owner');
+            var description = $('#s-description');
+            var duration = $('#s-duration');
+            var deadline = $('#s-deadline');
+
+            owner.on('keyup change', function () {
+                table
+                    .column(0)
+                    .search(this.value)
+                    .draw();
+            });
+            owner.on('click', function (e) {
+                e.stopPropagation();
+            });
+
+            description.on('keyup change', function () {
+                table
+                    .column(1)
+                    .search(this.value)
+                    .draw();
+            });
+            description.on('click', function (e) {
+                e.stopPropagation();
+            });
+
+            duration.on('keyup change', function () {
+                table
+                    .column(2)
+                    .search(this.value)
+                    .draw();
+            });
+            duration.on('click', function (e) {
+                e.stopPropagation();
+            });
+
+            deadline.on('keyup change', function () {
+                table
+                    .column(3)
+                    .search(this.value)
+                    .draw();
+            });
+            deadline.on('click', function (e) {
+                e.stopPropagation();
+            });
+        });
     </script>
 @stop
