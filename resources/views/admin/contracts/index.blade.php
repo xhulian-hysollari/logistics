@@ -36,23 +36,27 @@
                     </div>
                 </div>
                 <div class="table-responsive">
+
                     <table id="data_table" class="table no-margin">
                         <thead>
                         <tr>
-                            <th>test</th>
+                            <th>Owner</th>
+                            <th>Description</th>
+                            <th>Duration</th>
+                            <th>Deadline</th>
+                            <th style="display: none">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                            {{--@foreach($results as $contract)--}}
-                            {{--@for($i = 0; $i < 5; $i ++)--}}
-                                <tr>
-                            <td>test 1</td>
-                                <tr>
-                                <tr>
-                            <td>test 2</td>
-                                <tr>
-                                {{--@endfor--}}
-                            {{--@endforeach--}}
+                        @foreach($results as $contract)
+                            <tr>
+                                <td>{{$contract->owner->full_name}}</td>
+                                <td>{{str_limit($contract->description,'35','...')}}</td>
+                                <td>{{$contract->duration}}</td>
+                                <td>{{$contract->deadline}}</td>
+                                <td><a href="{{route('contracts.show', $contract->id)}}"><i class="fa fa-eye fa-2x"></i></a></td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
