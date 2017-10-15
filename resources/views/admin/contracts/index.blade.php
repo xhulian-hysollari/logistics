@@ -8,7 +8,7 @@
                         class="fa fa-plus"></i>
                 Create
                 new</a>
-            <hr>
+            <br>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
@@ -94,8 +94,9 @@
     <script>
 
         $(document).ready(function() {
-            var table = $('#data_table').dataTable();
 
+            $('#data_table').DataTable();
+            $('#data_table').dataTable();
             var owner = $('#s-owner');
             var description = $('#s-description');
             var duration = $('#s-duration');
