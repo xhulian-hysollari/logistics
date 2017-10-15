@@ -50,25 +50,31 @@
                         <tbody>
                             @foreach($results as $contract)
                                 <tr class="table-row">
-                                    <td>{{$contract->owner->full_name}}</td>
-                                    <td>{{str_limit($contract->description,'35','...')}}</td>
-                                    <td>{{str_limit($contract->requirements,'35','...')}}</td>
-                                    <td>{{$contract->duration}}</td>
-                                    <td>{{$contract->deadline}}</td>
-                                    <td>
-                                        @if(Sentinel::getUser()->id == $contract->user_id)
-                                            <a href="{{ route('contracts.edit', [$contract->id]) }}"><i
-                                                        class="fa fa-pencil-square fa-2x"></i></a>
-                                            <a href="{{route('contracts.delete', $contract->id)}}"><i
-                                                        class="fa fa-trash-o fa-2x"></i></a>
-                                        @else
-                                            <a href="{{route('contracts.show', $contract->id)}}"><i class="fa fa-eye fa-2x"></i></a>
-                                        @endif
-                                        @if(Sentinel::inRole('admin') && Sentinel::getUser()->id != $contract->user_id)
-                                                <a href="{{route('contracts.delete', $contract->id)}}"><i
-                                                            class="fa fa-trash-o fa-2x"></i></a>
-                                        @endif
-                                    </td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                    {{--<td>{{$contract->owner->full_name}}</td>--}}
+                                    {{--<td>{{str_limit($contract->description,'35','...')}}</td>--}}
+                                    {{--<td>{{str_limit($contract->requirements,'35','...')}}</td>--}}
+                                    {{--<td>{{$contract->duration}}</td>--}}
+                                    {{--<td>{{$contract->deadline}}</td>--}}
+                                    {{--<td>--}}
+                                        {{--@if(Sentinel::getUser()->id == $contract->user_id)--}}
+                                            {{--<a href="{{ route('contracts.edit', [$contract->id]) }}"><i--}}
+                                                        {{--class="fa fa-pencil-square fa-2x"></i></a>--}}
+                                            {{--<a href="{{route('contracts.delete', $contract->id)}}"><i--}}
+                                                        {{--class="fa fa-trash-o fa-2x"></i></a>--}}
+                                        {{--@else--}}
+                                            {{--<a href="{{route('contracts.show', $contract->id)}}"><i class="fa fa-eye fa-2x"></i></a>--}}
+                                        {{--@endif--}}
+                                        {{--@if(Sentinel::inRole('admin') && Sentinel::getUser()->id != $contract->user_id)--}}
+                                                {{--<a href="{{route('contracts.delete', $contract->id)}}"><i--}}
+                                                            {{--class="fa fa-trash-o fa-2x"></i></a>--}}
+                                        {{--@endif--}}
+                                    {{--</td>--}}
                                 <tr>
                             @endforeach
                         </tbody>
