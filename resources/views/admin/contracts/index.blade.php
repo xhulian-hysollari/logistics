@@ -100,7 +100,7 @@
     <script>
 
         $(document).ready(function() {
-            var table = $('#data_table').DataTable();
+            var table = $('#data_table').dataTable();
 
             var owner = $('#s-owner');
             var description = $('#s-description');
