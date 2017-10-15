@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <table class="table no-margin">
+                    <table class="table no-margin" id="data_table">
                         <thead>
                         <tr>
                             <th><i class="fa fa-map-marker"></i> Place of loading</th>
