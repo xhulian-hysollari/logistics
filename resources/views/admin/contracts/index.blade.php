@@ -3,12 +3,13 @@
 @section('content')
     <div class="col-lg-12">
         <div class="card">
-            <a href="{{route('contracts.create')}}" class="btn ink-reaction btn-primary pull-right" style="margin: 20px">
-                <i
-                        class="fa fa-plus"></i>
-                Create
-                new</a>
-            <br>
+            <div style="width: 100%">
+                <a href="{{route('contracts.create')}}" class="btn ink-reaction btn-primary pull-right" style="margin: 20px">
+                    <i
+                            class="fa fa-plus"></i>
+                    Create
+                    new</a>
+            </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
