@@ -105,7 +105,6 @@
         $(document).ready(function() {
 
             $('#data_table').DataTable();
-            $('#data_table').dataTable();
             var owner = $('#s-owner');
             var description = $('#s-description');
             var duration = $('#s-duration');
