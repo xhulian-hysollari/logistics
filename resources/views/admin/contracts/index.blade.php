@@ -39,13 +39,17 @@
                     <table id="data_table" class="table no-margin">
                         <thead>
                         <tr>
-
+                            <th>test</th>
                         </tr>
                         </thead>
                         <tbody>
                             {{--@foreach($results as $contract)--}}
                             {{--@for($i = 0; $i < 5; $i ++)--}}
                                 <tr>
+                            <td>test 1</td>
+                                <tr>
+                                <tr>
+                            <td>test 2</td>
                                 <tr>
                                 {{--@endfor--}}
                             {{--@endforeach--}}
