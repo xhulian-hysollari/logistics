@@ -49,7 +49,7 @@
                         </thead>
                         <tbody>
                             {{--@foreach($results as $contract)--}}
-                            @for($i = 0; $i < 5; $i ++)
+                            {{--@for($i = 0; $i < 5; $i ++)--}}
                                 <tr class="table-row">
                                 <td>{{$i}}</td>
                                 <td>{{$i}}</td>
@@ -77,7 +77,7 @@
                                         {{--@endif--}}
                                     {{--</td>--}}
                                 <tr>
-                                @endfor
+                                {{--@endfor--}}
                             {{--@endforeach--}}
                         </tbody>
                     </table>
