@@ -76,12 +76,11 @@
                                                             {{--class="fa fa-trash-o fa-2x"></i></a>--}}
                                         {{--@endif--}}
                                     {{--</td>--}}
-                                <tr>
+                                <tr>tr
                                 {{--@endfor--}}
                             {{--@endforeach--}}
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div>
