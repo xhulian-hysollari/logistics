@@ -7,31 +7,31 @@
                     <div class="row form-elem">
                         <div class="col-sm-6 form-elem">
                             <div class="default-inp form-elem">
-                                <input type="text" id="s-loading" placeholder="From"/>
+                                <input type="text" id="s-loading" class="form-control" placeholder="From"/>
                             </div>
                         </div>
                         <div class="col-sm-6 form-elem">
                             <div class="default-inp form-elem">
-                                <input type="text" id="s-unloading" placeholder="To"/>
+                                <input type="text" id="s-unloading" class="form-control" placeholder="To"/>
                             </div>
                         </div>
                     </div>
                     <div class="row form-elem">
                         <div class="col-sm-6 form-elem">
                             <div class="default-inp form-elem">
-                                <input type="text" id="s-volume" placeholder="Search volume"/>
+                                <input type="text" id="s-volume" class="form-control" placeholder="Search volume"/>
                             </div>
                         </div>
                         <div class="col-sm-6 form-elem">
                             <div class="default-inp form-elem">
-                                <input type="text" id="s-type" placeholder="Search type"/>
+                                <input type="text" id="s-type" class="form-control" placeholder="Search type"/>
                             </div>
                         </div>
                     </div>
                     <div class="row form-elem">
                         <div class="col-sm-12 form-elem">
                             <div class="default-inp form-elem">
-                                <input type="text" id="s-listed" placeholder="Search listing time"/>
+                                <input type="text" id="s-listed" class="form-control" placeholder="Search listing time"/>
                             </div>
                         </div>
                     </div>
