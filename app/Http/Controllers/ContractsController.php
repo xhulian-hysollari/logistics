@@ -19,7 +19,7 @@ class ContractsController extends Controller
             //}else{
             //    $results = Contracts::where('user_id', Sentinel::getUser()->id)->get();
             //}
-            return view('admin.contracts.index', compact('results'));
+            return view('admin.contracts.index', compact('results'))->render();
         }catch (\Exception $ex){
             dd($ex);
             return redirect()->back()->with('error', $ex->getMessage());
