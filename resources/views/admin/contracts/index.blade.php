@@ -47,7 +47,6 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @if(isset($results))
                             @foreach($results as $contract)
                                 <tr class="table-row">
                                     <td>{{$contract->owner->full_name}}</td>
@@ -71,11 +70,6 @@
                                     </td>
                                 <tr>
                             @endforeach
-                        @else
-                            <tr>
-                                <td colspan="6">No results</td>
-                            </tr>
-                        @endif
                         </tbody>
                     </table>
 
