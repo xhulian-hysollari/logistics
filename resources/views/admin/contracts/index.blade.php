@@ -48,14 +48,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                            @foreach($results as $contract)
+                            {{--@foreach($results as $contract)--}}
+                            @for($i = 0; $i < 5; $i ++)
                                 <tr class="table-row">
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
+                                <td>{{$i}}</td>
+                                <td>{{$i}}</td>
+                                <td>{{$i}}</td>
+                                <td>{{$i}}</td>
+                                <td>{{$i}}</td>
+                                <td>{{$i}}</td>
                                     {{--<td>{{$contract->owner->full_name}}</td>--}}
                                     {{--<td>{{str_limit($contract->description,'35','...')}}</td>--}}
                                     {{--<td>{{str_limit($contract->requirements,'35','...')}}</td>--}}
@@ -76,7 +77,8 @@
                                         {{--@endif--}}
                                     {{--</td>--}}
                                 <tr>
-                            @endforeach
+                                @endfor
+                            {{--@endforeach--}}
                         </tbody>
                     </table>
 
