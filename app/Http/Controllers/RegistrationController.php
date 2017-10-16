@@ -25,8 +25,11 @@ class RegistrationController extends Controller
             $full_name = $request->full_name;
             $email = $request->email;
             $password = $request->password;
-            $company_logo = $request->company_logo;
-            $logo = $company_logo->store('clogos');
+            $logo = null;
+            if($request->has('company_logo')){
+                $company_logo = $request->company_logo;
+                $logo = $company_logo->store('clogos');
+            }
             $user = $this->user->create([
                 'full_name' => $full_name,
                 'email' => $email,
