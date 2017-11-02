@@ -106,7 +106,7 @@
             });
             destination.on('keyup change', function () {
                 table
-                    .column(2)
+                    .column(3)
                     .search(this.value)
                     .draw();
             });
