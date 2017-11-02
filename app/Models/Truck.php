@@ -10,7 +10,7 @@ class Truck extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = [
+    protected $dates = [
         'valid_until'
     ];
 
