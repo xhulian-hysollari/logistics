@@ -24,6 +24,14 @@
                 document.getElementById("location_lat").value = place.geometry.location.lat();
                 document.getElementById("location_lng").value = place.geometry.location.lng();
             });
+            var destination = document.getElementById('destination');
+            var destinationcomplete = new google.maps.places.Autocomplete(destination, options);
+
+            destinationcomplete.addListener('place_changed', function () {
+                var place = destinationcomplete.getPlace();
+                document.getElementById("destination_lat").value = place.geometry.location.lat();
+                document.getElementById("destination_lng").value = place.geometry.location.lng();
+            });
         }
 
         google.maps.event.addDomListener(window, 'load', initDestination);

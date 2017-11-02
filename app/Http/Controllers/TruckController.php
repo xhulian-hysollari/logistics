@@ -60,6 +60,9 @@ class TruckController extends Controller
             $trucks->location = Input::get('location');
             $trucks->location_lat = Input::get('location_lat');
             $trucks->location_lng = Input::get('location_lng');
+            $trucks->destination = Input::get('destination');
+            $trucks->destination_lat = Input::get('destination_lat');
+            $trucks->destination_lng = Input::get('destination_lng');
             $trucks->description = Input::get('description');
             $trucks->status = 0;
             $trucks->save();
@@ -124,6 +127,9 @@ class TruckController extends Controller
             $trucks->location = Input::get('location');
             $trucks->location_lat = Input::get('location_lat');
             $trucks->location_lng = Input::get('location_lng');
+            $trucks->destination = Input::get('destination');
+            $trucks->destination_lat = Input::get('destination_lat');
+            $trucks->destination_lng = Input::get('destination_lng');
             $trucks->description = Input::get('description');
             $trucks->save();
 
