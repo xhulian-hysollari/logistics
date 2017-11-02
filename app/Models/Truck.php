@@ -17,7 +17,8 @@ class Truck extends Model
     }
 
     public function scopeActive($query){
-        return $query->whereDate('valid_until', '<', Carbon::parse($this->attributes['valid_until'])->addDays(3));
+        return $query->whereDate('valid_until', '<',
+            Carbon::parse($this->attributes['valid_until'])->addDays(3));
     }
 
 }
