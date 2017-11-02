@@ -17,9 +17,14 @@
                         </div>
                     </div>
                     <div class="row form-elem">
-                        <div class="col-sm-12 form-elem">
+                        <div class="col-sm-6 form-elem">
                             <div class="default-inp form-elem">
                                 <input type="text" id="s-location" placeholder="Search location"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 form-elem">
+                            <div class="default-inp form-elem">
+                                <input type="text" id="s-destination" placeholder="Search destination"/>
                             </div>
                         </div>
                     </div>
@@ -32,6 +37,7 @@
                         <th>{{trans('truck.plate')}}</th>
                         <th>{{trans('truck.type')}}</th>
                         <th>{{trans('truck.location')}}</th>
+                        <th>destination</th>
                         <th style="display: none">Actions</th>
                     </tr>
                     </thead>
@@ -41,6 +47,7 @@
                             <td>{{$truck->plate}}</td>
                             <td>{{$truck->type}}</td>
                             <td>{{$truck->location}}</td>
+                            <td>{{$truck->destination}}</td>
                             <td><a href="{{route('trucks.show', $truck->id)}}"><i class="fa fa-eye fa-2x"></i></a></td>
                         </tr>
                     @endforeach
@@ -69,6 +76,7 @@
             var plate = $('#s-plate');
             var type = $('#s-type');
             var location = $('#s-location');
+            var destination = $('#s-destination');
             plate.on('keyup change', function () {
                 table
                     .column(0)
@@ -96,7 +104,29 @@
             location.on('click', function (e) {
                 e.stopPropagation();
             });
+            destination.on('keyup change', function () {
+                table
+                    .column(2)
+                    .search(this.value)
+                    .draw();
+            });
+            destination.on('click', function (e) {
+                e.stopPropagation();
+            });
         });
 
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCiBlCK2sTv0-Dq_V098HVSJ7-lhLV13yU&libraries=places"></script>
+    <script>
+        function initDestination() {
+            var options = {
+            };
+
+            var loading = document.getElementById('s-location');
+            var unloading = document.getElementById('s-destination');
+            var loadcomplete = new google.maps.places.Autocomplete(loading, options);
+            var unloadcomplete = new google.maps.places.Autocomplete(unloading, options);
+        }
+        google.maps.event.addDomListener(window, 'load', initDestination);
     </script>
 @stop
