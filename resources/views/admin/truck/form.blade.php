@@ -39,6 +39,16 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
+                    <label for="lorry_type">Destination</label>
+                    <input class="form-control"  type="text" name="destination" id="destination" value="{{$result->location}}">
+                    <input class="form-control"  type="hidden" name="destination_lng" id="destination_lng" value="{{$result->location_lng}}">
+                    <input class="form-control"  type="hidden" name="destination_lat" id="destination_lat" value="{{$result->location_lat}}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
                     <label for="lorry_type">{{trans('truck.lorry_type')}}</label>
                     <input class="form-control"  type="text" name="lorry_type" id="lorry_type" value="{{$result->type}}">
                 </div>

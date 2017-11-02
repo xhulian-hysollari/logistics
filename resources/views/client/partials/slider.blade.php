@@ -5,6 +5,7 @@
             <div class="item">
                 <img src="{{'storage/'.$slide->optional}}" alt="slider">
                 <div class="container-fluid">
+                    @if($slide->title)
                     <div class="slider-content col-md-6 col-lg-6">
                         <div style="display:table;">
                             <div style="display:table-cell; width:100px; vertical-align:top;">
@@ -21,6 +22,7 @@
                         {{--<br>--}}
                         {{--<a class="btn btn-success" href="#">LEARN MORE</a></p>--}}
                     </div>
+                        @endif
                 </div>
             </div>
         @endforeach
