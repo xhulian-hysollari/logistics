@@ -65,6 +65,7 @@ class TruckController extends Controller
             $trucks->destination_lng = Input::get('destination_lng');
             $trucks->description = Input::get('description');
             $trucks->status = 0;
+            $trucks->valid_until = Input::get('valid_until');
             $trucks->save();
 
             return redirect()->route('trucks.index')->with('success', 'The Truck has been listed successfully!');
@@ -131,6 +132,7 @@ class TruckController extends Controller
             $trucks->destination_lat = Input::get('destination_lat');
             $trucks->destination_lng = Input::get('destination_lng');
             $trucks->description = Input::get('description');
+            $trucks->valid_until = Input::get('valid_until');
             $trucks->save();
 
             return redirect()->route('trucks.index')->with('success', 'The truck has been modified successfully!');

@@ -53,6 +53,12 @@
                     <input class="form-control"  type="text" name="lorry_type" id="lorry_type" value="{{$result->type}}">
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="valid_until">Valid Until</label>
+                    <input class="form-control"  type="date" name="valid_until" id="valid_until" value="{{$result->type}}">
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-12">
