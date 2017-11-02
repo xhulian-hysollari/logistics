@@ -44,7 +44,7 @@ class NavigationController extends Controller
     public function getTruckPage()
     {
 //        $user = Sentinel::getUser();
-        $results = Truck::whereDate('valid_until','>', Carbon::now()->addDays(3))->get();
+        $results = Truck::whereDate('valid_until','>', Carbon::now()->format('Y-m-d')->addDays(3))->get();
         return view('client.pages.truck', compact('results'))->render();
     }
     public function getTenderPage()
