@@ -48,7 +48,7 @@
                             <td>{{$truck->type}}</td>
                             <td>{{$truck->location}}</td>
                             <td>{{$truck->destination}}</td>
-                            <td><a href="{{route('trucks.show', $truck->id)}}"><i class="fa fa-eye fa-2x"></i></a></td>
+                            <td>@if($truck->valid_until->gt(\Carbon\Carbon::now()))<a href="{{route('trucks.show', $truck->id)}}"><i class="fa fa-eye fa-2x"></i></a>@else <span style="color:red">Expired</span> @endif</td>
                         </tr>
                     @endforeach
                     </tbody>
