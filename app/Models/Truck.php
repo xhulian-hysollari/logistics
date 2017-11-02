@@ -10,6 +10,10 @@ class Truck extends Model
 {
     use SoftDeletes;
 
+    protected $fillable = [
+        'valid_until'
+    ];
+
     public $timestamps = true;
 
     public function getOwnerAttribute(){
