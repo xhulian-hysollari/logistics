@@ -72,7 +72,9 @@
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
     <script>
         $(document).ready(function () {
-            var table = $('#data_table').DataTable();
+            var table = $('#data_table').DataTable({
+                "ordering": false
+            });
             var plate = $('#s-plate');
             var type = $('#s-type');
             var location = $('#s-location');

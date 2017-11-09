@@ -73,7 +73,9 @@
     <script>
 
         $(document).ready(function() {
-            var table = $('#data-table').DataTable();
+            var table = $('#data-table').DataTable({
+                "ordering": false
+            });
 
             var owner = $('#s-owner');
             var description = $('#s-description');

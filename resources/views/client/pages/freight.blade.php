@@ -81,7 +81,9 @@
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
     <script>
         $(document).ready(function () {
-            var table = $('#data_table').DataTable();
+            var table = $('#data_table').DataTable({
+                "ordering": false
+            });
             var loading = $('#s-loading');
             var unloading = $('#s-unloading');
             var volume = $('#s-volume');
