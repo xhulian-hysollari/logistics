@@ -22,7 +22,7 @@ class FreightController extends Controller
             //if(Sentinel::inRole('admin')){
                 $results = Freight::all()->latest();
             //}else{
-            //    $results = Freight::where('user_id', Sentinel::getUser()->id)->get();
+            //    $results s= Freight::where('user_id', Sentinel::getUser()->id)->get();
             //}
             return view('admin.freight.index', compact('results'))->render();
         }catch (\Exception $ex){
