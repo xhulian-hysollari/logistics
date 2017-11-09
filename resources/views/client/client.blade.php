@@ -121,6 +121,9 @@
             width: 100%;
             height: 200px;
         }
+        #data_table_wrapper{
+            width: 98%
+        }
     </style>
 </head>
 <body>
