@@ -16,7 +16,7 @@ class TruckController extends Controller
     {
         try {
 //            if(Sentinel::inRole('admin')){
-                $results = Truck::all();
+                $results = Truck::all()->latest();
 //            }else{
 //                $results = Truck::where('user_id', Sentinel::getUser()->id)->get();
 //            }
