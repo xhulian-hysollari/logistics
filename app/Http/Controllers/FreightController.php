@@ -20,7 +20,7 @@ class FreightController extends Controller
     {
         try{
             //if(Sentinel::inRole('admin')){
-                $results = Freight::all()->latest();
+                $results = Freight::latest()->get();
             //}else{
             //    $results s= Freight::where('user_id', Sentinel::getUser()->id)->get();
             //}

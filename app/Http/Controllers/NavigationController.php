@@ -38,7 +38,6 @@ class NavigationController extends Controller
     {
 //        $user = Sentinel::getUser();
         $results = Freight::latest()->get();
-        dd($results);
         return view('client.pages.freight', compact('results'))->render();
     }
 
@@ -51,7 +50,7 @@ class NavigationController extends Controller
     public function getTenderPage()
     {
 //        $user = Sentinel::getUser();
-        $results = Contracts::all();
+        $results = Contracts::latest()->get();
 
         return view('client.pages.tenders', compact('results'))->render();
     }
