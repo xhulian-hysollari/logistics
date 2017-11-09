@@ -38,6 +38,7 @@ class NavigationController extends Controller
     {
 //        $user = Sentinel::getUser();
         $results = Freight::latest()->get();
+        dd($results);
         return view('client.pages.freight', compact('results'))->render();
     }
 
