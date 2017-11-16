@@ -111,6 +111,9 @@
             margin-bottom: 0;
         }
 
+        p{
+            line-height: inherit !important;
+        }
         footer, footer a, footer .copy {
             color: white;
         }
