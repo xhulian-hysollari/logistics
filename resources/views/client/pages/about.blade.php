@@ -1,8 +1,13 @@
 @extends('client.client')
 @section('content')
+    <style>
+        p{
+            font-size: 17px;
+        }
+    </style>
     <div class="container-fluid block-content">
         <div class="row main-grid">
-            <div style="text-align: center; margin-bottom:40px;">
+            <div style="text-align: center;">
                 <h2>About Us</h2>
             </div>
             <div>
@@ -17,7 +22,7 @@
                         <li><a href="#tab3" data-toggle="tab">OUR VISION</a></li>
                     </ul>
 
-                    <div class="tab-content inner-offset wow fadeIn" data-wow-delay="0.3s">
+                    <div class="tab-content inner-offset wow fadeIn" data-wow-delay="0.3s" style="margin-top: 10px">
                         <div class="tab-pane active" id="tab1">
                             <div class="row">
                                 <div class="col-sm-5">
