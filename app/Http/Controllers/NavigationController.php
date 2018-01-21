@@ -30,8 +30,7 @@ class NavigationController extends Controller
 
     public function getAboutPage()
     {
-        $about = Setting::where('type', 2)->first();
-        return view('client.pages.about', compact('about'));
+        return view('client.pages.about');
     }
 
     public function getFreightPage()
