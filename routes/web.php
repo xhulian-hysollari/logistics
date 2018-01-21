@@ -31,6 +31,7 @@ Route::get('/', ['as' => 'home', 'uses' => 'NavigationController@getHomePage']);
 Route::post('/contact', ['as' => 'contact', 'uses' => 'ContactController@contact']);
 Route::get('/plans', ['as' => 'plans', 'uses' => 'PlansController@index']);
 Route::get('/register', ['as' => 'register', 'uses' => 'NavigationController@getRegistrationPage']);
+Route::get('/about', ['as' => 'about-us', 'uses' => 'NavigationController@getAboutPage']);
 Route::post('/register/autobot', ['as' => 'register.autobot', 'uses' => 'RegistrationController@register']);
 Route::get('/login', ['as' => 'login', 'uses' => 'NavigationController@getLoginPage']);
 Route::post('/login/autobot', ['as' => 'login.autobot', 'uses' => 'LoginController@login']);
@@ -204,6 +205,10 @@ Route::middleware(['guest'])->group(function () {
     });
 
 });
+
+Route::get('create_paypal_plan', 'PaypalController@create_plan');
+Route::get('/subscribe/paypal', 'PaypalController@paypalRedirect')->name('paypal.redirect');
+Route::get('/subscribe/paypal/return', 'PaypalController@paypalReturn')->name('paypal.return');
 
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.admin'), ['as' => 'admin', 'uses' => 'NavigationController@getAdminPages']);
 Route::get(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::transRoute('routes.getFreightList'), ['as' => 'freight_list', 'uses' => 'NavigationController@getFreightList']);
