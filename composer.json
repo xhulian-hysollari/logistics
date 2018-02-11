@@ -14,11 +14,11 @@
     "doctrine/dbal": "^2.6",
     "dompdf/dompdf": "^0.8.0",
     "guzzlehttp/guzzle": "^6.3",
-    "laravel/cashier-braintree": "~2.0",
     "laravel/framework": "5.4.*",
     "laravel/tinker": "~1.0",
     "laravelcollective/html": "^5.4",
-    "mcamara/laravel-localization": "^1.2"
+    "mcamara/laravel-localization": "^1.2",
+    "paypal/rest-api-sdk-php": "^1.13"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",

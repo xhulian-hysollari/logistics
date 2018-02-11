@@ -66,6 +66,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{route('plan.index')}}">
+                        <div class="gui-icon"><i class="md md-credit-card"></i></div>
+                        <span class="title">Plans</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{route('settings')}}">
                         <div class="gui-icon"><i class="md md-settings"></i></div>
                         <span class="title">Settings</span>

@@ -168,6 +168,18 @@ Route::middleware(['guest'])->group(function () {
         Route::get('/pages/show/{pages}', ['as' => 'pages.show', 'uses' => 'PagesController@show']);
         Route::get('/pages/edit/{id}', ['as' => 'pages.edit', 'uses' => 'PagesController@edit']);
         Route::patch('/pages/update/{id}', ['as' => 'pages.update', 'uses' => 'PagesController@update']);
+        /*
+        |--------------------------------------------------------------------------
+        | Plans Routes
+        |--------------------------------------------------------------------------
+        | All the routes related to plans
+        |
+        */
+
+        Route::get('/plans/list', ['as' => 'plan.index', 'uses' => 'PlansController@getPlanList']);
+        Route::get('/plans/create', ['as' => 'plan.create', 'uses' => 'PlansController@create']);
+        Route::post('/plans/save', ['as' => 'plan.store', 'uses' => 'PlansController@store']);
+        Route::get('/plans/delete/{slug}', ['as' => 'plan.delete', 'uses' => 'PlansController@delete']);
 
         /*
         |--------------------------------------------------------------------------
@@ -206,7 +218,7 @@ Route::middleware(['guest'])->group(function () {
 
 });
 
-Route::get('create_paypal_plan', 'PaypalController@create_plan');
+Route::post('create_paypal_plan', ['as' => 'paypal.plan', 'uses' => 'PaypalController@create_plan']);
 Route::get('/subscribe/paypal', 'PaypalController@paypalRedirect')->name('paypal.redirect');
 Route::get('/subscribe/paypal/return', 'PaypalController@paypalReturn')->name('paypal.return');
 

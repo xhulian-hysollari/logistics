@@ -8,15 +8,19 @@
                     <div class="pricing-table-header">
                         <h1>{{ $plan->name }}</h1>
                     </div>
-                    @if ($plan->description)
                     <div class="pricing-table-content">
-                        <ul style="padding: 0">
-                            <li>
-                                {!!  str_replace(',','</li><li>', $plan->description)  !!}
-                            </li>
+                        <ul style="padding: 0;">
+                            <li>Price: {{$plan->cost}}</li>
+                            <li>Duration: {{$plan->duration}} ({{$plan->public_duration}})</li>
+                            <li>{{$plan->freight_listing}} Freight Listings</li>
+                            <li>{{$plan->truck_listing}} Truck Listings</li>
+                            <li>{{$plan->tender_listing}} Tender Listings</li>
+                            <li>{{$plan->ads}} Hour Ads</li>
+                            <li>@if($plan->free_chat) Free Chat @endif</li>
+                            <li>@if($plan->route_planning) Route Planning @endif</li>
+                            <li>@if($plan->free_assistance) Free Assistance from logistics agents @endif</li>
                         </ul>
                     </div>
-                    @endif
                     <div class="pricing-table-footer" style="margin: auto 0 0 0">
                         <span style="font-size: 16pt; font-weight: bold"><sup>	&euro;</sup>{{ number_format($plan->cost, 2) }}</span>
                         <p>per month</p>
