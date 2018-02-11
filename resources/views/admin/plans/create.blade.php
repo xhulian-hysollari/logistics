@@ -31,7 +31,8 @@
                 <div class="col-md-6">
                     <div class="form-group form-control-default">
                         <label for="freight_listing">Number of freight listings</label>
-                        <input type="text" value="{{$result->freight_listing}}" class="form-control" id="freight_listing" name="freight_listing"
+                        <input type="text" value="{{$result->freight_listing}}" class="form-control"
+                               id="freight_listing" name="freight_listing"
                                placeholder="0">
                     </div>
                 </div>
@@ -40,14 +41,16 @@
                 <div class="col-md-6">
                     <div class="form-group form-control-default">
                         <label for="truck_listing">Number of truck listings</label>
-                        <input type="text" id="truck_listing" name="truck_listing" class="form-control" value="{{$result->truck_listing}}"
+                        <input type="text" id="truck_listing" name="truck_listing" class="form-control"
+                               value="{{$result->truck_listing}}"
                                placeholder="0">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group form-control-default">
                         <label for="tender_listing">Number of tender listings</label>
-                        <input type="text" value="{{$result->tender_listing}}" class="form-control" id="tender_listing" name="tender_listing"
+                        <input type="text" value="{{$result->tender_listing}}" class="form-control" id="tender_listing"
+                               name="tender_listing"
                                placeholder="0">
                     </div>
                 </div>
@@ -85,16 +88,28 @@
                 <div class="col-md-6">
                     <div class="form-group form-control-default">
                         <label for="duration">Duration (number only)</label>
-                        <input type="text" id="duration" name="duration" class="form-control" value="{{$result->duration}}">
+                        <input type="text" id="duration" name="duration" class="form-control"
+                               value="{{$result->duration}}">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group form-control-default">
                         <label for="duration_type">Duration Type</label>
                         <select name="duration_type" id="duration_type" class="form-control">
-                            <option value="addMonths">Monthly</option>
-                            <option value="addYears">Yearly</option>
+                            <option value="DAY">Daily</option>
+                            <option value="WEEK">Weekly</option>
+                            <option value="MONTH">Monthly</option>
+                            <option value="YEAR">Yearly</option>
                         </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-control-default">
+                        <label for="description">Short Description</label>
+                        <input type="text" id="description" name="description" class="form-control"
+                               value="{{$result->description}}">
                     </div>
                 </div>
             </div>
