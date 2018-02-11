@@ -176,14 +176,13 @@ class PaypalController extends Controller
             // Execute agreement
             $result = $agreement->execute($token, $this->apiContext);
             $user = Sentinel::getUser();
-            $user->role = 'subscriber';
-            $user->paypal = 1;
+//            $user->role = 'subscriber';
+//            $user->paypal = 1;
             if (isset($result->id)) {
                 $user->paypal_agreement_id = $result->id;
             }
             $user->save();
-
-            echo 'New Subscriber Created and Billed';
+            return redirect()->back()->with('success', 'Subscription completed successfully');
 
         } catch (\PayPal\Exception\PayPalConnectionException $ex) {
             echo 'You have either cancelled the request or your session has expired';
