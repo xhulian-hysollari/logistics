@@ -110,7 +110,7 @@ class PaypalController extends Controller
                 $local_plan->plan_id = $plan->getId();
                 $local_plan->save();
                 // Output plan id
-                echo 'Plan ID:' . $plan->getId();
+                return redirect()->back()->with('success', 'Subscription plan created successfully');
             } catch (PayPal\Exception\PayPalConnectionException $ex) {
                 echo $ex->getCode();
                 echo $ex->getData();
