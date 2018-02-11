@@ -169,26 +169,24 @@ class PaypalController extends Controller
 
     public function paypalReturn(Request $request)
     {
-        if (isset($_GET['success']) && $_GET['success'] == 'true') {
-            $token = $request->token;
-            $agreement = new \PayPal\Api\Agreement();
+        $token = $request->token;
+        $agreement = new \PayPal\Api\Agreement();
 
-            try {
-                // Execute agreement
-                $result = $agreement->execute($token, $this->apiContext);
-                $user = Sentinel::getUser();
-                $user->role = 'subscriber';
-                $user->paypal = 1;
-                if (isset($result->id)) {
-                    $user->paypal_agreement_id = $result->id;
-                }
-                $user->save();
-
-                echo 'New Subscriber Created and Billed';
-
-            } catch (\PayPal\Exception\PayPalConnectionException $ex) {
-                echo 'You have either cancelled the request or your session has expired';
+        try {
+            // Execute agreement
+            $result = $agreement->execute($token, $this->apiContext);
+            $user = Sentinel::getUser();
+            $user->role = 'subscriber';
+            $user->paypal = 1;
+            if (isset($result->id)) {
+                $user->paypal_agreement_id = $result->id;
             }
+            $user->save();
+
+            echo 'New Subscriber Created and Billed';
+
+        } catch (\PayPal\Exception\PayPalConnectionException $ex) {
+            echo 'You have either cancelled the request or your session has expired';
         }
     }
 
