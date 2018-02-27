@@ -1,7 +1,7 @@
 @extends('client.client')
 @section('content')
     <style>
-        p{
+        p {
             font-size: 17px;
         }
     </style>
@@ -72,22 +72,28 @@
 
                 </div>
 
-                <div class="container-fluid text-center wow fadeInUp" data-wow-delay="0.3s">
-                    <h1>A platform, a marketplace and an agency with professional agents will serve you.</h1>
+                <div class="container-fluid wow fadeInUp" data-wow-delay="0.3s">
+                    <h1 class="text-center">A platform, a marketplace and an agency <br> with professional agents will serve
+                        you.</h1>
+                    <ol style="font-size: 20px;">
+                        <li style="padding-bottom: 5px">Best contacts for import - export.</li>
+                        <li style="padding-bottom: 5px">The choice of serious companies in the market that offer the speed and safety on
+                            transport
+                            of freights
+                        </li>
+                        <li style="padding-bottom: 5px">Monitoring 24h your freight or your truck from personalized GPS</li>
+                        <li style="padding-bottom: 5px">A structured group analyzes and sets the fastest and the safest way for you</li>
+                        <li style="padding-bottom: 5px">Many offers that brings to you the best price.</li>
+                    </ol>
 
-                        <p>1. Best contacts for import - export.</p>
-                        <p>2. The choice of serious companies in the market that offer the speed and safety on transport
-                            of freights</p>
-                    <p>3. Monitoring 24h your freight or your truck from personalized GPS</p>
-                    <p>4. A structured group analyzes and sets the fastest and the safest way for you</p>
-                    <p>5. Many offers that brings to you the best price.</p>
 
                 </div>
 
-                <div class="container-fluid text-center wow fadeInUp" data-wow-delay="0.6s" style="margin-top: 20px">
+                <div class="container-fluid text-center wow fadeInUp" data-wow-delay="0.6s" style="margin-top: 50px">
                     <h1>We deliver innovation</h1>
-                    <h3>Our clients come to us with complex challenges that need solving. <br>
-                        That’s why we take the time to fully understand their business goals, their mission and for this we have create an innovative solution to their challenges.</h3>
+                    <p>Our clients come to us with complex challenges that need solving. <br>
+                        That’s why we take the time to fully understand their business goals, their mission and for this
+                        we have create an innovative solution to their challenges.</p>
                 </div>
 
 
