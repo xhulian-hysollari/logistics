@@ -11,7 +11,7 @@
                     <div class="pricing-table-content">
                         <ul style="padding: 0;">
                             <li>Price: {{$plan->cost}}</li>
-                            <li>Duration: {{$plan->duration}} ({{$plan->public_duration}})</li>
+                            <li>Duration: {{$plan->duration}} ( {{str_plural($plan->duration_type)}})</li>
                             <li>{{$plan->freight_listing}} Freight Listings</li>
                             <li>{{$plan->truck_listing}} Truck Listings</li>
                             <li>{{$plan->tender_listing}} Tender Listings</li>
