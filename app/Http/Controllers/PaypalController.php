@@ -107,6 +107,7 @@ class PaypalController extends Controller
                 $local_plan->free_chat = $request->free_chat;
                 $local_plan->route_planning = $request->route_planning;
                 $local_plan->free_assistance = $request->free_assistance;
+                $local_plan->description = $request->description;
                 $local_plan->plan_id = $plan->getId();
                 $local_plan->save();
                 // Output plan id
