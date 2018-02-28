@@ -23,7 +23,7 @@
                     </div>
                     <div class="pricing-table-footer" style="margin: auto 0 0 0">
                         <span style="font-size: 16pt; font-weight: bold"><sup>	&euro;</sup>{{ number_format($plan->cost, 2) }}</span>
-                        <p>per month</p>
+                        <p>{{$plan->duration}} {{strtoupper(str_plural($plan->duration_type))}}</p>
                         @if(Sentinel::getUser())
                             @if (!Sentinel::getUser()->subscribedToPlan($plan->braintree_plan, 'main'))
                                 <a href="{{ route('selected.plan', [$plan->slug]) }}">Choose Plan</a>
