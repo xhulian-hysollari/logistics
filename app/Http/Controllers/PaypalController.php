@@ -168,9 +168,15 @@ class PaypalController extends Controller
             $approvalUrl = $agreement->getApprovalLink();
             return redirect($approvalUrl);
         } catch (PayPal\Exception\PayPalConnectionException $ex) {
-            throw $ex;
-        } catch (Exception $ex) {
-            throw $ex;
+            echo "Last paypal pay catch" . PHP_EOL;
+            echo $ex->getCode();
+            echo $ex->getData();
+            die($ex);
+        } catch (Exception $ex)
+        {echo "Last pay catch" . PHP_EOL;
+            echo $ex->getCode();
+            echo $ex->getData();
+            die($ex);
         }
 
     }
