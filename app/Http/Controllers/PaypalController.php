@@ -112,17 +112,23 @@ class PaypalController extends Controller
                 // Output plan id
                 return redirect()->back()->with('success', 'Subscription plan created successfully');
             } catch (PayPal\Exception\PayPalConnectionException $ex) {
+                echo "mini paypal catch" . PHP_EOL;
                 echo $ex->getCode();
                 echo $ex->getData();
                 die($ex);
             } catch (Exception $ex) {
+                echo "mini catch" . PHP_EOL;
+                echo $ex->getCode();
+                echo $ex->getData();
                 die($ex);
             }
         } catch (PayPal\Exception\PayPalConnectionException $ex) {
+            echo "Last paypal catch" . PHP_EOL;
             echo $ex->getCode();
             echo $ex->getData();
             die($ex);
         } catch (Exception $ex) {
+            echo "Last catch" . PHP_EOL;
             die($ex);
         }
 
