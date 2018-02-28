@@ -128,7 +128,8 @@ class PaypalController extends Controller
             echo $ex->getData();
             die($ex);
         } catch (Exception $ex) {
-            echo "Last catch" . PHP_EOL;
+            echo "Last catch" . PHP_EOL;echo $ex->getCode();
+            echo $ex->getData();
             die($ex);
         }
 
