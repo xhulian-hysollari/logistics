@@ -15,7 +15,7 @@
                             <li>{{$plan->freight_listing}} Freight Listings</li>
                             <li>{{$plan->truck_listing}} Truck Listings</li>
                             <li>{{$plan->tender_listing}} Tender Listings</li>
-                            <li>{{$plan->ads}} Hour Ads</li>
+                            <li>Ads: {{$plan->ads}} </li>
                             <li>@if($plan->free_chat) Free Chat @endif</li>
                             <li>@if($plan->route_planning) Route Planning @endif</li>
                             <li>@if($plan->free_assistance) Free Assistance from logistics agents @endif</li>
