@@ -17,7 +17,6 @@
                             <li>@if($plan->free_chat) Free Chat @endif</li>
                             <li>@if($plan->route_planning) Route Planning @endif</li>
                             <li>@if($plan->free_assistance) Free Assistance from logistics agents @endif</li>
-                            <a href="{{route('paypal.redirect', ['plan_id' => $plan->plan_id])}}">Paypal</a>
                             {{--<form action="{{ route('user.subscribe') }}" method="post">--}}
                                 {{--{{ csrf_field() }}--}}
                                 {{--<div id="dropin-container"></div>--}}
@@ -29,6 +28,11 @@
                                 {{--</button>--}}
                             {{--</form>--}}
                         </ul>
+                        <p>{{$plan->description}}</p>
+                        <label for="tos"></label>
+                        <input type="checkbox" id="tos"> By continuing with the subscription I declare that I have read and accepted the
+                        <a href=""></a>
+                        <a href="{{route('paypal.redirect', ['plan_id' => $plan->plan_id])}}" class="btn btn-success">Paypal</a>
                     </div>
                 </div>
             </div>
