@@ -30,7 +30,7 @@ class NavigationController extends Controller
 
     public function getAboutPage()
     {
-        return view('layout.pages.about');
+        return view('client.pages.about');
     }
 
     public function getFreightPage()
