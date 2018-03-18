@@ -1,36 +1,36 @@
-@extends('client.client')
+@extends('layout.index')
 @section('content')
-    <div class="block-content" style="padding-left: 20px; padding-right: 20px;">
-        <div class="row main-grid">
+    <div class="container-fluid topmargin" style="padding-left: 20px; padding-right: 20px;">
+        <div class="row">
             <div class="col-sm-12">
-                <div class="container-fluid block-content" style="background-color: rgba(136,136,136,0.17); padding: 30px">
-                    <div class="row form-elem">
-                        <div class="col-sm-6 form-elem">
-                            <div class="default-inp form-elem">
-                                <input type="text" id="s-owner" placeholder="Search owner"/>
+                <div class="bottommargin" style="background-color: rgba(136,136,136,0.17); padding: 30px">
+                    <div class="row bottommargin">
+                        <div class="col-sm-6">
+                            <div class="default-inp">
+                                <input class="form-control" type="text" id="s-owner" placeholder="Search owner"/>
                             </div>
                         </div>
-                        <div class="col-sm-6 form-elem">
-                            <div class="default-inp form-elem">
-                                <input type="text" id="s-description" placeholder="Search description"/>
+                        <div class="col-sm-6">
+                            <div class="default-inp">
+                                <input class="form-control" type="text" id="s-description" placeholder="Search description"/>
                             </div>
                         </div>
                     </div>
                     <div class="row form-elem">
-                        <div class="col-sm-6 form-elem">
-                            <div class="default-inp form-elem">
-                                <input type="text" id="s-duration" placeholder="Search duration"/>
+                        <div class="col-sm-6">
+                            <div class="default-inp">
+                                <input class="form-control" type="text" id="s-duration" placeholder="Search duration"/>
                             </div>
                         </div>
-                        <div class="col-sm-6 form-elem">
-                            <div class="default-inp form-elem">
-                                <input type="text" id="s-deadline" placeholder="Search deadline"/>
+                        <div class="col-sm-6">
+                            <div class="default-inp">
+                                <input class="form-control" type="text" id="s-deadline" placeholder="Search deadline"/>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="resp-table">
-                <table id="data-table" class="table table-responsive table-striped">
+                <table id="data-table" class="table table-striped">
                     <thead>
                     <tr>
                         <th>Owner</th>
@@ -47,7 +47,7 @@
                             <td>{{str_limit($contract->description,'35','...')}}</td>
                             <td>{{$contract->duration}}</td>
                             <td>{{$contract->deadline}}</td>
-                            <td><a href="{{route('contracts.show', $contract->id)}}"><i class="fa fa-eye fa-2x"></i></a></td>
+                            <td><a href="{{route('contracts.show', $contract->id)}}"><i class="i-plain icon-folder-open"></i></a></td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -60,7 +60,6 @@
 
 @section('css')
     <link rel="stylesheet" href="{{asset('css/components/bs-datatable.css')}}">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
 
 @stop
 @section('js')
@@ -74,7 +73,8 @@
 
         $(document).ready(function() {
             var table = $('#data-table').DataTable({
-                "ordering": false
+                "ordering": false,
+                "dom": 'lrtp'
             });
 
             var owner = $('#s-owner');

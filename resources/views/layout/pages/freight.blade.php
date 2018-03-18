@@ -1,43 +1,43 @@
-@extends('client.client')
+@extends('layout.index')
 @section('content')
-    <div class="block-content" style="padding-left: 20px; padding-right: 20px;">
-        <div class="row main-grid">
+    <div class="container-fluid topmargin" style="padding-left: 20px; padding-right: 20px;">
+        <div class="row">
             <div class="col-sm-12">
-                <div class="container-fluid block-content" style="background-color: rgba(136,136,136,0.17); padding: 30px">
-                    <div class="row form-elem">
-                        <div class="col-sm-6 form-elem">
+                <div class="bottommargin" style="background-color: rgba(136,136,136,0.17); padding: 30px">
+                    <div class="row bottommargin-sm">
+                        <div class="col-sm-6">
                             <div class="default-inp form-elem">
-                                <input type="text" id="s-loading" placeholder="From"/>
+                                <input class="form-control" type="text" id="s-loading" placeholder="From"/>
                             </div>
                         </div>
-                        <div class="col-sm-6 form-elem">
+                        <div class="col-sm-6">
                             <div class="default-inp form-elem">
-                                <input type="text" id="s-unloading" placeholder="To"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row form-elem">
-                        <div class="col-sm-6 form-elem">
-                            <div class="default-inp form-elem">
-                                <input type="text" id="s-volume" placeholder="Search volume"/>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 form-elem">
-                            <div class="default-inp form-elem">
-                                <input type="text" id="s-type" placeholder="Search type"/>
+                                <input class="form-control" type="text" id="s-unloading" placeholder="To"/>
                             </div>
                         </div>
                     </div>
-                    <div class="row form-elem">
-                        <div class="col-sm-12 form-elem">
+                    <div class="row bottommargin-sm">
+                        <div class="col-sm-6">
                             <div class="default-inp form-elem">
-                                <input type="text" id="s-listed" placeholder="Search listing time"/>
+                                <input class="form-control" type="text" id="s-volume" placeholder="Search volume"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="default-inp">
+                                <input class="form-control" type="text" id="s-type" placeholder="Search type"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row bottommargin-sm">
+                        <div class="col-sm-12">
+                            <div class="default-inp">
+                                <input class="form-control" type="text" id="s-listed" placeholder="Search listing time"/>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="resp-table">
-                <table id="data_table" class="table table-responsive table-striped">
+                <table id="data_table" class="table table-striped">
                     <thead>
                     <tr>
                         <th><i class="fa fa-map-marker"></i> Place of loading</th>
@@ -56,7 +56,7 @@
                             <td>{{$freight->volume}}</td>
                             <td>{{$freight->type}}</td>
                             <td>{{\Carbon\Carbon::parse($freight->created_at)->diffForHumans()}}</td>
-                            <td><a href="{{route('freight.show', $freight->id)}}"><i class="fa fa-eye fa-2x"></i></a></td>
+                            <td><a href="{{route('freight.show', $freight->id)}}"><i class="i-plain icon-folder-open"></i></a></td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -68,9 +68,7 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="{{asset('css/components/bs-datatable.css')}}">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
-
+    <link rel="stylesheet" href="{{asset('new/css/components/bs-datatable.css')}}">
 @stop
 @section('js')
     <script type="text/javascript" src="{{asset('js/components/bs-datatable.js')}}"></script>
@@ -82,7 +80,8 @@
     <script>
         $(document).ready(function () {
             var table = $('#data_table').DataTable({
-                "ordering": false
+                "ordering": false,
+                "dom": 'lrtp'
             });
             var loading = $('#s-loading');
             var unloading = $('#s-unloading');

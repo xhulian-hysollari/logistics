@@ -1,37 +1,37 @@
-@extends('client.client')
+@extends('layout.index')
 @section('content')
-    <div class="block-content" style="padding-left: 20px; padding-right: 20px;">
-        <div class="row main-grid">
+    <div class="container-fluid topmargin" style="padding-left: 20px; padding-right: 20px;">
+        <div class="row">
             <div class="col-sm-12">
-                <div class="container-fluid block-content" style="background-color: rgba(136,136,136,0.17); padding: 30px">
-                    <div class="row form-elem">
-                        <div class="col-sm-6 form-elem">
-                            <div class="default-inp form-elem">
-                                <input type="text" id="s-plate" placeholder="Search plate"/>
+                <div class="bottommargin" style="background-color: rgba(136,136,136,0.17); padding: 30px">
+                    <div class="row bottommargin-sm">
+                        <div class="col-sm-6">
+                            <div class="default-inp">
+                                <input class="form-control" type="text" id="s-plate" placeholder="Search plate"/>
                             </div>
                         </div>
-                        <div class="col-sm-6 form-elem">
-                            <div class="default-inp form-elem">
-                                <input type="text" id="s-type" placeholder="Search truck type"/>
+                        <div class="col-sm-6">
+                            <div class="default-inp">
+                                <input class="form-control" type="text" id="s-type" placeholder="Search truck type"/>
                             </div>
                         </div>
                     </div>
-                    <div class="row form-elem">
-                        <div class="col-sm-6 form-elem">
-                            <div class="default-inp form-elem">
-                                <input type="text" id="s-location" placeholder="Search location"/>
+                    <div class="row bottommargin-sm">
+                        <div class="col-sm-6">
+                            <div class="default-inp">
+                                <input class="form-control" type="text" id="s-location" placeholder="Search location"/>
                             </div>
                         </div>
-                        <div class="col-sm-6 form-elem">
-                            <div class="default-inp form-elem">
-                                <input type="text" id="s-destination" placeholder="Search destination"/>
+                        <div class="col-sm-6">
+                            <div class="default-inp">
+                                <input class="form-control" type="text" id="s-destination" placeholder="Search destination"/>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="resp-table">
 
-                <table id="data_table" class="table table-responsive table-striped">
+                <table id="data_table" class="table table-striped">
                     <thead>
                     <tr>
                         <th>{{trans('truck.plate')}}</th>
@@ -48,7 +48,7 @@
                             <td>{{$truck->type}}</td>
                             <td>{{$truck->location}}</td>
                             <td>{{$truck->destination}}</td>
-                            <td>@if(\Carbon\Carbon::parse($truck->valid_until)->gt(\Carbon\Carbon::now()))<a href="{{route('trucks.show', $truck->id)}}"><i class="fa fa-eye fa-2x"></i></a>@else <span style="color:red">Expired</span> @endif</td>
+                            <td>@if(\Carbon\Carbon::parse($truck->valid_until)->gt(\Carbon\Carbon::now()))<a href="{{route('trucks.show', $truck->id)}}"><i class="i-plain icon-folder-open"></i></a>@else <span style="color:red">Expired</span> @endif</td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -61,7 +61,6 @@
 
 @section('css')
     <link rel="stylesheet" href="{{asset('css/components/bs-datatable.css')}}">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
 @stop
 @section('js')
     <script type="text/javascript" src="{{asset('js/components/bs-datatable.js')}}"></script>
@@ -73,7 +72,8 @@
     <script>
         $(document).ready(function () {
             var table = $('#data_table').DataTable({
-                "ordering": false
+                "ordering": false,
+                "dom": 'lrtp'
             });
             var plate = $('#s-plate');
             var type = $('#s-type');

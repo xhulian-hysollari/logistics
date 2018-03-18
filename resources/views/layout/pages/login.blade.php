@@ -1,4 +1,4 @@
-@extends('client.client')
+@extends('layout.index')
 @section('content')
     <div style="display: flex; justify-content: center; align-items: center; padding: 25px">
         <div class="col-md-6">

@@ -78,7 +78,18 @@
             background-color: rgba(0, 0, 0, 0.6);
             padding: 10px;
         }
+
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+            width: -webkit-fill-available !important;
+        }
+
+        .pagination > li {
+            padding: 5px;
+        }
     </style>
+    @section('css')@show
 
 </head>
 
@@ -201,10 +212,20 @@
                         <li><a href="{{route('plans')}}">
                                 <div>Pricing</div>
                             </a></li>
-                        <li><a href="{{route('freight')}}"><div>{{trans('navigation.freight')}}</div></a></li>
-                        <li><a href="{{route('truck')}}"><div>{{trans('navigation.truck')}}</div></a>
+                        <li><a href="{{route('freight')}}">
+                                <div>{{trans('navigation.freight')}}</div>
+                            </a></li>
+                        <li><a href="{{route('truck')}}">
+                                <div>{{trans('navigation.truck')}}</div>
+                            </a>
                         </li>
-                        <li><a href="{{route('tender')}}"><div>Tenders</div></a>
+                        <li><a href="{{route('tender')}}">
+                                <div>Tenders</div>
+                            </a>
+                        </li>
+                        <li><a href="#{{route('tender')}}">
+                                <div>Security</div>
+                            </a>
                         </li>
                         @if(\Cartalyst\Sentinel\Laravel\Facades\Sentinel::check())
                             <li><a href="{{route('dashboard')}}">Platform</a></li>
@@ -550,5 +571,6 @@
     });
 </script>
 
+@section('js')@show
 </body>
 </html>
