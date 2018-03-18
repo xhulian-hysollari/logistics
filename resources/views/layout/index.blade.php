@@ -63,6 +63,7 @@
             width: 80px;
             height: 80px;
         }
+
         .widget_links li, .widget_links li a {
             background-image: none !important;
             padding-left: 0;
@@ -72,9 +73,9 @@
             padding-top: 1px;
         }
 
-        .dark .slider-caption, .dark .slider-caption h2{
-            color:white;
-            background-color: rgba(0,0,0,0.6);
+        .dark .slider-caption, .dark .slider-caption h2 {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
             padding: 10px;
         }
     </style>
@@ -150,10 +151,12 @@
                 <!-- Logo
                     ============================================= -->
                 <div id="logo">
-                    <a href="{{route('home')}}" class="standard-logo"><img src="{{asset('media/logo-new.png')}}" alt="Max Logo" height="50">
-                                                                    </a>
-                    <a href="{{route('home')}}" class="retina-logo"><img src="{{asset('media/logo-new.png')}}" alt="Max Logo" height="50">
-                                                                  </a>
+                    <a href="{{route('home')}}" class="standard-logo"><img src="{{asset('media/logo-new.png')}}"
+                                                                           alt="Max Logo" height="50">
+                    </a>
+                    <a href="{{route('home')}}" class="retina-logo"><img src="{{asset('media/logo-new.png')}}"
+                                                                         alt="Max Logo" height="50">
+                    </a>
                 </div><!-- #logo end -->
 
                 <!-- Primary Navigation
@@ -198,6 +201,11 @@
                         <li><a href="{{route('plans')}}">
                                 <div>Pricing</div>
                             </a></li>
+                        <li><a href="{{route('freight')}}"><div>{{trans('navigation.freight')}}</div></a></li>
+                        <li><a href="{{route('truck')}}"><div>{{trans('navigation.truck')}}</div></a>
+                        </li>
+                        <li><a href="{{route('tender')}}"><div>Tenders</div></a>
+                        </li>
                         @if(\Cartalyst\Sentinel\Laravel\Facades\Sentinel::check())
                             <li><a href="{{route('dashboard')}}">Platform</a></li>
                             <li class="dropdown">
@@ -205,7 +213,8 @@
                                    data-toggle="dropdown">{{Sentinel::getUser()->full_name}} <i
                                             class="fa fa-caret-down"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{route('dashboard.profile')}}">{{trans('navigation.profile')}}</a></li>
+                                    <li><a href="{{route('dashboard.profile')}}">{{trans('navigation.profile')}}</a>
+                                    </li>
                                     <li><a href="{{route('logout')}}">{{trans('navigation.logout')}}</a></li>
                                 </ul>
                             </li>
@@ -229,11 +238,11 @@
         <div id="header-trigger"><i class="icon-line-menu"></i><i class="icon-line-cross"></i></div>
 
     </header><!-- #header end -->
-    @include('client.partials.alerts')
+@include('client.partials.alerts')
 
 <!-- Slider
     ============================================= -->
-    @section('slider')@show
+@section('slider')@show
 
 <!-- Content
     ============================================= -->
@@ -261,16 +270,18 @@
                 <div class="row clearfix">
                     <div class="col-md-8">
                         @if($pages = \App\Models\Pages::all())
-                        <div class="col_one_third">
-                            <div class="widget widget_links clearfix">
-                                <h4>USEFUL LINKS</h4>
-                                <ul>
-                                    @foreach($pages as $page)
-                                        <li><a href="{{route('pages', [$page->slug])}}">{!! strip_tags($page->page_title) !!}</a></li>
-                                    @endforeach
-                                </ul>
+                            <div class="col_one_third">
+                                <div class="widget widget_links clearfix">
+                                    <h4>USEFUL LINKS</h4>
+                                    <ul>
+                                        @foreach($pages as $page)
+                                            <li>
+                                                <a href="{{route('pages', [$page->slug])}}">{!! strip_tags($page->page_title) !!}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
                         @endif
                         <div class="col_one_third">
                             <div class="widget widget_links clearfix">
@@ -298,7 +309,9 @@
                                 <ul>
                                     @if(count($contacts = \App\Models\Setting::where('type',0)->get()) > 0)
                                         @foreach($contacts as $contact)
-                                            <li><i class="fa fa-{{trans('settings.icon_'.$contact->title)}}"></i> {{$contact->value}}</li>
+                                            <li>
+                                                <i class="fa fa-{{trans('settings.icon_'.$contact->title)}}"></i> {{$contact->value}}
+                                            </li>
                                         @endforeach
                                     @endif
                                 </ul>
@@ -314,7 +327,8 @@
                             <span>&copy; Max Logistics. All Rights Reserved.</span>
                             <div class="clear"></div>
                             <p style="margin-top: 10px;">Powered by
-                                <a href="https://inovap.com" style="color:#5da5f3" target="_blank">Inovap</a> &copy; 2017 All rights reserved.</p>
+                                <a href="https://inovap.com" style="color:#5da5f3" target="_blank">Inovap</a> &copy;
+                                2017 All rights reserved.</p>
                         </div>
 
                     </div>
