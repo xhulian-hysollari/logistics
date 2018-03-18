@@ -15,7 +15,7 @@
     @if(count($services = \App\Models\Setting::where('type',7)->take(3)->get()) > 0)
         @foreach($services as $service)
             <a href="#">
-                <img class="image_fade" src="{{asset('storage/'.$service->optional)}}" alt="Image 1">
+                <figure class="image_fade" style="background-image: url('{{asset('storage/'.$service->optional)}}'); background-size: cover; background-repeat: no-repeat; background-position: center center; height:320px; width:100%"></figure>
                 <div class="overlay">
                     <div class="text-overlay">
                         <div class="text-overlay-title">
