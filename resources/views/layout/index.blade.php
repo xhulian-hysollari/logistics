@@ -90,7 +90,7 @@
 
         <div class="widget clearfix">
 
-            <a href="index.html"><img src="{{asset('new/demos/car/images/logo@2x.png')}}" alt="Canvas Logo" height="50"></a>
+            <a href="index.html"><img src="{{asset('media/logo-new.png')}}" alt="Max Logo" height="50"></a>
 
             <p>It has always been, and will always be, about quality. We're passionate about ethically sourcing the
                 finest coffee beans, roasting them with great care. We'd like to hear your message!</p>
