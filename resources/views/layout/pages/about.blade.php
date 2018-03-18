@@ -68,7 +68,7 @@
                         </div>
                     </div>
 
-                    @include('client.partials.statistics')
+                    @include('layout.partials.statistics')
 
                 </div>
 
@@ -97,7 +97,7 @@
                 </div>
 
 
-                @include('client.partials.partners')
+                @include('layout.partials.partners')
             </div>
         </div>
     </div>
