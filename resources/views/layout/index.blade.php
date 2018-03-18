@@ -71,6 +71,11 @@
             font-weight: 400;
             padding-top: 1px;
         }
+
+        .dark .slider-caption, .dark .slider-caption h2{
+            color:white;
+            background-color: rgba(0,0,0,0.6);
+        }
     </style>
 
 </head>
