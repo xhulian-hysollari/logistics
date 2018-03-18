@@ -75,6 +75,7 @@
         .dark .slider-caption, .dark .slider-caption h2{
             color:white;
             background-color: rgba(0,0,0,0.6);
+            padding: 10px;
         }
     </style>
 

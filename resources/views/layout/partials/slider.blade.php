@@ -9,7 +9,7 @@
                         @if($slide->title)
                         <div class="container clearfix slider-content">
                             <div class="slider-caption top-left center">
-                                <h2 class="font-primary nott">{{$slide->title}}</h2>
+                                <h2 class="font-primary nott" style="    background-color: transparent;">{{$slide->title}}</h2>
                                 <p class="t300 font-primary d-none d-sm-block">{{$slide->value}}</p>
                             </div>
                         </div>
