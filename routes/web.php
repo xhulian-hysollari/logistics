@@ -19,6 +19,10 @@ Route::get('/about', function () {
     return view('client.pages.about');
 });
 
+Route::get('/layout', function () {
+    return view('layout.pages.home');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Global Routes
