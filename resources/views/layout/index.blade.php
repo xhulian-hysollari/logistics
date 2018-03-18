@@ -90,10 +90,10 @@
 
         <div class="widget clearfix">
 
-            <a href="index.html"><img src="{{asset('media/logo-new.png')}}" alt="Max Logo" height="50"></a>
+            <a href="{{route('home')}}"><img src="{{asset('media/logo-new.png')}}" alt="Max Logo" height="50"></a>
 
-            <p>It has always been, and will always be, about quality. We're passionate about ethically sourcing the
-                finest coffee beans, roasting them with great care. We'd like to hear your message!</p>
+            <p>It has always been, and will always be, about quality. We're passionate about ethically providing the
+                finest logistic service. We'd like to hear your message!</p>
 
             <div class="widget quick-contact-widget noborder notoppadding clearfix">
 
@@ -144,10 +144,10 @@
                 <!-- Logo
                     ============================================= -->
                 <div id="logo">
-                    <a href="index.html" class="standard-logo"><img src="{{asset('new/demos/car/images/logo.png')}}"
-                                                                    alt="Canvas Logo"></a>
-                    <a href="index.html" class="retina-logo"><img src="{{asset('new/demos/car/images/logo@2x.png')}}"
-                                                                  alt="Canvas Logo"></a>
+                    <a href="{{route('home')}}" class="standard-logo"><img src="{{asset('media/logo-new.png')}}" alt="Max Logo" height="50">
+                                                                    </a>
+                    <a href="{{route('home')}}" class="retina-logo"><img src="{{asset('media/logo-new.png')}}" alt="Max Logo" height="50">
+                                                                  </a>
                 </div><!-- #logo end -->
 
                 <!-- Primary Navigation
@@ -186,19 +186,32 @@
                         {{--</ul>--}}
                         {{--</div>--}}
                         {{--</li>--}}
-                        <li><a href="#">
+                        <li><a href="{{route('about-us')}}">
                                 <div>About Us</div>
                             </a></li>
-                        <li><a href="#">
+                        <li><a href="{{route('plans')}}">
                                 <div>Pricing</div>
                             </a></li>
-                        <li><a href="#">
-                                <div>Register</div>
-                            </a></li>
-                        <li><a href="#">
-                                <div>Login</div>
-                            </a></li>
-                        <li><a href="#">
+                        @if(\Cartalyst\Sentinel\Laravel\Facades\Sentinel::check())
+                            <li><a href="{{route('dashboard')}}">Platform</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle"
+                                   data-toggle="dropdown">{{Sentinel::getUser()->full_name}} <i
+                                            class="fa fa-caret-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{route('dashboard.profile')}}">{{trans('navigation.profile')}}</a></li>
+                                    <li><a href="{{route('logout')}}">{{trans('navigation.logout')}}</a></li>
+                                </ul>
+                            </li>
+                        @else
+                            <li><a href="{{route('register')}}">
+                                    <div>Register</div>
+                                </a></li>
+                            <li><a href="{{route('login')}}">
+                                    <div>Login</div>
+                                </a></li>
+                        @endif
+                        <li><a href="{{route('contact')}}">
                                 <div>Contacts</div>
                             </a></li>
                     </ul>
