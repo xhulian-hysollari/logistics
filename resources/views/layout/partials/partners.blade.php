@@ -4,8 +4,7 @@
              data-nav="false" data-pagi="false" data-loop="true" data-autoplay="3000" data-items-xs="2"
              data-items-sm="3" data-items-md="5" data-items-lg="5" data-items-xl="5">
             @foreach($partners as $partner)
-                <div class="oc-item"><a href="{{$partner->website}}" target="_blank"><img src="{{asset('storage/'.$partner->logo)}}"
-                                                      style="height: 24px" alt="Brands"></a></div>
+                <div class="oc-item"><a href="{{$partner->website}}" target="_blank"><figure style="margin: 0; background-image: url('{{asset('storage/'.$partner->logo)}}'); background-position: center center; background-repeat: no-repeat; background-size: cover; width:100%; height: 250px;"></figure></a></div>
             @endforeach
         </div>
     </div>
