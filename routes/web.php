@@ -31,7 +31,7 @@ Route::get('/layout', function () {
 |
 */
 
-Route::get('/home', ['as' => 'home', 'uses' => 'NavigationController@getHomePage']);
+Route::get('/', ['as' => 'home', 'uses' => 'NavigationController@getHomePage']);
 Route::post('/contact', ['as' => 'contact', 'uses' => 'ContactController@contact']);
 Route::get('/plans', ['as' => 'plans', 'uses' => 'PlansController@index']);
 Route::get('/register', ['as' => 'register', 'uses' => 'NavigationController@getRegistrationPage']);
