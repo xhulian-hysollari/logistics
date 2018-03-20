@@ -74,9 +74,11 @@
         <p>
             Email: {{$input['email']}}
         </p>
-        <p>
-            Topic: {{$input['subject']}}
-        </p>
+        @if(isset($input['topic']))
+            <p>
+                Topic: {{$input['subject']}}
+            </p>
+        @endif
         <p>
             Message: {{$input['message']}}
         </p>
