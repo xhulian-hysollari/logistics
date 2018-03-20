@@ -1,5 +1,13 @@
 @extends('layout.index')
 @section('content')
+    <section id="page-title">
+
+        <div class="container clearfix">
+            <h1>Contact Us</h1>
+            <span>Send us a message and we will get right back to you.</span>
+        </div>
+
+    </section><!-- #page-title end -->
     <div class="container topmargin" style="padding-left: 20px; padding-right: 20px;">
         <div class="row">
             <div class="col-sm-4">

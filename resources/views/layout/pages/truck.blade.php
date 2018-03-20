@@ -1,5 +1,13 @@
 @extends('layout.index')
 @section('content')
+    <section id="page-title">
+
+        <div class="container clearfix">
+            <h1>Truck Listing</h1>
+            <span>Search all the trucks listed in MaxLogistics LTD.</span>
+        </div>
+
+    </section><!-- #page-title end -->
     <div class="container-fluid topmargin" style="padding-left: 20px; padding-right: 20px;">
         <div class="row">
             <div class="col-sm-12">
@@ -7,24 +15,24 @@
                     <div class="row bottommargin-sm">
                         <div class="col-sm-6">
                             <div class="default-inp">
-                                <input class="form-control" type="text" id="s-plate" placeholder="Search plate"/>
+                                <input class=" sm-form-control input-block-level" type="text" id="s-plate" placeholder="Search plate"/>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="default-inp">
-                                <input class="form-control" type="text" id="s-type" placeholder="Search truck type"/>
+                                <input class=" sm-form-control input-block-level" type="text" id="s-type" placeholder="Search truck type"/>
                             </div>
                         </div>
                     </div>
                     <div class="row bottommargin-sm">
                         <div class="col-sm-6">
                             <div class="default-inp">
-                                <input class="form-control" type="text" id="s-location" placeholder="Search location"/>
+                                <input class=" sm-form-control input-block-level" type="text" id="s-location" placeholder="Search location"/>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="default-inp">
-                                <input class="form-control" type="text" id="s-destination" placeholder="Search destination"/>
+                                <input class=" sm-form-control input-block-level" type="text" id="s-destination" placeholder="Search destination"/>
                             </div>
                         </div>
                     </div>
@@ -48,7 +56,7 @@
                             <td>{{$truck->type}}</td>
                             <td>{{$truck->location}}</td>
                             <td>{{$truck->destination}}</td>
-                            <td>@if(\Carbon\Carbon::parse($truck->valid_until)->gt(\Carbon\Carbon::now()))<a href="{{route('trucks.show', $truck->id)}}"><i class="i-plain icon-folder-open"></i></a>@else <span style="color:red">Expired</span> @endif</td>
+                            <td>@if(\Carbon\Carbon::parse($truck->valid_until)->gt(\Carbon\Carbon::now()))<a href="{{route('trucks.show', $truck->id)}}"><i class="i-plain icon-folder-open sm-form-control input-block-levellse <span style="color:red">Expired</span> @endif</td>
                         </tr>
                     @endforeach
                     </tbody>

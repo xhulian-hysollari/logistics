@@ -20,38 +20,38 @@ class NavigationController extends Controller
 {
     public function getHomePage()
     {
-        return view('client.pages.home');
+        return view('layout.pages.home');
     }
 
     public function getContactPage()
     {
-        return view('client.pages.contact');
+        return view('layout.pages.contact');
     }
 
     public function getAboutPage()
     {
-        return view('client.pages.about');
+        return view('layout.pages.about');
     }
 
     public function getFreightPage()
     {
 //        $user = Sentinel::getUser();
         $results = Freight::latest()->get();
-        return view('client.pages.freight', compact('results'))->render();
+        return view('layout.pages.freight', compact('results'))->render();
     }
 
     public function getTruckPage()
     {
 //        $user = Sentinel::getUser();
         $results = Truck::active()->latest()->get();
-        return view('client.pages.truck', compact('results'))->render();
+        return view('layout.pages.truck', compact('results'))->render();
     }
     public function getTenderPage()
     {
 //        $user = Sentinel::getUser();
         $results = Contracts::latest()->get();
 
-        return view('client.pages.tenders', compact('results'))->render();
+        return view('layout.pages.tenders', compact('results'))->render();
     }
 
     public function getTenders(){
@@ -80,12 +80,12 @@ class NavigationController extends Controller
 
     public function getRegistrationPage()
     {
-        return view('client.pages.register');
+        return view('layout.pages.register');
     }
 
     public function getLoginPage()
     {
-        return view('client.pages.login');
+        return view('layout.pages.login');
     }
 
     public function getDashboardPage()

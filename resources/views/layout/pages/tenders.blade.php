@@ -1,30 +1,38 @@
 @extends('layout.index')
 @section('content')
+    <section id="page-title">
+
+        <div class="container clearfix">
+            <h1>Contract Listing</h1>
+            <span>Search all the contracts listed in MaxLogistics LTD.</span>
+        </div>
+
+    </section><!-- #page-title end -->
     <div class="container-fluid topmargin" style="padding-left: 20px; padding-right: 20px;">
         <div class="row">
             <div class="col-sm-12">
                 <div class="bottommargin" style="background-color: rgba(136,136,136,0.17); padding: 30px">
                     <div class="row bottommargin">
                         <div class="col-sm-6">
-                            <div class="default-inp">
-                                <input class="form-control" type="text" id="s-owner" placeholder="Search owner"/>
+                            <div class="form-group">
+                                <input class=" sm-form-control input-block-level" type="text" id="s-owner" placeholder="Search owner"/>
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="default-inp">
-                                <input class="form-control" type="text" id="s-description" placeholder="Search description"/>
+                            <div class="form-group">
+                                <input class=" sm-form-control input-block-level" type="text" id="s-description" placeholder="Search description"/>
                             </div>
                         </div>
                     </div>
                     <div class="row form-elem">
                         <div class="col-sm-6">
-                            <div class="default-inp">
-                                <input class="form-control" type="text" id="s-duration" placeholder="Search duration"/>
+                            <div class="form-group">
+                                <input class=" sm-form-control input-block-level" type="text" id="s-duration" placeholder="Search duration"/>
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="default-inp">
-                                <input class="form-control" type="text" id="s-deadline" placeholder="Search deadline"/>
+                            <div class="form-group">
+                                <input class=" sm-form-control input-block-level" type="text" id="s-deadline" placeholder="Search deadline"/>
                             </div>
                         </div>
                     </div>

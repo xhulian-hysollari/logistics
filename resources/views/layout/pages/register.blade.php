@@ -1,38 +1,44 @@
 @extends('layout.index')
 @section('content')
+    <section id="page-title">
+
+        <div class="container clearfix">
+            <h1>Registration</h1>
+        </div>
+
+    </section><!-- #page-title end -->
     <div class="row">
-        <div class="container-fluid">
-            <h4>Registration</h4>
+        <div class="container">
             <div class="row" style="margin-bottom: 20px;">
                 <form id="profile-form" method="post" style="width: 100%" action="{{route('register.autobot')}}" enctype="multipart/form-data">
                     <div class="form-elem">
-                        <div class="default-inp form-elem">
+                        <div class="form-group">
                             <label for="full_name">Full Name</label>
-                            <input type="text" name="full_name" id="full_name"
+                            <input class="sm-form-control input-block-level" type="text" name="full_name" id="full_name"
                                    placeholder="Full Name">
                         </div>
-                        <div class="default-inp form-elem">
+                        <div class="form-group">
                             <label for="company_logo">Company Logo</label>
-                            <input type="file" accept="image/*" name="company_logo" id="company_logo">
+                            <input class="sm-form-control input-block-level" type="file" accept="image/*" name="company_logo" id="company_logo">
                         </div>
-                        <div class="default-inp form-elem">
+                        <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" name="email" id="email"
+                            <input class="sm-form-control input-block-level" type="text" name="email" id="email"
                                    placeholder="Email">
                         </div>
-                        <div class="default-inp form-elem">
+                        <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" name="password" id="password"
+                            <input class="sm-form-control input-block-level" type="password" name="password" id="password"
                                    placeholder="********">
                         </div>
-                        <div class="default-inp form-elem">
+                        <div class="form-group">
                             <label for="confirm_password">Confirm password</label>
-                            <input type="password" name="confirm_password" id="confirm_password"
+                            <input class="sm-form-control input-block-level" type="password" name="confirm_password" id="confirm_password"
                                    placeholder="********">
                         </div>
-                        <div class="form-elem pull-right">
+                        <div class="form-group">
                             <button id="profile-btn" type="submit"
-                                    class="btn btn-primary next-step">Register</button>
+                                    class="button button-small button-3d nomargin">Register</button>
                         </div>
                     </div>
 

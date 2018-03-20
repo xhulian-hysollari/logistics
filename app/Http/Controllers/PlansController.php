@@ -12,7 +12,7 @@ class PlansController extends Controller
     public function index()
     {
         $results = Plan::orderBy('cost','asc')->get();
-        return view('client.pages.pricing')->with(['results' => $results]);
+        return view('layout.pages.pricing')->with(['results' => $results]);
     }
     public function getPlanList()
     {
