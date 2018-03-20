@@ -174,7 +174,7 @@
                 ============================================= -->
                 <nav id="primary-menu" class="with-arrows clearfix">
                     <ul>
-                        <li class="current"><a href="{{route('home')}}">
+                        <li class="{!! classActivePath('home') !!}"><a href="{{route('home')}}">
                                 <div>Home</div>
                             </a></li>
                         <!-- Mega Menu -->
@@ -206,48 +206,48 @@
                         {{--</ul>--}}
                         {{--</div>--}}
                         {{--</li>--}}
-                        <li><a href="{{route('about-us')}}">
+                        <li{!! classActivePath('about') !!}><a href="{{route('about')}}">
                                 <div>About Us</div>
                             </a></li>
-                        <li><a href="{{route('plans')}}">
+                        <li{!! classActivePath('plans') !!}><a href="{{route('plans')}}">
                                 <div>Pricing</div>
                             </a></li>
-                        <li><a href="{{route('freight')}}">
+                        <li{!! classActivePath('freight') !!}><a href="{{route('freight')}}">
                                 <div>{{trans('navigation.freight')}}</div>
                             </a></li>
-                        <li><a href="{{route('truck')}}">
+                        <li{!! classActivePath('truck') !!}><a href="{{route('truck')}}">
                                 <div>{{trans('navigation.truck')}}</div>
                             </a>
                         </li>
-                        <li><a href="{{route('tender')}}">
+                        <li{!! classActivePath('tender') !!}><a href="{{route('tender')}}">
                                 <div>Tenders</div>
                             </a>
                         </li>
-                        <li><a href="#{{route('tender')}}">
+                        <li{!! classActivePath('tender') !!}><a href="#{{route('tender')}}">
                                 <div>Security</div>
                             </a>
                         </li>
                         @if(\Cartalyst\Sentinel\Laravel\Facades\Sentinel::check())
-                            <li><a href="{{route('dashboard')}}">Platform</a></li>
+                            <li{!! classActivePath('dashboard') !!}><a href="{{route('dashboard')}}">Platform</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle"
                                    data-toggle="dropdown">{{Sentinel::getUser()->full_name}} <i
                                             class="fa fa-caret-down"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{route('dashboard.profile')}}">{{trans('navigation.profile')}}</a>
+                                    <li{!! classActivePath('dashboard.profile') !!}><a href="{{route('dashboard.profile')}}">{{trans('navigation.profile')}}</a>
                                     </li>
-                                    <li><a href="{{route('logout')}}">{{trans('navigation.logout')}}</a></li>
+                                    <li{!! classActivePath('logout') !!}><a href="{{route('logout')}}">{{trans('navigation.logout')}}</a></li>
                                 </ul>
                             </li>
                         @else
-                            <li><a href="{{route('register')}}">
+                            <li{!! classActivePath('register') !!}><a href="{{route('register')}}">
                                     <div>Register</div>
                                 </a></li>
-                            <li><a href="{{route('login')}}">
+                            <li{!! classActivePath('login') !!}><a href="{{route('login')}}">
                                     <div>Login</div>
                                 </a></li>
                         @endif
-                        <li><a href="{{route('contact')}}">
+                        <li{!! classActivePath('contact') !!}><a href="{{route('contact')}}">
                                 <div>Contacts</div>
                             </a></li>
                     </ul>
