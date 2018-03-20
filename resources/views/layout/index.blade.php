@@ -118,16 +118,19 @@
                 <h4>Quick Contact</h4>
                 <div class="quick-contact-form-result"></div>
                 <form id="quick-contact-form" name="quick-contact-form"
-                      action="{{asset('new/include/quickcontact.php')}}" method="post"
+                      action="{{action('ContactController@contact')}}" method="post"
                       class="quick-contact-form nobottommargin">
                     <div class="form-process"></div>
                     <input type="text" class="required sm-form-control input-block-level" id="quick-contact-form-name"
-                           name="quick-contact-form-name" value="" placeholder="Full Name"/>
+                           name="full_name" value="" placeholder="Full Name"/>
                     <input type="text" class="required sm-form-control email input-block-level"
-                           id="quick-contact-form-email" name="quick-contact-form-email" value=""
+                           id="quick-contact-form-email" name="email" value=""
                            placeholder="Email Address"/>
+                    <input type="text" class="required sm-form-control phone input-block-level"
+                           id="quick-contact-form-phone" name="phone" value=""
+                           placeholder="Phone Number"/>
                     <textarea class="required sm-form-control input-block-level short-textarea"
-                              id="quick-contact-form-message" name="quick-contact-form-message" rows="4" cols="30"
+                              id="quick-contact-form-message" name="message" rows="4" cols="30"
                               placeholder="Message"></textarea>
                     <input type="text" class="hidden" id="quick-contact-form-botcheck"
                            name="quick-contact-form-botcheck" value=""/>
