@@ -43,7 +43,7 @@
 
     <!-- Document Title
     ============================================= -->
-    <title>Automotive | Canvas</title>
+    <title>Max Logistics | Transportation and Logistics Platform</title>
 
     <style>
         /* Revolution Slider */
