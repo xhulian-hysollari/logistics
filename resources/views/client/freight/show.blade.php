@@ -1,4 +1,4 @@
-@extends('client.client')
+@extends('layout.index')
 
 @section('content')
     <div class="container block-content" style="padding-left: 20px; padding-right: 20px;">
