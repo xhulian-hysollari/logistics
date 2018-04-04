@@ -3,7 +3,6 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="well clearfix">
                 <div class="col_half">
                     <div class="row">
                         <div class="bottommargin">
@@ -108,12 +107,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <div class="well clearfix">
                 <div class="col_half">
                     <div class="row">
                         <div class="bottommargin">
@@ -190,7 +187,6 @@
                 <div class="col_half col_last">
                     <div id="location-map" style="height: 300px; width: 100%; color:red"></div>
                 </div>
-            </div>
         </div>
     </div>
 
