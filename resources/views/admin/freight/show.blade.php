@@ -192,8 +192,8 @@
 
     @if(Sentinel::check())
         @if(Sentinel::getUser()->id != $result->owner->id)
-            <div class="container-fluid block-content">
-                <div class="row main-grid">
+            <div class="container">
+                <div class="row">
                     <form action="{{route('freight.bid', $result->id)}}" method="post" enctype="multipart/form-data">
                         @include('client.partials.bid')
                     </form>
@@ -201,8 +201,8 @@
             </div>
         @endif
     @else
-        <div class="container-fluid block-content">
-            <div class="row main-grid">
+        <div class="container">
+            <div class="row">
                 <form action="{{route('freight.bid', $result->id)}}" method="post" enctype="multipart/form-data">
                     @include('client.partials.bid')
                 </form>
