@@ -5,51 +5,51 @@
         <div class="row">
                 <div class="col_half">
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Company: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 {{$result->owner->profile->company}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Email: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 {{$result->owner->email}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Phone: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 {{$result->owner->profile->telephone}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Mobile: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 {{$result->owner->profile->mobile}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Fax: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 {{$result->owner->profile->fax}}
                             </div>
                         </div>
@@ -57,51 +57,51 @@
                 </div>
                 <div class="col_half col_last">
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Representative: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 {{$result->owner->full_name}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Skype: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 {{$result->owner->profile->skype}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Company Website: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 {{$result->owner->profile->website}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Languages Spoken: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 {{$result->owner->profile->languages}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Description: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 {{$result->owner->profile->about_me}}
                             </div>
                         </div>
@@ -113,72 +113,72 @@
         <div class="row">
                 <div class="col_half">
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Freight ID: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 {{$result->freight_id}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Required Truck Type: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 {{$result->type}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Dimensions: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 L: {{$result->length}}, H: {{$result->height}}, W: {{$result->weight}},
                                 V: {{$result->volume}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Loading: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 {{$result->loading}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Unloading: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 {{$result->unloading}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Quantity: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 {{$result->quantity}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="bottommargin">
-                            <div class="col_full nobottommargin">
+                        <div class="bottommargin-sm">
+                            <div class="col_full nobottommargin-sm">
                                 <label class="control-label">Description: </label>
                             </div>
-                            <div class="col_full nobottommargin">
+                            <div class="col_full nobottommargin-sm">
                                 {{$result->description}}
                             </div>
                         </div>
