@@ -1,108 +1,108 @@
 @extends('layout.index')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row main-grid">
+    <div class="container">
+        <div class="row">
             <div class="well clearfix">
-                <div class="col-md-6">
+                <div class="col_half">
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Company: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 {{$result->owner->profile->company}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Email: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 {{$result->owner->email}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Phone: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 {{$result->owner->profile->telephone}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Mobile: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 {{$result->owner->profile->mobile}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Fax: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 {{$result->owner->profile->fax}}
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col_half col_last">
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Representative: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 {{$result->owner->full_name}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Skype: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 {{$result->owner->profile->skype}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Company Website: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 {{$result->owner->profile->website}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Languages Spoken: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 {{$result->owner->profile->languages}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Description: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 {{$result->owner->profile->about_me}}
                             </div>
                         </div>
@@ -111,36 +111,36 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row main-grid">
+    <div class="container">
+        <div class="row">
             <div class="well clearfix">
-                <div class="col-md-6">
+                <div class="col_half">
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Freight ID: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 {{$result->freight_id}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Required Truck Type: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 {{$result->type}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Dimensions: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 L: {{$result->length}}, H: {{$result->height}}, W: {{$result->weight}},
                                 V: {{$result->volume}}
                             </div>
@@ -148,46 +148,46 @@
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Loading: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 {{$result->loading}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Unloading: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 {{$result->unloading}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Quantity: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 {{$result->quantity}}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col_one_fourth">
                                 <label class="control-label">Description: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col_three_fourth col_last">
                                 {{$result->description}}
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col_half col_last">
                     <div id="location-map" style="height: 300px; width: 100%; color:red"></div>
                 </div>
             </div>
