@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PayPalRequest;
 use App\Models\Plan as LocalPlan;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Exception;
@@ -50,7 +51,7 @@ class PaypalController extends Controller
         $this->apiContext->setConfig(config('paypal.settings'));
     }
 
-    public function create_plan(Request $request)
+    public function create_plan(PayPalRequest $request)
     {
 
         // Create a new billing plan
