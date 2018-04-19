@@ -3,17 +3,17 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="page-title">{{ $plan->name }}</div>
-            <ul style="list-style:none">
-                <li>Price: {{$plan->cost}}</li>
-                <li>Duration: {{$plan->duration}} ({{$plan->public_duration}})</li>
-                <li>{{$plan->freight_listing}} Freight Listings</li>
-                <li>{{$plan->truck_listing}} Truck Listings</li>
-                <li>{{$plan->tender_listing}} Tender Listings</li>
-                <li>{{$plan->ads}} Hour Ads</li>
-                <li>@if($plan->free_chat) Free Chat @endif</li>
-                <li>@if($plan->route_planning) Route Planning @endif</li>
-                <li>@if($plan->free_assistance) Free Assistance from logistics agents @endif</li>
+            <div class="fancy-title title-bottom-border"><h3>{{ $plan->name }}</h3></div>
+            <ul class="iconlist iconlist-color nobottommargin" style="list-style:none">
+                <li><i class="icon-ok"></i>Price: {{$plan->cost}}</li>
+                <li><i class="icon-ok"></i>Duration: {{$plan->duration}} ({{$plan->public_duration}})</li>
+                <li><i class="icon-ok"></i>{{$plan->freight_listing}} Freight Listings</li>
+                <li><i class="icon-ok"></i>{{$plan->truck_listing}} Truck Listings</li>
+                <li><i class="icon-ok"></i>{{$plan->tender_listing}} Tender Listings</li>
+                <li><i class="icon-ok"></i>{{$plan->ads}} Hour Ads</li>
+                <li>@if($plan->free_chat)<i class="icon-ok"></i> Free Chat @endif</li>
+                <li>@if($plan->route_planning)<i class="icon-ok"></i> Route Planning @endif</li>
+                <li>@if($plan->free_assistance)<i class="icon-ok"></i> Free Assistance from logistics agents @endif</li>
                 {{--<form action="{{ route('user.subscribe') }}" method="post">--}}
                 {{--{{ csrf_field() }}--}}
                 {{--<div id="dropin-container"></div>--}}
