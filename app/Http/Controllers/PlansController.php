@@ -25,7 +25,7 @@ class PlansController extends Controller
         if ($request->user()->subscribedToPlan($plan->braintree_plan, 'main')) {
             return redirect()->route('plans')->with('error', 'Unauthorised operation');
         }
-        return view('client.pages.plan')->with(['plan' => $plan]);
+        return view('layout.pages.plan')->with(['plan' => $plan]);
     }
 
     public function create(){
