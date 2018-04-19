@@ -43,7 +43,7 @@
 
             <div class="col_full col_last topmargin">
                 <a href="{{route('paypal.redirect', ['plan_id' => $plan->plan_id])}}"
-                   class="button button-small button-3d nomargin">Paypal</a>
+                   class="button button-small button-3d nomargin">Pay with Paypal</a>
             </div>
         </div>
     </div>
