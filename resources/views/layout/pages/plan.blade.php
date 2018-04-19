@@ -3,10 +3,10 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col_full col_last col_full col_last nobottommargin topmargin">
+            <div class="col_full col_last nobottommargin topmargin">
                 <div class="fancy-title title-bottom-border"><h3>{{ $plan->name }}</h3></div>
             </div>
-            <div class="col_full col_last col_full col_last nobottommargin">
+            <div class="col_full col_last nobottommargin">
                 <ul class="iconlist iconlist-color nobottommargin" style="list-style:none">
                     <li><i class="icon-ok"></i>Price: {{$plan->cost}}</li>
                     <li><i class="icon-ok"></i>Duration: {{$plan->duration}} ({{$plan->public_duration}})</li>
@@ -31,17 +31,17 @@
                 </ul>
             </div>
 
-            <div class="col_full col_last col_full col_last nobottommargin">
+            <div class="col_full col_last nobottommargin">
                 <p>{{$plan->description}}</p>
             </div>
 
-            <div class="col_full col_last col_full col_last nobottommargin">
+            <div class="col_full col_last nobottommargin">
                 <label for="tos"></label>
                 <input type="checkbox" id="tos"> By continuing with the subscription I declare that I have read and
                 accepted the
             </div>
 
-            <div class="col_full col_last col_full col_last nobottommargin">
+            <div class="col_full col_last topmargin">
                 <a href="{{route('paypal.redirect', ['plan_id' => $plan->plan_id])}}"
                    class="button button-small button-3d nomargin">Paypal</a>
             </div>
