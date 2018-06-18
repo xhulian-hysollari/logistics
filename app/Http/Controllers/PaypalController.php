@@ -144,7 +144,7 @@ class PaypalController extends Controller
         $agreement = new Agreement();
         $agreement->setName($localPlan->name .  ' Subscription Agreement')
             ->setDescription($localPlan->description)
-            ->setStartDate(\Carbon\Carbon::now()->addMinutes(5)->toIso8601String());
+            ->setStartDate(\Carbon\Carbon::now()->addMonth()->toIso8601String());
 
         // Set plan id
         $plan = new Plan();
